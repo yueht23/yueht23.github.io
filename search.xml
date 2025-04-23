@@ -19,50 +19,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>华为入职培训-C++语言编程规范</title>
-    <url>/2025/04/22/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-C-%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<h1 id="1-课程简介"><a href="#1-课程简介" class="headerlink" title="1. 课程简介"></a>1. 课程简介</h1><p>视频中说可以在公司内网下载，在互联网上找到一个版本<a href="https://blog.csdn.net/yaoming168/article/details/136063619">华为C++语言编程规范</a></p>
-<h1 id="2-引言"><a href="#2-引言" class="headerlink" title="2. 引言"></a>2. 引言</h1><p>常见的c++中的未定义行为</p>
-<ul>
-<li>整数除以0</li>
-<li>有符号的整数溢出</li>
-<li>访问越界数组</li>
-<li>使用未初始化的变量</li>
-<li>越界访问</li>
-<li>使用<code>new T[n]</code>分配数组，却用delete不带[]释放<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>* arr = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>];  <span class="comment">// 分配10个int的空间</span></span><br><span class="line"><span class="keyword">delete</span> arr;              <span class="comment">// 错误！应该用delete[] arr</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>关于指针，优先使用<strong>引用和智能指针</strong></p>
-<h1 id="3-代码风格"><a href="#3-代码风格" class="headerlink" title="3. 代码风格"></a>3. 代码风格</h1><p>主要看项目组用啥命名风格，不推荐匈牙利</p>
-<h1 id="4-编程实践"><a href="#4-编程实践" class="headerlink" title="4. 编程实践"></a>4. 编程实践</h1><h2 id="4-1-函数、类、常量"><a href="#4-1-函数、类、常量" class="headerlink" title="4.1 函数、类、常量"></a>4.1 函数、类、常量</h2><h3 id="输入校验原则"><a href="#输入校验原则" class="headerlink" title="输入校验原则"></a>输入校验原则</h3><p><img src="/../images/image-2.png" alt="alt text"></p>
-<p>如上是两个函数单板的模型，首先熟悉一下相关的名词</p>
-<ul>
-<li>单板：一个函数或者一个类</li>
-<li>.so文件：shared object file，这是Unix下的动态链接库，大概类似于windows下的dll</li>
-</ul>
-<p>大概意思是：</p>
-<blockquote>
-<p>外部数据输入（箭头①） 需要进行严格的校验，<strong>防止恶意数据注入</strong>。<br>内部数据传递（箭头②、④、⑤） 也需要进行适当的校验，确保数据的一致性和安全性。<br>应用层与内核层交互（箭头③） 更加需要严谨的校验机制，<strong>避免因数据问题导致系统崩溃或被攻击</strong>。</p>
-</blockquote>
-<p>c++中常见的函数输入校验：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">devide</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> std::<span class="built_in">runtime_error</span>(<span class="string">&quot;Divide by zero&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a / b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="合理选择输入输出参数"><a href="#合理选择输入输出参数" class="headerlink" title="合理选择输入输出参数"></a>合理选择输入输出参数</h3><p>对于输入参数</p>
-<ul>
-<li>拷贝代价高，pass by reference</li>
-<li>拷贝代价低，pass by value</li>
-</ul>
-<h2 id="对于返回参数"><a href="#对于返回参数" class="headerlink" title="对于返回参数"></a>对于返回参数</h2><h2 id="4-2-枚举、声明与定义"><a href="#4-2-枚举、声明与定义" class="headerlink" title="4.2 枚举、声明与定义"></a>4.2 枚举、声明与定义</h2><h2 id="4-3-类型转换、整数运算"><a href="#4-3-类型转换、整数运算" class="headerlink" title="4.3 类型转换、整数运算"></a>4.3 类型转换、整数运算</h2><h2 id="4-4-表达式、语句"><a href="#4-4-表达式、语句" class="headerlink" title="4.4 表达式、语句"></a>4.4 表达式、语句</h2><h2 id="4-5-资源管理、错误处理"><a href="#4-5-资源管理、错误处理" class="headerlink" title="4.5 资源管理、错误处理"></a>4.5 资源管理、错误处理</h2><h2 id="4-6-模板与泛型编程、并发与并行"><a href="#4-6-模板与泛型编程、并发与并行" class="headerlink" title="4.6 模板与泛型编程、并发与并行"></a>4.6 模板与泛型编程、并发与并行</h2><h2 id="4-7-预处理、头文件与源文件"><a href="#4-7-预处理、头文件与源文件" class="headerlink" title="4.7 预处理、头文件与源文件"></a>4.7 预处理、头文件与源文件</h2><h2 id="4-8-标准库"><a href="#4-8-标准库" class="headerlink" title="4.8 标准库"></a>4.8 标准库</h2><h1 id="5-继承自C语言编程规范条款款"><a href="#5-继承自C语言编程规范条款款" class="headerlink" title="5. 继承自C语言编程规范条款款"></a>5. 继承自C语言编程规范条款款</h1>]]></content>
-      <categories>
-        <category>软件雏鹰计划</category>
-      </categories>
-      <tags>
-        <tag>cpp</tag>
-        <tag>编程规范</tag>
-        <tag>华为</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>labuladong-入门-编程语言基础及练习</title>
     <url>/2025/04/23/labuladong-%E5%85%A5%E9%97%A8-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%8F%8A%E7%BB%83%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本笔记是主要通过学习<a href="https://labuladong.online/algo/">labuladong的算法笔记</a>, 开始时间是2025&#x2F;03&#x2F;31。</p>
@@ -340,7 +296,1088 @@
       </categories>
       <tags>
         <tag>cpp</tag>
-        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>labuladong-基础-数据结构及排序精讲</title>
+    <url>/2025/04/23/labuladong-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E6%8E%92%E5%BA%8F%E7%B2%BE%E8%AE%B2/</url>
+    <content><![CDATA[<h1 id="基础：数据结构及排序精讲"><a href="#基础：数据结构及排序精讲" class="headerlink" title="基础：数据结构及排序精讲"></a><a href="https://labuladong.online/algo/menu/quick-start/">基础：数据结构及排序精讲</a></h1><h2 id="手把手带你实现动态数组"><a href="#手把手带你实现动态数组" class="headerlink" title="手把手带你实现动态数组"></a><a href="https://labuladong.online/algo/menu/dynamic-array/">手把手带你实现动态数组</a></h2><p>以下是动态数组和静态数组的主要区别总结：</p>
+<table>
+<thead>
+<tr>
+<th><strong>特性</strong></th>
+<th><strong>静态数组 (Static Array)</strong></th>
+<th><strong>动态数组 (Dynamic Array)</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>内存分配</strong></td>
+<td>编译时分配，大小固定</td>
+<td>运行时动态分配，大小可调整</td>
+</tr>
+<tr>
+<td><strong>大小灵活性</strong></td>
+<td>固定长度，不可扩展或收缩</td>
+<td>可动态扩展或收缩（如通过 <code>realloc</code> 或自动扩容策略）</td>
+</tr>
+<tr>
+<td><strong>内存管理</strong></td>
+<td>自动管理（栈或全局内存），无需手动释放</td>
+<td>需手动管理（堆内存），需显式释放（如 <code>free</code>&#x2F;<code>delete</code>）</td>
+</tr>
+<tr>
+<td><strong>访问速度</strong></td>
+<td>更快（连续内存，无额外开销）</td>
+<td>稍慢（可能涉及扩容时的内存搬移）</td>
+</tr>
+<tr>
+<td><strong>内存效率</strong></td>
+<td>可能浪费内存（需预分配足够空间）</td>
+<td>更高效（按需分配，减少浪费）</td>
+</tr>
+<tr>
+<td><strong>适用场景</strong></td>
+<td>数据量已知且固定的场景</td>
+<td>数据量变化频繁或未知的场景</td>
+</tr>
+<tr>
+<td><strong>示例（C++）</strong></td>
+<td><code>std::array&lt;int, 10&gt; arr;</code></td>
+<td><code>std::vector&lt;int&gt; arr;</code></td>
+</tr>
+<tr>
+<td><strong>示例（Python）</strong></td>
+<td>无（Python 列表本质是动态数组）</td>
+<td><code>list = []</code>（Python 列表自动扩容）</td>
+</tr>
+<tr>
+<td><strong>扩容成本</strong></td>
+<td>不支持扩容</td>
+<td>扩容时可能需复制全部元素（均摊时间复杂度 O(1)）</td>
+</tr>
+</tbody></table>
+<p>各种操作的复杂度</p>
+<table>
+<thead>
+<tr>
+<th><strong>操作</strong></th>
+<th><strong>静态数组 (Static Array)</strong></th>
+<th><strong>动态数组 (Dynamic Array)</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>访问 (Access)</strong></td>
+<td><code>O(1)</code></td>
+<td><code>O(1)</code></td>
+<td>随机访问，直接通过下标定位。</td>
+</tr>
+<tr>
+<td><strong>修改 (Update)</strong></td>
+<td><code>O(1)</code></td>
+<td><code>O(1)</code></td>
+<td>直接修改指定位置的元素。</td>
+</tr>
+<tr>
+<td><strong>插入 (Insert)</strong></td>
+<td><code>O(n)</code>（尾部 <code>O(1)</code>）</td>
+<td><code>O(n)</code>（尾部正常<code>O(1)</code>，不正常<code>O(n)</code>）</td>
+<td>不是在尾部的时候都要搬运，在尾部时动态有可能要扩容，扩容为<code>O(n)</code>但平均为<code>O(1)</code></td>
+</tr>
+<tr>
+<td><strong>删除 (Delete)</strong></td>
+<td><code>O(n)</code> （尾部 <code>O(1)</code>）</td>
+<td><code>O(n)</code>（尾部正常<code>O(1)</code>，不正常<code>O(n)</code>）</td>
+<td>不是在尾部需搬移后续元素，在尾部时动态有可能要缩容，缩容为<code>O(n)</code> 但平均为<code>O(1)</code></td>
+</tr>
+<tr>
+<td><strong>扩容 (Resize)</strong></td>
+<td>不支持</td>
+<td><code>O(n)</code></td>
+<td>动态数组扩容需分配新内存并拷贝旧数据。</td>
+</tr>
+<tr>
+<td><strong>查找 (Search)</strong></td>
+<td><code>O(n)</code>（无序） &#x2F; <code>O(log n)</code>（有序）</td>
+<td><code>O(n)</code>（无序） &#x2F; <code>O(log n)</code>（有序）</td>
+<td>线性查找或二分查找（若有序）。</td>
+</tr>
+<tr>
+<td><strong>查询长度 (Length)</strong></td>
+<td><code>O(1)</code></td>
+<td><code>O(1)</code></td>
+<td>都是提前保存的，动态数组查询长度不需要遍历</td>
+</tr>
+</tbody></table>
+<h2 id="手把手带你实现单-双链表"><a href="#手把手带你实现单-双链表" class="headerlink" title="手把手带你实现单&#x2F;双链表"></a><a href="https://labuladong.online/algo/menu/linked-list/">手把手带你实现单&#x2F;双链表</a></h2><h3 id="链表（链式存储）基本原理"><a href="#链表（链式存储）基本原理" class="headerlink" title="链表（链式存储）基本原理"></a><a href="https://labuladong.online/algo/data-structure-basic/linkedlist-basic/">链表（链式存储）基本原理</a></h3><p>Why we need linked lists? instead of dynamic arrays?<br><strong>高插入&#x2F;删除、内存碎片敏感且无需随机访问的场景。</strong></p>
+<p>与数组相比链表的复杂度表格如下：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>数组 (Array)</th>
+<th>单向链表 (Singly Linked List)</th>
+<th>双向链表 (Doubly Linked List)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>随机访问</strong></td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><strong>无序搜索</strong></td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><strong>有序二分查找</strong></td>
+<td>O(log n)</td>
+<td>❌ 不支持（必须顺序访问）</td>
+<td>❌ 不支持（必须顺序访问）</td>
+</tr>
+<tr>
+<td><strong>插入头部</strong></td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><strong>插入尾部</strong></td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><strong>插入中间</strong></td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><strong>删除头部</strong></td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><strong>删除尾部</strong></td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><strong>删除中间</strong></td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><strong>空间开销</strong></td>
+<td>O(n)</td>
+<td>O(n) + 指针开销</td>
+<td>O(n) + 双指针开销</td>
+</tr>
+<tr>
+<td><strong>查看长度</strong></td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody></table>
+<h3 id="链表代码实现"><a href="#链表代码实现" class="headerlink" title="链表代码实现"></a><a href="https://labuladong.online/algo/data-structure-basic/linkedlist-implement/">链表代码实现</a></h3><p>C++中有<code>std::list</code>和<code>std::forward_list</code>，前者是双向链表，后者是单向链表，在<a href="#%E5%8F%8C%E9%93%BE%E8%A1%A8list">前文</a>中已经介绍过了。</p>
+<h2 id="环形数组技巧及实现"><a href="#环形数组技巧及实现" class="headerlink" title="[环形数组技巧及实现]"></a>[环形数组技巧及实现]</h2><h3 id="环形数组技巧"><a href="#环形数组技巧" class="headerlink" title="环形数组技巧"></a><a href="https://labuladong.online/algo/data-structure-basic/cycle-array/">环形数组技巧</a></h3><p>Why we need circular arrays? instead of dynamic arrays?<br><strong>希望以O(1)复杂度进行数组头部增删元素</strong></p>
+<p>实现方法是维护两个指针<code>[start, end)</code>，<code>start</code>指向数组的头部，<code>end</code>指向数组的尾部。逻辑上数组为<code>[start, end)</code>，实际存储为<code>[0, n)</code>。</p>
+<ul>
+<li>当头部元素<ul>
+<li>删除时，<code>start++</code>，如果<code>start == end</code>，则<code>start = 0</code>，<code>end = 0</code>，表示数组为空。</li>
+<li>插入时，<code>start--</code>，如果<code>start &lt; 0</code>，则<code>start = n - 1</code>，表示数组头部插入元素。</li>
+</ul>
+</li>
+</ul>
+<p>环形数组在增删头部元素时复杂度为O(1)，而动态数组为O(n)。增删尾时与动态数组相同，复杂度为O(1)。增删中间元素时与动态数组相同，复杂度为O(n)。为什么编程语言的标准库中提供的动态数组容器底层并没有用环形数组技巧？<br><strong>如果用环形数组，增删查改的的所有操作都会涉及<code>%</code> 求模运算，这个操作是比较消耗性能的。尤其像数组的 <code>get</code> 方法，调用频率会非常非常高，如果每次调用都多一步 <code>%</code> 运算，加起来的性能损耗远大于环形数组带来的收益，因为数组很少在头部增删元素。如果你非要在头部增删，应该使用更合适的其他数据结构。所以一般只会在双端队列这种场景下使用环形数组，标准的动态数组并没有使用这个技巧。不是不能用，而是算总账不划算。</strong></p>
+<h2 id="手把手带你实现队列-栈"><a href="#手把手带你实现队列-栈" class="headerlink" title="手把手带你实现队列&#x2F;栈"></a><a href="https://labuladong.online/algo/menu/queue-stack/">手把手带你实现队列&#x2F;栈</a></h2><h3 id="队列-栈基本原理"><a href="#队列-栈基本原理" class="headerlink" title="队列&#x2F;栈基本原理"></a><a href="https://labuladong.online/algo/data-structure-basic/queue-stack-basic/">队列&#x2F;栈基本原理</a></h3><ul>
+<li>队列和栈都是「操作受限」的数据结构，队列是先进先出（FIFO），栈是先进后出（LIFO）。队列只能在一端插入元素，另一端删除元素；栈只能在某一端插入和删除元素。说白了就是把数组链表提供的 API 删掉了一部分，只保留头尾操作元素的 API 给你用。</li>
+</ul>
+<h3 id="用链表实现队列-栈"><a href="#用链表实现队列-栈" class="headerlink" title="用链表实现队列&#x2F;栈"></a><a href="https://labuladong.online/algo/data-structure-basic/linked-queue-stack/">用链表实现队列&#x2F;栈</a></h3><p>双链表有head和tail两个指针，天然的支持栈和队列的实现。满足:</p>
+<ul>
+<li>栈：<code>push_back</code>和<code>pop_back</code>在&#96;O(1)复杂度内完成</li>
+<li>队列：<code>push_back</code>和<code>pop_front</code>在&#96;O(1)复杂度内完成</li>
+</ul>
+<p>注意单链表实现栈和队列时</p>
+<ul>
+<li>栈：<code>push_back</code>和<code>pop_back</code>在&#96;O(1)复杂度内完成（单链表头为栈顶）</li>
+<li>队列：<code>push_back</code>和<code>pop_front</code>在没有办法同时<code>O(1)</code>复杂度完成，需要找到尾部元素，复杂度为<code>O(n)</code>，不过也可以保存tail指针</li>
+</ul>
+<h3 id="用数组实现队列-栈"><a href="#用数组实现队列-栈" class="headerlink" title="用数组实现队列&#x2F;栈"></a><a href="https://labuladong.online/algo/data-structure-basic/array-queue-stack/">用数组实现队列&#x2F;栈</a></h3><p>用动态数组实现队列和栈</p>
+<ul>
+<li>栈：<code>push_back</code>和<code>pop_back</code>在<code>O(1)</code>复杂度内完成，数组尾部为栈顶</li>
+<li>队列：<code>push_back</code>和<code>pop_front</code>在没有办法同时<code>O(1)</code>复杂度完成，不过可以采用环形数组的方式实现，详见<a href="#%E7%8E%AF%E5%BD%A2%E6%95%B0%E7%BB%84%E6%8A%80%E5%B7%A7%E5%8F%8A%E5%AE%9E%E7%8E%B0">环形数组技巧及实现</a>。</li>
+</ul>
+<h3 id="双端队列（Deque）原理及实现"><a href="#双端队列（Deque）原理及实现" class="headerlink" title="双端队列（Deque）原理及实现"></a><a href="https://labuladong.online/algo/data-structure-basic/deque-implement/">双端队列（Deque）原理及实现</a></h3><p>Deque is stand for Double-Ended Queue, 即双端队列，支持在两端插入和删除元素，同stack和queue一样都是受到限制的数据结构，其实就是在栈和队列的基础上增加了一个头部操作元素的 API。可以使用数组和链表实现。</p>
+<p>什么时候必须用Deque？Queue和Stack都不满足？</p>
+<ul>
+<li>当问题需要 灵活的双端操作 或 混合队列&#x2F;栈的逻辑 时，deque 是唯一选择。如果仅需严格的 FIFO 或 LIFO，则用 queue 或 stack 更语义化</li>
+<li>例如：Undo&#x2F;Redo 功能，用户可以随时撤销或重做操作，要求在两端都能快速插入和删除元素。</li>
+</ul>
+<h2 id="哈希表的原理及实现"><a href="#哈希表的原理及实现" class="headerlink" title="哈希表的原理及实现"></a><a href="https://labuladong.online/algo/menu/">哈希表的原理及实现</a></h2><p>首先哈希表和Map，不是一个东西啊。</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>哈希表（Hash Table）</th>
+<th>Map（映射）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>本质</strong></td>
+<td>具体的数据结构实现</td>
+<td>抽象的接口或概念</td>
+</tr>
+<tr>
+<td><strong>底层实现</strong></td>
+<td>哈希函数 + 冲突解决</td>
+<td>可以是哈希表、树、或其他结构</td>
+</tr>
+<tr>
+<td><strong>顺序性</strong></td>
+<td>通常无序</td>
+<td>取决于实现（如树实现有序）</td>
+</tr>
+<tr>
+<td><strong>语言中的例子</strong></td>
+<td>C++ <code>unordered_map</code>, Python <code>dict</code></td>
+<td>Java <code>Map</code> 接口，C++ <code>std::map</code></td>
+</tr>
+</tbody></table>
+<p>总结起来说<strong>哈希表是 <code>Map</code> 的一种实现方式，但 <code>Map</code> 还可以通过其他数据结构实现（如<code>TreeMap</code>）。</strong> 其与数组和链表的复杂度总结如下：</p>
+<table>
+<thead>
+<tr>
+<th><strong>操作</strong></th>
+<th><strong>哈希表(HashMap)</strong></th>
+<th><strong>数组(Array)</strong></th>
+<th><strong>双向链表(DoublyLinkedList)</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>随机访问元素</strong></td>
+<td>O(1)</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><strong>头部插入&#x2F;删除</strong></td>
+<td>-</td>
+<td>O(n)(O(1)当利用环形技巧)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><strong>尾部插入&#x2F;删除</strong></td>
+<td>-</td>
+<td>O(1)（动态数组）</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><strong>中间插入&#x2F;删除</strong></td>
+<td>-</td>
+<td>O(n)</td>
+<td>O(n)（需遍历到位置）</td>
+</tr>
+<tr>
+<td><strong>查找元素（按值）</strong></td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><strong>更新元素</strong></td>
+<td>O(1)</td>
+<td>O(1)</td>
+<td>O(n)（需遍历到位置）</td>
+</tr>
+<tr>
+<td><strong>遍历所有元素</strong></td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody></table>
+<h3 id="哈希表核心原理"><a href="#哈希表核心原理" class="headerlink" title="哈希表核心原理"></a><a href="https://labuladong.online/algo/data-structure-basic/hashmap-basic/">哈希表核心原理</a></h3><h4 id="哈希表的本质"><a href="#哈希表的本质" class="headerlink" title="哈希表的本质"></a>哈希表的本质</h4><p>本质就是一个数组，一般命名为table，(key,value)对的存储方式为<code>table[hash(key) % table.size()] = value</code>。定义size为键值对的个数，则负载因子为<code>load factor = size / table.size()</code>。负载因子本质上是空间利用率，但是负载因子越大，哈希表的性能越差，哈希冲突的概率越大。</p>
+<ul>
+<li>开放寻址法：负载因子接近1时，插入和查找可能需要多次探测，时间复杂度从理想的<code>O(1)</code>变为<code>O(n)</code>。</li>
+<li>拉链法：冲突会导致链表（或树）变长，操作时间复杂度从 <code>O(1)</code>变为<code>O(K)</code>。<br>一般高过某个阈值（比如0.75）就要扩容了，扩容时需要重新计算哈希值。</li>
+</ul>
+<h4 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h4><p>$\exists \text{ } key_1, key_2 \text{ s.t. } hash(key_1) \bmod table.size() &#x3D; hash(key_2) \bmod table.size()$，即不同的key经过哈希函数计算后得到相同的索引位置。常见的解决方法有两种：</p>
+<ul>
+<li>开放地址法（线性探查法）： 即当发生冲突时，线性探查下一个空位，直到找到一个空位为止，负载因子不能大于1。</li>
+<li>拉链法： 即每个索引位置存储一个链表，当发生冲突时，将新的元素插入到链表中，负载因子可以大于1。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>C++ <code>std::unordered_map</code></th>
+<th>Python <code>dict</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>冲突解决</strong></td>
+<td>拉链法（链表&#x2F;动态数组）</td>
+<td>开放寻址法（伪随机探查）</td>
+</tr>
+<tr>
+<td><strong>动态扩容</strong></td>
+<td>重新哈希，负载因子 ~1.0</td>
+<td>重新哈希，负载因子 ~2&#x2F;3</td>
+</tr>
+<tr>
+<td><strong>顺序保证</strong></td>
+<td>无序（C++标准）</td>
+<td>保持插入顺序（Python 3.7+）</td>
+</tr>
+</tbody></table>
+<h4 id="为什么不能依赖哈希表的遍历顺序？"><a href="#为什么不能依赖哈希表的遍历顺序？" class="headerlink" title="为什么不能依赖哈希表的遍历顺序？"></a>为什么不能依赖哈希表的遍历顺序？</h4><p>一般来说哈希表的遍历顺序是无序的，如下c++代码所示，输出的结果是随机的，不是按照插入顺序的。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">unordered_map&lt;<span class="type">int</span>, string&gt; umap;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">20</span>; i++) &#123;</span><br><span class="line">    umap[i] = <span class="built_in">to_string</span>(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;pair: umap) &#123;</span><br><span class="line">    cout &lt;&lt; pair.first &lt;&lt; <span class="string">&quot;-&gt;&quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是对于python的字典来说，遍历顺序是有序的，和插入顺序一致。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">map</span> = &#123;_:_ <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>)&#125;</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> <span class="built_in">map</span>.items():</span><br><span class="line">    <span class="built_in">print</span>(k, v)</span><br></pre></td></tr></table></figure>
+
+<p>python的dict的有序性是基于哈希表 + 双向链表（或类似结构）：Python 的字典不仅存储键值对，还维护了一个 插入顺序的双向链表（或类似机制），使得遍历时可以按照插入顺序输出。Python 3.6 之前，<code>dict</code> 也是无序的，但官方发现有序实现并不会显著降低性能，反而提高了可用性，于是在 3.7 中将其定为语言规范。 但是<strong>不依赖哈希表的遍历顺序</strong>是一个良好的编程习惯，尤其在 C++ 中。</p>
+<p>在Python中，<code>dict</code>虽然已经保证了有序性，但是强烈建议如果非要依赖顺序，还是使用<code>OrderedDict</code>，因为<code>OrderedDict</code>在此之上还实现了</p>
+<ul>
+<li>重新排序操作：可以通过move_to_end()方法将元素移动到开头或结尾</li>
+<li>相等性比较：两个OrderedDict只有在顺序和内容都相同时才被视为相等</li>
+</ul>
+<h4 id="为什么不建议在-for-循环中增-删哈希表的-key？"><a href="#为什么不建议在-for-循环中增-删哈希表的-key？" class="headerlink" title="为什么不建议在 for 循环中增&#x2F;删哈希表的 key？"></a>为什么不建议在 for 循环中增&#x2F;删哈希表的 key？</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">unordered_map&lt;<span class="type">int</span>, string&gt; umap;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">    umap[i] = <span class="built_in">to_string</span>(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;pair: umap) &#123;</span><br><span class="line">    <span class="keyword">if</span> (pair.first == <span class="number">0</span>) &#123;</span><br><span class="line">        umap[<span class="number">100</span>] = <span class="string">&quot;fuck&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;first:&quot;</span> &lt;&lt; pair.first &lt;&lt; <span class="string">&quot;-&gt;&quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line">&#125;    </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;pair: umap) &#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;sec:&quot;</span> &lt;&lt; pair.first &lt;&lt; <span class="string">&quot;-&gt;&quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>c++是不报错的，但是输出如下，第一轮是没有添加的键值对的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">first:1-&gt;1</span><br><span class="line">first:0-&gt;0</span><br><span class="line">sec:100-&gt;fuck</span><br><span class="line">sec:1-&gt;1</span><br><span class="line">sec:0-&gt;0</span><br></pre></td></tr></table></figure>
+<p>对于python来说，直接报错<code>RuntimeError: dictionary changed size during iteration</code>，因为在遍历字典时，字典的大小发生了变化，导致迭代器失效。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">omap = <span class="built_in">dict</span>()</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>):</span><br><span class="line">    omap[_] = <span class="built_in">str</span>(_)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> omap.items():</span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">0</span>:</span><br><span class="line">        omap[<span class="number">100</span>] = <span class="string">&quot;fuck&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;first&quot;</span>, k, <span class="string">&quot;-&gt;&quot;</span>, v)</span><br></pre></td></tr></table></figure>
+<p>所以<strong>不建议在 for 循环中增&#x2F;删哈希表的 key</strong></p>
+<h3 id="用拉链法实现哈希表"><a href="#用拉链法实现哈希表" class="headerlink" title="用拉链法实现哈希表"></a><a href="https://labuladong.online/algo/data-structure-basic/hashtable-chaining/">用拉链法实现哈希表</a></h3><p>首先需要注意，哈希表是存key的（如果不存，想想index没办法反哈希出key），所以如下的每个小格和的数据结构是个结构体<code>KVNode</code>，包含key和value两个属性。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">KVNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> key; <span class="comment">// 键</span></span><br><span class="line">    <span class="type">int</span> value; <span class="comment">// 值</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>其次拉链法的底层的哈希表结构为<code>vector&lt;list&lt;KVNode&gt;&gt; table</code>，想想为什么不是<code>vector&lt;vector&lt;KVNode&gt;&gt; table</code>，因为如果是这样增，查，改性能与<code>vector&lt;list&lt;KVNode&gt;&gt; table</code>是一样的，但是删除性能就差了，要不然你搬运，要不然你放弃这块内存。<strong>哈希冲突链通常较短，链表在这种场景下更高效。这个链表又叫做桶，C++的unsorted_map采用了这种方法</strong> ，</p>
+<p><img src="/../images/image-1.png" alt="alt text"><br>下面简单写一下拉链法的增，查，改，删操作：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 查</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> index = <span class="built_in">hash</span>(key); <span class="comment">// 计算哈希值</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;node : table[index]) &#123; <span class="comment">// 遍历链表</span></span><br><span class="line">        <span class="keyword">if</span> (node.key == key) &#123; <span class="comment">// 找到键</span></span><br><span class="line">            <span class="keyword">return</span> node.value; <span class="comment">// 返回值</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// 未找到键，返回-1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入，改</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">put</span><span class="params">(<span class="type">int</span> key, <span class="type">int</span> value)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> index = <span class="built_in">hash</span>(key); <span class="comment">// 计算哈希值</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;node : table[index]) &#123; <span class="comment">// 遍历链表</span></span><br><span class="line">        <span class="keyword">if</span> (node.key == key) &#123; <span class="comment">// 找到键</span></span><br><span class="line">            node.value = value; <span class="comment">// 更新值</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    table[index].<span class="built_in">push_back</span>(&#123;key, value&#125;); <span class="comment">// 未找到键，插入新节点</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">remove</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> index = <span class="built_in">hash</span>(key); <span class="comment">// 计算哈希值</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it = table[index].<span class="built_in">begin</span>(); it != table[index].<span class="built_in">end</span>(); ++it) &#123; <span class="comment">// 遍历链表</span></span><br><span class="line">        <span class="keyword">if</span> (it-&gt;key == key) &#123; <span class="comment">// 找到键</span></span><br><span class="line">            <span class="comment">// 迭代器it指向要删除的节点，list.erase(it)会删除该节点并返回下一个节点的迭代器</span></span><br><span class="line">            table[index].<span class="built_in">erase</span>(it); <span class="comment">// 删除节点</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+<h3 id="线性探查法的两个难点"><a href="#线性探查法的两个难点" class="headerlink" title="线性探查法的两个难点"></a><a href="https://labuladong.online/algo/data-structure-basic/linear-probing-key-point/">线性探查法的两个难点</a></h3><p>这种方法的底层的哈希表结构为<code>vector&lt;KVNode&gt; table</code>，当前的如果哈希值冲突了，就线性探查下一个空位，直到找到一个空位为止。具体来说</p>
+<ul>
+<li>增：如果<code>table[hash(key) % table.size()]</code>已经被占用，就线性探查下一个空位，直到找到一个空位为止，然后插入元素。</li>
+<li>查：从<code>table[hash(key) % table.size()]</code>开始线性探查，直到找到key对应的元素为止。如果找到了就返回值，如果没有找到就返回-1。</li>
+</ul>
+<p>这种方法务必注意，<strong>发生碰撞的key必须是连续的</strong></p>
+<p><img src="/../images/image-2.png" alt="alt text"></p>
+<h4 id="难点一：需要环形数组"><a href="#难点一：需要环形数组" class="headerlink" title="难点一：需要环形数组"></a>难点一：需要环形数组</h4><p>如果<code>table</code>的尾部比较满，一直线性探查下去，就可能越界了，需要环形数组的技巧（见<a href="#%E7%8E%AF%E5%BD%A2%E6%95%B0%E7%BB%84%E6%8A%80%E5%B7%A7%E5%8F%8A%E5%AE%9E%E7%8E%B0">环形数组技巧及实现</a>）。</p>
+<h4 id="难点二：维护元素的连续性"><a href="#难点二：维护元素的连续性" class="headerlink" title="难点二：维护元素的连续性"></a>难点二：维护元素的连续性</h4><p>例如对于上面的图片的例子，<code>hash(k1) = hash(k2) = hash(k3) = 0</code>，如果现在把<code>k2</code>删除了，不做任何处理，<code>k3</code>就无法被查了，针对这种情况，<strong>需要在删除元素时，维护元素的连续性</strong>。具体的方法是：</p>
+<h5 id="方法一：懒惰删除-特殊值标记法"><a href="#方法一：懒惰删除-特殊值标记法" class="headerlink" title="方法一：懒惰删除&#x2F;特殊值标记法"></a>方法一：懒惰删除&#x2F;特殊值标记法</h5><p>即不删除元素，而是将元素标记为已删除，保留在哈希表中。查找时，如果遇到已删除的元素，就继续线性探查下一个元素。这样可以避免删除操作对哈希表的影响，但会增加哈希表的空间占用。</p>
+<h5 id="方法二：搬运后面的元素-rehash法"><a href="#方法二：搬运后面的元素-rehash法" class="headerlink" title="方法二：搬运后面的元素&#x2F;rehash法"></a>方法二：搬运后面的元素&#x2F;rehash法</h5><p>即删除元素后，将后面的元素向前移动一个位置，保持元素的连续性。这样可以避免已删除元素对查找的影响，但会增加删除操作的时间复杂度。</p>
+<h3 id="哈希集合的原理及代码实现"><a href="#哈希集合的原理及代码实现" class="headerlink" title="哈希集合的原理及代码实现"></a><a href="https://labuladong.online/algo/data-structure-basic/hash-set/">哈希集合的原理及代码实现</a></h3><p><strong>哈希集合就是退化的哈希表,ie.没有值的哈希表</strong></p>
+<h2 id="哈希表结构的种种变换"><a href="#哈希表结构的种种变换" class="headerlink" title="哈希表结构的种种变换"></a><a href="https://labuladong.online/algo/menu/">哈希表结构的种种变换</a></h2><h3 id="用链表加强哈希表（LinkedHashMap）"><a href="#用链表加强哈希表（LinkedHashMap）" class="headerlink" title="用链表加强哈希表（LinkedHashMap）"></a><a href="https://labuladong.online/algo/data-structure-basic/hashtable-with-linked-list/">用链表加强哈希表（LinkedHashMap）</a></h3><p>Python默认的<code>dict</code>就是这种实现，包括<code>OrderedDict</code>也是这种实现,主要是为了保持插入顺序。但是C++的<code>unordered_map</code>是无序的，尤其有趣的是Golang的<code>map</code>每次输出都是随机的,专门是为了防止程序员依赖遍历顺序。</p>
+<p>与之前提到的<code>KVNode</code>结构体不同,<code>LinkedHashMap</code>的<code>KVNode</code>结构体中多了两个指针，分别指向前一个节点和后一个节点。这样就可以在O(1)复杂度内实现插入顺序的遍历。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">KVNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> key; <span class="comment">// 键</span></span><br><span class="line">    <span class="type">int</span> value; <span class="comment">// 值</span></span><br><span class="line">    KVNode* prev; <span class="comment">// 前一个节点</span></span><br><span class="line">    KVNode* next; <span class="comment">// 后一个节点</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>其表现为如下图所示<br><img src="/../images/image-3.png" alt="alt text"></p>
+<p>当我们在做</p>
+<ul>
+<li>增:<code>put(key, value)</code>时，除了在哈希表中插入元素外，还要<code>tail</code>指针指向的节点后面插入一个新节点，并更新<code>tail</code>指针,复杂度为<code>O(1)</code></li>
+<li>删：<code>remove(key)</code>时，除了在哈希表中删除元素外，还要删除链表中的节点，并将<code>*prev</code>和<code>*next</code>指针指向的节点连接起来，复杂度为<code>O(1)</code></li>
+<li>改：<code>put(key, value)</code>时，和vainilla的哈希表一样，复杂度为<code>O(1)</code></li>
+<li>查:<code>get(key)</code>时，和vainilla的哈希表一样，复杂度为<code>O(1)</code></li>
+<li>遍历:直接从<code>head</code>开始遍历即可，复杂度为<code>O(n)</code></li>
+</ul>
+<h3 id="用数组加强哈希表（ArrayHashMap）"><a href="#用数组加强哈希表（ArrayHashMap）" class="headerlink" title="用数组加强哈希表（ArrayHashMap）"></a><a href="https://labuladong.online/algo/data-structure-basic/hashtable-with-array/">用数组加强哈希表（ArrayHashMap）</a></h3><p>为什么要用数组加强哈希表？ArrayHashMap有什么用?<strong>希望以<code>O(1)</code>复杂度从HashMap中随机抽一个KVNode(e.g. <a href="https://leetcode.cn/problems/insert-delete-getrandom-o1/description/">Leetcode3880</a>)</strong>.换言之,需要实现一个API,<code>KVNode getRandom()</code>，返回一个随机的KVNode。对于朴素的哈希表来说，随机抽取一个KVNode的算法为:</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">getRandom</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> index = <span class="built_in">rand</span>() % table.<span class="built_in">size</span>(); </span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>; <span class="comment">// 计数器</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;node : table[index]) &#123; <span class="comment">// 遍历链表</span></span><br><span class="line">        <span class="keyword">if</span> (count == <span class="built_in">rand</span>()) &#123; <span class="comment">// 随机数等于计数器</span></span><br><span class="line">            <span class="keyword">return</span> node; <span class="comment">// 返回节点</span></span><br><span class="line">        &#125;</span><br><span class="line">        count++; <span class="comment">// 计数器加1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是这个算法的复杂度为<code>O(n)</code>，而我们希望它的复杂度为<code>O(1)</code>。也许你会想,直接对于HashMap的<code>table</code>数组进行随机抽取,但是这样会导致抽取到的可能会遇到空的,无论是拉链法还是线性探查法,都没有办法以<code>O(1)</code>实现<code>KVNode getRandom()</code>。 那么如何实现上述API呢？如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ArrayHashMap</span> :</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># arr: 用于存储所有的键值对[(k1, v1), (k2, v2), (k3, v3), ...]</span></span><br><span class="line">        <span class="variable language_">self</span>.arr = []</span><br><span class="line">        <span class="comment"># map: 用于储存键值对的映射关系，key -&gt; index</span></span><br><span class="line">        <span class="comment"># 例如：&#123;k1: 0, k2: 1, k3: 2, ...&#125;</span></span><br><span class="line">        <span class="variable language_">self</span>.<span class="built_in">map</span> = &#123;&#125; </span><br><span class="line"></span><br><span class="line">    <span class="comment"># put: 插入与修改键值对,复杂度为O(1)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">put</span>(<span class="params">self, key, value</span>):</span><br><span class="line">        <span class="comment"># 如果键已经存在，更新值</span></span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">in</span> <span class="variable language_">self</span>.<span class="built_in">map</span>:</span><br><span class="line">            index = <span class="variable language_">self</span>.<span class="built_in">map</span>[key]</span><br><span class="line">            <span class="variable language_">self</span>.arr[index] = (key, value)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 如果键不存在，插入新的键值对</span></span><br><span class="line">            <span class="variable language_">self</span>.arr.append((key, value))</span><br><span class="line">            index = <span class="built_in">len</span>(<span class="variable language_">self</span>.arr) - <span class="number">1</span></span><br><span class="line">            <span class="variable language_">self</span>.<span class="built_in">map</span>[key] = index</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># remove: 删除键值对,复杂度为O(1),</span></span><br><span class="line">    <span class="comment"># 重点是这个函数的实现</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">remove</span>(<span class="params">self, key</span>):</span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">not</span> <span class="keyword">in</span> <span class="variable language_">self</span>.<span class="built_in">map</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 获取要删除的键值对的索引</span></span><br><span class="line">        index = <span class="variable language_">self</span>.<span class="built_in">map</span>[key]</span><br><span class="line">        to_delete = <span class="variable language_">self</span>.arr[index] <span class="comment"># 获取要删除的键值对</span></span><br><span class="line">        last = <span class="variable language_">self</span>.arr[-<span class="number">1</span>] <span class="comment"># 获取最后一个键值对</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 交换</span></span><br><span class="line">        <span class="variable language_">self</span>.arr[index], <span class="variable language_">self</span>.arr[-<span class="number">1</span>] = <span class="variable language_">self</span>.arr[-<span class="number">1</span>], <span class="variable language_">self</span>.arr[index]  </span><br><span class="line">        <span class="variable language_">self</span>.<span class="built_in">map</span>[last[<span class="number">0</span>]] = index <span class="comment"># 更新映射关系</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 删除最后一个键值对</span></span><br><span class="line">        <span class="variable language_">self</span>.arr.pop() <span class="comment"># 删除最后一个键值对</span></span><br><span class="line">        <span class="comment"># 删除映射关系</span></span><br><span class="line">        <span class="variable language_">self</span>.<span class="built_in">map</span>.pop(to_delete[<span class="number">0</span>]) <span class="comment"># 删除映射关系</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># get: 获取键值对,复杂度为O(1)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, key</span>):</span><br><span class="line">        <span class="comment"># 如果键存在，返回对应的值</span></span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">in</span> <span class="variable language_">self</span>.<span class="built_in">map</span>:</span><br><span class="line">            index = <span class="variable language_">self</span>.<span class="built_in">map</span>[key]</span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">self</span>.arr[index][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># getRandom: 随机获取一个键值对,复杂度为O(1)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">getRandom</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># 随机获取一个索引</span></span><br><span class="line">        index = random.randint(<span class="number">0</span>, <span class="built_in">len</span>(<span class="variable language_">self</span>.arr) - <span class="number">1</span>)</span><br><span class="line">        <span class="comment"># 返回对应的键值对</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.arr[index]</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="二叉树结构及遍历"><a href="#二叉树结构及遍历" class="headerlink" title="二叉树结构及遍历"></a><a href="https://labuladong.online/algo/menu/binary-tree/">二叉树结构及遍历</a></h2><h3 id="二叉树基础及常见类型"><a href="#二叉树基础及常见类型" class="headerlink" title="二叉树基础及常见类型"></a><a href="https://labuladong.online/algo/data-structure-basic/binary-tree-basic/">二叉树基础及常见类型</a></h3><h4 id="常见的二叉树类型"><a href="#常见的二叉树类型" class="headerlink" title="常见的二叉树类型"></a>常见的二叉树类型</h4><blockquote>
+<p>这一部分感觉labuladong写的有点拉,建议参考<a href="https://www.baeldung.com/cs/full-vs-complete-vs-perfect-tree">这个</a><br>另外,满二叉树和完美二叉树有点迷惑,按照wiki上的定义,Full Binary Tree其实是不”满”的<br>下面的定义是基于wiki的,即是参考<a href="https://www.baeldung.com/cs/full-vs-complete-vs-perfect-tree">这个</a>的<br>与labuladong的定义不同,但是是正确的,所以不需要纠结<br>关于定义,我采用的是如下图所示的定义<br><img src="/../images/image-5.png" alt="alt text"></p>
+</blockquote>
+<h5 id="满二叉树-Full-Binary-Tree"><a href="#满二叉树-Full-Binary-Tree" class="headerlink" title="满二叉树(Full Binary Tree)"></a>满二叉树(Full Binary Tree)</h5><p>满二叉树是指每个节点要么有两个子节点，要么没有子节点。</p>
+<h5 id="完美二叉树-Perfect-Binary-Tree"><a href="#完美二叉树-Perfect-Binary-Tree" class="headerlink" title="完美二叉树(Perfect Binary Tree)"></a>完美二叉树(Perfect Binary Tree)</h5><p>完美二叉树是指每个节点都有两个子节点，且所有叶子节点都在同一层次上。完美二叉树的高度为$h$,第一层有$2^0$个节点，第二层有$2^1$个节点，…，第h层有$2^{h-1}$个节点，总共有$2^0+2^1+…+2^{h-1} &#x3D; 2^h - 1$个节点。 </p>
+<h5 id="完全二叉树-Complete-Binary-Tree"><a href="#完全二叉树-Complete-Binary-Tree" class="headerlink" title="完全二叉树(Complete Binary Tree)"></a>完全二叉树(Complete Binary Tree)</h5><p>完全二叉树是指除了最后一层外，每一层都满员，且最后一层的节点都集中在左侧。<strong>其性质是:完全二叉树可以用数组来存储，不需要真的构建链式节点，二叉堆就是完全二叉树，可以用物理的数组来表征概念上的二叉树。</strong></p>
+<h5 id="二叉搜索树-Binary-Search-Tree-BST"><a href="#二叉搜索树-Binary-Search-Tree-BST" class="headerlink" title="二叉搜索树(Binary Search Tree,BST)"></a>二叉搜索树(Binary Search Tree,BST)</h5><p>对于<strong>任何一个节点</strong>,其左子树的每个节点的值都要小于这个节点的值. <strong>其性质是:二叉搜索树的找一个节点的时间复杂度为O(logN)</strong></p>
+<h5 id="平衡二叉树-Balanced-Binary-Tree-AVL-Tree"><a href="#平衡二叉树-Balanced-Binary-Tree-AVL-Tree" class="headerlink" title="平衡二叉树(Balanced Binary Tree, AVL&lt;Adelson-Velskii &amp; Landis&gt; Tree )"></a>平衡二叉树(Balanced Binary Tree, AVL&lt;Adelson-Velskii &amp; Landis&gt; Tree )</h5><p>对于<strong>任何一个节点</strong>,其左右子树的高度差不超过1. <strong>其性质是:N个节点的平衡二叉树的高度为O(logN),查找、插入和删除在平均和最坏情况下的时间复杂度都是O(logN)</strong></p>
+<h5 id="自平衡二叉树-Self-Balancing-Binary-Tree"><a href="#自平衡二叉树-Self-Balancing-Binary-Tree" class="headerlink" title="自平衡二叉树 (Self-Balancing Binary Tree)"></a>自平衡二叉树 (Self-Balancing Binary Tree)</h5><p>自平衡二叉树是一种特殊的二叉搜索树，它在插入和删除节点时会自动调整树的结构，以保持平衡。常见的自平衡二叉树有红黑树。自平衡二叉树的查找、插入和删除操作的时间复杂度都是 O(log N)。</p>
+<h4 id="二叉树的实现"><a href="#二叉树的实现" class="headerlink" title="二叉树的实现"></a>二叉树的实现</h4><ul>
+<li>最常见的实现是采用链式存储结构，即每个节点包含三个指针，分别指向左子树、右子树</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> val; <span class="comment">// 节点值</span></span><br><span class="line">    TreeNode* left; <span class="comment">// 左子树指针</span></span><br><span class="line">    TreeNode* right; <span class="comment">// 右子树指针</span></span><br><span class="line">    <span class="built_in">TreeNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">left</span>(<span class="literal">nullptr</span>), <span class="built_in">right</span>(<span class="literal">nullptr</span>) &#123;&#125; <span class="comment">// 构造函数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><p>另外一种实现是采用数组存储结构，即每个节点的值存储在数组中</p>
+</li>
+<li><p>利用哈希表存储节点的值和指针,可以实现多叉树</p>
+</li>
+</ul>
+<h3 id="二叉树的递归-层序遍历"><a href="#二叉树的递归-层序遍历" class="headerlink" title="二叉树的递归&#x2F;层序遍历"></a><a href="https://labuladong.online/algo/data-structure-basic/binary-tree-traverse-basic/">二叉树的递归&#x2F;层序遍历</a></h3><p>和数组一样,二叉树也有遍历的概念,即访问树中的每一个节点。为了实现访问每一个节点,我们可以采用</p>
+<ul>
+<li>递归的方式实现，前中后序遍历</li>
+<li>非递归的方式实现层序遍历，细节不同有3中写法</li>
+</ul>
+<h4 id="递归遍历"><a href="#递归遍历" class="headerlink" title="递归遍历"></a>递归遍历</h4><p>递归遍历的框架是</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">traverse</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span>; <span class="comment">// 递归终止条件</span></span><br><span class="line">    <span class="comment">//时机点1 do something with root-&gt;val; e.g. arr.push_back(root-&gt;val); </span></span><br><span class="line">    <span class="built_in">traverse</span>(root-&gt;left); <span class="comment">// 遍历左子树</span></span><br><span class="line">    <span class="comment">//时机点2 do something with root-&gt;val; e.g. arr.push_back(root-&gt;val);</span></span><br><span class="line">    <span class="built_in">traverse</span>(root-&gt;right); <span class="comment">// 遍历右子树</span></span><br><span class="line">    <span class="comment">//时机点3 do something with root-&gt;val; e.g. arr.push_back(root-&gt;val);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述遍历的方式,我们有三个时机点对root-&gt;val进行操作</p>
+<ul>
+<li>时机点1,也就是第一次访问该节点,该节点的左右子树都还没有被访问,此时获得的信息最少</li>
+<li>时机点2,我们又一次访问了该节点,此时该节点的左子树已经被访问,右子树还没有被访问,此时获得的信息比第一次多了一点</li>
+<li>时机点3,我们又一次访问了该节点,此时该节点的左右子树都已经被访问,此时获得的信息最多</li>
+</ul>
+<p>综上所述,我们可以得出结论,<strong>时机点1,2,3分别对应前序遍历,中序遍历,后序遍历</strong> 换言之,<strong>前序遍历,中序遍历,后序遍历</strong>的本质不同是所加的代码在上述框架中的位置不同。</p>
+<blockquote>
+<p>由于BST的性质,我们可以得出结论,中序遍历的结果是一个升序的数组。</p>
+</blockquote>
+<h4 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h4><h5 id="层序遍历的基础框架是："><a href="#层序遍历的基础框架是：" class="headerlink" title="层序遍历的基础框架是："></a>层序遍历的基础框架是：</h5><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">levelOrderedTraverse</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span>; <span class="comment">// 递归终止条件</span></span><br><span class="line">    queue&lt;TreeNode*&gt; q; <span class="comment">// 队列</span></span><br><span class="line">    q.<span class="built_in">push</span>(root); <span class="comment">// 将根节点入队</span></span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>()) &#123; <span class="comment">// 队列不为空</span></span><br><span class="line">        TreeNode* node = q.<span class="built_in">front</span>(); <span class="comment">// 取出队头元素</span></span><br><span class="line">        q.<span class="built_in">pop</span>(); <span class="comment">// 出队</span></span><br><span class="line">        <span class="comment">// do something with node-&gt;val; e.g. arr.push_back(node-&gt;val);</span></span><br><span class="line">        <span class="keyword">if</span> (node-&gt;left != <span class="literal">nullptr</span>) q.<span class="built_in">push</span>(node-&gt;left); <span class="comment">// 左子树入队</span></span><br><span class="line">        <span class="keyword">if</span> (node-&gt;right != <span class="literal">nullptr</span>) q.<span class="built_in">push</span>(node-&gt;right); <span class="comment">// 右子树入队</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="层序遍历的带层数的框架是："><a href="#层序遍历的带层数的框架是：" class="headerlink" title="层序遍历的带层数的框架是："></a>层序遍历的带层数的框架是：</h5><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">levelOrderedTraverse</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span>; <span class="comment">// 递归终止条件</span></span><br><span class="line">    queue&lt;TreeNode*&gt; q; <span class="comment">// 队列</span></span><br><span class="line">    q.<span class="built_in">push</span>(root); <span class="comment">// 将根节点入队</span></span><br><span class="line">    <span class="type">int</span> depth = <span class="number">0</span>; <span class="comment">// 层数</span></span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>()) &#123; <span class="comment">// 队列不为空</span></span><br><span class="line">        <span class="type">int</span> size = q.<span class="built_in">size</span>(); <span class="comment">// 当前层的节点数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123; <span class="comment">// 遍历当前层的节点</span></span><br><span class="line">            TreeNode* node = q.<span class="built_in">front</span>(); <span class="comment">// 取出队头元素</span></span><br><span class="line">            q.<span class="built_in">pop</span>(); <span class="comment">// 出队</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// do something with node-&gt;val and depth; e.g:</span></span><br><span class="line">            <span class="comment">// cout &lt;&lt; &quot;depth:&quot; &lt;&lt; depth &lt;&lt; &quot; node:&quot; &lt;&lt; node-&gt;val &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (node-&gt;left != <span class="literal">nullptr</span>) q.<span class="built_in">push</span>(node-&gt;left); <span class="comment">// 左子树入队</span></span><br><span class="line">            <span class="keyword">if</span> (node-&gt;right != <span class="literal">nullptr</span>) q.<span class="built_in">push</span>(node-&gt;right); <span class="comment">// 右子树入队</span></span><br><span class="line">        &#125;</span><br><span class="line">        depth++; <span class="comment">// 层数加1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="层序遍历的”可变层数”的框架是："><a href="#层序遍历的”可变层数”的框架是：" class="headerlink" title="层序遍历的”可变层数”的框架是："></a>层序遍历的”可变层数”的框架是：</h5><p>上面一个框架中的层数本质上是该节点到根节点的距离且父节点到子节点的距离是1. 如果父节点到子节点的距离不是1,那么如何实现呢？如下图所示，每个节点的数据结构变为</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> val; <span class="comment">// 节点值</span></span><br><span class="line">    </span><br><span class="line">    TreeNode* left; <span class="comment">// 左子树指针</span></span><br><span class="line">    TreeNode* right; <span class="comment">// 右子树指针</span></span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> l_weight; <span class="comment">// 指向左子树的权重,可以不为1</span></span><br><span class="line">    <span class="type">int</span> r_weight; <span class="comment">// 指向右子树的权重，可以不为1</span></span><br><span class="line">    <span class="built_in">TreeNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">left</span>(<span class="literal">nullptr</span>), <span class="built_in">right</span>(<span class="literal">nullptr</span>), <span class="built_in">l_weight</span>(<span class="number">0</span>), <span class="built_in">r_weight</span>(<span class="number">0</span>) &#123;&#125; <span class="comment">// 构造函数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><img src="/../images/image-7.png" alt="alt text"></p>
+<p>上述功能的实现如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">State</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    TreeNode* node; <span class="comment">// 节点</span></span><br><span class="line">    <span class="type">int</span> weight; <span class="comment">// 权重</span></span><br><span class="line">    <span class="built_in">State</span>(TreeNode* n, <span class="type">int</span> w) : <span class="built_in">node</span>(n), <span class="built_in">weight</span>(w) &#123;&#125; <span class="comment">// 构造函数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">levelOrderedTraverse</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span>; <span class="comment">// 递归终止条件</span></span><br><span class="line">    queue&lt;State&gt; q; <span class="comment">// 队列</span></span><br><span class="line">    q.<span class="built_in">push</span>(<span class="built_in">State</span>(root, <span class="number">0</span>)); <span class="comment">// 将根节点入队</span></span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>()) &#123; <span class="comment">// 队列不为空</span></span><br><span class="line">        State state = q.<span class="built_in">front</span>(); <span class="comment">// 取出队头元素</span></span><br><span class="line">        q.<span class="built_in">pop</span>(); <span class="comment">// 出队</span></span><br><span class="line"></span><br><span class="line">        TreeNode* node = state.node; <span class="comment">// 节点</span></span><br><span class="line">        <span class="type">int</span> weight = state.weight; <span class="comment">// 权重</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// do something with node-&gt;val and weight; e.g:</span></span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;weight:&quot; &lt;&lt; weight &lt;&lt; &quot; node:&quot; &lt;&lt; node-&gt;val &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (node-&gt;left != <span class="literal">nullptr</span>) q.<span class="built_in">push</span>(<span class="built_in">State</span>(node-&gt;left, weight + node-&gt;l_weight)); <span class="comment">// 左子树入队</span></span><br><span class="line">        <span class="keyword">if</span> (node-&gt;right != <span class="literal">nullptr</span>) q.<span class="built_in">push</span>(<span class="built_in">State</span>(node-&gt;right, weight + node-&gt;r_weight)); <span class="comment">// 右子树入队</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="DFS-和-BFS-的适用场景"><a href="#DFS-和-BFS-的适用场景" class="headerlink" title="DFS 和 BFS 的适用场景"></a><a href="https://labuladong.online/algo/data-structure-basic/use-case-of-dfs-bfs/">DFS 和 BFS 的适用场景</a></h3><h4 id="BFS适合查找最短路径"><a href="#BFS适合查找最短路径" class="headerlink" title="BFS适合查找最短路径"></a>BFS适合查找最短路径</h4><p>BFS适合查找最短路径,例如<a href="https://leetcode.cn/problems/minimum-depth-of-binary-tree/">Leetcode 111</a>. 当边的权重为正的时候，层数增加势必会增加路径的长度，所以BFS适合查找最短路径，相比DFS，BFS可以提前减少不必要的搜索。</p>
+<h4 id="DFS-常用来寻找所有路径"><a href="#DFS-常用来寻找所有路径" class="headerlink" title="DFS 常用来寻找所有路径"></a>DFS 常用来寻找所有路径</h4><p>DFS它本就是一条树枝一条树枝从左往右遍历的，每条树枝就是一条路径，所以 DFS 算法天然适合寻找所有路径。例如<a href="https://leetcode.cn/problems/path-sum-ii/description/">Leetcode 113</a>. DFS适合寻找所有路径的原因是DFS会遍历所有的路径，而BFS只会遍历一条路径。</p>
+<h3 id="多叉树的递归-层序遍历"><a href="#多叉树的递归-层序遍历" class="headerlink" title="多叉树的递归&#x2F;层序遍历"></a><a href="https://labuladong.online/algo/data-structure-basic/n-ary-tree-traverse-basic/">多叉树的递归&#x2F;层序遍历</a></h3><p>我们可以将前文的<a href="###%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%80%92%E5%BD%92/%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86">二叉树的递归&#x2F;层序遍历</a>扩展到多叉树的递归遍历和层序遍历。如下是多叉树的节点结构体</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NTreeNode</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> val; <span class="comment">// 节点值</span></span><br><span class="line">    vector&lt;NTreeNode*&gt; children; <span class="comment">// 子节点指针</span></span><br><span class="line">    <span class="built_in">NTreeNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x) &#123;&#125; <span class="comment">// 构造函数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>注意的是，多叉树的递归遍历框架如下</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">traverse</span><span class="params">(NTreeNode* root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span>; <span class="comment">// 递归终止条件</span></span><br><span class="line">    <span class="comment">//时机点1 do something with root-&gt;val; e.g. arr.push_back(root-&gt;val); </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> child : root-&gt;children) &#123; <span class="comment">// 遍历子节点</span></span><br><span class="line">        <span class="built_in">traverse</span>(child); <span class="comment">// 遍历子节点</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//时机点2 do something with root-&gt;val; e.g. arr.push_back(root-&gt;val);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>多叉树是没有中序遍历的</strong>，其层序遍历也有三种，需要注意的是，是要将</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">levelOrderedTraverse</span><span class="params">(NTreeNode* root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span>; <span class="comment">// 递归终止条件</span></span><br><span class="line">    queue&lt;NTreeNode*&gt; q; <span class="comment">// 队列</span></span><br><span class="line">    q.<span class="built_in">push</span>(root); <span class="comment">// 将根节点入队</span></span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>()) &#123; <span class="comment">// 队列不为空</span></span><br><span class="line">        NTreeNode* node = q.<span class="built_in">front</span>(); <span class="comment">// 取出队头元素</span></span><br><span class="line">        q.<span class="built_in">pop</span>(); <span class="comment">// 出队</span></span><br><span class="line">        <span class="comment">// do something with node-&gt;val; e.g. arr.push_back(node-&gt;val);</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 只有这里与二叉树的层序遍历不同</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> child : node-&gt;children) &#123; <span class="comment">// 遍历子节点</span></span><br><span class="line">            q.<span class="built_in">push</span>(child); <span class="comment">// 子节点入队</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="二叉树结构的种种变换"><a href="#二叉树结构的种种变换" class="headerlink" title="二叉树结构的种种变换"></a><a href="https://labuladong.online/algo/menu/binary-tree/">二叉树结构的种种变换</a></h2><h3 id="二叉搜索树的应用及可视化"><a href="#二叉搜索树的应用及可视化" class="headerlink" title="二叉搜索树的应用及可视化"></a><a href="https://labuladong.online/algo/data-structure-basic/tree-map-basic/">二叉搜索树的应用及可视化</a></h3><h4 id="TreeMap-TreeSet的原理"><a href="#TreeMap-TreeSet的原理" class="headerlink" title="TreeMap&#x2F;TreeSet的原理"></a>TreeMap&#x2F;TreeSet的原理</h4><p>BST的可以在<code>O(logN)</code>的时间复杂度内查找,如下是是一个BST递归遍历查找的实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">search</span><span class="params">(TreeNode* root, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span>; <span class="comment">// 递归终止条件</span></span><br><span class="line">    <span class="keyword">if</span> (root-&gt;val == target) <span class="keyword">return</span>; <span class="comment">// 找到目标值</span></span><br><span class="line">    <span class="keyword">if</span> (root-&gt;val &gt; target) <span class="built_in">search</span>(root-&gt;left, target); <span class="comment">// 在左子树中查找</span></span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">search</span>(root-&gt;right, target); <span class="comment">// 在右子树中查找</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其这个特性可用于实现<code>TreeMap</code>和<code>TreeSet</code>，即有序的哈希表和哈希集合。由于我们都知道<code>set</code>是退化的<code>map</code>，所以这里我们只讨论<code>TreeMap</code>的实现，首先我们需要一个<code>TreeNode</code>的实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    K key; <span class="comment">// 键</span></span><br><span class="line">    V value; <span class="comment">// 值</span></span><br><span class="line">    TreeNode* left; <span class="comment">// 左子树指针</span></span><br><span class="line">    TreeNode* right; <span class="comment">// 右子树指针</span></span><br><span class="line">    <span class="built_in">TreeNode</span>(K k, V v) : <span class="built_in">key</span>(k), <span class="built_in">value</span>(v), <span class="built_in">left</span>(<span class="literal">nullptr</span>), <span class="built_in">right</span>(<span class="literal">nullptr</span>) &#123;&#125; <span class="comment">// 构造函数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>以下是 TreeMap 和 HashMap 的区别对比表，按照接口函数分类：</p>
+<table>
+<thead>
+<tr>
+<th><strong>接口函数</strong></th>
+<th><strong>说明</strong></th>
+<th><strong>TreeMap</strong></th>
+<th><strong>HashMap</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>put(key, value)</code></td>
+<td>插入或更新键值对</td>
+<td>支持，O(logN)</td>
+<td>支持，平均 O(1)，最坏 O(N)</td>
+</tr>
+<tr>
+<td><code>get(key)</code></td>
+<td>获取键对应的值</td>
+<td>支持，O(logN)</td>
+<td>支持，平均 O(1)，最坏 O(N)</td>
+</tr>
+<tr>
+<td><code>remove(key)</code></td>
+<td>删除键值对</td>
+<td>支持，O(logN)</td>
+<td>支持，平均 O(1)，最坏 O(N)</td>
+</tr>
+<tr>
+<td><code>containsKey(key)</code></td>
+<td>检查是否包含键</td>
+<td>支持，O(logN)</td>
+<td>支持，平均 O(1)，最坏 O(N)</td>
+</tr>
+<tr>
+<td><code>keys()</code></td>
+<td>返回所有键的集合（有序）</td>
+<td>支持，O(N)</td>
+<td>支持，无序，O(N)</td>
+</tr>
+<tr>
+<td><code>firstKey()</code></td>
+<td>返回最小键</td>
+<td>支持，O(logN)</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td><code>lastKey()</code></td>
+<td>返回最大键</td>
+<td>支持，O(logN)</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td><code>floorKey(key)</code></td>
+<td>返回小于等于 key 的最大键</td>
+<td>支持，O(logN)</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td><code>ceilingKey(key)</code></td>
+<td>返回大于等于 key 的最小键</td>
+<td>支持，O(logN)</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td><code>selectKey(k)</code></td>
+<td>返回排名为 k 的键（按顺序）</td>
+<td>支持，O(logN)</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td><code>rank(key)</code></td>
+<td>返回键的排名（按顺序）</td>
+<td>支持，O(logN)</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td><code>rangeKeys(low, high)</code></td>
+<td>返回区间 [low, high] 内的键（按顺序）</td>
+<td>支持，O(logN + M)（M 为结果数量）</td>
+<td>不支持</td>
+</tr>
+</tbody></table>
+<p><strong>注意：</strong> 即便我们前文中用链表加强哈希表实现了<code>LinkedHashMap</code>，但那也是仅仅实现了<strong>插入顺序</strong>的保存，没有办法按照<strong>键的顺序</strong>来遍历。只有<code>TreeMap</code>才能做到这一点。</p>
+<p>下面针对上述表格中的<code>TreeMap</code>接口函数的细节实现做出一些说明：</p>
+<ul>
+<li><code>get(key)</code>：最基本的功能，用前文中色提到的<code>search</code>函数即可实现，复杂度为<code>O(logN)</code></li>
+<li><code>put(key, value)，remove(key)，containsKey(key)</code>：都基于<code>get(key)</code>找到目标节点，然后进行相应的操作，复杂度为<code>O(logN)</code></li>
+<li><code>floorKey(key),ceilingKey(key)</code>：这两个函数的实现是基于<code>get(key)</code>的，复杂度为<code>O(logN)</code>,区别是<code>get(key)</code>找不到返回的是<code>nullptr</code>,而<code>floorKey(key)</code>和<code>ceilingKey(key)</code>返回的是<code>key</code>最接近的节点</li>
+<li><code>keys()</code>方法的有序需要要采用<strong>中序遍历</strong>的方式来实现，复杂度为<code>O(N)</code></li>
+<li><code>selectKey(k), rank(key)</code>这两个函数比较特殊，用中序遍历也做不到<code>O(logN)</code>的复杂度,而是<code>O(k)</code>的复杂度,所以我们需要在<code>TreeNode</code>中增加一个<code>size</code>的属性。<strong>size表示以改节点为根的子树的节点总数（包含当前节点）</strong></li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    K key; <span class="comment">// 键</span></span><br><span class="line">    V value; <span class="comment">// 值</span></span><br><span class="line">    TreeNode* left; <span class="comment">// 左子树指针</span></span><br><span class="line">    TreeNode* right; <span class="comment">// 右子树指针</span></span><br><span class="line">    <span class="type">int</span> size; <span class="comment">// 记录以当前节点为根的子树的节点总数（包含当前节点）</span></span><br><span class="line">    <span class="built_in">TreeNode</span>(K k, V v) : <span class="built_in">key</span>(k), <span class="built_in">value</span>(v), <span class="built_in">left</span>(<span class="literal">nullptr</span>), <span class="built_in">right</span>(<span class="literal">nullptr</span>), <span class="built_in">size</span>(<span class="number">1</span>) &#123;&#125; <span class="comment">// 构造函数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>则如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    7</span><br><span class="line">   / \</span><br><span class="line">  4   9</span><br><span class="line"> / \   \</span><br><span class="line">1   5   10</span><br><span class="line"></span><br><span class="line">keys [1, 4, 5, 7, 9, 10]</span><br><span class="line">rank  1  2  3  4  5  6</span><br><span class="line">size  1  3  1  6  2  1</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>selectKey(3)的查找过程如下:</p>
+<blockquote>
+<ol>
+<li>从根节点7开始，size(7) &#x3D; 6, 左子树的size(4) &#x3D; 3, 则rank(7) &#x3D; size(4) + 1 &#x3D; 4, rank(7) &#x3D; 4 &gt; 2,所以去左子树查找</li>
+<li>从节点4开始，size(4) &#x3D; 3, 左子树的size(1) &#x3D; 1, 则rank(4) &#x3D; size(1) + 1 &#x3D; 2, rank(4) &#x3D; 2 &lt; 3,所以去右子树查找</li>
+<li>从节点5开始，rank(4)&#x3D; 2.rank(7)&#x3D;4,且5在4的右子树中,5在7的左子树中,rank(4)&#x3D;2 &lt; rank(5) &lt; rank(7)&#x3D;4，所以rank（5）&#x3D; 3</li>
+<li>返回selectKey(3) &#x3D; 5</li>
+</ol>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>rank(9)的查找过程如下:</p>
+<blockquote>
+<ol>
+<li>从根节点7开始，size(7) &#x3D; 6, 左子树的size(4) &#x3D; 3, 则rank(7) &#x3D; size(4) + 1 &#x3D; 4, 9在7的右子树中，所以去右子树查找</li>
+<li>从节点9开始，size(9) &#x3D; 2, 左子树的为空，则rank(9) &#x3D; 1 + rank(7) &#x3D; 1 + 4 &#x3D; 5</li>
+<li>返回rank(9) &#x3D; 5</li>
+</ol>
+</blockquote>
+</blockquote>
+<h4 id="性能退化"><a href="#性能退化" class="headerlink" title="性能退化"></a>性能退化</h4><p>上述所有的复杂度都是建立在该二叉树搜索树是平衡的基础上，如下所示，该二叉树也是BST</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line"> \</span><br><span class="line">  2</span><br><span class="line">   \</span><br><span class="line">    3</span><br></pre></td></tr></table></figure>
+<p>显然<strong>该二叉搜索树没有办法以<code>O(logN)</code>的复杂度来查找元素,而是<code>O(N)</code>的复杂度,所以我们需要一种自动平衡的二叉搜索树</strong>,即自平衡二叉搜索树,如红黑树和AVL树，利用旋转来实现自平衡。将上述的二叉搜索树变为如下所示的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  2</span><br><span class="line"> / \</span><br><span class="line">1   3</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="红黑树的完美平衡及可视化"><a href="#红黑树的完美平衡及可视化" class="headerlink" title="红黑树的完美平衡及可视化"></a><a href="https://labuladong.online/algo/data-structure-basic/rbtree-basic/">红黑树的完美平衡及可视化</a></h3><blockquote>
+<p>虽然红黑树是具体如何实现的，目前不得而知，但是其有如下的性质</p>
+<ol>
+<li>总是能保证BST的性质</li>
+<li>总是能保证树的高度是O(logN)，不会退化成链表</li>
+</ol>
+</blockquote>
+<p>可以基于这种自平衡的二叉搜索树来实现<code>TreeMap</code>和<code>TreeSet</code>，从而在**牺牲一些增删改查的性能的前提下，来满足前文中提到的<code>TreeMap</code>和<code>TreeSet</code>的特殊接口函数的实现。**我们不需要知道红黑树的具体实现，只需要能调用即可，<strong>在C++中可以使用<code>std::set</code>和<code>std::map</code>的底层就是<code>TreeMap</code>和<code>TreeSet</code>。在Python中可以使用<code>sortedcontainers</code>库中的<code>SortedDict</code>和<code>SortedSet</code>，但Python的标准库中没有。</strong></p>
+<h3 id="Trie-字典树-前缀树原理及可视化"><a href="#Trie-字典树-前缀树原理及可视化" class="headerlink" title="Trie&#x2F;字典树&#x2F;前缀树原理及可视化"></a><a href="https://labuladong.online/algo/data-structure-basic/trie-map-basic/">Trie&#x2F;字典树&#x2F;前缀树原理及可视化</a></h3><blockquote>
+<p>Trie在C++和PPython中都没有原生支持</p>
+</blockquote>
+<p>Tire这种数据结构，<strong>本质上是个多叉树</strong>，来自于retrieval的英文单词，意思是“检索”，它的主要作用是<strong>高效地存储和检索字符串</strong>，由于其本质上是tree，所以截取自retrieval中的“trie”这个词。</p>
+<h4 id="Trie-树的主要应用场景"><a href="#Trie-树的主要应用场景" class="headerlink" title="Trie 树的主要应用场景"></a>Trie 树的主要应用场景</h4><h5 id="节约存储空间"><a href="#节约存储空间" class="headerlink" title="节约存储空间"></a>节约存储空间</h5><p>假设插入了大量的类似于<code>[&#123;&quot;hello&quot;:1&#125;, &#123;&quot;hell&quot;:2&#125;, &#123;&quot;he&quot;:3&#125;]</code>这样的键值对，使用Trie树可以节约存储空间。因为这些字符串有很多相同的前缀，Trie树可以将它们存储在同一条路径上。</p>
+<h5 id="方便前缀处理"><a href="#方便前缀处理" class="headerlink" title="方便前缀处理"></a>方便前缀处理</h5><p>Trie树的另一个重要应用场景是前缀处理，比如查找以某个前缀开头的所有字符串。Trie树可以在O(M)的时间复杂度内找到所有以某个前缀开头的字符串，其中M为前缀的长度。</p>
+<h5 id="可以使用通配符"><a href="#可以使用通配符" class="headerlink" title="可以使用通配符"></a>可以使用通配符</h5><p>比方说你想要查找所有<code>?h?o</code>的字符串，Trie树可以较为方便地实现这个功能。</p>
+<h5 id="可以按照字典序遍历键"><a href="#可以按照字典序遍历键" class="headerlink" title="可以按照字典序遍历键"></a>可以按照字典序遍历键</h5><p>这个功能其实通过<code>TreeMap</code>也可以实现，但<code>HashMap</code>就不行了。Trie树可以按照字典序遍历键，时间复杂度为O(N)，其中N为Trie树的节点数。</p>
+<h4 id="盘点一下截至到目前学习过的Map-Set"><a href="#盘点一下截至到目前学习过的Map-Set" class="headerlink" title="盘点一下截至到目前学习过的Map&#x2F;Set"></a>盘点一下截至到目前学习过的Map&#x2F;Set</h4><table>
+<thead>
+<tr>
+<th><strong>数据结构</strong></th>
+<th><strong>说明</strong></th>
+<th><strong>时间复杂度</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>HashMap/HashSet</code></td>
+<td>本质上是一个数组，通过哈希函数将键映射到数组的索引上</td>
+<td>增删改查平均 O(1)</td>
+</tr>
+<tr>
+<td><code>LinkedHashMap/LinkedHashSet</code></td>
+<td>本质上是一个链表+哈希表，链表维护插入顺序</td>
+<td>增删改查平均 O(1)</td>
+</tr>
+<tr>
+<td><code>ArrayHashMap/ArrayHashSet</code></td>
+<td>本质上是一个数组+哈希表，以O(1)实现<code>getRandom()</code></td>
+<td>增删改查平均 O(1)</td>
+</tr>
+<tr>
+<td><code>TreeMap/TreeSet</code></td>
+<td>本质上是一个红黑树，维护键的顺序</td>
+<td>增删改查 O(logN)</td>
+</tr>
+<tr>
+<td><code>TrieMap/TrieSet</code></td>
+<td>本质上是一个多叉树，维护字符串的前缀</td>
+<td>插入 O(M)，查找 O(M)，M 为字符串长度</td>
+</tr>
+</tbody></table>
+<h3 id="二叉堆核心原理及可视化"><a href="#二叉堆核心原理及可视化" class="headerlink" title="二叉堆核心原理及可视化"></a><a href="https://labuladong.online/algo/data-structure-basic/binary-heap-basic/">二叉堆核心原理及可视化</a></h3><blockquote>
+<p>C++和Python中都原生的支持二叉堆的实现，C++中是<code>algorithm</code>库中的<code>make_heap</code>和<code>pop_heap</code>，Python中是<code>heapq</code>模块中的<code>heapify</code>和<code>heappop</code>。</p>
+</blockquote>
+<h4 id="二叉堆的性质"><a href="#二叉堆的性质" class="headerlink" title="二叉堆的性质"></a>二叉堆的性质</h4><p>以最小堆为例，二叉堆的性质是：</p>
+<ul>
+<li>对于二叉堆中的每一个节点，其值都小于等于其子节点的值</li>
+<li>添加一个新节点时，先将其添加到堆的末尾，然后通过上浮操作将其放到正确的位置，复杂度为<code>O(logN)</code></li>
+<li>删除堆顶元素时，将堆顶元素与堆的最后一个元素交换，然后删除最后一个元素，再通过下沉操作将新的堆顶元素放到正确的位置，复杂度为<code>O(logN)</code></li>
+</ul>
+<h4 id="应用1：优先级队列"><a href="#应用1：优先级队列" class="headerlink" title="应用1：优先级队列"></a>应用1：优先级队列</h4><p>其API如下</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">PriorityQueue</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> x)</span></span>; <span class="comment">// 入队，复杂度为O(logN)</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">()</span></span>; <span class="comment">// 出队，复杂度为O(logN)</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">top</span><span class="params">()</span></span>; <span class="comment">// 返回队头元素，复杂度为O(1)</span></span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">empty</span><span class="params">()</span></span>; <span class="comment">// 判断队列是否为空</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span></span>; <span class="comment">// 返回队列大小</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong> 这里之所以叫队列是因为其与队列的接口函数类似，但其本质上是一个二叉堆。 </p>
+<h4 id="应用2：堆排序"><a href="#应用2：堆排序" class="headerlink" title="应用2：堆排序"></a>应用2：堆排序</h4><p>整体的复杂度为<code>O(NlogN)</code>，其实现如下</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">heapSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">res</span><span class="params">(arr.size())</span></span>; <span class="comment">// 结果数组</span></span><br><span class="line">    PriorityQueue pq; <span class="comment">// 优先级队列</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; arr.<span class="built_in">size</span>(); i++) &#123; <span class="comment">// 入队,复杂度为O(NlogN)</span></span><br><span class="line">        pq.<span class="built_in">push</span>(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; arr.<span class="built_in">size</span>(); i++) &#123; <span class="comment">// 出队，复杂度为O(NlogN)</span></span><br><span class="line">        res[i] = pq.<span class="built_in">top</span>(); <span class="comment">// 返回队头元素</span></span><br><span class="line">        pq.<span class="built_in">pop</span>(); <span class="comment">// 出队</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res; <span class="comment">// 返回结果数组</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="二叉堆一定要是树吗？"><a href="#二叉堆一定要是树吗？" class="headerlink" title="二叉堆一定要是树吗？"></a>二叉堆一定要是树吗？</h4><p>不一定，二叉堆，二叉树本质上是逻辑概念，而不是物理概念。天然地，我们可以用链式存储结构来实现二叉堆，但我们也可以用连续的数据结构来表征逻辑上的二叉堆。</p>
+<h3 id="二叉堆-优先级队列代码实现"><a href="#二叉堆-优先级队列代码实现" class="headerlink" title="二叉堆&#x2F;优先级队列代码实现"></a><a href="https://labuladong.online/algo/data-structure-basic/binary-heap-implement/">二叉堆&#x2F;优先级队列代码实现</a></h3><p>二叉堆的在增删元素时，其性质是通过<code>swim</code>和<code>sink</code>来确保的，这两个函数需要用到子节点和父节点的索引。由于二叉堆由于是完全二叉树，我们可以知道其子节点的索引是<code>2*i+1</code>和<code>2*i+2</code>,父节点的索引是<code>(i-1)/2</code>,所以我们可以用数组来实现二叉堆。如果采用链式存储，可节点需要保存父节点和子节点的指针。其实现如下</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">BinaryHeapNode</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> val; <span class="comment">// 节点值</span></span><br><span class="line">    BinaryHeapNode* left; <span class="comment">// 左子树指针</span></span><br><span class="line">    BinaryHeapNode* right; <span class="comment">// 右子树指针</span></span><br><span class="line">    BinaryHeapNode* parent; <span class="comment">// 父节点指针</span></span><br><span class="line">    <span class="built_in">BinaryHeapNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">left</span>(<span class="literal">nullptr</span>), <span class="built_in">right</span>(<span class="literal">nullptr</span>), <span class="built_in">parent</span>(<span class="literal">nullptr</span>) &#123;&#125; <span class="comment">// 构造函数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="增：push-swim"><a href="#增：push-swim" class="headerlink" title="增：push&#x2F;swim"></a>增：push&#x2F;swim</h4><p>以最小堆为例，其主要流程如下</p>
+<ul>
+<li>1、先把新元素追加到二叉树底层的最右侧，保持完全二叉树的结构。此时该元素的父节点可能比它大，不满足小顶堆的性质。</li>
+<li>2、为了恢复小顶堆的性质，需要将这个新元素不断上浮（swim），直到它的父节点比它小为止，或者到达根节点。</li>
+</ul>
+<h4 id="删：pop-sink"><a href="#删：pop-sink" class="headerlink" title="删：pop&#x2F;sink"></a>删：pop&#x2F;sink</h4><p>以最小堆为例，其主要流程如下</p>
+<ul>
+<li>1、将堆顶元素（最小值）与最后一个元素交换，然后弹出最后一个元素，保持完全二叉树的结构。</li>
+<li>2、为了恢复小顶堆的性质，需要将新的堆顶元素不断下沉（sink），直到它的子节点比它大为止，或者到达叶子节点。</li>
+</ul>
+<h4 id="查：top-peek，-复杂度为O-1"><a href="#查：top-peek，-复杂度为O-1" class="headerlink" title="查：top&#x2F;peek， 复杂度为O(1)"></a>查：top&#x2F;peek， 复杂度为<code>O(1)</code></h4><p>没啥好说的，直接返回堆顶元素即可。</p>
+<h4 id="为什么推荐采用数组表征二叉堆？"><a href="#为什么推荐采用数组表征二叉堆？" class="headerlink" title="为什么推荐采用数组表征二叉堆？"></a>为什么推荐采用数组表征二叉堆？</h4><p>增时需要在最底层的最右侧添加元素，删时需要在将根和最底层的最右侧元素交换，保持完全二叉树的结构。这两种操作都需要<strong>频繁地访问最底层的最右侧元素，采用数组表征二叉堆可以在<code>O(1)</code>的时间复杂度内访问到该元素，而采用链式存储结构则需要<code>O(N)</code>的时间复杂度。</strong></p>
+<h4 id="数组表征二叉堆的实现"><a href="#数组表征二叉堆的实现" class="headerlink" title="数组表征二叉堆的实现"></a>数组表征二叉堆的实现</h4><p>当且仅当完全二叉树才能用数组表征，完全二叉树的数组表征如下图：<br><img src="/../images/image-8.png" alt="alt text"><br>对于node.val &#x3D; arr[i]，以<code>arr[2] = R</code>为例</p>
+<ul>
+<li>左子节点的索引为<code>2*i+1 = 5</code> 为O </li>
+<li>右子节点的索引为<code>2*i+2 = 6</code> 为A</li>
+<li>父节点的索引为<code>(i-1)//2 = 0</code> 为T</li>
+</ul>
+<h3 id="线段树核心原理及可视化"><a href="#线段树核心原理及可视化" class="headerlink" title="线段树核心原理及可视化"></a><a href="https://labuladong.online/algo/data-structure-basic/segment-tree-basic/">线段树核心原理及可视化</a></h3><blockquote>
+<p>C++和Python中都没有原生的支持线段树的实现，</p>
+</blockquote>
+<p>现在有一个数组<code>arr = [1, 3, 5, 7, 9, 11]</code>，我们需要实现如下的功能</p>
+<ul>
+<li><ol>
+<li>查询区间<code>merge（i, j）</code>的值，其中<code>merge（i, j）</code>是一个聚合函数，表示对区间<code>[i, j]</code>的元素进行某种操作，比如求和、求最小值、求最大值等</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>更新区间<code>arr[i] = x</code>的值</li>
+</ol>
+</li>
+</ul>
+<p>自然的，我们可以朴素的用数组实现一个<code>VanillaSegmentTree</code>，如下所示</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">VanillaSegmentTree</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, arr, merge</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :param arr: 原始数组</span></span><br><span class="line"><span class="string">        :param merge: 聚合函数</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.arr = arr </span><br><span class="line">        <span class="variable language_">self</span>.merge = merge</span><br><span class="line">    <span class="comment"># 查询区间[i, j]的值, 复杂度为O(N)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">query</span>(<span class="params">self, i,j</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.merge(<span class="variable language_">self</span>.arr[i:j+<span class="number">1</span>])</span><br><span class="line">    <span class="comment"># 更新区间arr[i] = val, 复杂度为O(1)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">update</span>(<span class="params">self, i, val</span>):</span><br><span class="line">        <span class="variable language_">self</span>.arr[i] = val</span><br></pre></td></tr></table></figure>
+<p>现在的问题是，我们可以舍弃一部分<code>update</code>的时间复杂度来换取<code>query</code>的时间复杂度，换言之，这个数组我们不太经常更新，但我们经常查询。有什么好的方法吗？<strong>可以采用线段树来实现，其接口如下</strong>。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SegmentTree</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">SegmentTree</span>(vector&lt;<span class="type">int</span>&gt;&amp; arr, function&lt;<span class="built_in">int</span>(<span class="type">int</span>, <span class="type">int</span>)&gt; merge); <span class="comment">// 构造函数</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j)</span></span>; <span class="comment">// 查询区间[i, j]的值，复杂度为O(logN)</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">update</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> val)</span></span>; <span class="comment">// 更新区间arr[i] = val，复杂度为O(logN)</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这种数据结构就是线段树，其牺牲了<code>update</code>的时间复杂度来换取<code>query</code>一个数组闭区间[i, j]上的merge值的时间复杂度为<code>O(logN)</code>，而不是<code>O(N)</code>。</p>
+<h2 id="图论数据结构及遍历"><a href="#图论数据结构及遍历" class="headerlink" title="图论数据结构及遍历"></a><a href="https://labuladong.online/algo/menu/graph-theory/">图论数据结构及遍历</a></h2><h3 id="图结构基础及通用代码实现"><a href="#图结构基础及通用代码实现" class="headerlink" title="图结构基础及通用代码实现"></a><a href="https://labuladong.online/algo/data-structure-basic/graph-basic/">图结构基础及通用代码实现</a></h3><h4 id="图的逻辑结构"><a href="#图的逻辑结构" class="headerlink" title="图的逻辑结构"></a>图的逻辑结构</h4><p>如下是图的逻辑结构</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vertex</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> val; <span class="comment">// 节点值</span></span><br><span class="line">    vector&lt;Vertex*&gt; neighbors; <span class="comment">// 邻接表指针</span></span><br><span class="line">    <span class="built_in">GraphNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x) &#123;&#125; <span class="comment">// 构造函数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>上述是图的逻辑表述，具体实现可能不采用如上的数据结构。图的逻辑结构和多叉树是类似的，但是较为松弛，图的节点是可以任意指向的，而多叉树的节点是只能指向子节点的。</p>
+<p>入度和出度是有向图的概念，入度是指有多少条边指向该节点，出度是指该节点指向多少条边。对于无向图来说，入度和出度是相同的。</p>
+<h4 id="邻接表和邻接矩阵实现图结构"><a href="#邻接表和邻接矩阵实现图结构" class="headerlink" title="邻接表和邻接矩阵实现图结构"></a>邻接表和邻接矩阵实现图结构</h4><p>对于如下的图的邻接表和邻接矩阵的实现，可视化为：<br><img src="/../images/image-9.png" alt="alt text"></p>
+<p>在代码结构层面上，上述无权图的邻接表和邻接矩阵的实现如下所示：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 邻接表,空间复杂度为O(V+E),V为节点数，E为边数，适合稀疏图</span></span><br><span class="line"><span class="comment">// 优势：空间复杂度低，适合稀疏图</span></span><br><span class="line"><span class="comment">// 劣势：需要拓展结构体（如下所示，加入权重等属性)后才能实现有权图</span></span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; graph = &#123;</span><br><span class="line">    &#123;<span class="number">4</span>,<span class="number">3</span>,<span class="number">1</span>&#125;, <span class="comment">// 节点0的邻接节点</span></span><br><span class="line">    &#123;<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>&#125;, <span class="comment">// 节点1的邻接节点</span></span><br><span class="line">    &#123;<span class="number">3</span>&#125;, <span class="comment">// 节点2的邻接节点</span></span><br><span class="line">    &#123;<span class="number">4</span>&#125;,  <span class="comment">// 节点3的邻接节点</span></span><br><span class="line">    &#123;&#125; <span class="comment">// 节点4的邻接节点</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 邻接矩阵，空间复杂度为O(V^2),V为节点数，适合稠密图</span></span><br><span class="line"><span class="comment">// 优势：天然是个矩阵，可以采用矩阵运算来实现部分算法；天然支持有权图</span></span><br><span class="line"><span class="comment">// 劣势：空间复杂度高，适合稠密图</span></span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; graph = &#123;</span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>&#125;, <span class="comment">// 节点0的邻接节点</span></span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>&#125;, <span class="comment">// 节点1的邻接节点</span></span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>&#125;, <span class="comment">// 节点2的邻接节点</span></span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>&#125;, <span class="comment">// 节点3的邻接节点</span></span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;  <span class="comment">// 节点4的邻接节点</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>如果是有权图，则邻接表和邻接矩阵的实现如下所示：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 邻接表</span></span><br><span class="line"><span class="comment">// graph[x] 存储 x 的所有邻居节点以及对应的权重</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Edge</span> &#123;</span><br><span class="line">    <span class="type">int</span> to; <span class="comment">// 目标节点,destnation</span></span><br><span class="line">    <span class="type">int</span> weight;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;Edge&gt;&gt; graph;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 邻接矩阵</span></span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; matrix;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<blockquote>
+<p>如果节点不是int类型，而是例如<code>string</code>类型的等的，可以使用哈希表来把节点值映射到索引上，或者使用<code>unordered_map</code>来实现邻接表。</p>
+</blockquote>
+<h4 id="图结构的通用代码实现"><a href="#图结构的通用代码实现" class="headerlink" title="图结构的通用代码实现"></a>图结构的通用代码实现</h4><p>无论采用那种实现（邻接表还是邻接矩阵），还是表征那种图（有向图还是无向图，有权图还是无权图），图的通用API都可以如下所示：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Graph</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// 添加一条边（带权重）</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">addEdge</span><span class="params">(<span class="type">int</span> from, <span class="type">int</span> to, <span class="type">int</span> weight)</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 删除一条边</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">removeEdge</span><span class="params">(<span class="type">int</span> from, <span class="type">int</span> to)</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 判断两个节点是否相邻</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">bool</span> <span class="title">hasEdge</span><span class="params">(<span class="type">int</span> from, <span class="type">int</span> to)</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 返回一条边的权重</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">int</span> <span class="title">weight</span><span class="params">(<span class="type">int</span> from, <span class="type">int</span> to)</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 返回某个节点的所有邻居节点和对应权重</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> std::vector&lt;Edge&gt; <span class="title">neighbors</span><span class="params">(<span class="type">int</span> v)</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 返回节点总数</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">int</span> <span class="title">size</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 虚拟析构函数，确保子类正确释放资源</span></span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">Graph</span>() &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="无向图（Undirected-Graph）"><a href="#无向图（Undirected-Graph）" class="headerlink" title="无向图（Undirected Graph）"></a>无向图（Undirected Graph）</h5><h6 id="无向无权图（Undirected-Unweighted-Graph）"><a href="#无向无权图（Undirected-Unweighted-Graph）" class="headerlink" title="无向无权图（Undirected Unweighted Graph）"></a>无向无权图（Undirected Unweighted Graph）</h6><h6 id="无向加权图（Undirected-Weighted-Graph）"><a href="#无向加权图（Undirected-Weighted-Graph）" class="headerlink" title="无向加权图（Undirected Weighted Graph）"></a>无向加权图（Undirected Weighted Graph）</h6><h5 id="有向图（Directed-Graph）"><a href="#有向图（Directed-Graph）" class="headerlink" title="有向图（Directed Graph）"></a>有向图（Directed Graph）</h5><h6 id="有向无权图（Directed-Unweighted-Graph）"><a href="#有向无权图（Directed-Unweighted-Graph）" class="headerlink" title="有向无权图（Directed Unweighted Graph）"></a>有向无权图（Directed Unweighted Graph）</h6><h6 id="有向加权图（Directed-Weighted-Graph）"><a href="#有向加权图（Directed-Weighted-Graph）" class="headerlink" title="有向加权图（Directed Weighted Graph）"></a>有向加权图（Directed Weighted Graph）</h6><p>无向图和无权图都可以通过有向加权图退化而来，在这里只实现有向加权图API即可，其他的图的实现可以通过有向加权图的实现来实现。</p>
+<ul>
+<li>有向图加权图的邻接矩阵实现</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">DirectedWeightedGraph</span> : <span class="keyword">public</span> Graph &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Edge</span> &#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="type">int</span> to; <span class="comment">// 目标节点</span></span><br><span class="line">        <span class="type">int</span> weight; <span class="comment">// 权重</span></span><br><span class="line">        <span class="built_in">Edge</span>(<span class="type">int</span> f, <span class="type">int</span> t, <span class="type">int</span> w) :, <span class="built_in">to</span>(t), <span class="built_in">weight</span>(w) &#123;&#125; <span class="comment">// 构造函数</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line">    <span class="built_in">DirectedWeightedGraph</span>(<span class="type">int</span> n)  &#123;</span><br><span class="line">        matrix = vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;(n, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n, <span class="number">0</span>)); <span class="comment">// 初始化邻接矩阵</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 添加一条边</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addEdge</span><span class="params">(<span class="type">int</span> from, <span class="type">int</span> to, <span class="type">int</span> weight)</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        matrix[from][to] = weight; <span class="comment">// 添加边</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 删除一条边</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">removeEdge</span><span class="params">(<span class="type">int</span> from, <span class="type">int</span> to)</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        matrix[from][to] = <span class="number">0</span>; <span class="comment">// 删除边</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 判断两个节点是否相邻</span></span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">hasEdge</span><span class="params">(<span class="type">int</span> from, <span class="type">int</span> to)</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> matrix[from][to] != <span class="number">0</span>; <span class="comment">// 判断是否相邻</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 返回一条边的权重</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">weight</span><span class="params">(<span class="type">int</span> from, <span class="type">int</span> to)</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> matrix[from][to]; <span class="comment">// 返回权重</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 返回某个节点的所有邻居节点和对应权重</span></span><br><span class="line">    <span class="function">vector&lt;Edge&gt; <span class="title">neighbors</span><span class="params">(<span class="type">int</span> v)</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        vector&lt;Edge&gt; edges; <span class="comment">// 邻接节点</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> to = <span class="number">0</span>; to &lt; matrix[v].<span class="built_in">size</span>(); to++) &#123; <span class="comment">// 遍历邻接矩阵</span></span><br><span class="line">            <span class="keyword">if</span> (matrix[v][to] != <span class="number">0</span>) &#123; <span class="comment">// 如果有边</span></span><br><span class="line">                edges.<span class="built_in">push_back</span>(<span class="built_in">Edge</span>(to, matrix[v][to])); <span class="comment">// 添加边</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> edges; <span class="comment">// 返回邻接节点</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回节点总数</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> matrix.<span class="built_in">size</span>(); <span class="comment">// 返回节点总数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; matrix; <span class="comment">// 邻接矩阵</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>有向图加权图的邻接表实现</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">DirectedWeightedGraph</span> : <span class="keyword">public</span> Graph &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Edge</span> &#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="type">int</span> to; <span class="comment">// 目标节点</span></span><br><span class="line">        <span class="type">int</span> weight; <span class="comment">// 权重</span></span><br><span class="line">        <span class="built_in">Edge</span>(<span class="type">int</span> f, <span class="type">int</span> t, <span class="type">int</span> w) :, <span class="built_in">to</span>(t), <span class="built_in">weight</span>(w) &#123;&#125; <span class="comment">// 构造函数</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line">    <span class="built_in">DirectedWeightedGraph</span>(<span class="type">int</span> n)  &#123;</span><br><span class="line">        graph = vector&lt;vector&lt;Edge&gt;&gt;(n); <span class="comment">// 初始化邻接表</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 添加一条边</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addEdge</span><span class="params">(<span class="type">int</span> from, <span class="type">int</span> to, <span class="type">int</span> weight)</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        graph[from].<span class="built_in">push_back</span>(<span class="built_in">Edge</span>(to, weight)); <span class="comment">// 添加边</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 删除一条边</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">removeEdge</span><span class="params">(<span class="type">int</span> from, <span class="type">int</span> to)</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; graph[from].<span class="built_in">size</span>(); i++) &#123; <span class="comment">// 遍历邻接表</span></span><br><span class="line">            <span class="keyword">if</span> (graph[from][i].to == to) &#123; <span class="comment">// 如果有边</span></span><br><span class="line">                graph[from].<span class="built_in">erase</span>(graph[from].<span class="built_in">begin</span>() + i); <span class="comment">// 删除边</span></span><br><span class="line">                <span class="keyword">break</span>; <span class="comment">// 退出循环</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 判断两个节点是否相邻</span></span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">hasEdge</span><span class="params">(<span class="type">int</span> from, <span class="type">int</span> to)</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; graph[from].<span class="built_in">size</span>(); i++) &#123; <span class="comment">// 遍历邻接表</span></span><br><span class="line">            <span class="keyword">if</span> (graph[from][i].to == to) &#123; <span class="comment">// 如果有边</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// 返回true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 返回false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 返回一条边的权重</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">weight</span><span class="params">(<span class="type">int</span> from, <span class="type">int</span> to)</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; graph[from].<span class="built_in">size</span>(); i++) &#123; <span class="comment">// 遍历邻接表</span></span><br><span class="line">            <span class="keyword">if</span> (graph[from][i].to == to) &#123; <span class="comment">// 如果有边</span></span><br><span class="line">                <span class="keyword">return</span> graph[from][i].weight; <span class="comment">// 返回权重</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 返回0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 返回某个节点的所有邻居节点和对应权重</span></span><br><span class="line">    <span class="function">vector&lt;Edge&gt; <span class="title">neighbors</span><span class="params">(<span class="type">int</span> v)</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> graph[v]; <span class="comment">// 返回邻接节点</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 返回节点总数</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> graph.<span class="built_in">size</span>(); <span class="comment">// 返回节点总数</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    vector&lt;vector&lt;Edge&gt;&gt; graph; <span class="comment">// 邻接表</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="图结构的-DFS-BFS-遍历"><a href="#图结构的-DFS-BFS-遍历" class="headerlink" title="图结构的 DFS&#x2F;BFS 遍历"></a><a href="https://labuladong.online/algo/data-structure-basic/graph-traverse-basic/">图结构的 DFS&#x2F;BFS 遍历</a></h3><blockquote>
+<p>一句话总结：图的遍历和多叉树的遍历十分类似，都可以DFS&#x2F;BFS遍历。</p>
+<blockquote>
+<p>图的遍历和多叉树的遍历十分类似，但有两点不同：</p>
+<blockquote>
+<p>1.图的遍历可能出现环。遍历节点时需要维护一个<code>visited</code>数组来标记节点是否被访问过。<br>2.多叉树遍历点等价于遍历路径，因为根节点到叶子节点的路径是唯一的，而图的遍历点不等价于遍历路径，因为图的遍历点可能有多条路径。遍历路径时需要维护一个<code>onPath</code>数组来标记节点是否在路径上。之所以遍历路径时不能采用<code>visited</code>数组，from-&gt;to的可行路径不止一条（即便是DAG），所以要采用<code>onPath</code>数组来标记，最重要的是<code>onPath</code>要在后序位置处撤销。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>图的数据结构有三种，分别是前面说到的链式存储，十分类似多叉树的<code>Vertex</code>、 邻接表和邻接矩阵(这两个API一样，放在一起说)。由于<code>Vertex</code>与多叉树最为类似，我们先从<code>Vertex</code>开始说起，在这里的<code>Vertex</code>类稍有不同，我们引入了<code>id</code>来标记节点的唯一性。邻接表和邻接矩阵很好从<code>Vertex</code>类中推导出来，邻接表和邻接矩阵的实现可以参考前面的图的实现。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vertex</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> id; <span class="comment">// 节点id,唯一标识，防止死循环</span></span><br><span class="line">    <span class="type">int</span> val; <span class="comment">// 节点值</span></span><br><span class="line">    vector&lt;Vertex*&gt; neighbors; <span class="comment">// 邻接表指针</span></span><br><span class="line">    <span class="built_in">Vertex</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x) &#123;&#125; <span class="comment">// 构造函数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="图的DFS-BFS遍历实现"><a href="#图的DFS-BFS遍历实现" class="headerlink" title="图的DFS&#x2F;BFS遍历实现"></a>图的DFS&#x2F;BFS遍历实现</h4><h4 id="DFS遍历实现"><a href="#DFS遍历实现" class="headerlink" title="DFS遍历实现"></a>DFS遍历实现</h4><h5 id="DFS遍历所有节点（Visited数组）"><a href="#DFS遍历所有节点（Visited数组）" class="headerlink" title="DFS遍历所有节点（Visited数组）"></a>DFS遍历所有节点（Visited数组）</h5><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">traverse</span><span class="params">(Vertex* root,vector&lt;<span class="type">bool</span>&gt;&amp; visited)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span>; <span class="comment">// 如果节点为空，返回</span></span><br><span class="line">    <span class="keyword">if</span> (visited[root.id]) <span class="keyword">return</span>; <span class="comment">// 如果节点已经访问过，返回</span></span><br><span class="line">    visited[root.id] = <span class="literal">true</span>; <span class="comment">// 标记节点为已访问</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 时间点1： 前序位置</span></span><br><span class="line">    <span class="comment">// do something with root, e.g. cout &lt;&lt; root.val &lt;&lt; endl;</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> neighbor : root.neighbors) &#123; <span class="comment">// 遍历邻接表</span></span><br><span class="line">        <span class="built_in">traverse</span>(neighbor, visited); <span class="comment">// 递归遍历邻接节点</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 时间点2： 后序位置</span></span><br><span class="line">    <span class="comment">// do something with root e.g. cout &lt;&lt; root.val &lt;&lt; endl;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h5 id="DFS遍历所有路径（OnPath数组）"><a href="#DFS遍历所有路径（OnPath数组）" class="headerlink" title="DFS遍历所有路径（OnPath数组）"></a>DFS遍历所有路径（OnPath数组）</h5><p>首先考虑最简单的多叉树的<code>src-&gt;dest</code>路径，假设我们有如下的多叉树</p>
+<pre class="mermaid">graph TB
+   0((0,src)) --> 3
+    0 --> 1
+    0 --> 2
+    3 --> 4((4,dest))</pre>
+<p>很简单，只需要遍历所有节点到达<code>dest</code>节点的路径即可，且可行路径最多有一条，这是因为多叉树的性质决定的。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">path = [] <span class="comment"># 存储路径</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">src,dest</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> src: <span class="keyword">return</span> <span class="comment"># 如果节点为空，返回</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 时间点1： 前序位置</span></span><br><span class="line">    path.append(src) </span><br><span class="line">    <span class="keyword">if</span> src == dest: <span class="comment"># 如果节点是目标节点，返回</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;找到路径：&quot;</span>, path) <span class="comment"># 找到路径，打印路径</span></span><br><span class="line">        <span class="keyword">return</span> <span class="comment"># 找到了，不用再遍历了</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> neighbor <span class="keyword">in</span> src.neighbors: <span class="comment"># 遍历邻接表</span></span><br><span class="line">        traverse(neighbor, dest) <span class="comment"># 递归遍历邻接节点</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 时间点2： 后序位置</span></span><br><span class="line">    path.pop() <span class="comment"># 撤销路径</span></span><br><span class="line"></span><br><span class="line">traverse(src = <span class="number">0</span>, dest = <span class="number">4</span>) <span class="comment"># 遍历路径</span></span><br></pre></td></tr></table></figure>
+<p>搜索的树为：</p>
+<pre class="mermaid">graph TB
+   0(("traverse( 0,  4)")) --> 1(("traverse( 1,  4)"))
+   0(("traverse( 0,  4)")) --> 2(("traverse( 2,  4)"))
+   0(("traverse( 0,  4)")) --> 3(("traverse( 3,  4)"))
+   1(("traverse( 1,  4)")) --> 4(("traverse(None,  4)"))
+   2(("traverse( 2,  4)")) --> 5(("traverse(None,  4)"))
+    3(("traverse( 3,  4)")) --> 6(("found！traverse(4,4),"))</pre>
+
+
+
+
+
+<p>但是如果是图呢？我们可以用<code>onPath</code>数组来标记路径上的节点，<code>onPath</code>数组的作用是标记当前节点是否在路径上。<code>onPath</code>的引入是为了防止死循环的发生，如下图所示，可以避免类似于<code>0(from)-&gt;(1-&gt;2-&gt;3)*n-&gt;4(dest)</code>的产生，避免节点的重复访问。但是没有采用前面的<code>visited</code>数组是因为这样不会漏掉<code>0-&gt;3-&gt;1-&gt;4</code>的可行路径,因为采用visited再搜索完成<code>0-&gt;1-&gt;??</code>后，1会被标记为已访问，导致<code>0-&gt;3-&gt;1-&gt;4</code>的路径无法被访问到。</p>
+<pre class="mermaid">graph TB
+   0((0,src)) --> 3
+    0 --> 1
+    1 --> 2
+    1 --> 4
+    2 --> 3
+    3 --> 1
+    3 --> 4
+    4((4,dest)) --> 0</pre>
+
+<p>上述图的<code>src-&gt;dest</code>路径的实现如下所示：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">path = [] <span class="comment"># 存储路径</span></span><br><span class="line">onPath = [false] * n</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">src,dest</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> src: <span class="keyword">return</span> <span class="comment"># 如果节点为空，返回</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> onPath[src]: <span class="keyword">return</span> <span class="comment"># 如果节点已经在路径上，返回,避免死循环</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 时间点1： 前序位置</span></span><br><span class="line">    path.append(src) </span><br><span class="line">    onPath[src] = true <span class="comment"># 标记路径上的节点为true</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> src == dest: <span class="comment"># 如果节点是目标节点，返回</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;找到路径：&quot;</span>, path) <span class="comment"># 找到路径，打印路径</span></span><br><span class="line">        <span class="comment"># return 这里不return，如果非要return的话，下面的onPath[src] = false和path.pop()就会被跳过</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> neighbor <span class="keyword">in</span> src.neighbors: <span class="comment"># 遍历邻接表</span></span><br><span class="line">        traverse(neighbor, dest) <span class="comment"># 递归遍历邻接节点</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 时间点2： 后序位置</span></span><br><span class="line">    path.pop() <span class="comment"># 撤销路径</span></span><br><span class="line">    onPath[src] = false <span class="comment"># 撤销路径上的节点为false</span></span><br></pre></td></tr></table></figure>
+<p>他的搜索树为：</p>
+<pre class="mermaid">graph TB
+   0(("traverse( 0,  4)")) --> 1(("traverse( 1,  4)"))
+   0(("traverse( 0,  4)")) --> 2(("traverse( 3,  4)"))
+   1(("traverse( 1,  4)")) --> 3(("traverse( 2,  4)"))
+   1(("traverse( 1,  4)")) --> 4(("traverse( 4,  4),OK!"))
+    2(("traverse( 3,  4)")) --> 5(("traverse( 1,  4)"))
+    2(("traverse( 3,  4)")) --> 6(("traverse( 4,  4),OK!"))
+    3(("traverse( 2,  4)")) --> 7(("traverse( 3,  4)"))
+    5(("traverse( 1,  4)")) --> 9(("traverse( 4,  4),OK!"))
+    7(("traverse( 3,  4)")) --> 8(("traverse( 4,  4),OK!"))</pre>
+
+
+<h5 id="同时使用onPath和visited数组"><a href="#同时使用onPath和visited数组" class="headerlink" title="同时使用onPath和visited数组"></a>同时使用onPath和visited数组</h5><p>在一些较为复杂的图的遍历中，需要同时使用<code>onPath</code>和<code>visited</code>数组来标记节点是否被访问过，<strong>用来减枝</strong>，降低复杂度。例如在后面的<a href="https://labuladong.online/algo/data-structure/topological-sort/">拓扑排序和成环检测中</a>我们需要同时使用<code>onPath</code>和<code>visited</code>数组来标记节点是否被访问过，<code>onPath</code>数组用来标记当前节点是否在路径上，<code>visited</code>数组用来标记当前节点是否被访问过。</p>
+<h5 id="同时都不使用visited和onPath数组"><a href="#同时都不使用visited和onPath数组" class="headerlink" title="同时都不使用visited和onPath数组"></a>同时都不使用visited和onPath数组</h5><p>对于一些性质比较好的图，例如DAG(Directed Acyclic Graph)，我们可以不使用<code>visited</code>和<code>onPath</code>数组来标记节点是否被访问过，直接遍历即可,这事因为DAG的性质决定的，不会走回头路。如题目<a href="https://leetcode.cn/problems/all-paths-from-source-to-target/description/">Leetcode 797</a>所示，DAG的性质决定了不会走回头路，所以我们可以直接遍历即可。</p>
+<h4 id="BFS遍历实现"><a href="#BFS遍历实现" class="headerlink" title="BFS遍历实现"></a>BFS遍历实现</h4><h5 id="写法1-不记录步数"><a href="#写法1-不记录步数" class="headerlink" title="写法1 不记录步数"></a>写法1 不记录步数</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bfs</span>(<span class="params">graph, src</span>):</span><br><span class="line">    queue = deque() <span class="comment"># 队列</span></span><br><span class="line">    visited = [<span class="literal">False</span>] * graph.size() <span class="comment"># 访问数组,也可以用set来实现</span></span><br><span class="line"></span><br><span class="line">    queue.append(src) <span class="comment"># 入队</span></span><br><span class="line">    visited[src] = <span class="literal">True</span> <span class="comment"># 标记节点为已访问</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> queue: <span class="comment"># 队列不为空</span></span><br><span class="line">        node = queue.popleft() <span class="comment"># 出队</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># do something with node, e.g. cout &lt;&lt; node.val &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> neighbor <span class="keyword">in</span> graph.neighbors(node): <span class="comment"># 遍历邻接表</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> visited[neighbor]: <span class="comment"># 如果节点没有被访问过</span></span><br><span class="line">                queue.append(neighbor) <span class="comment"># 入队</span></span><br><span class="line">                visited[neighbor] = <span class="literal">True</span> <span class="comment"># 标记节点为已访问</span></span><br></pre></td></tr></table></figure>
+
+
+<h5 id="写法2-记录等长步数"><a href="#写法2-记录等长步数" class="headerlink" title="写法2 记录等长步数"></a>写法2 记录等长步数</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">bfs</span>(<span class="params">graph, src</span>):</span><br><span class="line">    queue = deque() <span class="comment"># 队列</span></span><br><span class="line">    visited = [<span class="literal">False</span>] * graph.size() <span class="comment"># 访问数组,也可以用set来实现</span></span><br><span class="line"></span><br><span class="line">    queue.append(src) <span class="comment"># 入队</span></span><br><span class="line">    visited[src] = <span class="literal">True</span> <span class="comment"># 标记节点为已访问</span></span><br><span class="line"></span><br><span class="line">    step = <span class="number">0</span> <span class="comment"># 步数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> queue: <span class="comment"># 队列不为空</span></span><br><span class="line">        sz = <span class="built_in">len</span>(queue) <span class="comment"># 队列长度</span></span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(sz):</span><br><span class="line">            node = queue.popleft() <span class="comment"># 出队</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># do something with node and step</span></span><br><span class="line">            <span class="comment"># e.g. cout &lt;&lt; &quot;src-&gt;&quot; &lt;&lt; node.val &lt;&lt; &quot; step:&quot; &lt;&lt; step &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> neighbor <span class="keyword">in</span> graph.neighbors(node): <span class="comment"># 遍历邻接表</span></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> visited[neighbor]: <span class="comment"># 如果节点没有被访问过</span></span><br><span class="line">                    queue.append(neighbor) <span class="comment"># 入队</span></span><br><span class="line">                    visited[neighbor] = <span class="literal">True</span> <span class="comment"># 标记节点为已访问</span></span><br><span class="line">        step += <span class="number">1</span> <span class="comment"># 步数加1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="写法3-记录变长步数"><a href="#写法3-记录变长步数" class="headerlink" title="写法3 记录变长步数"></a>写法3 记录变长步数</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">State</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, vertex, step</span>):</span><br><span class="line">        <span class="variable language_">self</span>.vertex = vertex <span class="comment"># 节点</span></span><br><span class="line">        <span class="variable language_">self</span>.step = step <span class="comment"># 步数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bfs</span>(<span class="params">graph, src</span>):</span><br><span class="line">    queue = deque() <span class="comment"># 队列</span></span><br><span class="line">    visited = [<span class="literal">False</span>] * graph.size() <span class="comment"># 访问数组,也可以用set来实现</span></span><br><span class="line"></span><br><span class="line">    queue.append(State(src, <span class="number">0</span>)) <span class="comment"># 入队</span></span><br><span class="line">    visited[src] = <span class="literal">True</span> <span class="comment"># 标记节点为已访问</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> queue: <span class="comment"># 队列不为空</span></span><br><span class="line">        state = queue.popleft() <span class="comment"># 出队</span></span><br><span class="line">        node = state.vertex <span class="comment"># 节点</span></span><br><span class="line">        step = state.step <span class="comment"># 步数</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># do something with node and step</span></span><br><span class="line">        <span class="comment"># e.g. cout &lt;&lt; &quot;src-&gt;&quot; &lt;&lt; node.val &lt;&lt; &quot; step:&quot; &lt;&lt; step &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> neighbor <span class="keyword">in</span> graph.neighbors(node): <span class="comment"># 遍历邻接表</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> visited[neighbor]: <span class="comment"># 如果节点没有被访问过</span></span><br><span class="line">                queue.append(State(neighbor, step + <span class="number">1</span>)) <span class="comment"># 入队</span></span><br><span class="line">                visited[neighbor] = <span class="literal">True</span> <span class="comment"># 标记节点为已访问</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="Union-Find-并查集原理"><a href="#Union-Find-并查集原理" class="headerlink" title="Union Find 并查集原理"></a><a href="https://labuladong.online/algo/data-structure-basic/union-find-basic/">Union Find 并查集原理</a></h3><h4 id="Union-Find-并查集的核心原理"><a href="#Union-Find-并查集的核心原理" class="headerlink" title="Union Find 并查集的核心原理"></a>Union Find 并查集的核心原理</h4><p>对于如下的无向图，我们关心:</p>
+<ul>
+<li>有几个连通分量，i.e. 有几个岛屿,如下图有4个连通分量</li>
+<li>判断两个节点是否在同一个连通分量中，e.g. <code>connected(0, 1)=true</code>，<code>connected(0, 4)=false</code></li>
+<li>合并两个连通分量，e.g. <code>union(0,4)</code>合并之后<code>0-1-2-4-5-9</code>连成一个大岛屿</li>
+</ul>
+<p><img src="/../images/image-10.png" alt="alt text"></p>
+<p>针对上述功能需求，并查集的API如下所示：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">UF</span> &#123;</span><br><span class="line">    <span class="comment">// 初始化并查集，包含 n 个节点，时间复杂度 O(n)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UF</span><span class="params">(<span class="type">int</span> n)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 连接节点 p 和节点 q，时间复杂度 O(1)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="type">void</span> <span class="title">union</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> q)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 查询节点 p 和节点 q 是否连通（是否在同一个连通分量内），时间复杂度 O(1)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="type">bool</span> <span class="title">connected</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> q)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 查询当前的连通分量数量，时间复杂度 O(1)</span></span><br><span class="line">    <span class="comment">// 由于并查集没有deunion操作，所以count不可能增加，只可能减少</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="type">int</span> <span class="title">count</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如何实现上述功能呢？考虑到每一个分量都是一个树的结构：</p>
+<ul>
+<li><code>union</code>操作可以看成是将两棵树合并成一棵树，把一个树的root指向另一个树的root即可。</li>
+<li><code>connected</code>操作可以看成是判断两个节点各自的root是否相同即可。</li>
+<li><code>count</code>操作可以看成是统计有多少个root节点即可。</li>
+</ul>
+<h3 id="Union-Find-并查集的底层数据结构"><a href="#Union-Find-并查集的底层数据结构" class="headerlink" title="Union Find 并查集的底层数据结构"></a>Union Find 并查集的底层数据结构</h3><p><strong>核心：Union Ford中每一个分量都是一棵树的结构，每一个Union Ford就是一个树的集合，或者说是一个森林</strong> 上面的并查集的森林为：</p>
+<p><img src="/../images/image-11.png" alt="alt text"></p>
+<p>注意我们只关心每个节点的父节点，不关心每个节点的子节点，且<code>root.parent = root</code>。<strong>我们可以用一个数组来表征这个森林，定义这个数组为parent，且<code>parent[node]=node.parent</code>,则找<code>node.root = parent[parent[parent[....[node]]]]</code></strong> 且则上述的并查集森林可以表示为<code>parent = [1, 1, 1, 3, 4, 4, 6, 6, 7, 9]</code>。</p>
+<h3 id="可视化并查集的实现及优化"><a href="#可视化并查集的实现及优化" class="headerlink" title="可视化并查集的实现及优化"></a>可视化并查集的实现及优化</h3><h4 id="未优化的版本"><a href="#未优化的版本" class="headerlink" title="未优化的版本"></a>未优化的版本</h4><p>最朴素的版本，咱也啥也不管，就规定<code>p.root = q.root</code>，即<code>p</code>的父节点指向<code>q</code>的父节点。这会导致<code>大树</code>的<code>root</code>指向<code>小树</code>的<code>root</code>，导致树的高度过高，查询的时间复杂度为O(N)，而不是O(logN)。如下图所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">p-&gt;0-&gt;1-&gt;2-&gt;3-&gt;4-&gt;5&lt;=&gt;6</span><br><span class="line">q-&gt;7</span><br></pre></td></tr></table></figure>
+<h4 id="权重数组优化"><a href="#权重数组优化" class="headerlink" title="权重数组优化"></a>权重数组优化</h4><p>我们可以维护一个权重数组<code>size</code>，用来记录每个节点的权重，<code>size[node]</code>表示以<code>node</code>为根节点的树的大小。我们在合并的时候，将小树的根节点指向大树的根节点，这样可以保证树的高度不会过高。但这种方法还是达不到O(1)的时间复杂度，无法满足前面API的要求。</p>
+<h4 id="路径压缩优化的版本"><a href="#路径压缩优化的版本" class="headerlink" title="路径压缩优化的版本"></a>路径压缩优化的版本</h4><p>对于Union Find的<code>find</code>操作，i.e. 查找root的操作，朴素的为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">UnionFind</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, n</span>):</span><br><span class="line">        <span class="variable language_">self</span>.parent = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)] <span class="comment"># 初始化parent数组</span></span><br><span class="line">        <span class="variable language_">self</span>.size = [<span class="number">1</span>] * n <span class="comment"># 初始化size数组</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># ... 其余方法</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">find</span>(<span class="params">self, p</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.parent[p] != p: <span class="comment"># 如果p不是根节点</span></span><br><span class="line">            p = <span class="variable language_">self</span>.parent[p]</span><br><span class="line">        <span class="keyword">return</span> p</span><br></pre></td></tr></table></figure>
+
+<p>对于<code>find</code>操作，我们可以采用路径压缩的方法来优化。<strong>路径压缩的核心思想是将每个节点的父节点指向根节点</strong>，这样可以大大减少树的高度，使树高度趋近于1。路径压缩的实现如下所示：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">UnionFind</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, n</span>):</span><br><span class="line">        <span class="variable language_">self</span>.parent = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)] <span class="comment"># 初始化parent数组</span></span><br><span class="line">        <span class="variable language_">self</span>.size = [<span class="number">1</span>] * n <span class="comment"># 初始化size数组</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># ... 其余方法</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">find</span>(<span class="params">self, p</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.parent[p] != p:</span><br><span class="line">            <span class="comment"># 路径压缩的核心思想是将每个节点的父节点&#123;self.parent[p]&#125;指向根节点&#123;self.find(self.parent[p])&#125;   </span></span><br><span class="line">            <span class="variable language_">self</span>.parent[p] = <span class="variable language_">self</span>.find(<span class="variable language_">self</span>.parent[p]) </span><br><span class="line">            p = <span class="variable language_">self</span>.parent[p] </span><br><span class="line">        <span class="keyword">return</span> p</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="十大排序算法原理及可视化"><a href="#十大排序算法原理及可视化" class="headerlink" title="十大排序算法原理及可视化"></a><a href="https://labuladong.online/algo/menu/sorting/">十大排序算法原理及可视化</a></h2><h3 id="本章导读"><a href="#本章导读" class="headerlink" title="本章导读"></a><a href="https://labuladong.online/algo/intro/sorting/">本章导读</a></h3><p>虽然很少有面试和算法题会考排序算法，但是排序算法是数据结构和算法的基础，很多数据结构和算法都是基于排序算法的，所以还是要了解一下排序算法的原理和实现。首先最重要的是，了解内置排序算法的调用。</p>
+<p>C++ STL的sort函数是基于std::sort 不采用单一固定算法，而是根据不同的数据规模和类型选择混合排序策略，通常结合了快速排序（Quicksort）、堆排序（Heapsort）和插入排序（Insertion Sort）。</p>
+<ul>
+<li>默认情况下，std::sort使用快速排序算法，平均时间复杂度为O(NlogN)，最坏时间复杂度为O(N^2)，空间复杂度为O(logN)，不稳定。</li>
+<li>当数据规模较小时，std::sort会切换到插入排序算法，平均时间复杂度为O(N^2)，最坏时间复杂度为O(N^2)，空间复杂度为O(1)，稳定。</li>
+<li>当数据规模较大时，std::sort会切换到堆排序算法，平均时间复杂度为O(NlogN)，最坏时间复杂度为O(NlogN)，空间复杂度为O(1)，不稳定。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// C++ STL的sort函数</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 排序vector&lt;int&gt; nums</span></span><br><span class="line">std::<span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>()); <span class="comment">// 升序排序</span></span><br><span class="line">std::<span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>(), std::<span class="built_in">greater</span>&lt;<span class="type">int</span>&gt;()); <span class="comment">// 降序排序</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 排序list&lt;int&gt; nums</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;list&gt;</span></span></span><br><span class="line"></span><br><span class="line">std::list&lt;<span class="type">int</span>&gt; nums = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">nums.<span class="built_in">sort</span>(); <span class="comment">// 升序排序</span></span><br><span class="line">nums.<span class="built_in">sort</span>(std::<span class="built_in">greater</span>&lt;<span class="type">int</span>&gt;()); <span class="comment">// 降序排序</span></span><br></pre></td></tr></table></figure>
+
+
+<p>Python的内置排序函数是timsort，时间复杂度为O(NlogN)，空间复杂度为O(N)，稳定。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># sort() 与 sorted() 的区别</span></span><br><span class="line"><span class="comment"># sort() 是list对象的方法，sorted() 是内置函数</span></span><br><span class="line"><span class="comment"># sort() 会修改原列表，sorted() 不会修改原列表，返回一个新的列表</span></span><br><span class="line"><span class="comment"># sort() 只能用于list，sorted() 可以用于任何可迭代对象</span></span><br><span class="line"></span><br><span class="line">arr = [<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">arr.sort() <span class="comment"># 升序排序</span></span><br><span class="line">arr.sort(reverse=<span class="literal">True</span>) <span class="comment"># 降序排序</span></span><br><span class="line"></span><br><span class="line">_ = <span class="built_in">sorted</span>(arr) <span class="comment"># 升序排序</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="排序算法的关键指标"><a href="#排序算法的关键指标" class="headerlink" title="排序算法的关键指标"></a><a href="https://labuladong.online/algo/data-structure-basic/sort-basic/">排序算法的关键指标</a></h3><p>时间复杂度、空间复杂度自不必说了，稳定性也是排序算法的一个重要指标。稳定性是指在排序过程中，如果两个元素相等，它们在排序后的相对位置不变，则称该排序算法是稳定的。为什么要考虑稳定性呢？例如：已经按照Date升序排列的用户数据，假设我们要按照UserID升序排列，如果排序算法不稳定，则可能会导致Date相同的用户的相对位置发生变化，这样就会导致数据的混乱。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">   Date    UserID</span><br><span class="line">2020-01-01  9999</span><br><span class="line">2020-01-02  9999</span><br><span class="line">2020-01-03  9999</span><br><span class="line">2020-02-01  1001</span><br><span class="line">2020-02-02  1001</span><br><span class="line">2020-02-03  1001</span><br></pre></td></tr></table></figure>
+
+
+<p>对如下10种排序算法，就时间复杂度、空间复杂度、稳定性、适用场景、局限性、核心思想等进行总结：</p>
+<table>
+<thead>
+<tr>
+<th>排序算法</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+<th>稳定性</th>
+<th>适用场景</th>
+<th>局限性</th>
+<th>核心思想</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>选择排序</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+</tr>
+<tr>
+<td>冒泡排序</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+</tr>
+<tr>
+<td>计数排序</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+</tr>
+<tr>
+<td>桶排序</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+</tr>
+<tr>
+<td>基数排序</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+<td>todo</td>
+</tr>
+</tbody></table>
+<h3 id="选择排序所面临的问题"><a href="#选择排序所面临的问题" class="headerlink" title="选择排序所面临的问题"></a><a href="https://labuladong.online/algo/data-structure-basic/select-sort/">选择排序所面临的问题</a></h3><p>todo</p>
+<h3 id="拥有稳定性：冒泡排序"><a href="#拥有稳定性：冒泡排序" class="headerlink" title="拥有稳定性：冒泡排序"></a><a href="https://labuladong.online/algo/data-structure-basic/bubble-sort/">拥有稳定性：冒泡排序</a></h3><p>todo</p>
+<h3 id="运用逆向思维：插入排序"><a href="#运用逆向思维：插入排序" class="headerlink" title="运用逆向思维：插入排序"></a><a href="https://labuladong.online/algo/data-structure-basic/insertion-sort/">运用逆向思维：插入排序</a></h3><p>todo</p>
+<h3 id="突破-O-N-2-：希尔排序"><a href="#突破-O-N-2-：希尔排序" class="headerlink" title="突破 O(N^2)：希尔排序"></a><a href="https://labuladong.online/algo/data-structure-basic/shell-sort/">突破 O(N^2)：希尔排序</a></h3><p>todo</p>
+<h3 id="妙用二叉树前序位置：快速排序"><a href="#妙用二叉树前序位置：快速排序" class="headerlink" title="妙用二叉树前序位置：快速排序"></a><a href="https://labuladong.online/algo/data-structure-basic/quick-sort/">妙用二叉树前序位置：快速排序</a></h3><p>todo</p>
+<h3 id="妙用二叉树后序位置：归并排序"><a href="#妙用二叉树后序位置：归并排序" class="headerlink" title="妙用二叉树后序位置：归并排序"></a><a href="https://labuladong.online/algo/data-structure-basic/merge-sort/">妙用二叉树后序位置：归并排序</a></h3><p>todo</p>
+<h3 id="二叉堆结构的运用：堆排序"><a href="#二叉堆结构的运用：堆排序" class="headerlink" title="二叉堆结构的运用：堆排序"></a><a href="https://labuladong.online/algo/data-structure-basic/heap-sort/">二叉堆结构的运用：堆排序</a></h3><p>todo</p>
+<h3 id="全新的排序原理：计数排序"><a href="#全新的排序原理：计数排序" class="headerlink" title="全新的排序原理：计数排序"></a><a href="https://labuladong.online/algo/data-structure-basic/counting-sort/">全新的排序原理：计数排序</a></h3><p>todo</p>
+<h3 id="博采众长：桶排序"><a href="#博采众长：桶排序" class="headerlink" title="博采众长：桶排序"></a><a href="https://labuladong.online/algo/data-structure-basic/bucket-sort/">博采众长：桶排序</a></h3><p>todo</p>
+<h3 id="基数排序（Radix-Sort）"><a href="#基数排序（Radix-Sort）" class="headerlink" title="基数排序（Radix Sort）"></a><a href="https://labuladong.online/algo/data-structure-basic/radix-sort/">基数排序（Radix Sort）</a></h3><p>todo</p>
+]]></content>
+      <categories>
+        <category>labuladong算法笔记</category>
+      </categories>
+      <tags>
+        <tag>cpp</tag>
+        <tag>数据结构</tag>
+        <tag>排序算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2025/04/23/test/</url>
+    <content><![CDATA[<h1 id="测试代码是否可以顺利渲染"><a href="#测试代码是否可以顺利渲染" class="headerlink" title="测试代码是否可以顺利渲染"></a>测试代码是否可以顺利渲染</h1><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello word&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">greeting</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Hello from JavaScript!&quot;</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello World&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打印 Hello World</span></span><br><span class="line">print<span class="punctuation">(</span><span class="string">&quot;Hello World&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个简单的数据框</span></span><br><span class="line">data <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span></span><br><span class="line">  name <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;Alice&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Bob&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Charlie&quot;</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">  age <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">25</span><span class="punctuation">,</span> <span class="number">30</span><span class="punctuation">,</span> <span class="number">35</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 ggplot2 绘制简单的散点图</span></span><br><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line">ggplot<span class="punctuation">(</span>data<span class="punctuation">,</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> name<span class="punctuation">,</span> y <span class="operator">=</span> age<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  geom_point<span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  labs<span class="punctuation">(</span>title <span class="operator">=</span> <span class="string">&quot;年龄分布&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h1><h2 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h2><p>$E&#x3D;mc^2$ and $\exists x \in X, \forall y \in Y, x \neq y$</p>
+<h2 id="行间公式"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式</h2><p>$$<br>\int_0^\infty \frac{x^3}{e^x} , dx &#x3D; \frac{\pi^4}{15}<br>$$</p>
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><table>
+<thead>
+<tr>
+<th>列1</th>
+<th>列2</th>
+<th>列3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+</tbody></table>
+<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><h2 id="本地图片"><a href="#本地图片" class="headerlink" title="本地图片"></a>本地图片</h2><p><img src="/../images/image-1.png" alt="alt text"></p>
+<h2 id="网络图片"><a href="#网络图片" class="headerlink" title="网络图片"></a>网络图片</h2><p><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="alt text"></p>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="https://www.google.com/">Google</a></p>
+<h1 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h1><pre class="mermaid">graph TD
+    A --> B
+    B --> C
+    C --> A</pre>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>华为入职培训-C++语言编程规范</title>
+    <url>/2025/04/22/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-C-%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="1-课程简介"><a href="#1-课程简介" class="headerlink" title="1. 课程简介"></a>1. 课程简介</h1><p>视频中说可以在公司内网下载，在互联网上找到一个版本<a href="https://blog.csdn.net/yaoming168/article/details/136063619">华为C++语言编程规范</a></p>
+<h1 id="2-引言"><a href="#2-引言" class="headerlink" title="2. 引言"></a>2. 引言</h1><p>常见的c++中的未定义行为</p>
+<ul>
+<li>整数除以0</li>
+<li>有符号的整数溢出</li>
+<li>访问越界数组</li>
+<li>使用未初始化的变量</li>
+<li>越界访问</li>
+<li>使用<code>new T[n]</code>分配数组，却用delete不带[]释放<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>* arr = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>];  <span class="comment">// 分配10个int的空间</span></span><br><span class="line"><span class="keyword">delete</span> arr;              <span class="comment">// 错误！应该用delete[] arr</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>关于指针，优先使用<strong>引用和智能指针</strong></p>
+<h1 id="3-代码风格"><a href="#3-代码风格" class="headerlink" title="3. 代码风格"></a>3. 代码风格</h1><p>主要看项目组用啥命名风格，不推荐匈牙利</p>
+<h1 id="4-编程实践"><a href="#4-编程实践" class="headerlink" title="4. 编程实践"></a>4. 编程实践</h1><h2 id="4-1-函数、类、常量"><a href="#4-1-函数、类、常量" class="headerlink" title="4.1 函数、类、常量"></a>4.1 函数、类、常量</h2><h3 id="输入校验原则"><a href="#输入校验原则" class="headerlink" title="输入校验原则"></a>输入校验原则</h3><p><img src="/../images/1745397201823-image.png" alt="alt text"></p>
+<p>如上是两个函数单板的模型，首先熟悉一下相关的名词</p>
+<ul>
+<li>单板：一个函数或者一个类</li>
+<li>.so文件：shared object file，这是Unix下的动态链接库，大概类似于windows下的dll</li>
+</ul>
+<p>大概意思是：</p>
+<blockquote>
+<p>外部数据输入（箭头①） 需要进行严格的校验，<strong>防止恶意数据注入</strong>。<br>内部数据传递（箭头②、④、⑤） 也需要进行适当的校验，确保数据的一致性和安全性。<br>应用层与内核层交互（箭头③） 更加需要严谨的校验机制，<strong>避免因数据问题导致系统崩溃或被攻击</strong>。</p>
+</blockquote>
+<p>c++中常见的函数输入校验：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">devide</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> std::<span class="built_in">runtime_error</span>(<span class="string">&quot;Divide by zero&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a / b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="合理选择输入输出参数"><a href="#合理选择输入输出参数" class="headerlink" title="合理选择输入输出参数"></a>合理选择输入输出参数</h3><p>对于输入参数</p>
+<ul>
+<li>拷贝代价高，pass by reference</li>
+<li>拷贝代价低，pass by value</li>
+</ul>
+<h2 id="对于返回参数"><a href="#对于返回参数" class="headerlink" title="对于返回参数"></a>对于返回参数</h2><h2 id="4-2-枚举、声明与定义"><a href="#4-2-枚举、声明与定义" class="headerlink" title="4.2 枚举、声明与定义"></a>4.2 枚举、声明与定义</h2><h2 id="4-3-类型转换、整数运算"><a href="#4-3-类型转换、整数运算" class="headerlink" title="4.3 类型转换、整数运算"></a>4.3 类型转换、整数运算</h2><h2 id="4-4-表达式、语句"><a href="#4-4-表达式、语句" class="headerlink" title="4.4 表达式、语句"></a>4.4 表达式、语句</h2><h2 id="4-5-资源管理、错误处理"><a href="#4-5-资源管理、错误处理" class="headerlink" title="4.5 资源管理、错误处理"></a>4.5 资源管理、错误处理</h2><h2 id="4-6-模板与泛型编程、并发与并行"><a href="#4-6-模板与泛型编程、并发与并行" class="headerlink" title="4.6 模板与泛型编程、并发与并行"></a>4.6 模板与泛型编程、并发与并行</h2><h2 id="4-7-预处理、头文件与源文件"><a href="#4-7-预处理、头文件与源文件" class="headerlink" title="4.7 预处理、头文件与源文件"></a>4.7 预处理、头文件与源文件</h2><h2 id="4-8-标准库"><a href="#4-8-标准库" class="headerlink" title="4.8 标准库"></a>4.8 标准库</h2><h1 id="5-继承自C语言编程规范条款款"><a href="#5-继承自C语言编程规范条款款" class="headerlink" title="5. 继承自C语言编程规范条款款"></a>5. 继承自C语言编程规范条款款</h1>]]></content>
+      <categories>
+        <category>软件雏鹰计划</category>
+      </categories>
+      <tags>
+        <tag>cpp</tag>
+        <tag>编程规范</tag>
+        <tag>华为</tag>
       </tags>
   </entry>
 </search>
