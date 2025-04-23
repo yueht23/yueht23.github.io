@@ -21,28 +21,326 @@
   <entry>
     <title>华为入职培训-C++语言编程规范</title>
     <url>/2025/04/22/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-C-%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<h2 id="课程概述"><a href="#课程概述" class="headerlink" title="课程概述"></a>课程概述</h2><p>本文是软件雏鹰计划（C++版）的第一章：C++语言编程规范的学习笔记。</p>
-<h3 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h3><ol>
-<li>C++基本语法规范</li>
-<li>函数编写规范</li>
-<li>指针使用规范</li>
-<li>内存管理规范</li>
-<li>代码风格规范</li>
-</ol>
-<h3 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h3><ul>
-<li>掌握华为C++编程规范</li>
-<li>理解并应用最佳实践</li>
-<li>提高代码质量和可维护性</li>
+    <content><![CDATA[<h1 id="1-课程简介"><a href="#1-课程简介" class="headerlink" title="1. 课程简介"></a>1. 课程简介</h1><p>视频中说可以在公司内网下载，在互联网上找到一个版本<a href="https://blog.csdn.net/yaoming168/article/details/136063619">华为C++语言编程规范</a></p>
+<h1 id="2-引言"><a href="#2-引言" class="headerlink" title="2. 引言"></a>2. 引言</h1><p>常见的c++中的未定义行为</p>
+<ul>
+<li>整数除以0</li>
+<li>有符号的整数溢出</li>
+<li>访问越界数组</li>
+<li>使用未初始化的变量</li>
+<li>越界访问</li>
+<li>使用<code>new T[n]</code>分配数组，却用delete不带[]释放<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>* arr = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>];  <span class="comment">// 分配10个int的空间</span></span><br><span class="line"><span class="keyword">delete</span> arr;              <span class="comment">// 错误！应该用delete[] arr</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="详细内容"><a href="#详细内容" class="headerlink" title="详细内容"></a>详细内容</h2><p>（这里添加具体的学习笔记内容）</p>
-]]></content>
+<p>关于指针，优先使用<strong>引用和智能指针</strong></p>
+<h1 id="3-代码风格"><a href="#3-代码风格" class="headerlink" title="3. 代码风格"></a>3. 代码风格</h1><p>主要看项目组用啥命名风格，不推荐匈牙利</p>
+<h1 id="4-编程实践"><a href="#4-编程实践" class="headerlink" title="4. 编程实践"></a>4. 编程实践</h1><h2 id="4-1-函数、类、常量"><a href="#4-1-函数、类、常量" class="headerlink" title="4.1 函数、类、常量"></a>4.1 函数、类、常量</h2><h3 id="输入校验原则"><a href="#输入校验原则" class="headerlink" title="输入校验原则"></a>输入校验原则</h3><p><img src="/../images/image-2.png" alt="alt text"></p>
+<p>如上是两个函数单板的模型，首先熟悉一下相关的名词</p>
+<ul>
+<li>单板：一个函数或者一个类</li>
+<li>.so文件：shared object file，这是Unix下的动态链接库，大概类似于windows下的dll</li>
+</ul>
+<p>大概意思是：</p>
+<blockquote>
+<p>外部数据输入（箭头①） 需要进行严格的校验，<strong>防止恶意数据注入</strong>。<br>内部数据传递（箭头②、④、⑤） 也需要进行适当的校验，确保数据的一致性和安全性。<br>应用层与内核层交互（箭头③） 更加需要严谨的校验机制，<strong>避免因数据问题导致系统崩溃或被攻击</strong>。</p>
+</blockquote>
+<p>c++中常见的函数输入校验：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">devide</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> std::<span class="built_in">runtime_error</span>(<span class="string">&quot;Divide by zero&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a / b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="合理选择输入输出参数"><a href="#合理选择输入输出参数" class="headerlink" title="合理选择输入输出参数"></a>合理选择输入输出参数</h3><p>对于输入参数</p>
+<ul>
+<li>拷贝代价高，pass by reference</li>
+<li>拷贝代价低，pass by value</li>
+</ul>
+<h2 id="对于返回参数"><a href="#对于返回参数" class="headerlink" title="对于返回参数"></a>对于返回参数</h2><h2 id="4-2-枚举、声明与定义"><a href="#4-2-枚举、声明与定义" class="headerlink" title="4.2 枚举、声明与定义"></a>4.2 枚举、声明与定义</h2><h2 id="4-3-类型转换、整数运算"><a href="#4-3-类型转换、整数运算" class="headerlink" title="4.3 类型转换、整数运算"></a>4.3 类型转换、整数运算</h2><h2 id="4-4-表达式、语句"><a href="#4-4-表达式、语句" class="headerlink" title="4.4 表达式、语句"></a>4.4 表达式、语句</h2><h2 id="4-5-资源管理、错误处理"><a href="#4-5-资源管理、错误处理" class="headerlink" title="4.5 资源管理、错误处理"></a>4.5 资源管理、错误处理</h2><h2 id="4-6-模板与泛型编程、并发与并行"><a href="#4-6-模板与泛型编程、并发与并行" class="headerlink" title="4.6 模板与泛型编程、并发与并行"></a>4.6 模板与泛型编程、并发与并行</h2><h2 id="4-7-预处理、头文件与源文件"><a href="#4-7-预处理、头文件与源文件" class="headerlink" title="4.7 预处理、头文件与源文件"></a>4.7 预处理、头文件与源文件</h2><h2 id="4-8-标准库"><a href="#4-8-标准库" class="headerlink" title="4.8 标准库"></a>4.8 标准库</h2><h1 id="5-继承自C语言编程规范条款款"><a href="#5-继承自C语言编程规范条款款" class="headerlink" title="5. 继承自C语言编程规范条款款"></a>5. 继承自C语言编程规范条款款</h1>]]></content>
       <categories>
         <category>软件雏鹰计划</category>
       </categories>
       <tags>
-        <tag>C++</tag>
+        <tag>cpp</tag>
         <tag>编程规范</tag>
         <tag>华为</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>labuladong-入门-编程语言基础及练习</title>
+    <url>/2025/04/23/labuladong-%E5%85%A5%E9%97%A8-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%8F%8A%E7%BB%83%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本笔记是主要通过学习<a href="https://labuladong.online/algo/">labuladong的算法笔记</a>, 开始时间是2025&#x2F;03&#x2F;31。</p>
+<h1 id="入门：编程语言基础及练习"><a href="#入门：编程语言基础及练习" class="headerlink" title="入门：编程语言基础及练习"></a><a href="https://labuladong.online/algo/menu/">入门：编程语言基础及练习</a></h1><blockquote>
+<p>本章就主要看了一下C++，刷了如下的题单<br><a href="https://leetcode.cn/problems/two-sum/">1.两数之和</a><br><a href="https://leetcode.cn/problems/contains-duplicate/">217.存在重复元素</a><br><a href="https://leetcode.cn/problems/single-number/">136.只出现一次的数字</a><br><a href="https://leetcode.cn/problems/valid-parentheses/">20.有效的括号</a><br><a href="https://leetcode.cn/problems/time-needed-to-buy-tickets/">2073. 买票需要的时间。</a></p>
+</blockquote>
+<h2 id="C-语言基础"><a href="#C-语言基础" class="headerlink" title="C++ 语言基础"></a><a href="https://labuladong.online/algo/programming-language-basic/cpp/">C++ 语言基础</a></h2><p>重点是看了一下C++的语法</p>
+<h3 id="Vector-动态数组"><a href="#Vector-动态数组" class="headerlink" title="Vector 动态数组"></a>Vector 动态数组</h3><p>常见的方法汇总为表格，以<code>vector&lt;int&gt; nums&#123;0,1,2,3,4,5&#125;</code>为例：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>nums.size()</code></td>
+<td>获取数组大小</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.empty()</code></td>
+<td>判断数组是否为空</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.push_back(6)</code></td>
+<td>在末尾添加元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.pop_back()</code></td>
+<td>删除末尾元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.front()</code></td>
+<td>获取第一个元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.back()</code></td>
+<td>获取最后一个元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.insert(nums.begin() + 2, 10)</code></td>
+<td>在指定位置插入元素</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>nums.erase(nums.begin() + 2)</code></td>
+<td>删除指定位置元素</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>swap(nums[0], nums[1])</code></td>
+<td>交换两个元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.begin()</code></td>
+<td>获取迭代器</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.end()</code></td>
+<td>获取迭代器</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+<p>对于数组的遍历</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 下角标遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line"> cout &lt;&lt; nums[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 迭代器遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = nums.<span class="built_in">begin</span>(); it != nums.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 范围for遍历, 类似于python的for num in nums</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> num : nums) &#123;</span><br><span class="line"> cout &lt;&lt; num &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="双链表list"><a href="#双链表list" class="headerlink" title="双链表list"></a>双链表list</h3><p>常见的方法汇总为表格，以<code>list&lt;int&gt; lst&#123;0,1,2,3,4,5&#125;</code>为例：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>lst.size()</code></td>
+<td>获取链表大小</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>lst.empty()</code></td>
+<td>判断链表是否为空</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>lst.push_back(6)</code></td>
+<td>在末尾添加元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>lst.push_front(6)</code></td>
+<td>在头部添加元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>lst.pop_back()</code></td>
+<td>删除末尾元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>lst.pop_front()</code></td>
+<td>删除头部元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>auto it = lst.begin();advance(it, 2); lst.insert(it, 10)</code></td>
+<td>在指定位置插入元素</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>auto it = lst.begin();advance(it, 2); lst.erase(it)</code></td>
+<td>删除指定位置元素</td>
+<td>O(n)</td>
+</tr>
+</tbody></table>
+<p>对于链表的遍历</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 迭代器遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = lst.<span class="built_in">begin</span>(); it != lst.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 范围for遍历, 类似于python的for num in lst</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> val : lst) &#123;</span><br><span class="line"> cout &lt;&lt; val &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="队列queue与栈stack"><a href="#队列queue与栈stack" class="headerlink" title="队列queue与栈stack"></a>队列queue与栈stack</h3><p>queue和stack都是基于双链表实现的，都支持push和pop操作，push都是从尾部添加元素，queue的pop是从头部删除元素，stack的pop是从尾部删除元素，且stack支持top操作，获取栈顶元素。两个的遍历方式是一样的，都是使用迭代器遍历。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 队列的遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = que.<span class="built_in">begin</span>(); it != que.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 栈的遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = sta.<span class="built_in">begin</span>(); it != sta.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="哈希表-unordered-map"><a href="#哈希表-unordered-map" class="headerlink" title="哈希表 unordered_map"></a>哈希表 unordered_map</h3><p>以<code>unordered_map&lt;int, string&gt; hashmap&#123;&#123;1, "one"&#125;, &#123;2, "two"&#125;, &#123;3, "three"&#125;&#125;;</code>为例：<br>常见的方法汇总为表格：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>hashmap.size()</code></td>
+<td>获取哈希表大小</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashmap.empty()</code></td>
+<td>判断哈希表是否为空</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashmap[4]</code></td>
+<td>获取指定key的值，此key不存在时会插入一个key为4，值为””的元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashmap.contains(4)</code></td>
+<td>判断key是否存在</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashmap[&quot;5&quot;]=&quot;five&quot;</code></td>
+<td>插入元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashmap.erase(4)</code></td>
+<td>删除指定key的元素</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+<p>对于哈希表的遍历</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 键值对遍历，pair是一个pair类型的值，拷贝了一份，效率低</span></span><br><span class="line"><span class="keyword">for</span> （<span class="keyword">auto</span> pair : hashmap） &#123;</span><br><span class="line"> cout &lt;&lt; pair.first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 键值对遍历， &amp;pair是一个pair类型的引用，避免拷贝，推荐使用</span></span><br><span class="line"><span class="keyword">for</span> （<span class="keyword">auto</span> &amp;pair : hashmap） &#123;</span><br><span class="line"> cout &lt;&lt; pair.first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 键值对遍历， const auto &amp;pair是一个pair类型的引用，避免拷贝，且pair是常量，不能修改</span></span><br><span class="line"><span class="keyword">for</span> （<span class="type">const</span> <span class="keyword">auto</span> &amp;pair : hashmap） &#123;</span><br><span class="line"> cout &lt;&lt; pair.first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line"> <span class="comment">// pair.first = 4; // 错误，pair是常量，不能修改</span></span><br><span class="line"> <span class="comment">// pair.second = &quot;xour&quot;; // 错误，pair是常量，不能修改</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用结构化绑定</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; [key, value] : umap) &#123;</span><br><span class="line"> std::cout &lt;&lt; <span class="string">&quot;Key: &quot;</span> &lt;&lt; key &lt;&lt; <span class="string">&quot;, Value: &quot;</span> &lt;&lt; value &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用迭代器遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = hashmap.<span class="built_in">begin</span>(); it != hashmap.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; it-&gt;first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="哈希集合unordered-set"><a href="#哈希集合unordered-set" class="headerlink" title="哈希集合unordered_set"></a>哈希集合unordered_set</h3><p>以<code>unordered_set&lt;int&gt; hashset&#123;1, 2, 3, 4, 5&#125;;</code>为例：<br>常见的方法汇总为表格：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>hashset.size()</code></td>
+<td>获取哈希表大小</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashset.empty()</code></td>
+<td>判断哈希表是否为空</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code> </code>hashset.contains(4)&#96;</td>
+<td>判断key是否存在</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashset.insert(6)</code></td>
+<td>插入元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashset.erase(4)</code></td>
+<td>删除指定key的元素</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+<p>利用vector构造unordered_set</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; nums&#123;<span class="number">1</span>,<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="function">unordered_set&lt;<span class="type">int</span>&gt; <span class="title">hashset</span><span class="params">(nums.begin(), nums.end())</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+<p>对于哈希集合的遍历</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;element : hashset) &#123;</span><br><span class="line"> cout &lt;&lt; element &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="字符串string"><a href="#字符串string" class="headerlink" title="字符串string"></a>字符串string</h3><p>C++中字符串本质上是一个动态数组，底层实现是一个字符数组，且字符串的长度是动态的，可以随时改变。<br>常见的方法汇总为表格：以<code>string str = &quot;hello world&quot;;</code>为例：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>str.size()</code></td>
+<td>获取字符串大小</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>str[0]</code></td>
+<td>获取第一个字符</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>s1.insert(0, &quot;x&quot;)</code></td>
+<td>在指定位置插入字符串</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>s1.erase(1, 2)</code></td>
+<td>从第1个位置开始删除2个字符</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>s1.replace(0, 2, &quot;xx&quot;)</code></td>
+<td>从第0个位置开始替换2个字符</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>s1.find(&quot;lo&quot;)</code></td>
+<td>查找字符串，返回第一个位置</td>
+<td>O(n)</td>
+</tr>
+</tbody></table>
+<p>遍历字符串</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 下标遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; str.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line"> cout &lt;&lt; str[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 迭代器遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = str.<span class="built_in">begin</span>(); it != str.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 范围for遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> ch : str) &#123;</span><br><span class="line"> cout &lt;&lt; ch &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="Pass-by-value与pass-by-reference"><a href="#Pass-by-value与pass-by-reference" class="headerlink" title="Pass-by-value与pass-by-reference"></a>Pass-by-value与pass-by-reference</h3><p>值传递和引用传递。值传递是将参数的值复制一份传递给函数，函数内部对参数的修改不会影响外部变量；引用传递是将参数的地址传递给函数，函数内部对参数的修改会影响外部变量。<strong>如果是传递基本类型，比如 int、bool 等，用传值比较多，因为这类数据一般不需要在函数内部修改，而且复制的开销很小。如果是传递容器数据结构，比如 vector、unordered_map 等，用传引用比较多，因为可以避免复制数据副本的开销，而且容器一般需要在函数内部修改。</strong></p>
+]]></content>
+      <categories>
+        <category>labuladong算法笔记</category>
+      </categories>
+      <tags>
+        <tag>cpp</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
 </search>
