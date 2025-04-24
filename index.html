@@ -3046,7 +3046,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-04-23 19:52:15" itemprop="dateModified" datetime="2025-04-23T19:52:15+08:00">2025-04-23</time>
+                <time title="修改时间：2025-04-24 21:03:01" itemprop="dateModified" datetime="2025-04-24T21:03:01+08:00">2025-04-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -3117,7 +3117,23 @@
 <h3 id="作用域最小"><a href="#作用域最小" class="headerlink" title="作用域最小"></a>作用域最小</h3><p>避免使用全局变量，全局变量会污染命名空间，导致代码的可读性降低，也容易产生命名冲突</p>
 <h2 id="4-3-类型转换、整数运算"><a href="#4-3-类型转换、整数运算" class="headerlink" title="4.3 类型转换、整数运算"></a>4.3 类型转换、整数运算</h2><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>用c++风格的类型转换，而不是c风格的类型转换。一般是是<code>dynamic_cast</code>，<code>static_cast</code>，<code>reinterpret_cast</code>，<code>const_cast</code>等的语法，其中<code>cast</code>有浇铸，铸造的意思</p>
 <h3 id="整数运算"><a href="#整数运算" class="headerlink" title="整数运算"></a>整数运算</h3><p>注意整数的溢出和回绕的问题</p>
-<h2 id="4-4-表达式、语句"><a href="#4-4-表达式、语句" class="headerlink" title="4.4 表达式、语句"></a>4.4 表达式、语句</h2><h2 id="4-5-资源管理、错误处理"><a href="#4-5-资源管理、错误处理" class="headerlink" title="4.5 资源管理、错误处理"></a>4.5 资源管理、错误处理</h2><h2 id="4-6-模板与泛型编程、并发与并行"><a href="#4-6-模板与泛型编程、并发与并行" class="headerlink" title="4.6 模板与泛型编程、并发与并行"></a>4.6 模板与泛型编程、并发与并行</h2><h2 id="4-7-预处理、头文件与源文件"><a href="#4-7-预处理、头文件与源文件" class="headerlink" title="4.7 预处理、头文件与源文件"></a>4.7 预处理、头文件与源文件</h2><h2 id="4-8-标准库"><a href="#4-8-标准库" class="headerlink" title="4.8 标准库"></a>4.8 标准库</h2><h1 id="5-继承自C语言编程规范条款款"><a href="#5-继承自C语言编程规范条款款" class="headerlink" title="5. 继承自C语言编程规范条款款"></a>5. 继承自C语言编程规范条款款</h1>
+<h2 id="4-4-表达式、语句"><a href="#4-4-表达式、语句" class="headerlink" title="4.4 表达式、语句"></a>4.4 表达式、语句</h2><h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><ul>
+<li>比较的时候，左边要放常量，右边放变量，<code>if (MAX == value)</code></li>
+<li>副作用不要放到逻辑判断中，例如<code>if (a == 0 || b ++ &gt; 1)</code> 这种是不允许的</li>
+<li>多使用<code>static_assert</code>在编译的时候检查，例如<code>static_assert(sizeof(int) == 4, &quot;int is not 4 bytes&quot;);</code></li>
+<li><code>int</code>类似不能单独作为判断依据，例如如下是不允许的<code>int a = 0; if (a) &#123;xxx&#125;</code></li>
+</ul>
+<h2 id="4-5-资源管理、错误处理"><a href="#4-5-资源管理、错误处理" class="headerlink" title="4.5 资源管理、错误处理"></a>4.5 资源管理、错误处理</h2><h3 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a>资源管理</h3><p>需要遵守RAII, Resource Acquisition Is Initialization,其主要的含义是</p>
+<ul>
+<li>初始化，初始化是资源的分配 </li>
+<li>析构，析构是资源的释放<br>常见的对有<code>new/delete</code>操作的封装，<code>fopen/fclose</code>等</li>
+</ul>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>有的地方是不能抛出异常的，例如：</p>
+<ul>
+<li>析构函数，析构函数不能抛出异常</li>
+<li>要用<code>noexcept</code>修饰，例如<code>void foo() noexcept</code>表示这个函数不会抛出异常</li>
+</ul>
+<h2 id="4-6-模板与泛型编程、并发与并行"><a href="#4-6-模板与泛型编程、并发与并行" class="headerlink" title="4.6 模板与泛型编程、并发与并行"></a>4.6 模板与泛型编程、并发与并行</h2><h2 id="4-7-预处理、头文件与源文件"><a href="#4-7-预处理、头文件与源文件" class="headerlink" title="4.7 预处理、头文件与源文件"></a>4.7 预处理、头文件与源文件</h2><h2 id="4-8-标准库"><a href="#4-8-标准库" class="headerlink" title="4.8 标准库"></a>4.8 标准库</h2><h1 id="5-继承自C语言编程规范条款款"><a href="#5-继承自C语言编程规范条款款" class="headerlink" title="5. 继承自C语言编程规范条款款"></a>5. 继承自C语言编程规范条款款</h1>
       
     </div>
 
