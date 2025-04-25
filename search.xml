@@ -4,7 +4,7 @@
     <title>Hello World</title>
     <url>/2025/04/22/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
@@ -16,6 +16,52 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h1 id="测试代码是否可以顺利渲染"><a href="#测试代码是否可以顺利渲染" class="headerlink" title="测试代码是否可以顺利渲染"></a>测试代码是否可以顺利渲染</h1><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello word&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">greeting</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Hello from JavaScript!&quot;</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello World&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打印 Hello World</span></span><br><span class="line">print<span class="punctuation">(</span><span class="string">&quot;Hello World&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个简单的数据框</span></span><br><span class="line">data <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span></span><br><span class="line">  name <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;Alice&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Bob&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Charlie&quot;</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">  age <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">25</span><span class="punctuation">,</span> <span class="number">30</span><span class="punctuation">,</span> <span class="number">35</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 ggplot2 绘制简单的散点图</span></span><br><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line">ggplot<span class="punctuation">(</span>data<span class="punctuation">,</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> name<span class="punctuation">,</span> y <span class="operator">=</span> age<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  geom_point<span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  labs<span class="punctuation">(</span>title <span class="operator">=</span> <span class="string">&quot;年龄分布&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h1><h2 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h2><p>$E&#x3D;mc^2$ and $\exists x \in X, \forall y \in Y, x \neq y$</p>
+<h2 id="行间公式"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式</h2><p>$$<br>\int_0^\infty \frac{x^3}{e^x} , dx &#x3D; \frac{\pi^4}{15}<br>$$</p>
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><table>
+<thead>
+<tr>
+<th>列1</th>
+<th>列2</th>
+<th>列3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+</tbody></table>
+<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><h2 id="本地图片"><a href="#本地图片" class="headerlink" title="本地图片"></a>本地图片</h2><p><img src="/../images/image-1.png" alt="alt text"></p>
+<h2 id="网络图片"><a href="#网络图片" class="headerlink" title="网络图片"></a>网络图片</h2><p><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="alt text"></p>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="https://www.google.com/">Google</a></p>
+<h1 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h1><pre class="mermaid">graph TD
+    A --> B
+    B --> C
+    C --> A</pre>
+
 ]]></content>
   </entry>
   <entry>
@@ -1853,57 +1899,6 @@
         <tag>编程规范</tag>
         <tag>华为</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2025/04/23/test/</url>
-    <content><![CDATA[<h1 id="测试代码是否可以顺利渲染"><a href="#测试代码是否可以顺利渲染" class="headerlink" title="测试代码是否可以顺利渲染"></a>测试代码是否可以顺利渲染</h1><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello word&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">greeting</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Hello from JavaScript!&quot;</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello World&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打印 Hello World</span></span><br><span class="line">print<span class="punctuation">(</span><span class="string">&quot;Hello World&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个简单的数据框</span></span><br><span class="line">data <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span></span><br><span class="line">  name <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;Alice&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Bob&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Charlie&quot;</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">  age <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">25</span><span class="punctuation">,</span> <span class="number">30</span><span class="punctuation">,</span> <span class="number">35</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 ggplot2 绘制简单的散点图</span></span><br><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line">ggplot<span class="punctuation">(</span>data<span class="punctuation">,</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> name<span class="punctuation">,</span> y <span class="operator">=</span> age<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  geom_point<span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  labs<span class="punctuation">(</span>title <span class="operator">=</span> <span class="string">&quot;年龄分布&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h1><h2 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h2><p>$E&#x3D;mc^2$ and $\exists x \in X, \forall y \in Y, x \neq y$</p>
-<h2 id="行间公式"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式</h2><p>$$<br>\int_0^\infty \frac{x^3}{e^x} , dx &#x3D; \frac{\pi^4}{15}<br>$$</p>
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><table>
-<thead>
-<tr>
-<th>列1</th>
-<th>列2</th>
-<th>列3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-</tr>
-<tr>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-</tr>
-<tr>
-<td>7</td>
-<td>8</td>
-<td>9</td>
-</tr>
-</tbody></table>
-<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><h2 id="本地图片"><a href="#本地图片" class="headerlink" title="本地图片"></a>本地图片</h2><p><img src="/../images/image-1.png" alt="alt text"></p>
-<h2 id="网络图片"><a href="#网络图片" class="headerlink" title="网络图片"></a>网络图片</h2><p><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="alt text"></p>
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="https://www.google.com/">Google</a></p>
-<h1 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h1><pre class="mermaid">graph TD
-    A --> B
-    B --> C
-    C --> A</pre>
-
-]]></content>
   </entry>
   <entry>
     <title>labuladong-第零章-核心刷题框架汇总</title>
