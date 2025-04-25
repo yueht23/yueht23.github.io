@@ -299,6 +299,150 @@
       </tags>
   </entry>
   <entry>
+    <title>labuladong-第二章-经典暴力搜索算法</title>
+    <url>/2025/04/23/labuladong-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%BB%8F%E5%85%B8%E6%9A%B4%E5%8A%9B%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<!-- # [第二章、经典暴力搜索算法](https://labuladong.online/algo/menu/braute-force-search/)
+## [DFS/回溯算法](https://labuladong.online/algo/menu/dfs/)
+### [回溯算法解题套路框架](https://labuladong.online/algo/essential-technique/backtrack-framework/)
+### [回溯算法实践：数独和 N 皇后问题](https://labuladong.online/algo/practice-in-action/sudoku-nqueue/)
+### [回溯算法秒杀所有排列/组合/子集问题](https://labuladong.online/algo/essential-technique/permutation-combination-subset-all-in-one/)
+### [球盒模型：回溯算法穷举的两种视角](https://labuladong.online/algo/practice-in-action/two-views-of-backtrack/)
+### [解答回溯算法/DFS算法的若干疑问](https://labuladong.online/algo/essential-technique/backtrack-vs-dfs/)
+### [一文秒杀所有岛屿题目](https://labuladong.online/algo/frequency-interview/island-dfs-summary/)
+### [回溯算法实践：括号生成](https://labuladong.online/algo/practice-in-action/generate-parentheses/)
+### [回溯算法实践：集合划分](https://labuladong.online/algo/practice-in-action/partition-to-k-equal-sum-subsets/)
+### [【强化练习】回溯算法经典习题 I](https://labuladong.online/algo/problem-set/backtrack-i/)
+### [【强化练习】回溯算法经典习题 II](https://labuladong.online/algo/problem-set/backtrack-ii/)
+### [【强化练习】回溯算法经典习题 III](https://labuladong.online/algo/problem-set/backtrack-iii/)
+
+## [BFS 算法](https://labuladong.online/algo/menu/bfs/)
+### [BFS 算法解题套路框架](https://labuladong.online/algo/essential-technique/bfs-framework/)
+### [【强化练习】BFS 经典习题 I](https://labuladong.online/algo/problem-set/bfs/)
+### [【强化练习】BFS 经典习题 II](https://labuladong.online/algo/problem-set/bfs-ii/)
+### [正在更新 ing](https://labuladong.online/algo/intro/updating/) -->
+
+
+
+
+<!-- 
+# [第三章、经典动态规划算法](https://labuladong.online/algo/menu/dp/)
+## [动态规划基本技巧](https://labuladong.online/algo/menu/dp-basic/)
+### [动态规划解题套路框架](https://labuladong.online/algo/essential-technique/dynamic-programming-framework/)
+### [动态规划设计：最长递增子序列](https://labuladong.online/algo/dynamic-programming/longest-increasing-subsequence/)
+### [base case 和备忘录的初始值怎么定？](https://labuladong.online/algo/dynamic-programming/memo-fundamental/)
+### [动态规划穷举的两种视角](https://labuladong.online/algo/dynamic-programming/two-views-of-dp/)
+### [动态规划和回溯算法的思维转换](https://labuladong.online/algo/dynamic-programming/word-break/)
+### [对动态规划进行降维打击](https://labuladong.online/algo/dynamic-programming/space-optimization/)
+### [最优子结构原理和 dp 数组遍历方向](https://labuladong.online/algo/dynamic-programming/faq-summary/)
+
+## [子序列类型问题](https://labuladong.online/algo/menu/subsequence/)
+### [经典动态规划：编辑距离](https://labuladong.online/algo/dynamic-programming/edit-distance/)
+### [动态规划设计：最大子数组](https://labuladong.online/algo/dynamic-programming/maximum-subarray/)
+### [经典动态规划：最长公共子序列](https://labuladong.online/algo/dynamic-programming/longest-common-subsequence/)
+### [动态规划之子序列问题解题模板](https://labuladong.online/algo/dynamic-programming/subsequence-problem/)
+
+## [背包类型问题](https://labuladong.online/algo/menu/knapsack/)
+### [经典动态规划：0-1 背包问题](https://labuladong.online/algo/dynamic-programming/knapsack1/)
+### [经典动态规划：子集背包问题](https://labuladong.online/algo/dynamic-programming/knapsack2/)
+### [经典动态规划：完全背包问题](https://labuladong.online/algo/dynamic-programming/knapsack3/)
+### [背包问题的变体：目标和](https://labuladong.online/algo/dynamic-programming/target-sum/)
+
+## [用动态规划玩游戏](https://labuladong.online/algo/menu/dp-game/)
+### [动态规划之最小路径和](https://labuladong.online/algo/dynamic-programming/minimum-path-sum/)
+### [动态规划帮我通关了《魔塔》](https://labuladong.online/algo/dynamic-programming/magic-tower/)
+### [动态规划帮我通关了《辐射4》](https://labuladong.online/algo/dynamic-programming/freedom-trail/)
+### [旅游省钱大法：加权最短路径](https://labuladong.online/algo/dynamic-programming/cheap-travel/)
+### [经典动态规划：正则表达式](https://labuladong.online/algo/dynamic-programming/regular-expression-matching/)
+### [经典动态规划：高楼扔鸡蛋](https://labuladong.online/algo/dynamic-programming/egg-drop/)
+### [经典动态规划：戳气球](https://labuladong.online/algo/dynamic-programming/burst-balloons/)
+### [经典动态规划：博弈问题](https://labuladong.online/algo/dynamic-programming/game-theory/)
+### [一个方法团灭 LeetCode 打家劫舍问题](https://labuladong.online/algo/dynamic-programming/house-robber/)
+### [一个方法团灭 LeetCode 股票买卖问题](https://labuladong.online/algo/dynamic-programming/stock-problem-summary/)
+
+## [贪心类型问题](https://labuladong.online/algo/menu/greedy/)
+### [贪心算法解题套路框架](https://labuladong.online/algo/essential-technique/greedy/)
+### [老司机加油算法](https://labuladong.online/algo/frequency-interview/gas-station-greedy/)
+### [贪心算法之区间调度问题](https://labuladong.online/algo/frequency-interview/interval-scheduling/)
+### [扫描线技巧：安排会议室](https://labuladong.online/algo/frequency-interview/scan-line-technique/)
+### [剪视频剪出一个贪心算法](https://labuladong.online/algo/frequency-interview/cut-video/) -->
+
+
+
+
+
+
+<!-- # [第四章、其他常见算法技巧](https://labuladong.online/algo/menu/other/)
+## [数学运算技巧](https://labuladong.online/algo/menu/math/)
+### [一行代码就能解决的算法题](https://labuladong.online/algo/frequency-interview/one-line-solutions/)
+### [常用的位操作](https://labuladong.online/algo/frequency-interview/bitwise-operation/)
+### [谈谈游戏中的随机算法](https://labuladong.online/algo/frequency-interview/random-algorithm/)
+### [讲两道常考的阶乘算法题](https://labuladong.online/algo/frequency-interview/factorial-problems/)
+### [如何高效寻找素数](https://labuladong.online/algo/frequency-interview/print-prime-number/)
+### [如何高效进行模幂运算](https://labuladong.online/algo/frequency-interview/quick-power/)
+### [如何同时寻找缺失和重复的元素](https://labuladong.online/algo/frequency-interview/mismatch-set/)
+### [几个反直觉的概率问题](https://labuladong.online/algo/frequency-interview/probability-problem/)
+### [【强化练习】数学技巧相关习题](https://labuladong.online/algo/problem-set/math-tricks/)
+
+## [经典面试题](https://labuladong.online/algo/menu/interview/)
+### [算法笔试「骗分」套路](https://labuladong.online/algo/other-skills/tips-in-exam/)
+### [如何高效解决接雨水问题](https://labuladong.online/algo/frequency-interview/trapping-rain-water/)
+### [一文秒杀所有丑数系列问题](https://labuladong.online/algo/frequency-interview/ugly-number-summary/)
+### [一个方法解决三道区间问题](https://labuladong.online/algo/practice-in-action/interval-problem-summary/)
+### [谁能想到，斗地主也能玩出算法](https://labuladong.online/algo/practice-in-action/split-array-into-consecutive-subsequences/)
+### [烧饼排序算法](https://labuladong.online/algo/frequency-interview/pancake-sorting/)
+### [字符串乘法计算](https://labuladong.online/algo/practice-in-action/multiply-strings/)
+### [如何判定完美矩形](https://labuladong.online/algo/frequency-interview/perfect-rectangle/) -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>labuladong算法笔记</category>
+      </categories>
+      <tags>
+        <tag>cpp</tag>
+        <tag>数据结构</tag>
+        <tag>排序算法</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>labuladong-基础-数据结构及排序精讲</title>
     <url>/2025/04/23/labuladong-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E6%8E%92%E5%BA%8F%E7%B2%BE%E8%AE%B2/</url>
     <content><![CDATA[<h1 id="基础：数据结构及排序精讲"><a href="#基础：数据结构及排序精讲" class="headerlink" title="基础：数据结构及排序精讲"></a><a href="https://labuladong.online/algo/menu/quick-start/">基础：数据结构及排序精讲</a></h1><h2 id="手把手带你实现动态数组"><a href="#手把手带你实现动态数组" class="headerlink" title="手把手带你实现动态数组"></a><a href="https://labuladong.online/algo/menu/dynamic-array/">手把手带你实现动态数组</a></h2><p>以下是动态数组和静态数组的主要区别总结：</p>
@@ -1469,10 +1613,68 @@
 <li><p><a href="https://leetcode.cn/problems/longest-common-prefix/description/">Leetcode 14</a> 最长公共前缀<br>简单题</p>
 </li>
 </ul>
-<!-- 
-### [一个方法团灭 nSum 问题](https://labuladong.online/algo/practice-in-action/nsum/)
-### [【强化练习】数组双指针经典习题](https://labuladong.online/algo/problem-set/array-two-pointers/)
-### [小而美的算法技巧：前缀和数组](https://labuladong.online/algo/data-structure/prefix-sum/)
+<h3 id="一个方法团灭-nSum-问题"><a href="#一个方法团灭-nSum-问题" class="headerlink" title="一个方法团灭 nSum 问题"></a><a href="https://labuladong.online/algo/practice-in-action/nsum/">一个方法团灭 nSum 问题</a></h3><p>本篇的核心想法就是先实现<code>twoSumTarget(nums: List[int], target: int) -&gt; List[List[int]]:</code>这个函数，然后面对</p>
+<ul>
+<li>threeSumTarget，固定一个数字，更新target，然后调用twoSumTarget，得到结果，再把结果加到res中，最后返回res</li>
+<li>fourSumTarget，固定一个数字，更新target，然后调用threeSumTarget，得到结果，再把结果加到res中，最后返回res</li>
+<li>…</li>
+<li>nSumTarget，固定一个数字，更新target，然后调用n-1SumTarget，得到结果，再把结果加到res中，最后返回res</li>
+</ul>
+<p>接下来我们先实现最为简单的<code>twoSumTarget</code>,我们对此加以限制，<strong>即有且有且仅有一个解</strong>，直接排序+双指针：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">twoSumTarget</span>(<span class="params">nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]: </span><br><span class="line">    <span class="comment"># 有且有且仅有一个解，所以返回一个list[int]而不是List[List[int]]</span></span><br><span class="line">    nums.sort() <span class="comment"># 对此排序</span></span><br><span class="line">    l_idx, r_idx = <span class="number">0</span>, <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> l_idx &lt; r_idx:</span><br><span class="line">        left, right = nums[l_idx], nums[r_idx]</span><br><span class="line">        s = left + right</span><br><span class="line">        <span class="keyword">if</span> s == target:</span><br><span class="line">            <span class="keyword">return</span> [left, right]</span><br><span class="line">        <span class="keyword">elif</span> s &lt; target:</span><br><span class="line">            l_idx += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            r_idx -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> [] <span class="comment"># impossible</span></span><br></pre></td></tr></table></figure>
+
+
+<p>接下来，我们对于限制，稍加松弛，<strong>即可能有多个解</strong>，例如<code>nums = [1,1,1,2,2,3,3], target = 4</code>，存在答案<code>[[1,3],[2,2]]</code>,如果直接仿照上面双指针的写法，如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">twoSumTarget</span>(<span class="params">nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">    <span class="comment"># ❌!! 该方法不对，会陷入死循环</span></span><br><span class="line">    res = []</span><br><span class="line">    nums.sort()</span><br><span class="line">    l_idx, r_idx = <span class="number">0</span>, <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> l_idx &lt; r_idx:</span><br><span class="line">        left, right = nums[l_idx], nums[r_idx]</span><br><span class="line">        s = left + right</span><br><span class="line">        <span class="keyword">if</span> s == target:</span><br><span class="line">            res.append([left, right])</span><br><span class="line">        <span class="keyword">elif</span> s &lt; target:</span><br><span class="line">            l_idx += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            r_idx -= <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+
+<p>会陷入死循环，加入到res后，left，right都不变了。下面提供<strong>可能有多个解</strong>的<code>twoSumTarget</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">twoSumTarget</span>(<span class="params">nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">    <span class="comment"># ✔，该方法才是正确的可以解决多个解的2Sum问题</span></span><br><span class="line">    res = []</span><br><span class="line">    nums.sort()</span><br><span class="line">    l_idx, r_idx = <span class="number">0</span>, <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> l_idx &lt; r_idx:</span><br><span class="line">        left, right = nums[l_idx], nums[r_idx]</span><br><span class="line">        s = left + right</span><br><span class="line">        <span class="keyword">if</span> s == target:</span><br><span class="line">            res.append([left, right])</span><br><span class="line">            <span class="keyword">while</span> l_idx &lt; r_idx <span class="keyword">and</span> nums[l_idx] == left:</span><br><span class="line">                l_idx += <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> r_idx &gt; l_idx <span class="keyword">and</span> nums[r_idx] == right:</span><br><span class="line">                r_idx -= <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">elif</span> s &lt; target:</span><br><span class="line">            <span class="keyword">while</span> l_idx &lt; r_idx <span class="keyword">and</span> nums[l_idx] == left:</span><br><span class="line">                l_idx += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>：</span><br><span class="line">            <span class="keyword">while</span> r_idx &gt; l_idx <span class="keyword">and</span> nums[r_idx] == right:</span><br><span class="line">                r_idx -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<p>这样，<strong>松弛后可以支持多个解的2Sum问题就被解决了</strong>，现在对该算法的复杂度进行分析，其时间复杂度为O(nlogn + n) &#x3D; O(nlogn)</p>
+<hr>
+<p>接下来我们来看<code>threeSumTarget(nums: List[int], target: int) -&gt; List[List[int]]</code>此时我们已经完了了<code>twoSumTarget(nums: List[int], target: int) -&gt; List[List[int]]</code>,不难得出：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">threeSumTarget</span>(<span class="params">nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">    res = []</span><br><span class="line">    numms.sort()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># f_idx 第一个元素的下标，i.e. 每一个可行解都是[nums[f_idx],x,x]</span></span><br><span class="line">    f_idx = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> f_idx &lt; <span class="built_in">len</span>(nums):</span><br><span class="line">        first = nums[f_idx]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> pair <span class="keyword">in</span> twoSumTarget(nums[f_idx+<span class="number">1</span>:], target - first): <span class="comment"># 第2,3个元素：</span></span><br><span class="line">            res.append([first] + pair)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> f_idx &lt; <span class="built_in">len</span>(nums) <span class="keyword">and</span> nums[f_idx] == first:</span><br><span class="line">            f_idx += <span class="number">1</span> <span class="comment"># 跳过重复的元素</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<p>对其进行复杂度分析，其时间复杂度为O(nlogn + n*n) &#x3D; O(n^2)，注意此时已经排序好了，所以每次<code>twoSumTarget</code>的复杂度为O(n)</p>
+<hr>
+<p>接下来我们来看<code>fourSumTarget(nums: List[int], target: int) -&gt; List[List[int]]</code>此时我们已经完了了<code>threeSumTarget(nums: List[int], target: int) -&gt; List[List[int]]</code>,不难得出：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fourSumTarget</span>(<span class="params">nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">    res = []</span><br><span class="line">    nums.sort()</span><br><span class="line"></span><br><span class="line">    f_idx = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> f_idx &lt; <span class="built_in">len</span>(nums):</span><br><span class="line">        first = nums[f_idx]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> <span class="built_in">tuple</span> <span class="keyword">in</span> threeSumTarget(nums[f_idx+<span class="number">1</span>:], target - first): <span class="comment"># 第2,3,4个元素：</span></span><br><span class="line">            res.append([first] + <span class="built_in">tuple</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> f_idx &lt; <span class="built_in">len</span>(nums) <span class="keyword">and</span> nums[f_idx] == first:</span><br><span class="line">            f_idx += <span class="number">1</span> <span class="comment"># 跳过重复的元素</span></span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<p>可以明显看出其重叠子问题的结构，现在尝试使用递归的递归方法来实现<code>nSumTarget</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">nSumTarget</span>(<span class="params">nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span>, n: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">    <span class="keyword">assert</span> n &gt;= <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(nums) &lt; n:</span><br><span class="line">        <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line">    res = []</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">2</span>:</span><br><span class="line">        <span class="comment"># 就是把twoSumTarget抄过来</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        l_idx, r_idx = <span class="number">0</span>, <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l_idx &lt; r_idx:</span><br><span class="line">            left, right = nums[l_idx], nums[r_idx]</span><br><span class="line">            s = left + right</span><br><span class="line">            <span class="keyword">if</span> s == target:</span><br><span class="line">                res.append([left, right])</span><br><span class="line">                <span class="keyword">while</span> l_idx &lt; r_idx <span class="keyword">and</span> nums[l_idx] == left:</span><br><span class="line">                    l_idx += <span class="number">1</span></span><br><span class="line">                <span class="keyword">while</span> r_idx &gt; l_idx <span class="keyword">and</span> nums[r_idx] == right:</span><br><span class="line">                    r_idx -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">elif</span> s &lt; target:</span><br><span class="line">                <span class="keyword">while</span> l_idx &lt; r_idx <span class="keyword">and</span> nums[l_idx] == left:</span><br><span class="line">                    l_idx += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">while</span> r_idx &gt; l_idx <span class="keyword">and</span> nums[r_idx] == right:</span><br><span class="line">                    r_idx -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        nums.sort()</span><br><span class="line">        f_idx = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> f_idx &lt; <span class="built_in">len</span>(nums):</span><br><span class="line">            first = nums[f_idx]</span><br><span class="line"></span><br><span class="line">            subs = nSumTarget(nums[f_idx + <span class="number">1</span>:], target - first, n - <span class="number">1</span>)  <span class="comment"># 所有子问题的结果</span></span><br><span class="line">            <span class="keyword">for</span> sub <span class="keyword">in</span> subs:</span><br><span class="line">                res.append([first] + sub)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> f_idx &lt; <span class="built_in">len</span>(nums) <span class="keyword">and</span> nums[f_idx] == first:</span><br><span class="line">                f_idx += <span class="number">1</span>  <span class="comment"># 跳过重复的元素</span></span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><a href="https://leetcode.cn/problems/two-sum/description/">Leetcode 1</a> 两数之和<br>首先用回溯暴力枚举试了下，TLE了，如下是TLE的代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.res = <span class="literal">None</span></span><br><span class="line">        <span class="variable language_">self</span>.track = []  <span class="comment"># 用于记录index</span></span><br><span class="line">        <span class="variable language_">self</span>.nums = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">backtrack</span>(<span class="params">self, begin_idx, target</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.res <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="variable language_">self</span>.track) &gt; <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        sum_of_track = <span class="built_in">sum</span>([<span class="variable language_">self</span>.nums[_] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="variable language_">self</span>.track])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="variable language_">self</span>.track) == <span class="number">2</span> <span class="keyword">and</span> sum_of_track == target:</span><br><span class="line">            <span class="variable language_">self</span>.res = <span class="variable language_">self</span>.track[:]</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">for</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(begin_idx, <span class="built_in">len</span>(<span class="variable language_">self</span>.nums)):</span><br><span class="line">            <span class="variable language_">self</span>.track.append(idx)</span><br><span class="line">            <span class="variable language_">self</span>.backtrack(idx + <span class="number">1</span>, target)</span><br><span class="line">            <span class="variable language_">self</span>.track.pop()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums, target</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.nums = nums</span><br><span class="line">        <span class="variable language_">self</span>.backtrack(<span class="number">0</span>, target)</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.res</span><br></pre></td></tr></table></figure>
+<p>该算法的复杂度是O(n^2)，显然比哈希表的复杂度要高，哈希表的复杂度是O(n)，使用哈希表的实现如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums, target</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        table = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> idx,num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> num <span class="keyword">in</span> table:</span><br><span class="line">                table[num].append(idx)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                table[num] = [idx]</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> table.keys():</span><br><span class="line">            remain = target - num</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> remain == num:</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">len</span>(table[num]) == <span class="number">2</span>:</span><br><span class="line">                    <span class="keyword">return</span> table[num]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> remain <span class="keyword">in</span> table:</span><br><span class="line">                    <span class="keyword">return</span> [table[num][<span class="number">0</span>],table[remain][<span class="number">0</span>]]</span><br><span class="line">        <span class="keyword">return</span> []</span><br></pre></td></tr></table></figure>
+
+<p>这个题目不是存在多个解的情况，所以不能用上面提到的<code>def twoSumTarget(nums: List[int], target: int) -&gt; List[List[int]]:</code>而是要用<code>def twoSumTarget(nums: List[int], target: int) -&gt; List[int]:</code>,但是这个题目要求返回idx,且题目给的是无序的就很烦，如下是采用双指针的实现：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums, target</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 防止后面排序后，找不到之前的idx</span></span><br><span class="line">        table = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> idx,num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> num <span class="keyword">in</span> table:</span><br><span class="line">                table[num].append(idx)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                table[num] = [idx]</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> table.keys():</span><br><span class="line">            remain = target - num</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 开始双指针</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        l_idx,r_idx = <span class="number">0</span>,<span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l_idx &lt; r_idx:</span><br><span class="line">            left,right = nums[l_idx], nums[r_idx]</span><br><span class="line">            s = left + right</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> s == target:</span><br><span class="line">                <span class="keyword">return</span> [table[left].pop(),table[right].pop()]</span><br><span class="line"></span><br><span class="line">            <span class="keyword">elif</span> s &lt; target:</span><br><span class="line">                l_idx += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r_idx -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> [] <span class="comment"># impossible</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<ul>
+<li><a href="https://leetcode.cn/problems/3sum/description/">Leetcode 15</a> 三数之和</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSumTarget</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        <span class="comment"># ✔，该方法才是正确的可以解决多个解的2Sum问题</span></span><br><span class="line">        res = []</span><br><span class="line">        nums.sort()</span><br><span class="line">        l_idx, r_idx = <span class="number">0</span>, <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l_idx &lt; r_idx:</span><br><span class="line">            left, right = nums[l_idx], nums[r_idx]</span><br><span class="line">            s = left + right</span><br><span class="line">            <span class="keyword">if</span> s == target:</span><br><span class="line">                res.append([left, right])</span><br><span class="line">                <span class="keyword">while</span> l_idx &lt; r_idx <span class="keyword">and</span> nums[l_idx] == left:</span><br><span class="line">                    l_idx += <span class="number">1</span></span><br><span class="line">                <span class="keyword">while</span> r_idx &gt; l_idx <span class="keyword">and</span> nums[r_idx] == right:</span><br><span class="line">                    r_idx -= <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">elif</span> s &lt; target:</span><br><span class="line">                <span class="keyword">while</span> l_idx &lt; r_idx <span class="keyword">and</span> nums[l_idx] == left:</span><br><span class="line">                    l_idx += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">while</span> r_idx &gt; l_idx <span class="keyword">and</span> nums[r_idx] == right:</span><br><span class="line">                    r_idx -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">threeSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        res = []</span><br><span class="line">        nums.sort()</span><br><span class="line">        f_idx = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> f_idx &lt; <span class="built_in">len</span>(nums):</span><br><span class="line">            first = nums[f_idx]</span><br><span class="line">            <span class="keyword">for</span> two_sum_res <span class="keyword">in</span> <span class="variable language_">self</span>.twoSumTarget(nums = nums[f_idx+<span class="number">1</span>:],target = <span class="number">0</span> - first):</span><br><span class="line">                res.append([first] + two_sum_res)</span><br><span class="line">            <span class="keyword">while</span> f_idx&lt; <span class="built_in">len</span>(nums) <span class="keyword">and</span> first == nums[f_idx]:</span><br><span class="line">                f_idx += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><a href="https://leetcode.cn/problems/4sum/description/">Leetcode 18</a> 四数之和<br>非要头铁回溯，TLE了，回溯的代码如下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.track = []</span><br><span class="line">        <span class="variable language_">self</span>.res = []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">backtrack</span>(<span class="params">self,candidates,target</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="variable language_">self</span>.track) &gt; <span class="number">4</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="variable language_">self</span>.track) == <span class="number">4</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">sum</span>(<span class="variable language_">self</span>.track) == target:</span><br><span class="line">                <span class="variable language_">self</span>.res.append(<span class="variable language_">self</span>.track[:])</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> idx,candidate <span class="keyword">in</span> <span class="built_in">enumerate</span>(candidates):</span><br><span class="line">            <span class="keyword">if</span> idx - <span class="number">1</span> &gt;= <span class="number">0</span> <span class="keyword">and</span> candidates[idx - <span class="number">1</span>] == candidates[idx]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="variable language_">self</span>.track.append(candidate)</span><br><span class="line">            <span class="variable language_">self</span>.backtrack(candidates[idx+<span class="number">1</span>:],target)</span><br><span class="line">            <span class="variable language_">self</span>.track.pop()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">fourSum</span>(<span class="params">self, nums, target</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        <span class="variable language_">self</span>.backtrack(nums,target)</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.res</span><br></pre></td></tr></table></figure>
+<p>超时的原因是没有办法合理的剪枝,如下是依据<code>threeSum</code>的思路，利用双指针解决<code>fourSum</code>，如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSumTarget</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        <span class="comment"># ✔，该方法才是正确的可以解决多个解的2Sum问题</span></span><br><span class="line">        res = []</span><br><span class="line">        nums.sort()</span><br><span class="line">        l_idx, r_idx = <span class="number">0</span>, <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l_idx &lt; r_idx:</span><br><span class="line">            left, right = nums[l_idx], nums[r_idx]</span><br><span class="line">            s = left + right</span><br><span class="line">            <span class="keyword">if</span> s == target:</span><br><span class="line">                res.append([left, right])</span><br><span class="line">                <span class="keyword">while</span> l_idx &lt; r_idx <span class="keyword">and</span> nums[l_idx] == left:</span><br><span class="line">                    l_idx += <span class="number">1</span></span><br><span class="line">                <span class="keyword">while</span> r_idx &gt; l_idx <span class="keyword">and</span> nums[r_idx] == right:</span><br><span class="line">                    r_idx -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">elif</span> s &lt; target:</span><br><span class="line">                <span class="keyword">while</span> l_idx &lt; r_idx <span class="keyword">and</span> nums[l_idx] == left:</span><br><span class="line">                    l_idx += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">while</span> r_idx &gt; l_idx <span class="keyword">and</span> nums[r_idx] == right:</span><br><span class="line">                    r_idx -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">threeSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        res = []</span><br><span class="line">        nums.sort()</span><br><span class="line">        f_idx = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> f_idx &lt; <span class="built_in">len</span>(nums):</span><br><span class="line">            first = nums[f_idx]</span><br><span class="line">            <span class="keyword">for</span> two_sum_res <span class="keyword">in</span> <span class="variable language_">self</span>.twoSumTarget(nums=nums[f_idx + <span class="number">1</span>:], target=target - first):</span><br><span class="line">                res.append([first] + two_sum_res)</span><br><span class="line">            <span class="keyword">while</span> f_idx &lt; <span class="built_in">len</span>(nums) <span class="keyword">and</span> first == nums[f_idx]:</span><br><span class="line">                f_idx += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">fourSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        res = []</span><br><span class="line">        nums.sort()</span><br><span class="line"></span><br><span class="line">        f_idx = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> f_idx &lt; <span class="built_in">len</span>(nums):</span><br><span class="line">            first = nums[f_idx]</span><br><span class="line">            <span class="keyword">for</span> three_sum_res <span class="keyword">in</span> <span class="variable language_">self</span>.threeSum(nums=nums[f_idx + <span class="number">1</span>:], target=target - first):</span><br><span class="line">                res.append([first] + three_sum_res)</span><br><span class="line">            <span class="keyword">while</span> f_idx &lt; <span class="built_in">len</span>(nums) <span class="keyword">and</span> first == nums[f_idx]:</span><br><span class="line">                f_idx += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="【强化练习】数组双指针经典习题"><a href="#【强化练习】数组双指针经典习题" class="headerlink" title="【强化练习】数组双指针经典习题"></a><a href="https://labuladong.online/algo/problem-set/array-two-pointers/">【强化练习】数组双指针经典习题</a></h3><h3 id="小而美的算法技巧：前缀和数组"><a href="#小而美的算法技巧：前缀和数组" class="headerlink" title="小而美的算法技巧：前缀和数组"></a><a href="https://labuladong.online/algo/data-structure/prefix-sum/">小而美的算法技巧：前缀和数组</a></h3><!-- 
 ### [【强化练习】前缀和技巧经典习题](https://labuladong.online/algo/problem-set/perfix-sum/)
 ### [小而美的算法技巧：差分数组](https://labuladong.online/algo/data-structure/diff-array/)
 ### [滑动窗口算法核心代码模板](https://labuladong.online/algo/essential-technique/sliding-window-framework/)
@@ -1483,8 +1685,6 @@
 ### [【强化练习】二分搜索算法经典习题](https://labuladong.online/algo/problem-set/binary-search/)
 ### [带权重的随机选择算法](https://labuladong.online/algo/frequency-interview/random-pick-with-weight/)
 ### [田忌赛马背后的算法决策](https://labuladong.online/algo/practice-in-action/advantage-shuffle/)
-
-
 ## [手把手刷二叉树算法](https://labuladong.online/algo/menu/binary-tree/)
 ### [二叉树系列算法核心纲领](https://labuladong.online/algo/essential-technique/binary-tree-summary/)
 ### [二叉树心法（思路篇）](https://labuladong.online/algo/data-structure/binary-tree-part1/)
@@ -1495,7 +1695,6 @@
 ### [二叉搜索树心法（基操篇）](https://labuladong.online/algo/data-structure/bst-part2/)
 ### [二叉搜索树心法（构造篇）](https://labuladong.online/algo/data-structure/bst-part3/)
 ### [二叉搜索树心法（后序篇）](https://labuladong.online/algo/data-structure/bst-part4/)
-
 ## [套模板解决 100 道二叉树习题](https://labuladong.online/algo/menu/100-bt/)
 ### [本章导读](https://labuladong.online/algo/intro/binary-tree-practice/)
 ### [【强化练习】用「遍历」思维解题 I](https://labuladong.online/algo/problem-set/binary-tree-traverse-i/)
@@ -1511,7 +1710,6 @@
 ### [【强化练习】运用层序遍历解题 II](https://labuladong.online/algo/problem-set/binary-tree-level-ii/)
 ### [【强化练习】二叉搜索树经典例题 I](https://labuladong.online/algo/problem-set/bst1/)
 ### [【强化练习】二叉搜索树经典例题 II](https://labuladong.online/algo/problem-set/bst2/)
-
 ## [二叉树的拓展延伸](https://labuladong.online/algo/menu/more-bt/)
 ### [拓展：最近公共祖先系列解题框架](https://labuladong.online/algo/practice-in-action/lowest-common-ancestor-summary/)
 ### [拓展：如何计算完全二叉树的节点数](https://labuladong.online/algo/data-structure/count-complete-tree-nodes/)
@@ -1519,7 +1717,6 @@
 ### [拓展：归并排序详解及应用](https://labuladong.online/algo/practice-in-action/merge-sort/)
 ### [拓展：快速排序详解及应用](https://labuladong.online/algo/practice-in-action/quick-sort/)
 ### [拓展：用栈模拟递归迭代遍历二叉树](https://labuladong.online/algo/data-structure/iterative-traversal-binary-tree/)
-
 ## [手把手设计数据结构](https://labuladong.online/algo/menu/design/)
 ### [队列实现栈以及栈实现队列](https://labuladong.online/algo/data-structure/stack-queue/)
 ### [【强化练习】栈的经典习题](https://labuladong.online/algo/problem-set/stack/)
@@ -1544,8 +1741,6 @@
 ### [拓展：如何实现一个计算器](https://labuladong.online/algo/data-structure/implement-calculator/)
 ### [拓展：两个二叉堆实现中位数算法](https://labuladong.online/algo/practice-in-action/find-median-from-data-stream/)
 ### [拓展：数组去重问题（困难版）](https://labuladong.online/algo/frequency-interview/remove-duplicate-letters/)
-
-
 ## [手把手刷图算法](https://labuladong.online/algo/menu/graph/)
 ### [环检测及拓扑排序算法](https://labuladong.online/algo/data-structure/topological-sort/)
 ### [众里寻他千百度：名流问题](https://labuladong.online/algo/frequency-interview/find-celebrity/)
@@ -1555,8 +1750,7 @@
 ### [Kruskal 最小生成树算法](https://labuladong.online/algo/data-structure/kruskal/)
 ### [Prim 最小生成树算法](https://labuladong.online/algo/data-structure/prim/)
 ### [Dijkstra 算法模板及应用](https://labuladong.online/algo/data-structure/dijkstra/)
-### [【强化练习】Dijkstra 算法经典习题](https://labuladong.online/algo/problem-set/dijkstra/) -->
-]]></content>
+### [【强化练习】Dijkstra 算法经典习题](https://labuladong.online/algo/problem-set/dijkstra/) -->]]></content>
       <categories>
         <category>labuladong算法笔记</category>
       </categories>
@@ -1566,6 +1760,134 @@
         <tag>排序算法</tag>
         <tag>算法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>华为入职培训-C++语言编程规范</title>
+    <url>/2025/04/22/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-C-%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="1-课程简介"><a href="#1-课程简介" class="headerlink" title="1. 课程简介"></a>1. 课程简介</h1><p>视频中说可以在公司内网下载，在互联网上找到一个版本<a href="https://blog.csdn.net/yaoming168/article/details/136063619">华为C++语言编程规范</a></p>
+<h1 id="2-引言"><a href="#2-引言" class="headerlink" title="2. 引言"></a>2. 引言</h1><p>常见的c++中的未定义行为</p>
+<ul>
+<li>整数除以0</li>
+<li>有符号的整数溢出</li>
+<li>访问越界数组</li>
+<li>使用未初始化的变量</li>
+<li>越界访问</li>
+<li>使用<code>new T[n]</code>分配数组，却用delete不带[]释放<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>* arr = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>];  <span class="comment">// 分配10个int的空间</span></span><br><span class="line"><span class="keyword">delete</span> arr;              <span class="comment">// 错误！应该用delete[] arr</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>关于指针，优先使用<strong>引用和智能指针</strong></p>
+<h1 id="3-代码风格"><a href="#3-代码风格" class="headerlink" title="3. 代码风格"></a>3. 代码风格</h1><p>主要看项目组用啥命名风格，不推荐匈牙利</p>
+<h1 id="4-编程实践"><a href="#4-编程实践" class="headerlink" title="4. 编程实践"></a>4. 编程实践</h1><h2 id="4-1-函数、类、常量"><a href="#4-1-函数、类、常量" class="headerlink" title="4.1 函数、类、常量"></a>4.1 函数、类、常量</h2><h3 id="输入校验原则"><a href="#输入校验原则" class="headerlink" title="输入校验原则"></a>输入校验原则</h3><p><img src="/../images/1745397201823-image.png" alt="alt text"></p>
+<p>如上是两个函数单板的模型，首先熟悉一下相关的名词</p>
+<ul>
+<li>单板：一个函数或者一个类</li>
+<li>.so文件：shared object file，这是Unix下的动态链接库，大概类似于windows下的dll</li>
+</ul>
+<p>大概意思是：</p>
+<blockquote>
+<p>外部数据输入（箭头①） 需要进行严格的校验，<strong>防止恶意数据注入</strong>。<br>内部数据传递（箭头②、④、⑤） 也需要进行适当的校验，确保数据的一致性和安全性。<br>应用层与内核层交互（箭头③） 更加需要严谨的校验机制，<strong>避免因数据问题导致系统崩溃或被攻击</strong>。</p>
+</blockquote>
+<p>c++中常见的函数输入校验：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">devide</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> std::<span class="built_in">runtime_error</span>(<span class="string">&quot;Divide by zero&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a / b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="合理选择输入输出参数"><a href="#合理选择输入输出参数" class="headerlink" title="合理选择输入输出参数"></a>合理选择输入输出参数</h3><p>对于输入参数</p>
+<ul>
+<li>拷贝代价高，pass by reference</li>
+<li>拷贝代价低，pass by value</li>
+<li>要被移动的参数，作为参数的时候应该使用右值引用类型，在函数内用<code>std::move</code></li>
+<li>不要用C风格的变参类型，因为没有办法验证输入</li>
+</ul>
+<h2 id="对于返回参数"><a href="#对于返回参数" class="headerlink" title="对于返回参数"></a>对于返回参数</h2><h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>要保证类的封装性，要与外部解耦</p>
+<p><img src="/../images/1745407464208-image.png" alt="alt text"></p>
+<ul>
+<li><strong>Rule of three</strong>: 拷贝构造函数、赋值运算符、析构函数</li>
+<li><strong>Rule of five</strong>: 拷贝构造函数、赋值运算符、析构函数、移动构造函数、移动赋值运算符</li>
+<li><strong>Rule of zero</strong>: 析构函数、移动构造函数、移动赋值运算符</li>
+</ul>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>多用常量，编译器检查友好，使得代码的可读性更高</p>
+<h2 id="4-2-枚举、声明与定义"><a href="#4-2-枚举、声明与定义" class="headerlink" title="4.2 枚举、声明与定义"></a>4.2 枚举、声明与定义</h2><h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>c++中优先使用枚举类，例如</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum class</span> <span class="title class_">Color</span> &#123; RED, GREEN, BLUE &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="声明与定义"><a href="#声明与定义" class="headerlink" title="声明与定义"></a>声明与定义</h3><p>避免定义保留标识符，如<code>void * malloc()</code>，malloc是C语言的标准库函数，在c++中应该使用<code>std::malloc</code></p>
+<h3 id="作用域最小"><a href="#作用域最小" class="headerlink" title="作用域最小"></a>作用域最小</h3><p>避免使用全局变量，全局变量会污染命名空间，导致代码的可读性降低，也容易产生命名冲突</p>
+<h2 id="4-3-类型转换、整数运算"><a href="#4-3-类型转换、整数运算" class="headerlink" title="4.3 类型转换、整数运算"></a>4.3 类型转换、整数运算</h2><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>用c++风格的类型转换，而不是c风格的类型转换。一般是是<code>dynamic_cast</code>，<code>static_cast</code>，<code>reinterpret_cast</code>，<code>const_cast</code>等的语法，其中<code>cast</code>有浇铸，铸造的意思</p>
+<h3 id="整数运算"><a href="#整数运算" class="headerlink" title="整数运算"></a>整数运算</h3><p>注意整数的溢出和回绕的问题</p>
+<h2 id="4-4-表达式、语句"><a href="#4-4-表达式、语句" class="headerlink" title="4.4 表达式、语句"></a>4.4 表达式、语句</h2><h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><ul>
+<li>比较的时候，左边要放常量，右边放变量，<code>if (MAX == value)</code></li>
+<li>副作用不要放到逻辑判断中，例如<code>if (a == 0 || b ++ &gt; 1)</code> 这种是不允许的</li>
+<li>多使用<code>static_assert</code>在编译的时候检查，例如<code>static_assert(sizeof(int) == 4, &quot;int is not 4 bytes&quot;);</code></li>
+<li><code>int</code>类似不能单独作为判断依据，例如如下是不允许的<code>int a = 0; if (a) &#123;xxx&#125;</code></li>
+</ul>
+<h2 id="4-5-资源管理、错误处理"><a href="#4-5-资源管理、错误处理" class="headerlink" title="4.5 资源管理、错误处理"></a>4.5 资源管理、错误处理</h2><h3 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a>资源管理</h3><p>需要遵守RAII, Resource Acquisition Is Initialization,其主要的含义是</p>
+<ul>
+<li>初始化，初始化是资源的分配 </li>
+<li>析构，析构是资源的释放<br>常见的对有<code>new/delete</code>操作的封装，<code>fopen/fclose</code>等</li>
+</ul>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>有的地方是不能抛出异常的，例如：</p>
+<ul>
+<li>析构函数，析构函数不能抛出异常</li>
+<li>要用<code>noexcept</code>修饰，例如<code>void foo() noexcept</code>表示这个函数不会抛出异常</li>
+</ul>
+<h2 id="4-6-模板与泛型编程、并发与并行"><a href="#4-6-模板与泛型编程、并发与并行" class="headerlink" title="4.6 模板与泛型编程、并发与并行"></a>4.6 模板与泛型编程、并发与并行</h2><h2 id="4-7-预处理、头文件与源文件"><a href="#4-7-预处理、头文件与源文件" class="headerlink" title="4.7 预处理、头文件与源文件"></a>4.7 预处理、头文件与源文件</h2><h2 id="4-8-标准库"><a href="#4-8-标准库" class="headerlink" title="4.8 标准库"></a>4.8 标准库</h2><h1 id="5-继承自C语言编程规范条款款"><a href="#5-继承自C语言编程规范条款款" class="headerlink" title="5. 继承自C语言编程规范条款款"></a>5. 继承自C语言编程规范条款款</h1>]]></content>
+      <categories>
+        <category>软件雏鹰计划</category>
+      </categories>
+      <tags>
+        <tag>cpp</tag>
+        <tag>编程规范</tag>
+        <tag>华为</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2025/04/23/test/</url>
+    <content><![CDATA[<h1 id="测试代码是否可以顺利渲染"><a href="#测试代码是否可以顺利渲染" class="headerlink" title="测试代码是否可以顺利渲染"></a>测试代码是否可以顺利渲染</h1><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello word&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">greeting</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Hello from JavaScript!&quot;</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello World&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打印 Hello World</span></span><br><span class="line">print<span class="punctuation">(</span><span class="string">&quot;Hello World&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个简单的数据框</span></span><br><span class="line">data <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span></span><br><span class="line">  name <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;Alice&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Bob&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Charlie&quot;</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">  age <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">25</span><span class="punctuation">,</span> <span class="number">30</span><span class="punctuation">,</span> <span class="number">35</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 ggplot2 绘制简单的散点图</span></span><br><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line">ggplot<span class="punctuation">(</span>data<span class="punctuation">,</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> name<span class="punctuation">,</span> y <span class="operator">=</span> age<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  geom_point<span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  labs<span class="punctuation">(</span>title <span class="operator">=</span> <span class="string">&quot;年龄分布&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h1><h2 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h2><p>$E&#x3D;mc^2$ and $\exists x \in X, \forall y \in Y, x \neq y$</p>
+<h2 id="行间公式"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式</h2><p>$$<br>\int_0^\infty \frac{x^3}{e^x} , dx &#x3D; \frac{\pi^4}{15}<br>$$</p>
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><table>
+<thead>
+<tr>
+<th>列1</th>
+<th>列2</th>
+<th>列3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+</tbody></table>
+<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><h2 id="本地图片"><a href="#本地图片" class="headerlink" title="本地图片"></a>本地图片</h2><p><img src="/../images/image-1.png" alt="alt text"></p>
+<h2 id="网络图片"><a href="#网络图片" class="headerlink" title="网络图片"></a>网络图片</h2><p><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="alt text"></p>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="https://www.google.com/">Google</a></p>
+<h1 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h1><pre class="mermaid">graph TD
+    A --> B
+    B --> C
+    C --> A</pre>
+
+]]></content>
   </entry>
   <entry>
     <title>labuladong-第零章-核心刷题框架汇总</title>
@@ -2310,278 +2632,6 @@
         <tag>数据结构</tag>
         <tag>排序算法</tag>
         <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2025/04/23/test/</url>
-    <content><![CDATA[<h1 id="测试代码是否可以顺利渲染"><a href="#测试代码是否可以顺利渲染" class="headerlink" title="测试代码是否可以顺利渲染"></a>测试代码是否可以顺利渲染</h1><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello word&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">greeting</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Hello from JavaScript!&quot;</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello World&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打印 Hello World</span></span><br><span class="line">print<span class="punctuation">(</span><span class="string">&quot;Hello World&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个简单的数据框</span></span><br><span class="line">data <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span></span><br><span class="line">  name <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;Alice&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Bob&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Charlie&quot;</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">  age <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">25</span><span class="punctuation">,</span> <span class="number">30</span><span class="punctuation">,</span> <span class="number">35</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 ggplot2 绘制简单的散点图</span></span><br><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line">ggplot<span class="punctuation">(</span>data<span class="punctuation">,</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> name<span class="punctuation">,</span> y <span class="operator">=</span> age<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  geom_point<span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  labs<span class="punctuation">(</span>title <span class="operator">=</span> <span class="string">&quot;年龄分布&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h1><h2 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h2><p>$E&#x3D;mc^2$ and $\exists x \in X, \forall y \in Y, x \neq y$</p>
-<h2 id="行间公式"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式</h2><p>$$<br>\int_0^\infty \frac{x^3}{e^x} , dx &#x3D; \frac{\pi^4}{15}<br>$$</p>
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><table>
-<thead>
-<tr>
-<th>列1</th>
-<th>列2</th>
-<th>列3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-</tr>
-<tr>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-</tr>
-<tr>
-<td>7</td>
-<td>8</td>
-<td>9</td>
-</tr>
-</tbody></table>
-<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><h2 id="本地图片"><a href="#本地图片" class="headerlink" title="本地图片"></a>本地图片</h2><p><img src="/../images/image-1.png" alt="alt text"></p>
-<h2 id="网络图片"><a href="#网络图片" class="headerlink" title="网络图片"></a>网络图片</h2><p><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="alt text"></p>
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="https://www.google.com/">Google</a></p>
-<h1 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h1><pre class="mermaid">graph TD
-    A --> B
-    B --> C
-    C --> A</pre>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>labuladong-第二章-经典暴力搜索算法</title>
-    <url>/2025/04/23/labuladong-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%BB%8F%E5%85%B8%E6%9A%B4%E5%8A%9B%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<!-- # [第二章、经典暴力搜索算法](https://labuladong.online/algo/menu/braute-force-search/)
-## [DFS/回溯算法](https://labuladong.online/algo/menu/dfs/)
-### [回溯算法解题套路框架](https://labuladong.online/algo/essential-technique/backtrack-framework/)
-### [回溯算法实践：数独和 N 皇后问题](https://labuladong.online/algo/practice-in-action/sudoku-nqueue/)
-### [回溯算法秒杀所有排列/组合/子集问题](https://labuladong.online/algo/essential-technique/permutation-combination-subset-all-in-one/)
-### [球盒模型：回溯算法穷举的两种视角](https://labuladong.online/algo/practice-in-action/two-views-of-backtrack/)
-### [解答回溯算法/DFS算法的若干疑问](https://labuladong.online/algo/essential-technique/backtrack-vs-dfs/)
-### [一文秒杀所有岛屿题目](https://labuladong.online/algo/frequency-interview/island-dfs-summary/)
-### [回溯算法实践：括号生成](https://labuladong.online/algo/practice-in-action/generate-parentheses/)
-### [回溯算法实践：集合划分](https://labuladong.online/algo/practice-in-action/partition-to-k-equal-sum-subsets/)
-### [【强化练习】回溯算法经典习题 I](https://labuladong.online/algo/problem-set/backtrack-i/)
-### [【强化练习】回溯算法经典习题 II](https://labuladong.online/algo/problem-set/backtrack-ii/)
-### [【强化练习】回溯算法经典习题 III](https://labuladong.online/algo/problem-set/backtrack-iii/)
-
-## [BFS 算法](https://labuladong.online/algo/menu/bfs/)
-### [BFS 算法解题套路框架](https://labuladong.online/algo/essential-technique/bfs-framework/)
-### [【强化练习】BFS 经典习题 I](https://labuladong.online/algo/problem-set/bfs/)
-### [【强化练习】BFS 经典习题 II](https://labuladong.online/algo/problem-set/bfs-ii/)
-### [正在更新 ing](https://labuladong.online/algo/intro/updating/) -->
-
-
-
-
-<!-- 
-# [第三章、经典动态规划算法](https://labuladong.online/algo/menu/dp/)
-## [动态规划基本技巧](https://labuladong.online/algo/menu/dp-basic/)
-### [动态规划解题套路框架](https://labuladong.online/algo/essential-technique/dynamic-programming-framework/)
-### [动态规划设计：最长递增子序列](https://labuladong.online/algo/dynamic-programming/longest-increasing-subsequence/)
-### [base case 和备忘录的初始值怎么定？](https://labuladong.online/algo/dynamic-programming/memo-fundamental/)
-### [动态规划穷举的两种视角](https://labuladong.online/algo/dynamic-programming/two-views-of-dp/)
-### [动态规划和回溯算法的思维转换](https://labuladong.online/algo/dynamic-programming/word-break/)
-### [对动态规划进行降维打击](https://labuladong.online/algo/dynamic-programming/space-optimization/)
-### [最优子结构原理和 dp 数组遍历方向](https://labuladong.online/algo/dynamic-programming/faq-summary/)
-
-## [子序列类型问题](https://labuladong.online/algo/menu/subsequence/)
-### [经典动态规划：编辑距离](https://labuladong.online/algo/dynamic-programming/edit-distance/)
-### [动态规划设计：最大子数组](https://labuladong.online/algo/dynamic-programming/maximum-subarray/)
-### [经典动态规划：最长公共子序列](https://labuladong.online/algo/dynamic-programming/longest-common-subsequence/)
-### [动态规划之子序列问题解题模板](https://labuladong.online/algo/dynamic-programming/subsequence-problem/)
-
-## [背包类型问题](https://labuladong.online/algo/menu/knapsack/)
-### [经典动态规划：0-1 背包问题](https://labuladong.online/algo/dynamic-programming/knapsack1/)
-### [经典动态规划：子集背包问题](https://labuladong.online/algo/dynamic-programming/knapsack2/)
-### [经典动态规划：完全背包问题](https://labuladong.online/algo/dynamic-programming/knapsack3/)
-### [背包问题的变体：目标和](https://labuladong.online/algo/dynamic-programming/target-sum/)
-
-## [用动态规划玩游戏](https://labuladong.online/algo/menu/dp-game/)
-### [动态规划之最小路径和](https://labuladong.online/algo/dynamic-programming/minimum-path-sum/)
-### [动态规划帮我通关了《魔塔》](https://labuladong.online/algo/dynamic-programming/magic-tower/)
-### [动态规划帮我通关了《辐射4》](https://labuladong.online/algo/dynamic-programming/freedom-trail/)
-### [旅游省钱大法：加权最短路径](https://labuladong.online/algo/dynamic-programming/cheap-travel/)
-### [经典动态规划：正则表达式](https://labuladong.online/algo/dynamic-programming/regular-expression-matching/)
-### [经典动态规划：高楼扔鸡蛋](https://labuladong.online/algo/dynamic-programming/egg-drop/)
-### [经典动态规划：戳气球](https://labuladong.online/algo/dynamic-programming/burst-balloons/)
-### [经典动态规划：博弈问题](https://labuladong.online/algo/dynamic-programming/game-theory/)
-### [一个方法团灭 LeetCode 打家劫舍问题](https://labuladong.online/algo/dynamic-programming/house-robber/)
-### [一个方法团灭 LeetCode 股票买卖问题](https://labuladong.online/algo/dynamic-programming/stock-problem-summary/)
-
-## [贪心类型问题](https://labuladong.online/algo/menu/greedy/)
-### [贪心算法解题套路框架](https://labuladong.online/algo/essential-technique/greedy/)
-### [老司机加油算法](https://labuladong.online/algo/frequency-interview/gas-station-greedy/)
-### [贪心算法之区间调度问题](https://labuladong.online/algo/frequency-interview/interval-scheduling/)
-### [扫描线技巧：安排会议室](https://labuladong.online/algo/frequency-interview/scan-line-technique/)
-### [剪视频剪出一个贪心算法](https://labuladong.online/algo/frequency-interview/cut-video/) -->
-
-
-
-
-
-
-<!-- # [第四章、其他常见算法技巧](https://labuladong.online/algo/menu/other/)
-## [数学运算技巧](https://labuladong.online/algo/menu/math/)
-### [一行代码就能解决的算法题](https://labuladong.online/algo/frequency-interview/one-line-solutions/)
-### [常用的位操作](https://labuladong.online/algo/frequency-interview/bitwise-operation/)
-### [谈谈游戏中的随机算法](https://labuladong.online/algo/frequency-interview/random-algorithm/)
-### [讲两道常考的阶乘算法题](https://labuladong.online/algo/frequency-interview/factorial-problems/)
-### [如何高效寻找素数](https://labuladong.online/algo/frequency-interview/print-prime-number/)
-### [如何高效进行模幂运算](https://labuladong.online/algo/frequency-interview/quick-power/)
-### [如何同时寻找缺失和重复的元素](https://labuladong.online/algo/frequency-interview/mismatch-set/)
-### [几个反直觉的概率问题](https://labuladong.online/algo/frequency-interview/probability-problem/)
-### [【强化练习】数学技巧相关习题](https://labuladong.online/algo/problem-set/math-tricks/)
-
-## [经典面试题](https://labuladong.online/algo/menu/interview/)
-### [算法笔试「骗分」套路](https://labuladong.online/algo/other-skills/tips-in-exam/)
-### [如何高效解决接雨水问题](https://labuladong.online/algo/frequency-interview/trapping-rain-water/)
-### [一文秒杀所有丑数系列问题](https://labuladong.online/algo/frequency-interview/ugly-number-summary/)
-### [一个方法解决三道区间问题](https://labuladong.online/algo/practice-in-action/interval-problem-summary/)
-### [谁能想到，斗地主也能玩出算法](https://labuladong.online/algo/practice-in-action/split-array-into-consecutive-subsequences/)
-### [烧饼排序算法](https://labuladong.online/algo/frequency-interview/pancake-sorting/)
-### [字符串乘法计算](https://labuladong.online/algo/practice-in-action/multiply-strings/)
-### [如何判定完美矩形](https://labuladong.online/algo/frequency-interview/perfect-rectangle/) -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>labuladong算法笔记</category>
-      </categories>
-      <tags>
-        <tag>cpp</tag>
-        <tag>数据结构</tag>
-        <tag>排序算法</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>华为入职培训-C++语言编程规范</title>
-    <url>/2025/04/22/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-C-%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<h1 id="1-课程简介"><a href="#1-课程简介" class="headerlink" title="1. 课程简介"></a>1. 课程简介</h1><p>视频中说可以在公司内网下载，在互联网上找到一个版本<a href="https://blog.csdn.net/yaoming168/article/details/136063619">华为C++语言编程规范</a></p>
-<h1 id="2-引言"><a href="#2-引言" class="headerlink" title="2. 引言"></a>2. 引言</h1><p>常见的c++中的未定义行为</p>
-<ul>
-<li>整数除以0</li>
-<li>有符号的整数溢出</li>
-<li>访问越界数组</li>
-<li>使用未初始化的变量</li>
-<li>越界访问</li>
-<li>使用<code>new T[n]</code>分配数组，却用delete不带[]释放<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>* arr = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>];  <span class="comment">// 分配10个int的空间</span></span><br><span class="line"><span class="keyword">delete</span> arr;              <span class="comment">// 错误！应该用delete[] arr</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>关于指针，优先使用<strong>引用和智能指针</strong></p>
-<h1 id="3-代码风格"><a href="#3-代码风格" class="headerlink" title="3. 代码风格"></a>3. 代码风格</h1><p>主要看项目组用啥命名风格，不推荐匈牙利</p>
-<h1 id="4-编程实践"><a href="#4-编程实践" class="headerlink" title="4. 编程实践"></a>4. 编程实践</h1><h2 id="4-1-函数、类、常量"><a href="#4-1-函数、类、常量" class="headerlink" title="4.1 函数、类、常量"></a>4.1 函数、类、常量</h2><h3 id="输入校验原则"><a href="#输入校验原则" class="headerlink" title="输入校验原则"></a>输入校验原则</h3><p><img src="/../images/1745397201823-image.png" alt="alt text"></p>
-<p>如上是两个函数单板的模型，首先熟悉一下相关的名词</p>
-<ul>
-<li>单板：一个函数或者一个类</li>
-<li>.so文件：shared object file，这是Unix下的动态链接库，大概类似于windows下的dll</li>
-</ul>
-<p>大概意思是：</p>
-<blockquote>
-<p>外部数据输入（箭头①） 需要进行严格的校验，<strong>防止恶意数据注入</strong>。<br>内部数据传递（箭头②、④、⑤） 也需要进行适当的校验，确保数据的一致性和安全性。<br>应用层与内核层交互（箭头③） 更加需要严谨的校验机制，<strong>避免因数据问题导致系统崩溃或被攻击</strong>。</p>
-</blockquote>
-<p>c++中常见的函数输入校验：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">devide</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> std::<span class="built_in">runtime_error</span>(<span class="string">&quot;Divide by zero&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a / b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="合理选择输入输出参数"><a href="#合理选择输入输出参数" class="headerlink" title="合理选择输入输出参数"></a>合理选择输入输出参数</h3><p>对于输入参数</p>
-<ul>
-<li>拷贝代价高，pass by reference</li>
-<li>拷贝代价低，pass by value</li>
-<li>要被移动的参数，作为参数的时候应该使用右值引用类型，在函数内用<code>std::move</code></li>
-<li>不要用C风格的变参类型，因为没有办法验证输入</li>
-</ul>
-<h2 id="对于返回参数"><a href="#对于返回参数" class="headerlink" title="对于返回参数"></a>对于返回参数</h2><h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>要保证类的封装性，要与外部解耦</p>
-<p><img src="/../images/1745407464208-image.png" alt="alt text"></p>
-<ul>
-<li><strong>Rule of three</strong>: 拷贝构造函数、赋值运算符、析构函数</li>
-<li><strong>Rule of five</strong>: 拷贝构造函数、赋值运算符、析构函数、移动构造函数、移动赋值运算符</li>
-<li><strong>Rule of zero</strong>: 析构函数、移动构造函数、移动赋值运算符</li>
-</ul>
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>多用常量，编译器检查友好，使得代码的可读性更高</p>
-<h2 id="4-2-枚举、声明与定义"><a href="#4-2-枚举、声明与定义" class="headerlink" title="4.2 枚举、声明与定义"></a>4.2 枚举、声明与定义</h2><h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>c++中优先使用枚举类，例如</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum class</span> <span class="title class_">Color</span> &#123; RED, GREEN, BLUE &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="声明与定义"><a href="#声明与定义" class="headerlink" title="声明与定义"></a>声明与定义</h3><p>避免定义保留标识符，如<code>void * malloc()</code>，malloc是C语言的标准库函数，在c++中应该使用<code>std::malloc</code></p>
-<h3 id="作用域最小"><a href="#作用域最小" class="headerlink" title="作用域最小"></a>作用域最小</h3><p>避免使用全局变量，全局变量会污染命名空间，导致代码的可读性降低，也容易产生命名冲突</p>
-<h2 id="4-3-类型转换、整数运算"><a href="#4-3-类型转换、整数运算" class="headerlink" title="4.3 类型转换、整数运算"></a>4.3 类型转换、整数运算</h2><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>用c++风格的类型转换，而不是c风格的类型转换。一般是是<code>dynamic_cast</code>，<code>static_cast</code>，<code>reinterpret_cast</code>，<code>const_cast</code>等的语法，其中<code>cast</code>有浇铸，铸造的意思</p>
-<h3 id="整数运算"><a href="#整数运算" class="headerlink" title="整数运算"></a>整数运算</h3><p>注意整数的溢出和回绕的问题</p>
-<h2 id="4-4-表达式、语句"><a href="#4-4-表达式、语句" class="headerlink" title="4.4 表达式、语句"></a>4.4 表达式、语句</h2><h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><ul>
-<li>比较的时候，左边要放常量，右边放变量，<code>if (MAX == value)</code></li>
-<li>副作用不要放到逻辑判断中，例如<code>if (a == 0 || b ++ &gt; 1)</code> 这种是不允许的</li>
-<li>多使用<code>static_assert</code>在编译的时候检查，例如<code>static_assert(sizeof(int) == 4, &quot;int is not 4 bytes&quot;);</code></li>
-<li><code>int</code>类似不能单独作为判断依据，例如如下是不允许的<code>int a = 0; if (a) &#123;xxx&#125;</code></li>
-</ul>
-<h2 id="4-5-资源管理、错误处理"><a href="#4-5-资源管理、错误处理" class="headerlink" title="4.5 资源管理、错误处理"></a>4.5 资源管理、错误处理</h2><h3 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a>资源管理</h3><p>需要遵守RAII, Resource Acquisition Is Initialization,其主要的含义是</p>
-<ul>
-<li>初始化，初始化是资源的分配 </li>
-<li>析构，析构是资源的释放<br>常见的对有<code>new/delete</code>操作的封装，<code>fopen/fclose</code>等</li>
-</ul>
-<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>有的地方是不能抛出异常的，例如：</p>
-<ul>
-<li>析构函数，析构函数不能抛出异常</li>
-<li>要用<code>noexcept</code>修饰，例如<code>void foo() noexcept</code>表示这个函数不会抛出异常</li>
-</ul>
-<h2 id="4-6-模板与泛型编程、并发与并行"><a href="#4-6-模板与泛型编程、并发与并行" class="headerlink" title="4.6 模板与泛型编程、并发与并行"></a>4.6 模板与泛型编程、并发与并行</h2><h2 id="4-7-预处理、头文件与源文件"><a href="#4-7-预处理、头文件与源文件" class="headerlink" title="4.7 预处理、头文件与源文件"></a>4.7 预处理、头文件与源文件</h2><h2 id="4-8-标准库"><a href="#4-8-标准库" class="headerlink" title="4.8 标准库"></a>4.8 标准库</h2><h1 id="5-继承自C语言编程规范条款款"><a href="#5-继承自C语言编程规范条款款" class="headerlink" title="5. 继承自C语言编程规范条款款"></a>5. 继承自C语言编程规范条款款</h1>]]></content>
-      <categories>
-        <category>软件雏鹰计划</category>
-      </categories>
-      <tags>
-        <tag>cpp</tag>
-        <tag>编程规范</tag>
-        <tag>华为</tag>
       </tags>
   </entry>
 </search>
