@@ -420,7 +420,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-04-25 20:13:11" itemprop="dateModified" datetime="2025-04-25T20:13:11+08:00">2025-04-25</time>
+                <time title="修改时间：2025-04-25 20:19:25" itemprop="dateModified" datetime="2025-04-25T20:19:25+08:00">2025-04-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -678,16 +678,15 @@
 <p>前缀和技巧适用于快速、频繁地计算一个索引区间内的元素之和。<br>前缀和的核心是需要pedding 0，否则会出现越界。</p>
 </blockquote>
 <h4 id="1-d-前缀和"><a href="#1-d-前缀和" class="headerlink" title="1-d 前缀和"></a>1-d 前缀和</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/range-sum-query-immutable/description/">Leetcode 303</a> 区域和检索-数组不可变<br>对于给定的数组$nums$其长度为$n$，我们定义如下前缀和数组$preSum$其长度为$[n+1]$，定义如下：</li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/range-sum-query-immutable/description/">Leetcode 303</a> 区域和检索-数组不可变<br>对于给定的数组$nums$其长度为$n$，我们定义如下前缀和数组$preSum$其长度为$[n+1]$，定义如下：<br>$$<br>preSum[0] &#x3D; 0\<br>preSum[i] &#x3D; nums[0] + nums[1] + … + nums[i-1] \forall i \in [1,n]<br>$$<br>$preSum[i]$ 表示区间 $[0,i)$ 的元素之和，对于API<code>sumRange(self, left: int, right: int)</code>希望求出区间 $[left,right]$ 的元素之和，可以直接返回:<br>$$<br>\begin{align*}<br>  &amp;nums[left] + …+ nums[right] \<br>  &amp;&#x3D;  nums[0] +…+nums[left] + …+ nums[right] -( nums[0] + … + nums[left-1])\<br>  &amp;&#x3D; preSum[right+1] - preSum[left]<br>\end{align*}<br>$$</li>
 </ul>
-<p>$$<br>preSum[0] &#x3D; 0\<br>preSum[i] &#x3D; nums[0] + nums[1] + … + nums[i-1] \forall i \in [1,n]<br>$$</p>
-<p>$preSum[i]$ 表示区间 $[0,i)$ 的元素之和，对于API<code>sumRange(self, left: int, right: int)</code>希望求出区间 $[left,right]$ 的元素之和，可以直接返回:<br>$$<br>\begin{align*}<br>    &amp;nums[left] + …+ nums[right] \<br>    &amp;&#x3D;  nums[0] +…+nums[left] + …+ nums[right] -( nums[0] + … + nums[left-1])\<br>    &amp;&#x3D; preSum[right+1] - preSum[left]<br>\end{align*}<br>$$</p>
 <h4 id="2-d-前缀和"><a href="#2-d-前缀和" class="headerlink" title="2-d 前缀和"></a>2-d 前缀和</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/range-sum-query-2d-immutable/description/">Leetcode 304</a> 二维区域和检索-矩阵不可变<br>对于给定的二维数组$matrix$，其长度为$m$行$n$列，我们定义如下前缀和数组$preSum$其长度为$[m+1,n+1]$，定义如下：<br>$$<br>\begin{align*}<br>preSum[i,j] &amp;&#x3D; 0 \quad i &#x3D; 0 or j &#x3D; 0\<br>preSum[i,j] &amp;&#x3D; matrix[0,0] + … + matrix[i-1,j-1] \forall i,j \in [1,m],[1,n]<br>\end{align*}<br>$$</li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/range-sum-query-2d-immutable/description/">Leetcode 304</a> 二维区域和检索-矩阵不可变<br>对于给定的二维数组$matrix$，其长度为$m$行$n$列，我们定义如下前缀和数组$preSum$其长度为$[m+1,n+1]$，定义如下：</li>
 </ul>
+<p>$$<br>\begin{align*}<br>preSum[i,j] &amp;&#x3D; 0 \quad i &#x3D; 0 or j &#x3D; 0\<br>preSum[i,j] &amp;&#x3D; matrix[0,0] + … + matrix[i-1,j-1] \forall i,j \in [1,m],[1,n]<br>\end{align*}<br>$$</p>
 <p>对于给定的API<code>sumRegion(self, row1: int, col1: int, row2: int, col2: int)</code>希望求出矩阵$matrix$中左上角为$(row1,col1)$，右下角为$(row2,col2)$的元素之和，i.e. $\sum_{i&#x3D;row1}^{row2}\sum_{j&#x3D;col1}^{col2}matrix[i,j]$,证明如下：<br>$$<br>\begin{align*}<br>\sum_{i&#x3D;row1}^{row2}\sum_{j&#x3D;col1}^{col2}matrix[i,j] &amp;&#x3D; matrix[row1,col1] + … + matrix[row2,col2]\<br>\end{align*}<br>$$<br>具体可以拆解为：<br><img src="/../images/1745582349133-image.png" alt="alt text"></p>
 <p>那么该题的答案为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NumMatrix</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, matrix</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type matrix: List[List[int]]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        m = <span class="built_in">len</span>(matrix)</span><br><span class="line">        n = <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.pre_sum = [[<span class="number">0</span>]*(n+<span class="number">1</span>)<span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 我们此时已经知道了pre_sum[i-1][j-1],pre_sum[i][j-1],pre_sum[i-1][j],比较蠢的是如下计算，会TLE</span></span><br><span class="line">                <span class="comment"># s = 0</span></span><br><span class="line">                <span class="comment"># for _i in range(i):</span></span><br><span class="line">                <span class="comment">#     for _j in range(j):</span></span><br><span class="line">                <span class="comment">#         s += matrix[_i][_j]</span></span><br><span class="line">                <span class="comment"># self.pre_sum[i][j] = s</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 如下是比较聪明的写法</span></span><br><span class="line">                <span class="variable language_">self</span>.pre_sum[i][j] = <span class="variable language_">self</span>.pre_sum[i-<span class="number">1</span>][j] + <span class="variable language_">self</span>.pre_sum[i][j -<span class="number">1</span>] - <span class="variable language_">self</span>.pre_sum[i-<span class="number">1</span>][j-<span class="number">1</span>]  + matrix[i-<span class="number">1</span>][j-<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">sumRegion</span>(<span class="params">self, row1, col1, row2, col2</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type row1: int</span></span><br><span class="line"><span class="string">        :type col1: int</span></span><br><span class="line"><span class="string">        :type row2: int</span></span><br><span class="line"><span class="string">        :type col2: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        res += <span class="variable language_">self</span>.pre_sum[row2+<span class="number">1</span>][col2+<span class="number">1</span>]</span><br><span class="line">        res -= <span class="variable language_">self</span>.pre_sum[row2+<span class="number">1</span>][col1]</span><br><span class="line">        res -= <span class="variable language_">self</span>.pre_sum[row1][col2+<span class="number">1</span>]</span><br><span class="line">        res += <span class="variable language_">self</span>.pre_sum[row1][col1]</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NumMatrix</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, matrix</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type matrix: List[List[int]]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        m = <span class="built_in">len</span>(matrix)</span><br><span class="line">        n = <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.pre_sum = [[<span class="number">0</span>]*(n+<span class="number">1</span>)<span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m+<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 我们此时已经知道了pre_sum[i-1][j-1],pre_sum[i][j-1],pre_sum[i-1][j],</span></span><br><span class="line">                <span class="comment"># 比较蠢的是如下计算，会TLE</span></span><br><span class="line">                <span class="comment"># s = 0</span></span><br><span class="line">                <span class="comment"># for _i in range(i):</span></span><br><span class="line">                <span class="comment">#     for _j in range(j):</span></span><br><span class="line">                <span class="comment">#         s += matrix[_i][_j]</span></span><br><span class="line">                <span class="comment"># self.pre_sum[i][j] = s</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 如下是比较聪明的写法</span></span><br><span class="line">                <span class="variable language_">self</span>.pre_sum[i][j] = <span class="variable language_">self</span>.pre_sum[i-<span class="number">1</span>][j] + <span class="variable language_">self</span>.pre_sum[i][j -<span class="number">1</span>] - <span class="variable language_">self</span>.pre_sum[i-<span class="number">1</span>][j-<span class="number">1</span>]  + matrix[i-<span class="number">1</span>][j-<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">sumRegion</span>(<span class="params">self, row1, col1, row2, col2</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type row1: int</span></span><br><span class="line"><span class="string">        :type col1: int</span></span><br><span class="line"><span class="string">        :type row2: int</span></span><br><span class="line"><span class="string">        :type col2: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        res += <span class="variable language_">self</span>.pre_sum[row2+<span class="number">1</span>][col2+<span class="number">1</span>]</span><br><span class="line">        res -= <span class="variable language_">self</span>.pre_sum[row2+<span class="number">1</span>][col1]</span><br><span class="line">        res -= <span class="variable language_">self</span>.pre_sum[row1][col2+<span class="number">1</span>]</span><br><span class="line">        res += <span class="variable language_">self</span>.pre_sum[row1][col1]</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
 
 
 <!-- 
@@ -3411,6 +3410,59 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
