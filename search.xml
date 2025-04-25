@@ -891,7 +891,8 @@
 <li>析构函数，析构函数不能抛出异常</li>
 <li>要用<code>noexcept</code>修饰，例如<code>void foo() noexcept</code>表示这个函数不会抛出异常</li>
 </ul>
-<h2 id="4-6-模板与泛型编程、并发与并行"><a href="#4-6-模板与泛型编程、并发与并行" class="headerlink" title="4.6 模板与泛型编程、并发与并行"></a>4.6 模板与泛型编程、并发与并行</h2><h2 id="4-7-预处理、头文件与源文件"><a href="#4-7-预处理、头文件与源文件" class="headerlink" title="4.7 预处理、头文件与源文件"></a>4.7 预处理、头文件与源文件</h2><h2 id="4-8-标准库"><a href="#4-8-标准库" class="headerlink" title="4.8 标准库"></a>4.8 标准库</h2><h1 id="5-继承自C语言编程规范条款款"><a href="#5-继承自C语言编程规范条款款" class="headerlink" title="5. 继承自C语言编程规范条款款"></a>5. 继承自C语言编程规范条款款</h1>]]></content>
+<h2 id="4-6-模板与泛型编程、并发与并行"><a href="#4-6-模板与泛型编程、并发与并行" class="headerlink" title="4.6 模板与泛型编程、并发与并行"></a>4.6 模板与泛型编程、并发与并行</h2><h3 id="模板与泛型"><a href="#模板与泛型" class="headerlink" title="模板与泛型"></a>模板与泛型</h3><p>template并不是百利而无一害的，其可能造成<strong>代码膨胀</strong>：<br><img src="/../images/1745584892805-image.png" alt="alt text"></p>
+<h2 id="4-7-预处理、头文件与源文件"><a href="#4-7-预处理、头文件与源文件" class="headerlink" title="4.7 预处理、头文件与源文件"></a>4.7 预处理、头文件与源文件</h2><h2 id="4-8-标准库"><a href="#4-8-标准库" class="headerlink" title="4.8 标准库"></a>4.8 标准库</h2><h1 id="5-继承自C语言编程规范条款款"><a href="#5-继承自C语言编程规范条款款" class="headerlink" title="5. 继承自C语言编程规范条款款"></a>5. 继承自C语言编程规范条款款</h1>]]></content>
       <categories>
         <category>软件雏鹰计划</category>
       </categories>
