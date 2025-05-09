@@ -1063,6 +1063,534 @@
       </tags>
   </entry>
   <entry>
+    <title>labuladong-入门-编程语言基础及练习</title>
+    <url>/2025/04/23/labuladong-%E5%85%A5%E9%97%A8-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%8F%8A%E7%BB%83%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本笔记是主要通过学习<a href="https://labuladong.online/algo/">labuladong的算法笔记</a>, 开始时间是2025&#x2F;03&#x2F;31。</p>
+<h1 id="入门：编程语言基础及练习"><a href="#入门：编程语言基础及练习" class="headerlink" title="入门：编程语言基础及练习"></a><a href="https://labuladong.online/algo/menu/">入门：编程语言基础及练习</a></h1><blockquote>
+<p>本章就主要看了一下C++，刷了如下的题单<br><a href="https://leetcode.cn/problems/two-sum/">1.两数之和</a><br><a href="https://leetcode.cn/problems/contains-duplicate/">217.存在重复元素</a><br><a href="https://leetcode.cn/problems/single-number/">136.只出现一次的数字</a><br><a href="https://leetcode.cn/problems/valid-parentheses/">20.有效的括号</a><br><a href="https://leetcode.cn/problems/time-needed-to-buy-tickets/">2073. 买票需要的时间。</a></p>
+</blockquote>
+<h2 id="C-语言基础"><a href="#C-语言基础" class="headerlink" title="C++ 语言基础"></a><a href="https://labuladong.online/algo/programming-language-basic/cpp/">C++ 语言基础</a></h2><p>重点是看了一下C++的语法</p>
+<h3 id="Vector-动态数组"><a href="#Vector-动态数组" class="headerlink" title="Vector 动态数组"></a>Vector 动态数组</h3><p>常见的方法汇总为表格，以<code>vector&lt;int&gt; nums&#123;0,1,2,3,4,5&#125;</code>为例：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>nums.size()</code></td>
+<td>获取数组大小</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.empty()</code></td>
+<td>判断数组是否为空</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.push_back(6)</code></td>
+<td>在末尾添加元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.pop_back()</code></td>
+<td>删除末尾元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.front()</code></td>
+<td>获取第一个元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.back()</code></td>
+<td>获取最后一个元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.insert(nums.begin() + 2, 10)</code></td>
+<td>在指定位置插入元素</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>nums.erase(nums.begin() + 2)</code></td>
+<td>删除指定位置元素</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>swap(nums[0], nums[1])</code></td>
+<td>交换两个元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.begin()</code></td>
+<td>获取迭代器</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>nums.end()</code></td>
+<td>获取迭代器</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+<p>对于数组的遍历</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 下角标遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line"> cout &lt;&lt; nums[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 迭代器遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = nums.<span class="built_in">begin</span>(); it != nums.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 范围for遍历, 类似于python的for num in nums</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> num : nums) &#123;</span><br><span class="line"> cout &lt;&lt; num &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="双链表list"><a href="#双链表list" class="headerlink" title="双链表list"></a>双链表list</h3><p>常见的方法汇总为表格，以<code>list&lt;int&gt; lst&#123;0,1,2,3,4,5&#125;</code>为例：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>lst.size()</code></td>
+<td>获取链表大小</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>lst.empty()</code></td>
+<td>判断链表是否为空</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>lst.push_back(6)</code></td>
+<td>在末尾添加元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>lst.push_front(6)</code></td>
+<td>在头部添加元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>lst.pop_back()</code></td>
+<td>删除末尾元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>lst.pop_front()</code></td>
+<td>删除头部元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>auto it = lst.begin();advance(it, 2); lst.insert(it, 10)</code></td>
+<td>在指定位置插入元素</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>auto it = lst.begin();advance(it, 2); lst.erase(it)</code></td>
+<td>删除指定位置元素</td>
+<td>O(n)</td>
+</tr>
+</tbody></table>
+<p>对于链表的遍历</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 迭代器遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = lst.<span class="built_in">begin</span>(); it != lst.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 范围for遍历, 类似于python的for num in lst</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> val : lst) &#123;</span><br><span class="line"> cout &lt;&lt; val &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="队列queue与栈stack"><a href="#队列queue与栈stack" class="headerlink" title="队列queue与栈stack"></a>队列queue与栈stack</h3><p>queue和stack都是基于双链表实现的，都支持push和pop操作，push都是从尾部添加元素，queue的pop是从头部删除元素，stack的pop是从尾部删除元素，且stack支持top操作，获取栈顶元素。两个的遍历方式是一样的，都是使用迭代器遍历。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 队列的遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = que.<span class="built_in">begin</span>(); it != que.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 栈的遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = sta.<span class="built_in">begin</span>(); it != sta.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="哈希表-unordered-map"><a href="#哈希表-unordered-map" class="headerlink" title="哈希表 unordered_map"></a>哈希表 unordered_map</h3><p>以<code>unordered_map&lt;int, string&gt; hashmap&#123;&#123;1, "one"&#125;, &#123;2, "two"&#125;, &#123;3, "three"&#125;&#125;;</code>为例：<br>常见的方法汇总为表格：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>hashmap.size()</code></td>
+<td>获取哈希表大小</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashmap.empty()</code></td>
+<td>判断哈希表是否为空</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashmap[4]</code></td>
+<td>获取指定key的值，此key不存在时会插入一个key为4，值为””的元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashmap.contains(4)</code></td>
+<td>判断key是否存在</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashmap[&quot;5&quot;]=&quot;five&quot;</code></td>
+<td>插入元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashmap.erase(4)</code></td>
+<td>删除指定key的元素</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+<p>对于哈希表的遍历</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 键值对遍历，pair是一个pair类型的值，拷贝了一份，效率低</span></span><br><span class="line"><span class="keyword">for</span> （<span class="keyword">auto</span> pair : hashmap） &#123;</span><br><span class="line"> cout &lt;&lt; pair.first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 键值对遍历， &amp;pair是一个pair类型的引用，避免拷贝，推荐使用</span></span><br><span class="line"><span class="keyword">for</span> （<span class="keyword">auto</span> &amp;pair : hashmap） &#123;</span><br><span class="line"> cout &lt;&lt; pair.first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 键值对遍历， const auto &amp;pair是一个pair类型的引用，避免拷贝，且pair是常量，不能修改</span></span><br><span class="line"><span class="keyword">for</span> （<span class="type">const</span> <span class="keyword">auto</span> &amp;pair : hashmap） &#123;</span><br><span class="line"> cout &lt;&lt; pair.first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line"> <span class="comment">// pair.first = 4; // 错误，pair是常量，不能修改</span></span><br><span class="line"> <span class="comment">// pair.second = &quot;xour&quot;; // 错误，pair是常量，不能修改</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用结构化绑定</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; [key, value] : umap) &#123;</span><br><span class="line"> std::cout &lt;&lt; <span class="string">&quot;Key: &quot;</span> &lt;&lt; key &lt;&lt; <span class="string">&quot;, Value: &quot;</span> &lt;&lt; value &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用迭代器遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = hashmap.<span class="built_in">begin</span>(); it != hashmap.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; it-&gt;first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="哈希集合unordered-set"><a href="#哈希集合unordered-set" class="headerlink" title="哈希集合unordered_set"></a>哈希集合unordered_set</h3><p>以<code>unordered_set&lt;int&gt; hashset&#123;1, 2, 3, 4, 5&#125;;</code>为例：<br>常见的方法汇总为表格：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>hashset.size()</code></td>
+<td>获取哈希表大小</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashset.empty()</code></td>
+<td>判断哈希表是否为空</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code> </code>hashset.contains(4)&#96;</td>
+<td>判断key是否存在</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashset.insert(6)</code></td>
+<td>插入元素</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>hashset.erase(4)</code></td>
+<td>删除指定key的元素</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+<p>利用vector构造unordered_set</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; nums&#123;<span class="number">1</span>,<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="function">unordered_set&lt;<span class="type">int</span>&gt; <span class="title">hashset</span><span class="params">(nums.begin(), nums.end())</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+<p>对于哈希集合的遍历</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;element : hashset) &#123;</span><br><span class="line"> cout &lt;&lt; element &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="字符串string"><a href="#字符串string" class="headerlink" title="字符串string"></a>字符串string</h3><p>C++中字符串本质上是一个动态数组，底层实现是一个字符数组，且字符串的长度是动态的，可以随时改变。<br>常见的方法汇总为表格：以<code>string str = &quot;hello world&quot;;</code>为例：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>str.size()</code></td>
+<td>获取字符串大小</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>str[0]</code></td>
+<td>获取第一个字符</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td><code>s1.insert(0, &quot;x&quot;)</code></td>
+<td>在指定位置插入字符串</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>s1.erase(1, 2)</code></td>
+<td>从第1个位置开始删除2个字符</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>s1.replace(0, 2, &quot;xx&quot;)</code></td>
+<td>从第0个位置开始替换2个字符</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td><code>s1.find(&quot;lo&quot;)</code></td>
+<td>查找字符串，返回第一个位置</td>
+<td>O(n)</td>
+</tr>
+</tbody></table>
+<p>遍历字符串</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 下标遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; str.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line"> cout &lt;&lt; str[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 迭代器遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = str.<span class="built_in">begin</span>(); it != str.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 范围for遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> ch : str) &#123;</span><br><span class="line"> cout &lt;&lt; ch &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="Pass-by-value与pass-by-reference"><a href="#Pass-by-value与pass-by-reference" class="headerlink" title="Pass-by-value与pass-by-reference"></a>Pass-by-value与pass-by-reference</h3><p>值传递和引用传递。值传递是将参数的值复制一份传递给函数，函数内部对参数的修改不会影响外部变量；引用传递是将参数的地址传递给函数，函数内部对参数的修改会影响外部变量。<strong>如果是传递基本类型，比如 int、bool 等，用传值比较多，因为这类数据一般不需要在函数内部修改，而且复制的开销很小。如果是传递容器数据结构，比如 vector、unordered_map 等，用传引用比较多，因为可以避免复制数据副本的开销，而且容器一般需要在函数内部修改。</strong></p>
+]]></content>
+      <categories>
+        <category>labuladong算法笔记</category>
+      </categories>
+      <tags>
+        <tag>cpp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>labuladong-第二章-经典暴力搜索算法</title>
+    <url>/2025/04/23/labuladong-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%BB%8F%E5%85%B8%E6%9A%B4%E5%8A%9B%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<!-- # [第二章、经典暴力搜索算法](https://labuladong.online/algo/menu/braute-force-search/)
+## [DFS/回溯算法](https://labuladong.online/algo/menu/dfs/)
+### [回溯算法解题套路框架](https://labuladong.online/algo/essential-technique/backtrack-framework/)
+### [回溯算法实践：数独和 N 皇后问题](https://labuladong.online/algo/practice-in-action/sudoku-nqueue/)
+### [回溯算法秒杀所有排列/组合/子集问题](https://labuladong.online/algo/essential-technique/permutation-combination-subset-all-in-one/)
+### [球盒模型：回溯算法穷举的两种视角](https://labuladong.online/algo/practice-in-action/two-views-of-backtrack/)
+### [解答回溯算法/DFS算法的若干疑问](https://labuladong.online/algo/essential-technique/backtrack-vs-dfs/)
+### [一文秒杀所有岛屿题目](https://labuladong.online/algo/frequency-interview/island-dfs-summary/)
+### [回溯算法实践：括号生成](https://labuladong.online/algo/practice-in-action/generate-parentheses/)
+### [回溯算法实践：集合划分](https://labuladong.online/algo/practice-in-action/partition-to-k-equal-sum-subsets/)
+### [【强化练习】回溯算法经典习题 I](https://labuladong.online/algo/problem-set/backtrack-i/)
+### [【强化练习】回溯算法经典习题 II](https://labuladong.online/algo/problem-set/backtrack-ii/)
+### [【强化练习】回溯算法经典习题 III](https://labuladong.online/algo/problem-set/backtrack-iii/)
+
+## [BFS 算法](https://labuladong.online/algo/menu/bfs/)
+### [BFS 算法解题套路框架](https://labuladong.online/algo/essential-technique/bfs-framework/)
+### [【强化练习】BFS 经典习题 I](https://labuladong.online/algo/problem-set/bfs/)
+### [【强化练习】BFS 经典习题 II](https://labuladong.online/algo/problem-set/bfs-ii/)
+### [正在更新 ing](https://labuladong.online/algo/intro/updating/) -->
+
+
+
+
+<!-- 
+# [第三章、经典动态规划算法](https://labuladong.online/algo/menu/dp/)
+## [动态规划基本技巧](https://labuladong.online/algo/menu/dp-basic/)
+### [动态规划解题套路框架](https://labuladong.online/algo/essential-technique/dynamic-programming-framework/)
+### [动态规划设计：最长递增子序列](https://labuladong.online/algo/dynamic-programming/longest-increasing-subsequence/)
+### [base case 和备忘录的初始值怎么定？](https://labuladong.online/algo/dynamic-programming/memo-fundamental/)
+### [动态规划穷举的两种视角](https://labuladong.online/algo/dynamic-programming/two-views-of-dp/)
+### [动态规划和回溯算法的思维转换](https://labuladong.online/algo/dynamic-programming/word-break/)
+### [对动态规划进行降维打击](https://labuladong.online/algo/dynamic-programming/space-optimization/)
+### [最优子结构原理和 dp 数组遍历方向](https://labuladong.online/algo/dynamic-programming/faq-summary/)
+
+## [子序列类型问题](https://labuladong.online/algo/menu/subsequence/)
+### [经典动态规划：编辑距离](https://labuladong.online/algo/dynamic-programming/edit-distance/)
+### [动态规划设计：最大子数组](https://labuladong.online/algo/dynamic-programming/maximum-subarray/)
+### [经典动态规划：最长公共子序列](https://labuladong.online/algo/dynamic-programming/longest-common-subsequence/)
+### [动态规划之子序列问题解题模板](https://labuladong.online/algo/dynamic-programming/subsequence-problem/)
+
+## [背包类型问题](https://labuladong.online/algo/menu/knapsack/)
+### [经典动态规划：0-1 背包问题](https://labuladong.online/algo/dynamic-programming/knapsack1/)
+### [经典动态规划：子集背包问题](https://labuladong.online/algo/dynamic-programming/knapsack2/)
+### [经典动态规划：完全背包问题](https://labuladong.online/algo/dynamic-programming/knapsack3/)
+### [背包问题的变体：目标和](https://labuladong.online/algo/dynamic-programming/target-sum/)
+
+## [用动态规划玩游戏](https://labuladong.online/algo/menu/dp-game/)
+### [动态规划之最小路径和](https://labuladong.online/algo/dynamic-programming/minimum-path-sum/)
+### [动态规划帮我通关了《魔塔》](https://labuladong.online/algo/dynamic-programming/magic-tower/)
+### [动态规划帮我通关了《辐射4》](https://labuladong.online/algo/dynamic-programming/freedom-trail/)
+### [旅游省钱大法：加权最短路径](https://labuladong.online/algo/dynamic-programming/cheap-travel/)
+### [经典动态规划：正则表达式](https://labuladong.online/algo/dynamic-programming/regular-expression-matching/)
+### [经典动态规划：高楼扔鸡蛋](https://labuladong.online/algo/dynamic-programming/egg-drop/)
+### [经典动态规划：戳气球](https://labuladong.online/algo/dynamic-programming/burst-balloons/)
+### [经典动态规划：博弈问题](https://labuladong.online/algo/dynamic-programming/game-theory/)
+### [一个方法团灭 LeetCode 打家劫舍问题](https://labuladong.online/algo/dynamic-programming/house-robber/)
+### [一个方法团灭 LeetCode 股票买卖问题](https://labuladong.online/algo/dynamic-programming/stock-problem-summary/)
+
+## [贪心类型问题](https://labuladong.online/algo/menu/greedy/)
+### [贪心算法解题套路框架](https://labuladong.online/algo/essential-technique/greedy/)
+### [老司机加油算法](https://labuladong.online/algo/frequency-interview/gas-station-greedy/)
+### [贪心算法之区间调度问题](https://labuladong.online/algo/frequency-interview/interval-scheduling/)
+### [扫描线技巧：安排会议室](https://labuladong.online/algo/frequency-interview/scan-line-technique/)
+### [剪视频剪出一个贪心算法](https://labuladong.online/algo/frequency-interview/cut-video/) -->
+
+
+
+
+
+
+<!-- # [第四章、其他常见算法技巧](https://labuladong.online/algo/menu/other/)
+## [数学运算技巧](https://labuladong.online/algo/menu/math/)
+### [一行代码就能解决的算法题](https://labuladong.online/algo/frequency-interview/one-line-solutions/)
+### [常用的位操作](https://labuladong.online/algo/frequency-interview/bitwise-operation/)
+### [谈谈游戏中的随机算法](https://labuladong.online/algo/frequency-interview/random-algorithm/)
+### [讲两道常考的阶乘算法题](https://labuladong.online/algo/frequency-interview/factorial-problems/)
+### [如何高效寻找素数](https://labuladong.online/algo/frequency-interview/print-prime-number/)
+### [如何高效进行模幂运算](https://labuladong.online/algo/frequency-interview/quick-power/)
+### [如何同时寻找缺失和重复的元素](https://labuladong.online/algo/frequency-interview/mismatch-set/)
+### [几个反直觉的概率问题](https://labuladong.online/algo/frequency-interview/probability-problem/)
+### [【强化练习】数学技巧相关习题](https://labuladong.online/algo/problem-set/math-tricks/)
+
+## [经典面试题](https://labuladong.online/algo/menu/interview/)
+### [算法笔试「骗分」套路](https://labuladong.online/algo/other-skills/tips-in-exam/)
+### [如何高效解决接雨水问题](https://labuladong.online/algo/frequency-interview/trapping-rain-water/)
+### [一文秒杀所有丑数系列问题](https://labuladong.online/algo/frequency-interview/ugly-number-summary/)
+### [一个方法解决三道区间问题](https://labuladong.online/algo/practice-in-action/interval-problem-summary/)
+### [谁能想到，斗地主也能玩出算法](https://labuladong.online/algo/practice-in-action/split-array-into-consecutive-subsequences/)
+### [烧饼排序算法](https://labuladong.online/algo/frequency-interview/pancake-sorting/)
+### [字符串乘法计算](https://labuladong.online/algo/practice-in-action/multiply-strings/)
+### [如何判定完美矩形](https://labuladong.online/algo/frequency-interview/perfect-rectangle/) -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>labuladong算法笔记</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>排序算法</tag>
+        <tag>cpp</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>华为入职培训-现代cpp实战-2025</title>
+    <url>/2025/04/29/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-%E7%8E%B0%E4%BB%A3cpp%E5%AE%9E%E6%88%98-2025/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>软件雏鹰计划</category>
+      </categories>
+      <tags>
+        <tag>cpp</tag>
+        <tag>华为</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>华为入职培训-C++语言编程规范</title>
+    <url>/2025/04/22/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-C-%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="1-课程简介"><a href="#1-课程简介" class="headerlink" title="1. 课程简介"></a>1. 课程简介</h1><p>视频中说可以在公司内网下载，在互联网上找到一个版本<a href="https://blog.csdn.net/yaoming168/article/details/136063619">华为C++语言编程规范</a></p>
+<h1 id="2-引言"><a href="#2-引言" class="headerlink" title="2. 引言"></a>2. 引言</h1><p>常见的c++中的未定义行为</p>
+<ul>
+<li>整数除以0</li>
+<li>有符号的整数溢出</li>
+<li>访问越界数组</li>
+<li>使用未初始化的变量</li>
+<li>越界访问</li>
+<li>使用<code>new T[n]</code>分配数组，却用delete不带[]释放<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>* arr = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>];  <span class="comment">// 分配10个int的空间</span></span><br><span class="line"><span class="keyword">delete</span> arr;              <span class="comment">// 错误！应该用delete[] arr</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>关于指针，优先使用<strong>引用和智能指针</strong></p>
+<h1 id="3-代码风格"><a href="#3-代码风格" class="headerlink" title="3. 代码风格"></a>3. 代码风格</h1><p>主要看项目组用啥命名风格，不推荐匈牙利</p>
+<h1 id="4-编程实践"><a href="#4-编程实践" class="headerlink" title="4. 编程实践"></a>4. 编程实践</h1><h2 id="4-1-函数、类、常量"><a href="#4-1-函数、类、常量" class="headerlink" title="4.1 函数、类、常量"></a>4.1 函数、类、常量</h2><h3 id="输入校验原则"><a href="#输入校验原则" class="headerlink" title="输入校验原则"></a>输入校验原则</h3><p><img src="/../images/1745397201823-image.png" alt="alt text"></p>
+<p>如上是两个函数单板的模型，首先熟悉一下相关的名词</p>
+<ul>
+<li>单板：一个函数或者一个类</li>
+<li>.so文件：shared object file，这是Unix下的动态链接库，大概类似于windows下的dll</li>
+</ul>
+<p>大概意思是：</p>
+<blockquote>
+<p>外部数据输入（箭头①） 需要进行严格的校验，<strong>防止恶意数据注入</strong>。<br>内部数据传递（箭头②、④、⑤） 也需要进行适当的校验，确保数据的一致性和安全性。<br>应用层与内核层交互（箭头③） 更加需要严谨的校验机制，<strong>避免因数据问题导致系统崩溃或被攻击</strong>。</p>
+</blockquote>
+<p>c++中常见的函数输入校验：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">devide</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> std::<span class="built_in">runtime_error</span>(<span class="string">&quot;Divide by zero&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a / b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="合理选择输入输出参数"><a href="#合理选择输入输出参数" class="headerlink" title="合理选择输入输出参数"></a>合理选择输入输出参数</h3><p>对于输入参数</p>
+<ul>
+<li>拷贝代价高，pass by reference</li>
+<li>拷贝代价低，pass by value</li>
+<li>要被移动的参数，作为参数的时候应该使用右值引用类型，在函数内用<code>std::move</code></li>
+<li>不要用C风格的变参类型，因为没有办法验证输入</li>
+</ul>
+<h2 id="对于返回参数"><a href="#对于返回参数" class="headerlink" title="对于返回参数"></a>对于返回参数</h2><h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>要保证类的封装性，要与外部解耦</p>
+<p><img src="/../images/1745407464208-image.png" alt="alt text"></p>
+<ul>
+<li><strong>Rule of three</strong>: 拷贝构造函数、赋值运算符、析构函数</li>
+<li><strong>Rule of five</strong>: 拷贝构造函数、赋值运算符、析构函数、移动构造函数、移动赋值运算符</li>
+<li><strong>Rule of zero</strong>: 析构函数、移动构造函数、移动赋值运算符</li>
+</ul>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>多用常量，编译器检查友好，使得代码的可读性更高</p>
+<h2 id="4-2-枚举、声明与定义"><a href="#4-2-枚举、声明与定义" class="headerlink" title="4.2 枚举、声明与定义"></a>4.2 枚举、声明与定义</h2><h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>c++中优先使用枚举类，例如</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum class</span> <span class="title class_">Color</span> &#123; RED, GREEN, BLUE &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="声明与定义"><a href="#声明与定义" class="headerlink" title="声明与定义"></a>声明与定义</h3><p>避免定义保留标识符，如<code>void * malloc()</code>，malloc是C语言的标准库函数，在c++中应该使用<code>std::malloc</code></p>
+<h3 id="作用域最小"><a href="#作用域最小" class="headerlink" title="作用域最小"></a>作用域最小</h3><p>避免使用全局变量，全局变量会污染命名空间，导致代码的可读性降低，也容易产生命名冲突</p>
+<h2 id="4-3-类型转换、整数运算"><a href="#4-3-类型转换、整数运算" class="headerlink" title="4.3 类型转换、整数运算"></a>4.3 类型转换、整数运算</h2><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>用c++风格的类型转换，而不是c风格的类型转换。一般是是<code>dynamic_cast</code>，<code>static_cast</code>，<code>reinterpret_cast</code>，<code>const_cast</code>等的语法，其中<code>cast</code>有浇铸，铸造的意思</p>
+<h3 id="整数运算"><a href="#整数运算" class="headerlink" title="整数运算"></a>整数运算</h3><p>注意整数的溢出和回绕的问题</p>
+<h2 id="4-4-表达式、语句"><a href="#4-4-表达式、语句" class="headerlink" title="4.4 表达式、语句"></a>4.4 表达式、语句</h2><h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><ul>
+<li>比较的时候，左边要放常量，右边放变量，<code>if (MAX == value)</code></li>
+<li>副作用不要放到逻辑判断中，例如<code>if (a == 0 || b ++ &gt; 1)</code> 这种是不允许的</li>
+<li>多使用<code>static_assert</code>在编译的时候检查，例如<code>static_assert(sizeof(int) == 4, &quot;int is not 4 bytes&quot;);</code></li>
+<li><code>int</code>类似不能单独作为判断依据，例如如下是不允许的<code>int a = 0; if (a) &#123;xxx&#125;</code></li>
+</ul>
+<h2 id="4-5-资源管理、错误处理"><a href="#4-5-资源管理、错误处理" class="headerlink" title="4.5 资源管理、错误处理"></a>4.5 资源管理、错误处理</h2><h3 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a>资源管理</h3><p>需要遵守RAII, Resource Acquisition Is Initialization,其主要的含义是</p>
+<ul>
+<li>初始化，初始化是资源的分配 </li>
+<li>析构，析构是资源的释放<br>常见的对有<code>new/delete</code>操作的封装，<code>fopen/fclose</code>等</li>
+</ul>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>有的地方是不能抛出异常的，例如：</p>
+<ul>
+<li>析构函数，析构函数不能抛出异常</li>
+<li>要用<code>noexcept</code>修饰，例如<code>void foo() noexcept</code>表示这个函数不会抛出异常</li>
+</ul>
+<h2 id="4-6-模板与泛型编程、并发与并行"><a href="#4-6-模板与泛型编程、并发与并行" class="headerlink" title="4.6 模板与泛型编程、并发与并行"></a>4.6 模板与泛型编程、并发与并行</h2><h3 id="模板与泛型"><a href="#模板与泛型" class="headerlink" title="模板与泛型"></a>模板与泛型</h3><p>template并不是百利而无一害的，其可能造成<strong>代码膨胀</strong>：<br><img src="/../images/1745584892805-image.png" alt="alt text"></p>
+<h2 id="4-7-预处理、头文件与源文件"><a href="#4-7-预处理、头文件与源文件" class="headerlink" title="4.7 预处理、头文件与源文件"></a>4.7 预处理、头文件与源文件</h2><h3 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h3><p><img src="/../images/1745671766322-image.png" alt="alt text"></p>
+<ul>
+<li>避免使用宏</li>
+</ul>
+<h3 id="头文件与源文件"><a href="#头文件与源文件" class="headerlink" title="头文件与源文件"></a>头文件与源文件</h3><p><img src="/../images/1745672089703-image.png" alt="alt text"></p>
+<ul>
+<li>自己的头文件用 “”</li>
+<li>第三方库用 &lt;&gt;</li>
+</ul>
+<h2 id="4-8-标准库"><a href="#4-8-标准库" class="headerlink" title="4.8 标准库"></a>4.8 标准库</h2><h3 id="优先使用c-的标准库"><a href="#优先使用c-的标准库" class="headerlink" title="优先使用c++的标准库"></a>优先使用c++的标准库</h3><p>尽量不是用c的标准库</p>
+<h3 id="注意线程不安全-异步不安全的函数"><a href="#注意线程不安全-异步不安全的函数" class="headerlink" title="注意线程不安全&#x2F;异步不安全的函数"></a>注意线程不安全&#x2F;异步不安全的函数</h3><h1 id="5-继承自C语言编程规范条款款"><a href="#5-继承自C语言编程规范条款款" class="headerlink" title="5. 继承自C语言编程规范条款款"></a>5. 继承自C语言编程规范条款款</h1><p><img src="/../images/1745840906133-image.png" alt="alt text"></p>
+<ul>
+<li>断言不能用在正式版本中，只能在调试的过程中使用，例如<code>assert(x &gt; 0)</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>软件雏鹰计划</category>
+      </categories>
+      <tags>
+        <tag>cpp</tag>
+        <tag>华为</tag>
+        <tag>编程规范</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>labuladong-第零章-核心刷题框架汇总</title>
     <url>/2025/04/23/labuladong-%E7%AC%AC%E9%9B%B6%E7%AB%A0-%E6%A0%B8%E5%BF%83%E5%88%B7%E9%A2%98%E6%A1%86%E6%9E%B6%E6%B1%87%E6%80%BB/</url>
     <content><![CDATA[<h1 id="第零章、核心刷题框架汇总"><a href="#第零章、核心刷题框架汇总" class="headerlink" title="第零章、核心刷题框架汇总"></a><a href="https://labuladong.online/algo/menu/core/">第零章、核心刷题框架汇总</a></h1><h2 id="本章导读"><a href="#本章导读" class="headerlink" title="本章导读"></a><a href="https://labuladong.online/algo/intro/core-intro/">本章导读</a></h2><h2 id="学习数据结构和算法的框架思维"><a href="#学习数据结构和算法的框架思维" class="headerlink" title="学习数据结构和算法的框架思维"></a><a href="https://labuladong.online/algo/essential-technique/algorithm-summary/">学习数据结构和算法的框架思维</a></h2><blockquote>
@@ -1801,442 +2329,6 @@
 </ul>
 <h3 id="数据结构的算法分析"><a href="#数据结构的算法分析" class="headerlink" title="数据结构的算法分析"></a>数据结构的算法分析</h3><p>分析数据结构 API 的时间复杂度和分析普通算法函数的时间复杂度稍微有一些区别，因为数据结构是会动态变化的。如动态数组的<code>push_back</code>操作，时间复杂度是 O(1)，但是如果动态数组的容量不够了，就需要扩容，时间复杂度就变成了 O(n)。哈希表的<code>put</code>操作，时间复杂度是 O(1)，但是如果哈希冲突了，需要rehash，时间复杂度就变成了 O(n)。</p>
 <p>如果想衡量数据结构类中的某个方法的时间复杂度，<strong>不能简单地看最坏或者最好的时间复杂度，而应该看摊还（平均）时间复杂度</strong></p>
-]]></content>
-      <categories>
-        <category>labuladong算法笔记</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-        <tag>排序算法</tag>
-        <tag>cpp</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>华为入职培训-现代cpp实战-2025</title>
-    <url>/2025/04/29/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-%E7%8E%B0%E4%BB%A3cpp%E5%AE%9E%E6%88%98-2025/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>软件雏鹰计划</category>
-      </categories>
-      <tags>
-        <tag>cpp</tag>
-        <tag>华为</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>labuladong-入门-编程语言基础及练习</title>
-    <url>/2025/04/23/labuladong-%E5%85%A5%E9%97%A8-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%8F%8A%E7%BB%83%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本笔记是主要通过学习<a href="https://labuladong.online/algo/">labuladong的算法笔记</a>, 开始时间是2025&#x2F;03&#x2F;31。</p>
-<h1 id="入门：编程语言基础及练习"><a href="#入门：编程语言基础及练习" class="headerlink" title="入门：编程语言基础及练习"></a><a href="https://labuladong.online/algo/menu/">入门：编程语言基础及练习</a></h1><blockquote>
-<p>本章就主要看了一下C++，刷了如下的题单<br><a href="https://leetcode.cn/problems/two-sum/">1.两数之和</a><br><a href="https://leetcode.cn/problems/contains-duplicate/">217.存在重复元素</a><br><a href="https://leetcode.cn/problems/single-number/">136.只出现一次的数字</a><br><a href="https://leetcode.cn/problems/valid-parentheses/">20.有效的括号</a><br><a href="https://leetcode.cn/problems/time-needed-to-buy-tickets/">2073. 买票需要的时间。</a></p>
-</blockquote>
-<h2 id="C-语言基础"><a href="#C-语言基础" class="headerlink" title="C++ 语言基础"></a><a href="https://labuladong.online/algo/programming-language-basic/cpp/">C++ 语言基础</a></h2><p>重点是看了一下C++的语法</p>
-<h3 id="Vector-动态数组"><a href="#Vector-动态数组" class="headerlink" title="Vector 动态数组"></a>Vector 动态数组</h3><p>常见的方法汇总为表格，以<code>vector&lt;int&gt; nums&#123;0,1,2,3,4,5&#125;</code>为例：</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-<th>复杂度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>nums.size()</code></td>
-<td>获取数组大小</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>nums.empty()</code></td>
-<td>判断数组是否为空</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>nums.push_back(6)</code></td>
-<td>在末尾添加元素</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>nums.pop_back()</code></td>
-<td>删除末尾元素</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>nums.front()</code></td>
-<td>获取第一个元素</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>nums.back()</code></td>
-<td>获取最后一个元素</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>nums.insert(nums.begin() + 2, 10)</code></td>
-<td>在指定位置插入元素</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td><code>nums.erase(nums.begin() + 2)</code></td>
-<td>删除指定位置元素</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td><code>swap(nums[0], nums[1])</code></td>
-<td>交换两个元素</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>nums.begin()</code></td>
-<td>获取迭代器</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>nums.end()</code></td>
-<td>获取迭代器</td>
-<td>O(1)</td>
-</tr>
-</tbody></table>
-<p>对于数组的遍历</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 下角标遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line"> cout &lt;&lt; nums[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 迭代器遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = nums.<span class="built_in">begin</span>(); it != nums.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 范围for遍历, 类似于python的for num in nums</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> num : nums) &#123;</span><br><span class="line"> cout &lt;&lt; num &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h3 id="双链表list"><a href="#双链表list" class="headerlink" title="双链表list"></a>双链表list</h3><p>常见的方法汇总为表格，以<code>list&lt;int&gt; lst&#123;0,1,2,3,4,5&#125;</code>为例：</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-<th>复杂度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>lst.size()</code></td>
-<td>获取链表大小</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td><code>lst.empty()</code></td>
-<td>判断链表是否为空</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>lst.push_back(6)</code></td>
-<td>在末尾添加元素</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>lst.push_front(6)</code></td>
-<td>在头部添加元素</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>lst.pop_back()</code></td>
-<td>删除末尾元素</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>lst.pop_front()</code></td>
-<td>删除头部元素</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>auto it = lst.begin();advance(it, 2); lst.insert(it, 10)</code></td>
-<td>在指定位置插入元素</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td><code>auto it = lst.begin();advance(it, 2); lst.erase(it)</code></td>
-<td>删除指定位置元素</td>
-<td>O(n)</td>
-</tr>
-</tbody></table>
-<p>对于链表的遍历</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 迭代器遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = lst.<span class="built_in">begin</span>(); it != lst.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 范围for遍历, 类似于python的for num in lst</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> val : lst) &#123;</span><br><span class="line"> cout &lt;&lt; val &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h3 id="队列queue与栈stack"><a href="#队列queue与栈stack" class="headerlink" title="队列queue与栈stack"></a>队列queue与栈stack</h3><p>queue和stack都是基于双链表实现的，都支持push和pop操作，push都是从尾部添加元素，queue的pop是从头部删除元素，stack的pop是从尾部删除元素，且stack支持top操作，获取栈顶元素。两个的遍历方式是一样的，都是使用迭代器遍历。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 队列的遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = que.<span class="built_in">begin</span>(); it != que.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 栈的遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = sta.<span class="built_in">begin</span>(); it != sta.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="哈希表-unordered-map"><a href="#哈希表-unordered-map" class="headerlink" title="哈希表 unordered_map"></a>哈希表 unordered_map</h3><p>以<code>unordered_map&lt;int, string&gt; hashmap&#123;&#123;1, "one"&#125;, &#123;2, "two"&#125;, &#123;3, "three"&#125;&#125;;</code>为例：<br>常见的方法汇总为表格：</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-<th>复杂度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>hashmap.size()</code></td>
-<td>获取哈希表大小</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>hashmap.empty()</code></td>
-<td>判断哈希表是否为空</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>hashmap[4]</code></td>
-<td>获取指定key的值，此key不存在时会插入一个key为4，值为””的元素</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>hashmap.contains(4)</code></td>
-<td>判断key是否存在</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>hashmap[&quot;5&quot;]=&quot;five&quot;</code></td>
-<td>插入元素</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>hashmap.erase(4)</code></td>
-<td>删除指定key的元素</td>
-<td>O(1)</td>
-</tr>
-</tbody></table>
-<p>对于哈希表的遍历</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 键值对遍历，pair是一个pair类型的值，拷贝了一份，效率低</span></span><br><span class="line"><span class="keyword">for</span> （<span class="keyword">auto</span> pair : hashmap） &#123;</span><br><span class="line"> cout &lt;&lt; pair.first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 键值对遍历， &amp;pair是一个pair类型的引用，避免拷贝，推荐使用</span></span><br><span class="line"><span class="keyword">for</span> （<span class="keyword">auto</span> &amp;pair : hashmap） &#123;</span><br><span class="line"> cout &lt;&lt; pair.first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 键值对遍历， const auto &amp;pair是一个pair类型的引用，避免拷贝，且pair是常量，不能修改</span></span><br><span class="line"><span class="keyword">for</span> （<span class="type">const</span> <span class="keyword">auto</span> &amp;pair : hashmap） &#123;</span><br><span class="line"> cout &lt;&lt; pair.first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line"> <span class="comment">// pair.first = 4; // 错误，pair是常量，不能修改</span></span><br><span class="line"> <span class="comment">// pair.second = &quot;xour&quot;; // 错误，pair是常量，不能修改</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用结构化绑定</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; [key, value] : umap) &#123;</span><br><span class="line"> std::cout &lt;&lt; <span class="string">&quot;Key: &quot;</span> &lt;&lt; key &lt;&lt; <span class="string">&quot;, Value: &quot;</span> &lt;&lt; value &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用迭代器遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = hashmap.<span class="built_in">begin</span>(); it != hashmap.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; it-&gt;first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="哈希集合unordered-set"><a href="#哈希集合unordered-set" class="headerlink" title="哈希集合unordered_set"></a>哈希集合unordered_set</h3><p>以<code>unordered_set&lt;int&gt; hashset&#123;1, 2, 3, 4, 5&#125;;</code>为例：<br>常见的方法汇总为表格：</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-<th>复杂度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>hashset.size()</code></td>
-<td>获取哈希表大小</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>hashset.empty()</code></td>
-<td>判断哈希表是否为空</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code> </code>hashset.contains(4)&#96;</td>
-<td>判断key是否存在</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>hashset.insert(6)</code></td>
-<td>插入元素</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>hashset.erase(4)</code></td>
-<td>删除指定key的元素</td>
-<td>O(1)</td>
-</tr>
-</tbody></table>
-<p>利用vector构造unordered_set</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; nums&#123;<span class="number">1</span>,<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="function">unordered_set&lt;<span class="type">int</span>&gt; <span class="title">hashset</span><span class="params">(nums.begin(), nums.end())</span></span>;</span><br></pre></td></tr></table></figure>
-
-
-<p>对于哈希集合的遍历</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;element : hashset) &#123;</span><br><span class="line"> cout &lt;&lt; element &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="字符串string"><a href="#字符串string" class="headerlink" title="字符串string"></a>字符串string</h3><p>C++中字符串本质上是一个动态数组，底层实现是一个字符数组，且字符串的长度是动态的，可以随时改变。<br>常见的方法汇总为表格：以<code>string str = &quot;hello world&quot;;</code>为例：</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-<th>复杂度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>str.size()</code></td>
-<td>获取字符串大小</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>str[0]</code></td>
-<td>获取第一个字符</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td><code>s1.insert(0, &quot;x&quot;)</code></td>
-<td>在指定位置插入字符串</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td><code>s1.erase(1, 2)</code></td>
-<td>从第1个位置开始删除2个字符</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td><code>s1.replace(0, 2, &quot;xx&quot;)</code></td>
-<td>从第0个位置开始替换2个字符</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td><code>s1.find(&quot;lo&quot;)</code></td>
-<td>查找字符串，返回第一个位置</td>
-<td>O(n)</td>
-</tr>
-</tbody></table>
-<p>遍历字符串</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 下标遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; str.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line"> cout &lt;&lt; str[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 迭代器遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = str.<span class="built_in">begin</span>(); it != str.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line"> cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 范围for遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> ch : str) &#123;</span><br><span class="line"> cout &lt;&lt; ch &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="Pass-by-value与pass-by-reference"><a href="#Pass-by-value与pass-by-reference" class="headerlink" title="Pass-by-value与pass-by-reference"></a>Pass-by-value与pass-by-reference</h3><p>值传递和引用传递。值传递是将参数的值复制一份传递给函数，函数内部对参数的修改不会影响外部变量；引用传递是将参数的地址传递给函数，函数内部对参数的修改会影响外部变量。<strong>如果是传递基本类型，比如 int、bool 等，用传值比较多，因为这类数据一般不需要在函数内部修改，而且复制的开销很小。如果是传递容器数据结构，比如 vector、unordered_map 等，用传引用比较多，因为可以避免复制数据副本的开销，而且容器一般需要在函数内部修改。</strong></p>
-]]></content>
-      <categories>
-        <category>labuladong算法笔记</category>
-      </categories>
-      <tags>
-        <tag>cpp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>labuladong-第二章-经典暴力搜索算法</title>
-    <url>/2025/04/23/labuladong-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%BB%8F%E5%85%B8%E6%9A%B4%E5%8A%9B%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<!-- # [第二章、经典暴力搜索算法](https://labuladong.online/algo/menu/braute-force-search/)
-## [DFS/回溯算法](https://labuladong.online/algo/menu/dfs/)
-### [回溯算法解题套路框架](https://labuladong.online/algo/essential-technique/backtrack-framework/)
-### [回溯算法实践：数独和 N 皇后问题](https://labuladong.online/algo/practice-in-action/sudoku-nqueue/)
-### [回溯算法秒杀所有排列/组合/子集问题](https://labuladong.online/algo/essential-technique/permutation-combination-subset-all-in-one/)
-### [球盒模型：回溯算法穷举的两种视角](https://labuladong.online/algo/practice-in-action/two-views-of-backtrack/)
-### [解答回溯算法/DFS算法的若干疑问](https://labuladong.online/algo/essential-technique/backtrack-vs-dfs/)
-### [一文秒杀所有岛屿题目](https://labuladong.online/algo/frequency-interview/island-dfs-summary/)
-### [回溯算法实践：括号生成](https://labuladong.online/algo/practice-in-action/generate-parentheses/)
-### [回溯算法实践：集合划分](https://labuladong.online/algo/practice-in-action/partition-to-k-equal-sum-subsets/)
-### [【强化练习】回溯算法经典习题 I](https://labuladong.online/algo/problem-set/backtrack-i/)
-### [【强化练习】回溯算法经典习题 II](https://labuladong.online/algo/problem-set/backtrack-ii/)
-### [【强化练习】回溯算法经典习题 III](https://labuladong.online/algo/problem-set/backtrack-iii/)
-
-## [BFS 算法](https://labuladong.online/algo/menu/bfs/)
-### [BFS 算法解题套路框架](https://labuladong.online/algo/essential-technique/bfs-framework/)
-### [【强化练习】BFS 经典习题 I](https://labuladong.online/algo/problem-set/bfs/)
-### [【强化练习】BFS 经典习题 II](https://labuladong.online/algo/problem-set/bfs-ii/)
-### [正在更新 ing](https://labuladong.online/algo/intro/updating/) -->
-
-
-
-
-<!-- 
-# [第三章、经典动态规划算法](https://labuladong.online/algo/menu/dp/)
-## [动态规划基本技巧](https://labuladong.online/algo/menu/dp-basic/)
-### [动态规划解题套路框架](https://labuladong.online/algo/essential-technique/dynamic-programming-framework/)
-### [动态规划设计：最长递增子序列](https://labuladong.online/algo/dynamic-programming/longest-increasing-subsequence/)
-### [base case 和备忘录的初始值怎么定？](https://labuladong.online/algo/dynamic-programming/memo-fundamental/)
-### [动态规划穷举的两种视角](https://labuladong.online/algo/dynamic-programming/two-views-of-dp/)
-### [动态规划和回溯算法的思维转换](https://labuladong.online/algo/dynamic-programming/word-break/)
-### [对动态规划进行降维打击](https://labuladong.online/algo/dynamic-programming/space-optimization/)
-### [最优子结构原理和 dp 数组遍历方向](https://labuladong.online/algo/dynamic-programming/faq-summary/)
-
-## [子序列类型问题](https://labuladong.online/algo/menu/subsequence/)
-### [经典动态规划：编辑距离](https://labuladong.online/algo/dynamic-programming/edit-distance/)
-### [动态规划设计：最大子数组](https://labuladong.online/algo/dynamic-programming/maximum-subarray/)
-### [经典动态规划：最长公共子序列](https://labuladong.online/algo/dynamic-programming/longest-common-subsequence/)
-### [动态规划之子序列问题解题模板](https://labuladong.online/algo/dynamic-programming/subsequence-problem/)
-
-## [背包类型问题](https://labuladong.online/algo/menu/knapsack/)
-### [经典动态规划：0-1 背包问题](https://labuladong.online/algo/dynamic-programming/knapsack1/)
-### [经典动态规划：子集背包问题](https://labuladong.online/algo/dynamic-programming/knapsack2/)
-### [经典动态规划：完全背包问题](https://labuladong.online/algo/dynamic-programming/knapsack3/)
-### [背包问题的变体：目标和](https://labuladong.online/algo/dynamic-programming/target-sum/)
-
-## [用动态规划玩游戏](https://labuladong.online/algo/menu/dp-game/)
-### [动态规划之最小路径和](https://labuladong.online/algo/dynamic-programming/minimum-path-sum/)
-### [动态规划帮我通关了《魔塔》](https://labuladong.online/algo/dynamic-programming/magic-tower/)
-### [动态规划帮我通关了《辐射4》](https://labuladong.online/algo/dynamic-programming/freedom-trail/)
-### [旅游省钱大法：加权最短路径](https://labuladong.online/algo/dynamic-programming/cheap-travel/)
-### [经典动态规划：正则表达式](https://labuladong.online/algo/dynamic-programming/regular-expression-matching/)
-### [经典动态规划：高楼扔鸡蛋](https://labuladong.online/algo/dynamic-programming/egg-drop/)
-### [经典动态规划：戳气球](https://labuladong.online/algo/dynamic-programming/burst-balloons/)
-### [经典动态规划：博弈问题](https://labuladong.online/algo/dynamic-programming/game-theory/)
-### [一个方法团灭 LeetCode 打家劫舍问题](https://labuladong.online/algo/dynamic-programming/house-robber/)
-### [一个方法团灭 LeetCode 股票买卖问题](https://labuladong.online/algo/dynamic-programming/stock-problem-summary/)
-
-## [贪心类型问题](https://labuladong.online/algo/menu/greedy/)
-### [贪心算法解题套路框架](https://labuladong.online/algo/essential-technique/greedy/)
-### [老司机加油算法](https://labuladong.online/algo/frequency-interview/gas-station-greedy/)
-### [贪心算法之区间调度问题](https://labuladong.online/algo/frequency-interview/interval-scheduling/)
-### [扫描线技巧：安排会议室](https://labuladong.online/algo/frequency-interview/scan-line-technique/)
-### [剪视频剪出一个贪心算法](https://labuladong.online/algo/frequency-interview/cut-video/) -->
-
-
-
-
-
-
-<!-- # [第四章、其他常见算法技巧](https://labuladong.online/algo/menu/other/)
-## [数学运算技巧](https://labuladong.online/algo/menu/math/)
-### [一行代码就能解决的算法题](https://labuladong.online/algo/frequency-interview/one-line-solutions/)
-### [常用的位操作](https://labuladong.online/algo/frequency-interview/bitwise-operation/)
-### [谈谈游戏中的随机算法](https://labuladong.online/algo/frequency-interview/random-algorithm/)
-### [讲两道常考的阶乘算法题](https://labuladong.online/algo/frequency-interview/factorial-problems/)
-### [如何高效寻找素数](https://labuladong.online/algo/frequency-interview/print-prime-number/)
-### [如何高效进行模幂运算](https://labuladong.online/algo/frequency-interview/quick-power/)
-### [如何同时寻找缺失和重复的元素](https://labuladong.online/algo/frequency-interview/mismatch-set/)
-### [几个反直觉的概率问题](https://labuladong.online/algo/frequency-interview/probability-problem/)
-### [【强化练习】数学技巧相关习题](https://labuladong.online/algo/problem-set/math-tricks/)
-
-## [经典面试题](https://labuladong.online/algo/menu/interview/)
-### [算法笔试「骗分」套路](https://labuladong.online/algo/other-skills/tips-in-exam/)
-### [如何高效解决接雨水问题](https://labuladong.online/algo/frequency-interview/trapping-rain-water/)
-### [一文秒杀所有丑数系列问题](https://labuladong.online/algo/frequency-interview/ugly-number-summary/)
-### [一个方法解决三道区间问题](https://labuladong.online/algo/practice-in-action/interval-problem-summary/)
-### [谁能想到，斗地主也能玩出算法](https://labuladong.online/algo/practice-in-action/split-array-into-consecutive-subsequences/)
-### [烧饼排序算法](https://labuladong.online/algo/frequency-interview/pancake-sorting/)
-### [字符串乘法计算](https://labuladong.online/algo/practice-in-action/multiply-strings/)
-### [如何判定完美矩形](https://labuladong.online/algo/frequency-interview/perfect-rectangle/) -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ]]></content>
       <categories>
         <category>labuladong算法笔记</category>
@@ -2992,58 +3084,52 @@
       更小
         严格更小
         更小或者相等
-``` -->
-<p><img src="/../images/1746709574123-image.png" alt="alt text"></p>
-<p>同时还要考虑到是不是循环数组，总共$2<em>2</em>2*2&#x3D;16$种情况，我们定义如下的算法模板：</p>
-<pre><code class="language-python">def monoStkTemplate(nums: List[int], is_cyclic=False: bool, is_next=True: bool, is_greater=True: bool,is_equal=True: bool) -&gt; List[int]:
-    &quot;&quot;&quot;
-    nums: 输入数组
-    is_cyclic: 是否循环数组
-    is_next: 是关注下一个元素，还是上一个元素
-    is_greater: 是关注更大还是更小
-    is_equal: 是严格更大/更小还是包括等于的情况
-    &quot;&quot;&quot;
-    n = len(nums)
-    ans = [0] * n
-    stk = []
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![alt text](../images/1746709574123-image.png)</span><br><span class="line"></span><br><span class="line">同时还要考虑到是不是循环数组，总共$2*2*2*2=16$种情况，我们定义如下的算法模板：</span><br><span class="line">```python</span><br><span class="line">def monoStkTemplate(nums: List[int], is_cyclic: bool, is_next: bool, is_greater: bool, is_equal: bool) -&gt; List[int]:</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    nums: 输入数组</span><br><span class="line">    is_cyclic: 是否循环数组</span><br><span class="line">    is_next: 是关注下一个元素，还是上一个元素</span><br><span class="line">    is_greater: 是关注更大还是更小</span><br><span class="line">    is_equal: 是严格更大/更小还是包括等于的情况</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    n = len(nums)</span><br><span class="line">    ans = [0] * n</span><br><span class="line">    stk = []</span><br><span class="line"></span><br><span class="line">    range_ = None</span><br><span class="line">    comparator = None</span><br><span class="line"></span><br><span class="line">    if is_next and is_cyclic:</span><br><span class="line">        range_ = range(2 * n - 1, -1, -1)</span><br><span class="line">    elif is_next and not is_cyclic:</span><br><span class="line">        range_ = range(n - 1, -1, -1)</span><br><span class="line">    elif not is_next and is_cyclic:</span><br><span class="line">        range_ = range(2 * n)</span><br><span class="line">    elif not is_next and not is_cyclic:</span><br><span class="line">        range_ = range(n)</span><br><span class="line"></span><br><span class="line">    if is_greater and is_equal:</span><br><span class="line">        comparator = lambda stk_top, cur: stk_top &lt; cur</span><br><span class="line">    elif is_greater and not is_equal:</span><br><span class="line">        comparator = lambda stk_top, cur: stk_top &lt;= cur</span><br><span class="line">    elif not is_greater and is_equal:</span><br><span class="line">        comparator = lambda stk_top, cur: stk_top &gt; cur</span><br><span class="line">    elif not is_greater and not is_equal:</span><br><span class="line">        comparator = lambda stk_top, cur: stk_top &gt;= cur</span><br><span class="line"></span><br><span class="line">    for i in range_:</span><br><span class="line">        idx = i % n</span><br><span class="line">        cur = nums[idx]</span><br><span class="line"></span><br><span class="line">        while stk and comparator(stk[-1], cur):</span><br><span class="line">            stk.pop()</span><br><span class="line">        ans[idx] = stk[-1] if stk else -1</span><br><span class="line">        stk.append(cur)</span><br><span class="line"></span><br><span class="line">    return ans&lt;/pre&gt;</span><br><span class="line"></span><br><span class="line">#### 相关题目</span><br><span class="line">- [Leetcode 1019](https://leetcode.cn/problems/next-greater-node-in-linked-list/) 链表中的下一个更大元素</span><br><span class="line">本质上就是下一个更大的元素，可以用一个数组把链表存起来</span><br><span class="line"></span><br><span class="line">- [Leetcode 1944*](https://leetcode.cn/problems/number-of-visible-people-in-a-queue/) 队列中可见的人数</span><br><span class="line">改题目是比较困难的，与之前的返回下一个更大/更小的元素或者其idx做差不同，其关心的是，pop_cnt  即需要弹出几次？</span><br><span class="line">代码如下，该题与[Leetcode 402](https://leetcode.cn/problems/remove-k-digits/) 移除k个数字比较类似。都是关心单调栈构建过程中**弹出的次数pop_cnt**</span><br><span class="line">```python</span><br><span class="line">class Solution:</span><br><span class="line">    def canSeePersonsCount(self, heights: List[int]) -&gt; List[int]:</span><br><span class="line">        n = len(heights)</span><br><span class="line">        ans = [0] * n</span><br><span class="line">        stk = []</span><br><span class="line">        for i in range(n-1,-1,-1):</span><br><span class="line">            pop_cnt = 0</span><br><span class="line">            while stk and stk[-1] &lt; heights[i]:</span><br><span class="line">                pop_cnt += 1</span><br><span class="line">                stk.pop()</span><br><span class="line">            # 既不是idx差也不是元素，而是pop_cnt</span><br><span class="line">            ans[i] = pop_cnt + 1 if stk else pop_cnt</span><br><span class="line">            stk.append(heights[i])</span><br><span class="line">        return ans</span><br></pre></td></tr></table></figure>
 
-    range_ = None
-    comparator = None
 
-    if is_next and is_cyclic:
-        range_ = range(2*n-1,-1,-1) 
-    elif is_next and not is_cyclic:
-        range_ = range(n-1, -1, -1)
-    elif not is_next and is_cyclic:
-        range_ = range(2*n)
-    elif not is_next and not is_cyclic:
-        range_ = range(n)
-
-    if is_greater and is_equal:
-        comparator = lambda stk_top, cur: stk_top &lt; cur
-    elif is_greater and not is_equal:
-        comparator = lambda stk_top, cur: stk_top &lt;= cur
-    elif not is_greater and is_equal:
-        comparator = lambda stk_top, cur: stk_top &gt; cur
-    elif not is_greater and not is_equal:
-        comparator = lambda stk_top, cur: stk_top &gt;= cur
-
-    for i in range_:
-        idx = i % k
-        cur = nums[idx]
-
-        while stk and comparator(stk[-1], cur):
-            stk.pop()
-        ans[idx] = stk[-1] if stk else -1
-        stk.append(cur)
-
-    return ans&lt;/pre&gt;
+<ul>
+<li><a href="https://leetcode.cn/problems/remove-k-digits/">Leetcode 402*</a> 移除k个数字<br>非常有技巧的一个题目，首先咱线回溯暴力枚举一下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.k = <span class="literal">None</span> </span><br><span class="line">        <span class="variable language_">self</span>.n = <span class="literal">None</span></span><br><span class="line">        <span class="variable language_">self</span>.track = []</span><br><span class="line">        <span class="variable language_">self</span>.res = []</span><br><span class="line">        <span class="variable language_">self</span>.num = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">backtrack</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">assert</span> <span class="built_in">len</span>(<span class="variable language_">self</span>.track) &lt;= <span class="variable language_">self</span>.k</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="variable language_">self</span>.track) == <span class="variable language_">self</span>.k:</span><br><span class="line">            left = <span class="string">&quot;&quot;</span>.join([c <span class="keyword">for</span> idx,c <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="variable language_">self</span>.num) <span class="keyword">if</span> idx <span class="keyword">not</span> <span class="keyword">in</span> <span class="variable language_">self</span>.track])</span><br><span class="line">            left = <span class="built_in">str</span>(<span class="built_in">int</span>(left)) <span class="keyword">if</span> left <span class="keyword">else</span> <span class="string">&quot;0&quot;</span></span><br><span class="line">            <span class="variable language_">self</span>.res.append(left)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            candidates = [idx <span class="keyword">for</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="variable language_">self</span>.n) <span class="keyword">if</span> idx <span class="keyword">not</span> <span class="keyword">in</span> <span class="variable language_">self</span>.track]</span><br><span class="line">            <span class="keyword">for</span> candidate <span class="keyword">in</span> candidates:</span><br><span class="line">                <span class="variable language_">self</span>.track.append(candidate)</span><br><span class="line">                <span class="variable language_">self</span>.backtrack()</span><br><span class="line">                <span class="variable language_">self</span>.track.pop()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeKdigits</span>(<span class="params">self, num: <span class="built_in">str</span>, k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="variable language_">self</span>.k = k</span><br><span class="line">        <span class="variable language_">self</span>.n = <span class="built_in">len</span>(num)</span><br><span class="line">        <span class="variable language_">self</span>.num = num</span><br><span class="line">        <span class="variable language_">self</span>.backtrack()</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">sorted</span>(<span class="variable language_">self</span>.res,key=<span class="keyword">lambda</span> x: <span class="built_in">int</span>(x))[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<p>把所有的可能咱都保存，然后排序，看看那个最小，假设字符串的长度是n，要移除k个的化，该递归树的大小为$n^k$显然 k &lt;&#x3D; n &lt;&#x3D; $10^5$ 是不可能通过所有测例的。该题的<strong>正确解法是贪心+单调栈</strong>，需要明确</p>
+<ul>
+<li>如果数字类似”12345”这种↗类型的，现在要删除一个数字，最好删除后面的，变成”1234”</li>
+<li>如果数字类似”54321”这种↘类型的，现在要删除一个数字，最好删除前面的，变成”5432”<br>如何将一般的数字整理为↗类型的呢？用单调栈，从前往后遍历，同时维护一个pop_cnt,因为最大只能pop出k个数字，遍历完该数字后，单调栈中的元素就是我们希望的数字，代码实现如下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeKdigits</span>(<span class="params">self, num: <span class="built_in">str</span>, k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        pop_cnt = <span class="number">0</span> <span class="comment"># 统计已经pop出的次数</span></span><br><span class="line">        stk = []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> num:</span><br><span class="line">            <span class="keyword">while</span> pop_cnt &lt; k <span class="keyword">and</span> stk <span class="keyword">and</span> <span class="built_in">int</span>(stk[-<span class="number">1</span>]) &gt; <span class="built_in">int</span>(c):</span><br><span class="line">                pop_cnt += <span class="number">1</span></span><br><span class="line">                stk.pop()</span><br><span class="line">            stk.append(c)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 类似12345 k=10000这种情况，我们已经整理完了，还有可操作的次数</span></span><br><span class="line">        <span class="comment"># 直接贪心从后侧开始删</span></span><br><span class="line">        <span class="keyword">while</span> pop_cnt &lt; k <span class="keyword">and</span> stk:</span><br><span class="line">            stk.pop()</span><br><span class="line">            pop_cnt += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># print(&quot;stk&quot;, stk)</span></span><br><span class="line">        <span class="comment"># print(&quot;pop_cnt&quot;, pop_cnt)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># drop front 0，避免出现0200这种情况</span></span><br><span class="line">        <span class="keyword">while</span> stk <span class="keyword">and</span> stk[<span class="number">0</span>] == <span class="string">&quot;0&quot;</span>:</span><br><span class="line">            stk.pop(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join(stk) <span class="keyword">if</span> stk <span class="keyword">else</span> <span class="string">&quot;0&quot;</span></span><br></pre></td></tr></table></figure>
 
 
 
-&lt;!-- 单调队列结构解决滑动窗口问题  
-【练习】单调队列的通用实现及经典习题   --&gt;
-&lt;!-- ## [手把手刷二叉树算法](https://labuladong.online/algo/menu/binary-tree/)
+
+<ul>
+<li><p><a href="https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/">Leetcode 1475</a> 商品折扣后的最终价格<br>下一个更小元素的模板</p>
+</li>
+<li><p><a href="https://leetcode.cn/problems/online-stock-span/">Leetcode 901*</a> 在线股票跨度<br>该问题关注的是<strong>上一个</strong>所以是正向的遍历,ps:只能正向遍历，因为数据是以流的形式给的，其关心的是idx差</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">StockSpanner</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.stk = []</span><br><span class="line">        <span class="variable language_">self</span>.date = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">next</span>(<span class="params">self, price: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="variable language_">self</span>.date += <span class="number">1</span> <span class="comment"># i.e idx</span></span><br><span class="line">        <span class="keyword">while</span> <span class="variable language_">self</span>.stk <span class="keyword">and</span> <span class="variable language_">self</span>.stk[-<span class="number">1</span>][<span class="number">0</span>] &lt;= price:</span><br><span class="line">            <span class="variable language_">self</span>.stk.pop()</span><br><span class="line">        ans = <span class="variable language_">self</span>.date - <span class="variable language_">self</span>.stk[-<span class="number">1</span>][<span class="number">1</span>] <span class="keyword">if</span> <span class="variable language_">self</span>.stk <span class="keyword">else</span> <span class="variable language_">self</span>.date <span class="comment">#  idx差</span></span><br><span class="line">        <span class="variable language_">self</span>.stk.append((price,<span class="variable language_">self</span>.date))</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><a href="https://leetcode.cn/problems/car-fleet/">Leetcode 853*</a> 车队<br>如果两辆车a,b,如果a车离目的地比较近，但是b车先到到则说明a,b是同一个车队。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">carFleet</span>(<span class="params">self, target: <span class="built_in">int</span>, position: <span class="type">List</span>[<span class="built_in">int</span>], speed: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># (pos,time) tuple list ranked by -pos i.e. 离targe越近越靠前</span></span><br><span class="line">        cars = <span class="built_in">sorted</span>([(pos,(target-pos)/sp) <span class="keyword">for</span> pos,sp <span class="keyword">in</span> <span class="built_in">zip</span>(position,speed)],key=<span class="keyword">lambda</span> x: -x[<span class="number">0</span>])</span><br><span class="line">        stk = []</span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> pos, tim <span class="keyword">in</span> cars:</span><br><span class="line">            <span class="keyword">while</span> stk <span class="keyword">and</span> tim &gt; stk[-<span class="number">1</span>]:</span><br><span class="line">                stk.pop()</span><br><span class="line">            res = res + <span class="number">1</span> <span class="keyword">if</span> <span class="keyword">not</span> stk <span class="keyword">else</span> res</span><br><span class="line">            stk.append(tim)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><a href="https://leetcode.cn/problems/shortest-unsorted-continuous-subarray/description/">Leetcode 581*</a> 最短无序连续子数组<br>最简单最直观的方法就是用排序+左右指针的方法，该方法的复杂度为O(nlogn)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findUnsortedSubarray</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        nums = [<span class="built_in">float</span>(<span class="string">&quot;-inf&quot;</span>)] + nums + [<span class="built_in">float</span>(<span class="string">&quot;inf&quot;</span>)]</span><br><span class="line">        nums_s = <span class="built_in">sorted</span>(nums)</span><br><span class="line"></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> left <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> nums[left] != nums_s[left]:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">for</span> right <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> nums[right] != nums_s[right]:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> right - left + <span class="number">1</span> <span class="keyword">if</span> right &gt;= left <span class="keyword">else</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>可以使用单调栈的方法，一个incr_stk从头到尾，一个decr_stk从尾到头。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findUnsortedSubarray</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        left, right = <span class="built_in">float</span>(<span class="string">&quot;inf&quot;</span>), <span class="built_in">float</span>(<span class="string">&quot;-inf&quot;</span>)</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        incr_stk, decr_stk = [], []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">while</span> incr_stk <span class="keyword">and</span> nums[incr_stk[-<span class="number">1</span>]] &gt; nums[i]:</span><br><span class="line">                left = <span class="built_in">min</span>(left, incr_stk.pop())</span><br><span class="line">            incr_stk.append(i)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n - <span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">while</span> decr_stk <span class="keyword">and</span> nums[decr_stk[-<span class="number">1</span>]] &lt; nums[i]:</span><br><span class="line">                right = <span class="built_in">max</span>(right, decr_stk.pop())</span><br><span class="line">            decr_stk.append(i)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> left == <span class="built_in">float</span>(<span class="string">&quot;inf&quot;</span>) <span class="keyword">and</span> right == <span class="built_in">float</span>(<span class="string">&quot;-inf&quot;</span>) <span class="keyword">else</span> right - left + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<!-- 单调队列结构解决滑动窗口问题  
+【练习】单调队列的通用实现及经典习题   -->
+<!-- ## [手把手刷二叉树算法](https://labuladong.online/algo/menu/binary-tree/)
 ### [二叉树系列算法核心纲领](https://labuladong.online/algo/essential-technique/binary-tree-summary/)
 ### [二叉树心法（思路篇）](https://labuladong.online/algo/data-structure/binary-tree-part1/)
 ### [二叉树心法（构造篇）](https://labuladong.online/algo/data-structure/binary-tree-part2/)
@@ -3053,11 +3139,11 @@
 ### [二叉搜索树心法（基操篇）](https://labuladong.online/algo/data-structure/bst-part2/)
 ### [二叉搜索树心法（构造篇）](https://labuladong.online/algo/data-structure/bst-part3/)
 ### [二叉搜索树心法（后序篇）](https://labuladong.online/algo/data-structure/bst-part4/)
-## [套模板解决 100 道二叉树习题](https://labuladong.online/algo/menu/100-bt/) --&gt;
+## [套模板解决 100 道二叉树习题](https://labuladong.online/algo/menu/100-bt/) -->
 
 
 
-&lt;!-- 
+<!-- 
 ### [本章导读](https://labuladong.online/algo/intro/binary-tree-practice/)
 ### [【强化练习】用「遍历」思维解题 I](https://labuladong.online/algo/problem-set/binary-tree-traverse-i/)
 ### [【强化练习】用「遍历」思维解题 II](https://labuladong.online/algo/problem-set/binary-tree-traverse-ii/)
@@ -3112,9 +3198,7 @@
 ### [Kruskal 最小生成树算法](https://labuladong.online/algo/data-structure/kruskal/)
 ### [Prim 最小生成树算法](https://labuladong.online/algo/data-structure/prim/)
 ### [Dijkstra 算法模板及应用](https://labuladong.online/algo/data-structure/dijkstra/)
-### [【强化练习】Dijkstra 算法经典习题](https://labuladong.online/algo/problem-set/dijkstra/) --&gt;
-</code></pre>
-]]></content>
+### [【强化练习】Dijkstra 算法经典习题](https://labuladong.online/algo/problem-set/dijkstra/) -->]]></content>
       <categories>
         <category>labuladong算法笔记</category>
       </categories>
@@ -3123,98 +3207,6 @@
         <tag>排序算法</tag>
         <tag>cpp</tag>
         <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>华为入职培训-C++语言编程规范</title>
-    <url>/2025/04/22/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-C-%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<h1 id="1-课程简介"><a href="#1-课程简介" class="headerlink" title="1. 课程简介"></a>1. 课程简介</h1><p>视频中说可以在公司内网下载，在互联网上找到一个版本<a href="https://blog.csdn.net/yaoming168/article/details/136063619">华为C++语言编程规范</a></p>
-<h1 id="2-引言"><a href="#2-引言" class="headerlink" title="2. 引言"></a>2. 引言</h1><p>常见的c++中的未定义行为</p>
-<ul>
-<li>整数除以0</li>
-<li>有符号的整数溢出</li>
-<li>访问越界数组</li>
-<li>使用未初始化的变量</li>
-<li>越界访问</li>
-<li>使用<code>new T[n]</code>分配数组，却用delete不带[]释放<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>* arr = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>];  <span class="comment">// 分配10个int的空间</span></span><br><span class="line"><span class="keyword">delete</span> arr;              <span class="comment">// 错误！应该用delete[] arr</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>关于指针，优先使用<strong>引用和智能指针</strong></p>
-<h1 id="3-代码风格"><a href="#3-代码风格" class="headerlink" title="3. 代码风格"></a>3. 代码风格</h1><p>主要看项目组用啥命名风格，不推荐匈牙利</p>
-<h1 id="4-编程实践"><a href="#4-编程实践" class="headerlink" title="4. 编程实践"></a>4. 编程实践</h1><h2 id="4-1-函数、类、常量"><a href="#4-1-函数、类、常量" class="headerlink" title="4.1 函数、类、常量"></a>4.1 函数、类、常量</h2><h3 id="输入校验原则"><a href="#输入校验原则" class="headerlink" title="输入校验原则"></a>输入校验原则</h3><p><img src="/../images/1745397201823-image.png" alt="alt text"></p>
-<p>如上是两个函数单板的模型，首先熟悉一下相关的名词</p>
-<ul>
-<li>单板：一个函数或者一个类</li>
-<li>.so文件：shared object file，这是Unix下的动态链接库，大概类似于windows下的dll</li>
-</ul>
-<p>大概意思是：</p>
-<blockquote>
-<p>外部数据输入（箭头①） 需要进行严格的校验，<strong>防止恶意数据注入</strong>。<br>内部数据传递（箭头②、④、⑤） 也需要进行适当的校验，确保数据的一致性和安全性。<br>应用层与内核层交互（箭头③） 更加需要严谨的校验机制，<strong>避免因数据问题导致系统崩溃或被攻击</strong>。</p>
-</blockquote>
-<p>c++中常见的函数输入校验：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">devide</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> std::<span class="built_in">runtime_error</span>(<span class="string">&quot;Divide by zero&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a / b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="合理选择输入输出参数"><a href="#合理选择输入输出参数" class="headerlink" title="合理选择输入输出参数"></a>合理选择输入输出参数</h3><p>对于输入参数</p>
-<ul>
-<li>拷贝代价高，pass by reference</li>
-<li>拷贝代价低，pass by value</li>
-<li>要被移动的参数，作为参数的时候应该使用右值引用类型，在函数内用<code>std::move</code></li>
-<li>不要用C风格的变参类型，因为没有办法验证输入</li>
-</ul>
-<h2 id="对于返回参数"><a href="#对于返回参数" class="headerlink" title="对于返回参数"></a>对于返回参数</h2><h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>要保证类的封装性，要与外部解耦</p>
-<p><img src="/../images/1745407464208-image.png" alt="alt text"></p>
-<ul>
-<li><strong>Rule of three</strong>: 拷贝构造函数、赋值运算符、析构函数</li>
-<li><strong>Rule of five</strong>: 拷贝构造函数、赋值运算符、析构函数、移动构造函数、移动赋值运算符</li>
-<li><strong>Rule of zero</strong>: 析构函数、移动构造函数、移动赋值运算符</li>
-</ul>
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>多用常量，编译器检查友好，使得代码的可读性更高</p>
-<h2 id="4-2-枚举、声明与定义"><a href="#4-2-枚举、声明与定义" class="headerlink" title="4.2 枚举、声明与定义"></a>4.2 枚举、声明与定义</h2><h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>c++中优先使用枚举类，例如</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum class</span> <span class="title class_">Color</span> &#123; RED, GREEN, BLUE &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="声明与定义"><a href="#声明与定义" class="headerlink" title="声明与定义"></a>声明与定义</h3><p>避免定义保留标识符，如<code>void * malloc()</code>，malloc是C语言的标准库函数，在c++中应该使用<code>std::malloc</code></p>
-<h3 id="作用域最小"><a href="#作用域最小" class="headerlink" title="作用域最小"></a>作用域最小</h3><p>避免使用全局变量，全局变量会污染命名空间，导致代码的可读性降低，也容易产生命名冲突</p>
-<h2 id="4-3-类型转换、整数运算"><a href="#4-3-类型转换、整数运算" class="headerlink" title="4.3 类型转换、整数运算"></a>4.3 类型转换、整数运算</h2><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>用c++风格的类型转换，而不是c风格的类型转换。一般是是<code>dynamic_cast</code>，<code>static_cast</code>，<code>reinterpret_cast</code>，<code>const_cast</code>等的语法，其中<code>cast</code>有浇铸，铸造的意思</p>
-<h3 id="整数运算"><a href="#整数运算" class="headerlink" title="整数运算"></a>整数运算</h3><p>注意整数的溢出和回绕的问题</p>
-<h2 id="4-4-表达式、语句"><a href="#4-4-表达式、语句" class="headerlink" title="4.4 表达式、语句"></a>4.4 表达式、语句</h2><h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><ul>
-<li>比较的时候，左边要放常量，右边放变量，<code>if (MAX == value)</code></li>
-<li>副作用不要放到逻辑判断中，例如<code>if (a == 0 || b ++ &gt; 1)</code> 这种是不允许的</li>
-<li>多使用<code>static_assert</code>在编译的时候检查，例如<code>static_assert(sizeof(int) == 4, &quot;int is not 4 bytes&quot;);</code></li>
-<li><code>int</code>类似不能单独作为判断依据，例如如下是不允许的<code>int a = 0; if (a) &#123;xxx&#125;</code></li>
-</ul>
-<h2 id="4-5-资源管理、错误处理"><a href="#4-5-资源管理、错误处理" class="headerlink" title="4.5 资源管理、错误处理"></a>4.5 资源管理、错误处理</h2><h3 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a>资源管理</h3><p>需要遵守RAII, Resource Acquisition Is Initialization,其主要的含义是</p>
-<ul>
-<li>初始化，初始化是资源的分配 </li>
-<li>析构，析构是资源的释放<br>常见的对有<code>new/delete</code>操作的封装，<code>fopen/fclose</code>等</li>
-</ul>
-<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>有的地方是不能抛出异常的，例如：</p>
-<ul>
-<li>析构函数，析构函数不能抛出异常</li>
-<li>要用<code>noexcept</code>修饰，例如<code>void foo() noexcept</code>表示这个函数不会抛出异常</li>
-</ul>
-<h2 id="4-6-模板与泛型编程、并发与并行"><a href="#4-6-模板与泛型编程、并发与并行" class="headerlink" title="4.6 模板与泛型编程、并发与并行"></a>4.6 模板与泛型编程、并发与并行</h2><h3 id="模板与泛型"><a href="#模板与泛型" class="headerlink" title="模板与泛型"></a>模板与泛型</h3><p>template并不是百利而无一害的，其可能造成<strong>代码膨胀</strong>：<br><img src="/../images/1745584892805-image.png" alt="alt text"></p>
-<h2 id="4-7-预处理、头文件与源文件"><a href="#4-7-预处理、头文件与源文件" class="headerlink" title="4.7 预处理、头文件与源文件"></a>4.7 预处理、头文件与源文件</h2><h3 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h3><p><img src="/../images/1745671766322-image.png" alt="alt text"></p>
-<ul>
-<li>避免使用宏</li>
-</ul>
-<h3 id="头文件与源文件"><a href="#头文件与源文件" class="headerlink" title="头文件与源文件"></a>头文件与源文件</h3><p><img src="/../images/1745672089703-image.png" alt="alt text"></p>
-<ul>
-<li>自己的头文件用 “”</li>
-<li>第三方库用 &lt;&gt;</li>
-</ul>
-<h2 id="4-8-标准库"><a href="#4-8-标准库" class="headerlink" title="4.8 标准库"></a>4.8 标准库</h2><h3 id="优先使用c-的标准库"><a href="#优先使用c-的标准库" class="headerlink" title="优先使用c++的标准库"></a>优先使用c++的标准库</h3><p>尽量不是用c的标准库</p>
-<h3 id="注意线程不安全-异步不安全的函数"><a href="#注意线程不安全-异步不安全的函数" class="headerlink" title="注意线程不安全&#x2F;异步不安全的函数"></a>注意线程不安全&#x2F;异步不安全的函数</h3><h1 id="5-继承自C语言编程规范条款款"><a href="#5-继承自C语言编程规范条款款" class="headerlink" title="5. 继承自C语言编程规范条款款"></a>5. 继承自C语言编程规范条款款</h1><p><img src="/../images/1745840906133-image.png" alt="alt text"></p>
-<ul>
-<li>断言不能用在正式版本中，只能在调试的过程中使用，例如<code>assert(x &gt; 0)</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>软件雏鹰计划</category>
-      </categories>
-      <tags>
-        <tag>cpp</tag>
-        <tag>华为</tag>
-        <tag>编程规范</tag>
       </tags>
   </entry>
 </search>
