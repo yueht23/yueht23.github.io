@@ -493,7 +493,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-09 20:45:48" itemprop="dateModified" datetime="2025-05-09T20:45:48+08:00">2025-05-09</time>
+                <time title="修改时间：2025-05-09 20:47:55" itemprop="dateModified" datetime="2025-05-09T20:47:55+08:00">2025-05-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1288,6 +1288,9 @@
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/car-fleet/">Leetcode 853*</a> 车队<br>如果两辆车a,b,如果a车离目的地比较近，但是b车先到到则说明a,b是同一个车队。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">carFleet</span>(<span class="params">self, target: <span class="built_in">int</span>, position: <span class="type">List</span>[<span class="built_in">int</span>], speed: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># (pos,time) tuple list ranked by -pos i.e. 离targe越近越靠前</span></span><br><span class="line">        cars = <span class="built_in">sorted</span>([(pos,(target-pos)/sp) <span class="keyword">for</span> pos,sp <span class="keyword">in</span> <span class="built_in">zip</span>(position,speed)],key=<span class="keyword">lambda</span> x: -x[<span class="number">0</span>])</span><br><span class="line">        stk = []</span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> pos, tim <span class="keyword">in</span> cars:</span><br><span class="line">            <span class="keyword">while</span> stk <span class="keyword">and</span> tim &gt; stk[-<span class="number">1</span>]:</span><br><span class="line">                stk.pop()</span><br><span class="line">            res = res + <span class="number">1</span> <span class="keyword">if</span> <span class="keyword">not</span> stk <span class="keyword">else</span> res</span><br><span class="line">            stk.append(tim)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+
+
 
 
 <ul>
