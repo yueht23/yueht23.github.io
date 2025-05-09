@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://yueht23.github.io/images/1746343037577-image.png">
 <meta property="og:image" content="https://yueht23.github.io/images/1746426165225-image.png">
 <meta property="article:published_time" content="2025-04-23T09:43:47.000Z">
-<meta property="article:modified_time" content="2025-05-09T12:47:55.661Z">
+<meta property="article:modified_time" content="2025-05-09T12:55:40.613Z">
 <meta property="article:author" content="Yueht">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="排序算法">
@@ -236,7 +236,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-09 20:47:55" itemprop="dateModified" datetime="2025-05-09T20:47:55+08:00">2025-05-09</time>
+                <time title="修改时间：2025-05-09 20:55:40" itemprop="dateModified" datetime="2025-05-09T20:55:40+08:00">2025-05-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -360,15 +360,7 @@
 
 
 
-<h2 id="手把手刷数组算法"><a href="#手把手刷数组算法" class="headerlink" title="手把手刷数组算法"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/menu/array/">手把手刷数组算法</a></h2><h3 id="双指针技巧秒杀七道数组题目"><a href="#双指针技巧秒杀七道数组题目" class="headerlink" title="双指针技巧秒杀七道数组题目"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/essential-technique/array-two-pointers-summary/">双指针技巧秒杀七道数组题目</a></h3><h3 id="二维数组的花式遍历技巧"><a href="#二维数组的花式遍历技巧" class="headerlink" title="二维数组的花式遍历技巧"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/practice-in-action/2d-array-traversal-summary/">二维数组的花式遍历技巧</a></h3><!-- LeetCode	力扣	难度
-151. Reverse Words in a String	151. 反转字符串中的单词	🟠
-48. Rotate Image	48. 旋转图像	🟠
-54. Spiral Matrix	54. 螺旋矩阵	🟠
-59. Spiral Matrix II	59. 螺旋矩阵 II	🟠
-61. Rotate List	61. 旋转链表	🟠
--	剑指 Offer 29. 顺时针打印矩阵	🟢 -->
-
-<ul>
+<h2 id="手把手刷数组算法"><a href="#手把手刷数组算法" class="headerlink" title="手把手刷数组算法"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/menu/array/">手把手刷数组算法</a></h2><h3 id="双指针技巧秒杀七道数组题目"><a href="#双指针技巧秒杀七道数组题目" class="headerlink" title="双指针技巧秒杀七道数组题目"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/essential-technique/array-two-pointers-summary/">双指针技巧秒杀七道数组题目</a></h3><h3 id="二维数组的花式遍历技巧"><a href="#二维数组的花式遍历技巧" class="headerlink" title="二维数组的花式遍历技巧"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/practice-in-action/2d-array-traversal-summary/">二维数组的花式遍历技巧</a></h3><ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-words-in-a-string/">Leetcode 151</a> 反转字符串中的单词<br>用python直接输出<code>&quot; &quot;.join(reversed(s.split()))</code>即可</li>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/rotate-image/">Leetcode 48*</a> 旋转图像<br><img src="/../images/image-25.png" alt="alt text"><br><strong>rotate &#x3D; transpose + flip</strong></li>
 </ul>
@@ -1031,10 +1023,6 @@
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/car-fleet/">Leetcode 853*</a> 车队<br>如果两辆车a,b,如果a车离目的地比较近，但是b车先到到则说明a,b是同一个车队。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">carFleet</span>(<span class="params">self, target: <span class="built_in">int</span>, position: <span class="type">List</span>[<span class="built_in">int</span>], speed: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># (pos,time) tuple list ranked by -pos i.e. 离targe越近越靠前</span></span><br><span class="line">        cars = <span class="built_in">sorted</span>([(pos,(target-pos)/sp) <span class="keyword">for</span> pos,sp <span class="keyword">in</span> <span class="built_in">zip</span>(position,speed)],key=<span class="keyword">lambda</span> x: -x[<span class="number">0</span>])</span><br><span class="line">        stk = []</span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> pos, tim <span class="keyword">in</span> cars:</span><br><span class="line">            <span class="keyword">while</span> stk <span class="keyword">and</span> tim &gt; stk[-<span class="number">1</span>]:</span><br><span class="line">                stk.pop()</span><br><span class="line">            res = res + <span class="number">1</span> <span class="keyword">if</span> <span class="keyword">not</span> stk <span class="keyword">else</span> res</span><br><span class="line">            stk.append(tim)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
-
-
-
 
 <ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/shortest-unsorted-continuous-subarray/description/">Leetcode 581*</a> 最短无序连续子数组<br>最简单最直观的方法就是用排序+左右指针的方法，该方法的复杂度为O(nlogn)</li>
