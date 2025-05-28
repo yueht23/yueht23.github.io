@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yueht23.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false,"animation":true,"content_length":400,"show_result":true,"show_result_on_focus":true,"auto_focus":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1.课程简介2.软件测试基础2.1为什么要测试2.2什么是测试2.3测试原则 穷尽测试是不可能的 杀虫剂悖论，反复使用相同的测试，可能会导致测试结果不准确 测试显示缺陷的存在，但不能证明系统不存在缺陷 测试本质上一种抽样检验 NO risk, No test Boehm’s Law:在开发过程中越晚修正缺陷，代价越大 Absence of error谬误：认为“软件没有发现缺陷”等同于“软件没有缺">
+<meta property="og:type" content="article">
+<meta property="og:title" content="华为入职培训-软件测试技术及应用">
+<meta property="og:url" content="https://yueht23.github.io/2025/05/27/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8/index.html">
+<meta property="og:site_name" content="Yueht&#39;s Blog">
+<meta property="og:description" content="1.课程简介2.软件测试基础2.1为什么要测试2.2什么是测试2.3测试原则 穷尽测试是不可能的 杀虫剂悖论，反复使用相同的测试，可能会导致测试结果不准确 测试显示缺陷的存在，但不能证明系统不存在缺陷 测试本质上一种抽样检验 NO risk, No test Boehm’s Law:在开发过程中越晚修正缺陷，代价越大 Absence of error谬误：认为“软件没有发现缺陷”等同于“软件没有缺">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yueht23.github.io/images/1748323841010-image.png">
+<meta property="og:image" content="https://yueht23.github.io/images/1748324617581-image.png">
+<meta property="og:image" content="https://yueht23.github.io/images/1748324723521-image.png">
+<meta property="og:image" content="https://yueht23.github.io/images/1748325192374-image.png">
+<meta property="og:image" content="https://yueht23.github.io/images/1748329677524-image.png">
+<meta property="og:image" content="https://yueht23.github.io/images/1748345261590-image.png">
+<meta property="article:published_time" content="2025-05-27T11:18:09.000Z">
+<meta property="article:modified_time" content="2025-05-27T11:37:43.175Z">
+<meta property="article:author" content="Yueht">
+<meta property="article:tag" content="华为">
+<meta property="article:tag" content="测试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yueht23.github.io/images/1748323841010-image.png">
+
+<link rel="canonical" href="https://yueht23.github.io/2025/05/27/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>华为入职培训-软件测试技术及应用 | Yueht's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Yueht's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yueht23.github.io/2025/05/27/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yueht">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yueht's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          华为入职培训-软件测试技术及应用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-05-27 19:18:09 / 修改时间：19:37:43" itemprop="dateCreated datePublished" datetime="2025-05-27T19:18:09+08:00">2025-05-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E9%9B%8F%E9%B9%B0%E8%AE%A1%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">软件雏鹰计划</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-课程简介"><a href="#1-课程简介" class="headerlink" title="1.课程简介"></a>1.课程简介</h1><h1 id="2-软件测试基础"><a href="#2-软件测试基础" class="headerlink" title="2.软件测试基础"></a>2.软件测试基础</h1><h2 id="2-1为什么要测试"><a href="#2-1为什么要测试" class="headerlink" title="2.1为什么要测试"></a>2.1为什么要测试</h2><h2 id="2-2什么是测试"><a href="#2-2什么是测试" class="headerlink" title="2.2什么是测试"></a>2.2什么是测试</h2><h2 id="2-3测试原则"><a href="#2-3测试原则" class="headerlink" title="2.3测试原则"></a>2.3测试原则</h2><ul>
+<li>穷尽测试是不可能的</li>
+<li><strong>杀虫剂悖论</strong>，反复使用相同的测试，可能会导致测试结果不准确</li>
+<li>测试显示缺陷的存在，但不能证明系统不存在缺陷</li>
+<li>测试本质上一种抽样检验</li>
+<li>NO risk, No test</li>
+<li>Boehm’s Law:在开发过程中越晚修正缺陷，代价越大</li>
+<li>Absence of error谬误：认为“软件没有发现缺陷”等同于“软件没有缺陷”或“软件完全满足用户需求”。这种谬误忽略了测试的根本目标，可能导致对软件质量的错误信心。</li>
+</ul>
+<h2 id="2-4测试模型"><a href="#2-4测试模型" class="headerlink" title="2.4测试模型"></a>2.4测试模型</h2><ul>
+<li>T-IBO模型<br><img src="/../images/1748323841010-image.png" alt="alt text"></li>
+<li>Test Oracle（测试预言）Test Oracle 是软件测试中的一个关键概念，指一种能够判断被测系统的输出是否正确的机制或方法。它用于验证测试用例的预期结果是否与实际结果一致，从而确定测试是否通过,常见的有：<ul>
+<li>确定性 Oracle（Deterministic Oracle）预期结果是明确且唯一的，如数学运算、协议响应等。</li>
+<li>启发式 Oracle（Heuristic Oracle）结果可能有一定灵活性，需通过规则或经验判断。示例：图像识别系统对某张图片的分类置信度 &gt;90% 即算正确。</li>
+<li>统计 Oracle（Statistical Oracle）基于概率或统计规律验证结果，如性能测试中的吞吐量应在合理范围内。</li>
+<li>无 Oracle 问题（Oracle Problem）某些场景难以定义准确的 Oracle（如复杂 AI 系统、创造性生成内容），需依赖人工评估或替代方法。</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-5测试术语"><a href="#2-5测试术语" class="headerlink" title="2.5测试术语"></a>2.5测试术语</h2><ul>
+<li>EORROR&#x2F;BUG&#x2F;Failure<br><img src="/../images/1748324617581-image.png" alt="alt text"></li>
+<li>Verification&#x2F;Validation<br><img src="/../images/1748324723521-image.png" alt="alt text"></li>
+</ul>
+<h2 id="2-6测试分类"><a href="#2-6测试分类" class="headerlink" title="2.6测试分类"></a>2.6测试分类</h2><p><img src="/../images/1748325192374-image.png" alt="alt text"><br>分类标准：</p>
+<ol>
+<li>是否运行程序</li>
+<li>按照测试阶段</li>
+<li>是否涉及源码</li>
+<li>其他</li>
+</ol>
+<h2 id="2-7测试流程"><a href="#2-7测试流程" class="headerlink" title="2.7测试流程"></a>2.7测试流程</h2><p><img src="/../images/1748329677524-image.png" alt="alt text"></p>
+<ul>
+<li>开发者测试<ul>
+<li>UT: unit test 单元测试</li>
+<li>IT: integration test 集成测试</li>
+<li>MST: multi-system test 多系统测试</li>
+<li>BBIT:</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-测试设计技术"><a href="#3-测试设计技术" class="headerlink" title="3.测试设计技术"></a>3.测试设计技术</h1><h2 id="3-1测试设计概述"><a href="#3-1测试设计概述" class="headerlink" title="3.1测试设计概述"></a>3.1测试设计概述</h2><h2 id="3-2黑盒测试设计技术"><a href="#3-2黑盒测试设计技术" class="headerlink" title="3.2黑盒测试设计技术"></a>3.2黑盒测试设计技术</h2><h3 id="3-2-1-等价类（Equivalence-Partitioning）"><a href="#3-2-1-等价类（Equivalence-Partitioning）" class="headerlink" title="3.2.1 等价类（Equivalence Partitioning）"></a>3.2.1 等价类（Equivalence Partitioning）</h3><p>将输入数据划分为若干组，每组中的数据在测试中应产生相同输出。目的是通过减少测试用例数量覆盖更多场景。</p>
+<ul>
+<li><strong>有效等价类</strong>：符合规范的输入</li>
+<li><strong>无效等价类</strong>：非法或异常输入<br>示例：测试输入1-100的文本框，可分为：</li>
+<li>有效：1-100之间的数字</li>
+<li>无效：小于1、大于100的数字、非数字字符,eg. 啤酒沙发饮料</li>
+</ul>
+<h3 id="3-2-2-边界值分析（Boundary-Value-Analysis）"><a href="#3-2-2-边界值分析（Boundary-Value-Analysis）" class="headerlink" title="3.2.2 边界值分析（Boundary Value Analysis）"></a>3.2.2 边界值分析（Boundary Value Analysis）</h3><p>专注于输入范围的边界条件，因为边界附近最容易出现错误。通常测试：</p>
+<ul>
+<li>最小值、略高于最小值</li>
+<li>正常值</li>
+<li>最大值、略低于最大值<br>示例：同上1-100的输入框，测试：0,1,2,99,100,101</li>
+</ul>
+<h3 id="3-2-3-数据组合（Combinatorial-Testing）"><a href="#3-2-3-数据组合（Combinatorial-Testing）" class="headerlink" title="3.2.3 数据组合（Combinatorial Testing）"></a>3.2.3 数据组合（Combinatorial Testing）</h3><p>系统化组合多个输入参数，以检测参数间交互可能引发的缺陷。常用技术包括：</p>
+<ul>
+<li><strong>全组合</strong>：覆盖所有可能（成本高）</li>
+<li><strong>配对测试（Pairwise）</strong>：覆盖所有两两组合（高效）<br>示例：测试登录功能（用户名类型×密码长度×验证码状态）<br>有一些开源的工具如<a target="_blank" rel="noopener" href="https://github.com/microsoft/pict">PICT</a> 可以自动生成数据组合用例。</li>
+</ul>
+<h3 id="3-2-4-判定表（Decision-Table）"><a href="#3-2-4-判定表（Decision-Table）" class="headerlink" title="3.2.4 判定表（Decision Table）"></a>3.2.4 判定表（Decision Table）</h3><p>以表格形式表示不同输入组合对应的系统行为，适合处理业务规则复杂的场景。包含：</p>
+<ul>
+<li>条件桩（输入条件）</li>
+<li>动作桩（预期输出）</li>
+<li>规则（条件与动作的对应关系）<br>示例：机票折扣规则（会员等级×购票时间→折扣率）</li>
+</ul>
+<h3 id="3-2-5-判定点（Decision-Point）"><a href="#3-2-5-判定点（Decision-Point）" class="headerlink" title="3.2.5 判定点（Decision Point）"></a>3.2.5 判定点（Decision Point）</h3><p>程序流程中可能产生不同分支的逻辑判断点。测试需覆盖所有可能路径。<br>示例：if-else、switch-case语句都是典型的判定点</p>
+<h3 id="3-2-6-PCT（Pairwise-Combinatorial-Testing）"><a href="#3-2-6-PCT（Pairwise-Combinatorial-Testing）" class="headerlink" title="3.2.6 PCT（Pairwise Combinatorial Testing）"></a>3.2.6 PCT（Pairwise Combinatorial Testing）</h3><p>一种优化的组合测试技术，通过数学算法（如正交阵列）保证所有参数的两两组合被覆盖，平衡测试效率与缺陷发现能力。<br>工具支持：如微软PICT、Hexawise等</p>
+<h3 id="3-2-7-状态机测试（State-Transition-Testing）"><a href="#3-2-7-状态机测试（State-Transition-Testing）" class="headerlink" title="3.2.7 状态机测试（State Transition Testing）"></a>3.2.7 状态机测试（State Transition Testing）</h3><p>适用于具有明确状态转换的系统。通过：</p>
+<ol>
+<li>绘制状态转换图</li>
+<li>设计覆盖典型路径、异常路径的测试用例<br>示例：ATM机状态流程（空闲→插卡→输入密码→选择服务→完成→退卡）</li>
+</ol>
+<p>这些技术可单独使用或组合应用，根据系统特点（如输入维度、业务规则复杂度等）选择最合适的方法。实际测试中常配合因果图、场景法等技术增强覆盖度。</p>
+<h2 id="3-3白盒测试设计技术"><a href="#3-3白盒测试设计技术" class="headerlink" title="3.3白盒测试设计技术"></a>3.3白盒测试设计技术</h2><p>白盒测试是一种软件测试方法，测试人员基于代码的内部结构、设计和实现来设计测试用例。与黑盒测试（仅关注输入输出）不同，白盒测试需要了解程序的内部逻辑，通常用于验证代码路径、条件分支、循环和数据结构等。  </p>
+<h3 id="白盒测试的主要技术"><a href="#白盒测试的主要技术" class="headerlink" title="白盒测试的主要技术"></a><strong>白盒测试的主要技术</strong></h3><ol>
+<li><strong>语句覆盖（Statement Coverage）</strong>：确保代码中的每一行至少执行一次。  </li>
+<li><strong>分支覆盖（Branch Coverage）</strong>：测试所有可能的条件分支（如 <code>if-else</code>）。  </li>
+<li><strong>路径覆盖（Path Coverage）</strong>：覆盖代码中所有可能的执行路径。  </li>
+<li><strong>条件覆盖（Condition Coverage）</strong>：测试布尔表达式的所有可能结果。  </li>
+<li><strong>循环覆盖（Loop Coverage）</strong>：验证循环结构的正确性（如 <code>for</code>、<code>while</code>）。<br><img src="/../images/1748345261590-image.png" alt="alt text"></li>
+</ol>
+<h3 id="常用的白盒测试工具"><a href="#常用的白盒测试工具" class="headerlink" title="常用的白盒测试工具"></a><strong>常用的白盒测试工具</strong></h3><h4 id="1-静态代码分析工具（不运行代码）"><a href="#1-静态代码分析工具（不运行代码）" class="headerlink" title="1. 静态代码分析工具（不运行代码）"></a><strong>1. 静态代码分析工具（不运行代码）</strong></h4><ul>
+<li><strong>SonarQube</strong>：检测代码质量、安全漏洞和代码异味。  </li>
+<li><strong>Checkstyle</strong>（Java）：检查代码是否符合编码规范。  </li>
+<li><strong>PMD</strong>（Java&#x2F;JavaScript等）：识别潜在的错误和不良实践。  </li>
+<li><strong>ESLint</strong>（JavaScript）：静态分析 JavaScript 代码。  </li>
+<li><strong>Pylint</strong>（Python）：检查 Python 代码的错误和风格问题。</li>
+</ul>
+<h4 id="2-动态代码分析工具（运行代码）"><a href="#2-动态代码分析工具（运行代码）" class="headerlink" title="2. 动态代码分析工具（运行代码）"></a><strong>2. 动态代码分析工具（运行代码）</strong></h4><ul>
+<li><strong>JUnit</strong>（Java）、<strong>NUnit</strong>（.NET）、<strong>PyTest</strong>（Python）：单元测试框架，用于白盒测试。  </li>
+<li><strong>JaCoCo</strong>（Java）、<strong>Coverage.py</strong>（Python）：代码覆盖率工具，检查测试覆盖情况。  </li>
+<li><strong>GDB</strong>（GNU Debugger）：调试工具，用于分析程序运行时的行为。  </li>
+<li><strong>Valgrind</strong>（C&#x2F;C++）：检测内存泄漏和性能问题。</li>
+</ul>
+<h4 id="3-集成-高级白盒测试工具"><a href="#3-集成-高级白盒测试工具" class="headerlink" title="3. 集成&#x2F;高级白盒测试工具"></a><strong>3. 集成&#x2F;高级白盒测试工具</strong></h4><ul>
+<li><strong>Selenium</strong>（Web 自动化）：可与单元测试框架结合，进行白盒+黑盒混合测试。  </li>
+<li><strong>Postman</strong>（API 测试）：用于白盒测试后端逻辑。  </li>
+<li><strong>Klocwork</strong>（C&#x2F;C++&#x2F;Java）：静态分析 + 动态测试，用于企业级代码检查。</li>
+</ul>
+<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a><strong>适用场景</strong></h3><ul>
+<li>单元测试（开发者编写）  </li>
+<li>代码审查  </li>
+<li>安全漏洞检测  </li>
+<li>性能优化分析<br>白盒测试通常由开发人员或测试工程师执行，适合在开发早期发现逻辑错误，提高代码质量。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%8D%8E%E4%B8%BA/" rel="tag"># 华为</a>
+              <a href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag"># 测试</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/05/20/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-Clean%20Code%E4%B8%8E%E9%87%8D%E6%9E%84%E5%AE%89%E5%85%A8%E5%AE%9E%E8%B7%B5/" rel="prev" title="华为入职培训-Clean Code与重构安全实践">
+      <i class="fa fa-chevron-left"></i> 华为入职培训-Clean Code与重构安全实践
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E8%AF%BE%E7%A8%8B%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">1.课程简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80"><span class="nav-number">2.</span> <span class="nav-text">2.软件测试基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%B5%8B%E8%AF%95"><span class="nav-number">2.1.</span> <span class="nav-text">2.1为什么要测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2%E4%BB%80%E4%B9%88%E6%98%AF%E6%B5%8B%E8%AF%95"><span class="nav-number">2.2.</span> <span class="nav-text">2.2什么是测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3%E6%B5%8B%E8%AF%95%E5%8E%9F%E5%88%99"><span class="nav-number">2.3.</span> <span class="nav-text">2.3测试原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.4.</span> <span class="nav-text">2.4测试模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5%E6%B5%8B%E8%AF%95%E6%9C%AF%E8%AF%AD"><span class="nav-number">2.5.</span> <span class="nav-text">2.5测试术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB"><span class="nav-number">2.6.</span> <span class="nav-text">2.6测试分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B"><span class="nav-number">2.7.</span> <span class="nav-text">2.7测试流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%B5%8B%E8%AF%95%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF"><span class="nav-number">3.</span> <span class="nav-text">3.测试设计技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1%E6%B5%8B%E8%AF%95%E8%AE%BE%E8%AE%A1%E6%A6%82%E8%BF%B0"><span class="nav-number">3.1.</span> <span class="nav-text">3.1测试设计概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF"><span class="nav-number">3.2.</span> <span class="nav-text">3.2黑盒测试设计技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-%E7%AD%89%E4%BB%B7%E7%B1%BB%EF%BC%88Equivalence-Partitioning%EF%BC%89"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.2.1 等价类（Equivalence Partitioning）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-%E8%BE%B9%E7%95%8C%E5%80%BC%E5%88%86%E6%9E%90%EF%BC%88Boundary-Value-Analysis%EF%BC%89"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.2.2 边界值分析（Boundary Value Analysis）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3-%E6%95%B0%E6%8D%AE%E7%BB%84%E5%90%88%EF%BC%88Combinatorial-Testing%EF%BC%89"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.2.3 数据组合（Combinatorial Testing）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-4-%E5%88%A4%E5%AE%9A%E8%A1%A8%EF%BC%88Decision-Table%EF%BC%89"><span class="nav-number">3.2.4.</span> <span class="nav-text">3.2.4 判定表（Decision Table）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-5-%E5%88%A4%E5%AE%9A%E7%82%B9%EF%BC%88Decision-Point%EF%BC%89"><span class="nav-number">3.2.5.</span> <span class="nav-text">3.2.5 判定点（Decision Point）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-6-PCT%EF%BC%88Pairwise-Combinatorial-Testing%EF%BC%89"><span class="nav-number">3.2.6.</span> <span class="nav-text">3.2.6 PCT（Pairwise Combinatorial Testing）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-7-%E7%8A%B6%E6%80%81%E6%9C%BA%E6%B5%8B%E8%AF%95%EF%BC%88State-Transition-Testing%EF%BC%89"><span class="nav-number">3.2.7.</span> <span class="nav-text">3.2.7 状态机测试（State Transition Testing）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF"><span class="nav-number">3.3.</span> <span class="nav-text">3.3白盒测试设计技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF"><span class="nav-number">3.3.1.</span> <span class="nav-text">白盒测试的主要技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="nav-number">3.3.2.</span> <span class="nav-text">常用的白盒测试工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7%EF%BC%88%E4%B8%8D%E8%BF%90%E8%A1%8C%E4%BB%A3%E7%A0%81%EF%BC%89"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">1. 静态代码分析工具（不运行代码）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7%EF%BC%88%E8%BF%90%E8%A1%8C%E4%BB%A3%E7%A0%81%EF%BC%89"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">2. 动态代码分析工具（运行代码）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E9%9B%86%E6%88%90-%E9%AB%98%E7%BA%A7%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="nav-number">3.3.2.3.</span> <span class="nav-text">3. 集成&#x2F;高级白盒测试工具</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">3.3.3.</span> <span class="nav-text">适用场景</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yueht</p>
+  <div class="site-description" itemprop="description">个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yueht</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'default',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

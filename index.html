@@ -192,6 +192,256 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yueht23.github.io/2025/05/27/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yueht">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yueht's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/27/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">华为入职培训-软件测试技术及应用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-05-27 19:18:09 / 修改时间：19:37:43" itemprop="dateCreated datePublished" datetime="2025-05-27T19:18:09+08:00">2025-05-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E9%9B%8F%E9%B9%B0%E8%AE%A1%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">软件雏鹰计划</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-课程简介"><a href="#1-课程简介" class="headerlink" title="1.课程简介"></a>1.课程简介</h1><h1 id="2-软件测试基础"><a href="#2-软件测试基础" class="headerlink" title="2.软件测试基础"></a>2.软件测试基础</h1><h2 id="2-1为什么要测试"><a href="#2-1为什么要测试" class="headerlink" title="2.1为什么要测试"></a>2.1为什么要测试</h2><h2 id="2-2什么是测试"><a href="#2-2什么是测试" class="headerlink" title="2.2什么是测试"></a>2.2什么是测试</h2><h2 id="2-3测试原则"><a href="#2-3测试原则" class="headerlink" title="2.3测试原则"></a>2.3测试原则</h2><ul>
+<li>穷尽测试是不可能的</li>
+<li><strong>杀虫剂悖论</strong>，反复使用相同的测试，可能会导致测试结果不准确</li>
+<li>测试显示缺陷的存在，但不能证明系统不存在缺陷</li>
+<li>测试本质上一种抽样检验</li>
+<li>NO risk, No test</li>
+<li>Boehm’s Law:在开发过程中越晚修正缺陷，代价越大</li>
+<li>Absence of error谬误：认为“软件没有发现缺陷”等同于“软件没有缺陷”或“软件完全满足用户需求”。这种谬误忽略了测试的根本目标，可能导致对软件质量的错误信心。</li>
+</ul>
+<h2 id="2-4测试模型"><a href="#2-4测试模型" class="headerlink" title="2.4测试模型"></a>2.4测试模型</h2><ul>
+<li>T-IBO模型<br><img src="/../images/1748323841010-image.png" alt="alt text"></li>
+<li>Test Oracle（测试预言）Test Oracle 是软件测试中的一个关键概念，指一种能够判断被测系统的输出是否正确的机制或方法。它用于验证测试用例的预期结果是否与实际结果一致，从而确定测试是否通过,常见的有：<ul>
+<li>确定性 Oracle（Deterministic Oracle）预期结果是明确且唯一的，如数学运算、协议响应等。</li>
+<li>启发式 Oracle（Heuristic Oracle）结果可能有一定灵活性，需通过规则或经验判断。示例：图像识别系统对某张图片的分类置信度 &gt;90% 即算正确。</li>
+<li>统计 Oracle（Statistical Oracle）基于概率或统计规律验证结果，如性能测试中的吞吐量应在合理范围内。</li>
+<li>无 Oracle 问题（Oracle Problem）某些场景难以定义准确的 Oracle（如复杂 AI 系统、创造性生成内容），需依赖人工评估或替代方法。</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-5测试术语"><a href="#2-5测试术语" class="headerlink" title="2.5测试术语"></a>2.5测试术语</h2><ul>
+<li>EORROR&#x2F;BUG&#x2F;Failure<br><img src="/../images/1748324617581-image.png" alt="alt text"></li>
+<li>Verification&#x2F;Validation<br><img src="/../images/1748324723521-image.png" alt="alt text"></li>
+</ul>
+<h2 id="2-6测试分类"><a href="#2-6测试分类" class="headerlink" title="2.6测试分类"></a>2.6测试分类</h2><p><img src="/../images/1748325192374-image.png" alt="alt text"><br>分类标准：</p>
+<ol>
+<li>是否运行程序</li>
+<li>按照测试阶段</li>
+<li>是否涉及源码</li>
+<li>其他</li>
+</ol>
+<h2 id="2-7测试流程"><a href="#2-7测试流程" class="headerlink" title="2.7测试流程"></a>2.7测试流程</h2><p><img src="/../images/1748329677524-image.png" alt="alt text"></p>
+<ul>
+<li>开发者测试<ul>
+<li>UT: unit test 单元测试</li>
+<li>IT: integration test 集成测试</li>
+<li>MST: multi-system test 多系统测试</li>
+<li>BBIT:</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-测试设计技术"><a href="#3-测试设计技术" class="headerlink" title="3.测试设计技术"></a>3.测试设计技术</h1><h2 id="3-1测试设计概述"><a href="#3-1测试设计概述" class="headerlink" title="3.1测试设计概述"></a>3.1测试设计概述</h2><h2 id="3-2黑盒测试设计技术"><a href="#3-2黑盒测试设计技术" class="headerlink" title="3.2黑盒测试设计技术"></a>3.2黑盒测试设计技术</h2><h3 id="3-2-1-等价类（Equivalence-Partitioning）"><a href="#3-2-1-等价类（Equivalence-Partitioning）" class="headerlink" title="3.2.1 等价类（Equivalence Partitioning）"></a>3.2.1 等价类（Equivalence Partitioning）</h3><p>将输入数据划分为若干组，每组中的数据在测试中应产生相同输出。目的是通过减少测试用例数量覆盖更多场景。</p>
+<ul>
+<li><strong>有效等价类</strong>：符合规范的输入</li>
+<li><strong>无效等价类</strong>：非法或异常输入<br>示例：测试输入1-100的文本框，可分为：</li>
+<li>有效：1-100之间的数字</li>
+<li>无效：小于1、大于100的数字、非数字字符,eg. 啤酒沙发饮料</li>
+</ul>
+<h3 id="3-2-2-边界值分析（Boundary-Value-Analysis）"><a href="#3-2-2-边界值分析（Boundary-Value-Analysis）" class="headerlink" title="3.2.2 边界值分析（Boundary Value Analysis）"></a>3.2.2 边界值分析（Boundary Value Analysis）</h3><p>专注于输入范围的边界条件，因为边界附近最容易出现错误。通常测试：</p>
+<ul>
+<li>最小值、略高于最小值</li>
+<li>正常值</li>
+<li>最大值、略低于最大值<br>示例：同上1-100的输入框，测试：0,1,2,99,100,101</li>
+</ul>
+<h3 id="3-2-3-数据组合（Combinatorial-Testing）"><a href="#3-2-3-数据组合（Combinatorial-Testing）" class="headerlink" title="3.2.3 数据组合（Combinatorial Testing）"></a>3.2.3 数据组合（Combinatorial Testing）</h3><p>系统化组合多个输入参数，以检测参数间交互可能引发的缺陷。常用技术包括：</p>
+<ul>
+<li><strong>全组合</strong>：覆盖所有可能（成本高）</li>
+<li><strong>配对测试（Pairwise）</strong>：覆盖所有两两组合（高效）<br>示例：测试登录功能（用户名类型×密码长度×验证码状态）<br>有一些开源的工具如<a target="_blank" rel="noopener" href="https://github.com/microsoft/pict">PICT</a> 可以自动生成数据组合用例。</li>
+</ul>
+<h3 id="3-2-4-判定表（Decision-Table）"><a href="#3-2-4-判定表（Decision-Table）" class="headerlink" title="3.2.4 判定表（Decision Table）"></a>3.2.4 判定表（Decision Table）</h3><p>以表格形式表示不同输入组合对应的系统行为，适合处理业务规则复杂的场景。包含：</p>
+<ul>
+<li>条件桩（输入条件）</li>
+<li>动作桩（预期输出）</li>
+<li>规则（条件与动作的对应关系）<br>示例：机票折扣规则（会员等级×购票时间→折扣率）</li>
+</ul>
+<h3 id="3-2-5-判定点（Decision-Point）"><a href="#3-2-5-判定点（Decision-Point）" class="headerlink" title="3.2.5 判定点（Decision Point）"></a>3.2.5 判定点（Decision Point）</h3><p>程序流程中可能产生不同分支的逻辑判断点。测试需覆盖所有可能路径。<br>示例：if-else、switch-case语句都是典型的判定点</p>
+<h3 id="3-2-6-PCT（Pairwise-Combinatorial-Testing）"><a href="#3-2-6-PCT（Pairwise-Combinatorial-Testing）" class="headerlink" title="3.2.6 PCT（Pairwise Combinatorial Testing）"></a>3.2.6 PCT（Pairwise Combinatorial Testing）</h3><p>一种优化的组合测试技术，通过数学算法（如正交阵列）保证所有参数的两两组合被覆盖，平衡测试效率与缺陷发现能力。<br>工具支持：如微软PICT、Hexawise等</p>
+<h3 id="3-2-7-状态机测试（State-Transition-Testing）"><a href="#3-2-7-状态机测试（State-Transition-Testing）" class="headerlink" title="3.2.7 状态机测试（State Transition Testing）"></a>3.2.7 状态机测试（State Transition Testing）</h3><p>适用于具有明确状态转换的系统。通过：</p>
+<ol>
+<li>绘制状态转换图</li>
+<li>设计覆盖典型路径、异常路径的测试用例<br>示例：ATM机状态流程（空闲→插卡→输入密码→选择服务→完成→退卡）</li>
+</ol>
+<p>这些技术可单独使用或组合应用，根据系统特点（如输入维度、业务规则复杂度等）选择最合适的方法。实际测试中常配合因果图、场景法等技术增强覆盖度。</p>
+<h2 id="3-3白盒测试设计技术"><a href="#3-3白盒测试设计技术" class="headerlink" title="3.3白盒测试设计技术"></a>3.3白盒测试设计技术</h2><p>白盒测试是一种软件测试方法，测试人员基于代码的内部结构、设计和实现来设计测试用例。与黑盒测试（仅关注输入输出）不同，白盒测试需要了解程序的内部逻辑，通常用于验证代码路径、条件分支、循环和数据结构等。  </p>
+<h3 id="白盒测试的主要技术"><a href="#白盒测试的主要技术" class="headerlink" title="白盒测试的主要技术"></a><strong>白盒测试的主要技术</strong></h3><ol>
+<li><strong>语句覆盖（Statement Coverage）</strong>：确保代码中的每一行至少执行一次。  </li>
+<li><strong>分支覆盖（Branch Coverage）</strong>：测试所有可能的条件分支（如 <code>if-else</code>）。  </li>
+<li><strong>路径覆盖（Path Coverage）</strong>：覆盖代码中所有可能的执行路径。  </li>
+<li><strong>条件覆盖（Condition Coverage）</strong>：测试布尔表达式的所有可能结果。  </li>
+<li><strong>循环覆盖（Loop Coverage）</strong>：验证循环结构的正确性（如 <code>for</code>、<code>while</code>）。<br><img src="/../images/1748345261590-image.png" alt="alt text"></li>
+</ol>
+<h3 id="常用的白盒测试工具"><a href="#常用的白盒测试工具" class="headerlink" title="常用的白盒测试工具"></a><strong>常用的白盒测试工具</strong></h3><h4 id="1-静态代码分析工具（不运行代码）"><a href="#1-静态代码分析工具（不运行代码）" class="headerlink" title="1. 静态代码分析工具（不运行代码）"></a><strong>1. 静态代码分析工具（不运行代码）</strong></h4><ul>
+<li><strong>SonarQube</strong>：检测代码质量、安全漏洞和代码异味。  </li>
+<li><strong>Checkstyle</strong>（Java）：检查代码是否符合编码规范。  </li>
+<li><strong>PMD</strong>（Java&#x2F;JavaScript等）：识别潜在的错误和不良实践。  </li>
+<li><strong>ESLint</strong>（JavaScript）：静态分析 JavaScript 代码。  </li>
+<li><strong>Pylint</strong>（Python）：检查 Python 代码的错误和风格问题。</li>
+</ul>
+<h4 id="2-动态代码分析工具（运行代码）"><a href="#2-动态代码分析工具（运行代码）" class="headerlink" title="2. 动态代码分析工具（运行代码）"></a><strong>2. 动态代码分析工具（运行代码）</strong></h4><ul>
+<li><strong>JUnit</strong>（Java）、<strong>NUnit</strong>（.NET）、<strong>PyTest</strong>（Python）：单元测试框架，用于白盒测试。  </li>
+<li><strong>JaCoCo</strong>（Java）、<strong>Coverage.py</strong>（Python）：代码覆盖率工具，检查测试覆盖情况。  </li>
+<li><strong>GDB</strong>（GNU Debugger）：调试工具，用于分析程序运行时的行为。  </li>
+<li><strong>Valgrind</strong>（C&#x2F;C++）：检测内存泄漏和性能问题。</li>
+</ul>
+<h4 id="3-集成-高级白盒测试工具"><a href="#3-集成-高级白盒测试工具" class="headerlink" title="3. 集成&#x2F;高级白盒测试工具"></a><strong>3. 集成&#x2F;高级白盒测试工具</strong></h4><ul>
+<li><strong>Selenium</strong>（Web 自动化）：可与单元测试框架结合，进行白盒+黑盒混合测试。  </li>
+<li><strong>Postman</strong>（API 测试）：用于白盒测试后端逻辑。  </li>
+<li><strong>Klocwork</strong>（C&#x2F;C++&#x2F;Java）：静态分析 + 动态测试，用于企业级代码检查。</li>
+</ul>
+<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a><strong>适用场景</strong></h3><ul>
+<li>单元测试（开发者编写）  </li>
+<li>代码审查  </li>
+<li>安全漏洞检测  </li>
+<li>性能优化分析<br>白盒测试通常由开发人员或测试工程师执行，适合在开发早期发现逻辑错误，提高代码质量。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yueht23.github.io/2025/05/20/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-Clean%20Code%E4%B8%8E%E9%87%8D%E6%9E%84%E5%AE%89%E5%85%A8%E5%AE%9E%E8%B7%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yueht">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yueht's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/20/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-Clean%20Code%E4%B8%8E%E9%87%8D%E6%9E%84%E5%AE%89%E5%85%A8%E5%AE%9E%E8%B7%B5/" class="post-title-link" itemprop="url">华为入职培训-Clean Code与重构安全实践</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-20 19:18:09" itemprop="dateCreated datePublished" datetime="2025-05-20T19:18:09+08:00">2025-05-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-05-27 12:57:47" itemprop="dateModified" datetime="2025-05-27T12:57:47+08:00">2025-05-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E9%9B%8F%E9%B9%B0%E8%AE%A1%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">软件雏鹰计划</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="第1章-华为安全框架和实践"><a href="#第1章-华为安全框架和实践" class="headerlink" title="第1章 华为安全框架和实践"></a>第1章 华为安全框架和实践</h1><h2 id="1-1-安全框架和实践介绍"><a href="#1-1-安全框架和实践介绍" class="headerlink" title="1.1 安全框架和实践介绍"></a>1.1 安全框架和实践介绍</h2><p><img src="/../images/1747746862168-image.png" alt="alt text"></p>
+<h1 id="第2章-Clean-Code与重构"><a href="#第2章-Clean-Code与重构" class="headerlink" title="第2章 Clean Code与重构"></a>第2章 Clean Code与重构</h1><p><img src="/../images/1748321811607-image.png" alt="alt text"><br><img src="/../images/1748255062940-image.png" alt="alt text"><br><strong>重构和加特性</strong>不能同时进行</p>
+<ul>
+<li>重构：改变代码内部，不改变外部，不添加新功能，对外观察一切不变</li>
+<li>加特性：添加新功能，不改变内部，改变外部</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://yueht23.github.io/2025/04/29/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-%E7%8E%B0%E4%BB%A3cpp%E5%AE%9E%E6%88%98-2025/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -223,7 +473,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-12 19:56:23" itemprop="dateModified" datetime="2025-05-12T19:56:23+08:00">2025-05-12</time>
+                <time title="修改时间：2025-05-28 23:26:59" itemprop="dateModified" datetime="2025-05-28T23:26:59+08:00">2025-05-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -582,7 +832,440 @@
 <p>智能指针让C++内存管理变得更简单、更安全！</p>
 <h3 id="使用建议"><a href="#使用建议" class="headerlink" title="使用建议"></a>使用建议</h3><p><img src="/../images/1747049713743-image.png" alt="alt text"></p>
 <h2 id="小节自测-1"><a href="#小节自测-1" class="headerlink" title="小节自测"></a>小节自测</h2><p><img src="/../images/1747049838519-image.png" alt="alt text"><br><img src="/../images/1747049854419-image.png" alt="alt text"><br>B. 错误：赋值时不需要显式使用 std::move，因为函数返回的 unique_ptr 已经是右值，会自动移动。显式使用 std::move 是多余的（尽管语法上不会报错）。</p>
-<h1 id="5-容器和类容器"><a href="#5-容器和类容器" class="headerlink" title="5. 容器和类容器"></a>5. 容器和类容器</h1><h2 id="5-1-string；序列容器"><a href="#5-1-string；序列容器" class="headerlink" title="5.1 string；序列容器"></a>5.1 string；序列容器</h2><h2 id="5-2-关联容器和无序关联容器"><a href="#5-2-关联容器和无序关联容器" class="headerlink" title="5.2 关联容器和无序关联容器"></a>5.2 关联容器和无序关联容器</h2><h2 id="小节自测-2"><a href="#小节自测-2" class="headerlink" title="小节自测"></a>小节自测</h2><h1 id="6-迭代器和循环"><a href="#6-迭代器和循环" class="headerlink" title="6. 迭代器和循环"></a>6. 迭代器和循环</h1><h2 id="6-迭代器和循环-1"><a href="#6-迭代器和循环-1" class="headerlink" title="6. 迭代器和循环"></a>6. 迭代器和循环</h2><h2 id="小节自测-3"><a href="#小节自测-3" class="headerlink" title="小节自测"></a>小节自测</h2><h1 id="7-对象返回和异常"><a href="#7-对象返回和异常" class="headerlink" title="7. 对象返回和异常"></a>7. 对象返回和异常</h1><h2 id="7-1-返回值优化和对象返回"><a href="#7-1-返回值优化和对象返回" class="headerlink" title="7.1 返回值优化和对象返回"></a>7.1 返回值优化和对象返回</h2><h2 id="7-2-异常的得失和相关建议"><a href="#7-2-异常的得失和相关建议" class="headerlink" title="7.2 异常的得失和相关建议"></a>7.2 异常的得失和相关建议</h2><h2 id="小节自测-4"><a href="#小节自测-4" class="headerlink" title="小节自测"></a>小节自测</h2>
+<h1 id="5-容器和类容器"><a href="#5-容器和类容器" class="headerlink" title="5. 容器和类容器"></a>5. 容器和类容器</h1><h2 id="5-1-string；序列容器"><a href="#5-1-string；序列容器" class="headerlink" title="5.1 string；序列容器"></a>5.1 string；序列容器</h2><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>string类是C++标准库中的字符串类，用于处理字符串。它提供了很多功能，如字符串拼接、查找、替换、大小写转换、比较、截取、复制等等。<strong>String不是容器</strong>。</p>
+<ul>
+<li>支持字符串的拼接操作，如+，+&#x3D;</li>
+<li>支持字符串的查找<code>find()</code>,<code>rfind()</code></li>
+<li>size()的复杂度是O(1)而不是O(n)</li>
+<li>在堆上分配空间</li>
+</ul>
+<h3 id="array"><a href="#array" class="headerlink" title="array"></a>array</h3><p>C数组的更好的替代品，C++11引入了array模板，用于处理数组。</p>
+<ul>
+<li>和C数组一样，在栈上分配空间，性能方面没有差异</li>
+<li>需要在编译时指定数组的大小，不能在运行时动态改变大小</li>
+</ul>
+<h3 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h3><p>vector是一个动态数组，它提供了一些额外的功能，如插入、删除、查找、排序等。</p>
+<h3 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h3><p>双端队列，和python的deque一样</p>
+<ul>
+<li>初始化：&#96;deque<int> dq;</li>
+</ul>
+<h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><p>list是一个双向链表，它提供一些额外的功能，如插入、删除、查找、排序等。</p>
+<h3 id="queue"><a href="#queue" class="headerlink" title="queue"></a>queue</h3><p>queue是一个先进先出（FIFO）的容器，它提供了一些额外的功能，如插入、删除、查找、排序等。</p>
+<h3 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h3><p>stack是一个先进后出（LIFO）的容器，它提供了一些额外的功能，如插入、删除、查找、排序等。</p>
+<h2 id="5-2-关联容器和无序关联容器"><a href="#5-2-关联容器和无序关联容器" class="headerlink" title="5.2 关联容器和无序关联容器"></a>5.2 关联容器和无序关联容器</h2><p>C++ 标准库提供了以下几种关联容器和无序关联容器：</p>
+<h3 id="关联容器-有序容器"><a href="#关联容器-有序容器" class="headerlink" title="关联容器 (有序容器)"></a>关联容器 (有序容器)</h3><p>这些容器基于红黑树实现，元素按键的排序顺序存储</p>
+<ol>
+<li><p><strong>set</strong> - 唯一键的集合，按照键排序</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::set&lt;Key&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>multiset</strong> - 键集合，允许重复键，按照键排序</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::multiset&lt;Key&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>map</strong> - 键值对集合，键唯一，按照键排序</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::map&lt;Key, T&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>multimap</strong> - 键值对集合，允许重复键，按照键排序</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::multimap&lt;Key, T&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="无序关联容器-哈希容器"><a href="#无序关联容器-哈希容器" class="headerlink" title="无序关联容器 (哈希容器)"></a>无序关联容器 (哈希容器)</h3><p>这些容器基于哈希表实现，元素不按特定顺序存储</p>
+<ol>
+<li><p><strong>unordered_set</strong> - 唯一键的集合，基于哈希</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::unordered_set&lt;Key&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>unordered_multiset</strong> - 键集合，允许重复键，基于哈希</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::unordered_multiset&lt;Key&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>unordered_map</strong> - 键值对集合，键唯一，基于哈希</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::unordered_map&lt;Key, T&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>unordered_multimap</strong> - 键值对集合，允许重复键，基于哈希</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::unordered_multimap&lt;Key, T&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>关联容器</th>
+<th>无序关联容器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>实现方式</td>
+<td>红黑树</td>
+<td>哈希表</td>
+</tr>
+<tr>
+<td>元素顺序</td>
+<td>按键排序</td>
+<td>无特定顺序</td>
+</tr>
+<tr>
+<td>查找复杂度</td>
+<td>O(log n)</td>
+<td>平均O(1)，最坏O(n)</td>
+</tr>
+<tr>
+<td>需要</td>
+<td>比较运算符(&lt;)</td>
+<td>哈希函数和相等运算符</td>
+</tr>
+<tr>
+<td>内存使用</td>
+<td>通常较少</td>
+<td>通常较多</td>
+</tr>
+</tbody></table>
+<p>选择哪种容器取决于具体需求：如果需要有序访问，使用关联容器；如果需要更快的查找速度且不关心顺序，使用无序关联容器。</p>
+<h2 id="小节自测-2"><a href="#小节自测-2" class="headerlink" title="小节自测"></a>小节自测</h2><p><img src="/../images/1747481889476-image.png" alt="alt text"><br>这道题目考察的是STL（Standard Template Library）中各种设施的特性，特别是关于容器和函数对象的性能比较。让我们逐一分析每个选项：<br><strong>A. 容器的拷贝代价比较大，但支持现代C++的移动语义后可以避免拷贝的代价。</strong>  </p>
+<ul>
+<li>这是正确的。STL容器的拷贝操作通常涉及深拷贝，代价较高。但现代C++引入了移动语义（如移动构造函数和移动赋值运算符），可以通过转移资源所有权来避免拷贝，提高性能。</li>
+</ul>
+<p><strong>B. 如果预先知道vector的最大大小，可以使用reserve来避免不必要的重分配带来的性能代价。</strong>  </p>
+<ul>
+<li>这是正确的。<code>vector</code>在动态扩容时会重新分配内存并拷贝元素，这会带来性能开销。使用<code>reserve</code>可以预先分配足够的内存，避免多次重分配。</li>
+</ul>
+<p><strong>C. 函数对象的调用性能比函数指针差，因为函数对象的调用有对象构造和析构的负担。</strong>  </p>
+<ul>
+<li>这是错误的。函数对象（仿函数）通常是轻量级的，其调用性能通常优于函数指针，因为函数对象的调用是静态解析（编译时确定），而函数指针是动态解析（运行时确定）。此外，现代编译器可以优化掉函数对象的构造和析构开销。</li>
+</ul>
+<p><strong>D. 函数对象的调用性能比函数指针好，因为函数对象调用时是静态解析，函数指针调用时是动态解析。</strong>  </p>
+<ul>
+<li>这是正确的。函数对象的调用在编译时就能确定，因此性能更好；而函数指针需要在运行时解析，性能稍差。</li>
+</ul>
+<p>题目问的是“哪个是错误的”，因此正确答案是 <strong>C</strong>。</p>
+<h1 id="6-迭代器和循环"><a href="#6-迭代器和循环" class="headerlink" title="6. 迭代器和循环"></a>6. 迭代器和循环</h1><h2 id="6-迭代器和循环-1"><a href="#6-迭代器和循环-1" class="headerlink" title="6. 迭代器和循环"></a>6. 迭代器和循环</h2><h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><ul>
+<li>是一个概念，而不是类型</li>
+<li>从一个断点触发，下一步，下一步，下一步，直到结束</li>
+<li>用来遍历容器中的元素<ul>
+<li>遍历一个字符串中的字符</li>
+<li>遍历一个map中的键值对</li>
+<li>遍历一个目录里面的所有文件</li>
+<li>….</li>
+</ul>
+</li>
+</ul>
+<p><img src="/../images/1747482482431-image.png" alt="alt text"></p>
+<p>从您的图中可以看出迭代器概念的层级关系：</p>
+<ul>
+<li>最基础的是InputIterator（支持用*读取）</li>
+<li>ForwardIterator继承自InputIterator</li>
+<li>BidirectionalIterator继承自ForwardIterator</li>
+<li>RandomAccessIterator继承自BidirectionalIterator</li>
+<li>OutputIterator是独立的（支持用*输出）</li>
+</ul>
+<p>迭代器是C++中用于访问容器元素的一种抽象机制，它提供了统一的访问容器元素的方式。以下是您图中提到的各种迭代器概念及其关系：</p>
+<ol>
+<li><p><strong>InputIterator（输入迭代器）</strong></p>
+<ul>
+<li>最基本的迭代器类型</li>
+<li>只能单向向前移动（++）</li>
+<li>只能读取元素（用*读取）</li>
+<li>只能单遍遍历（不能多次遍历同一序列）</li>
+<li>示例：<code>istream_iterator</code></li>
+</ul>
+</li>
+<li><p><strong>OutputIterator（输出迭代器）</strong></p>
+<ul>
+<li>只能单向向前移动（++）</li>
+<li>只能写入元素（用*输出）</li>
+<li>只能单遍遍历</li>
+<li>示例：<code>ostream_iterator</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="更高级的迭代器概念"><a href="#更高级的迭代器概念" class="headerlink" title="更高级的迭代器概念"></a>更高级的迭代器概念</h2><ol start="3">
+<li><p><strong>ForwardIterator（前向迭代器）</strong></p>
+<ul>
+<li>继承自InputIterator</li>
+<li>可以多次遍历同一序列</li>
+<li>支持读写操作（如果可变）</li>
+<li>示例：<code>std::forward_list</code>的迭代器</li>
+</ul>
+</li>
+<li><p><strong>BidirectionalIterator（双向迭代器）</strong></p>
+<ul>
+<li>继承自ForwardIterator</li>
+<li>可以向前（++）和向后（–）移动</li>
+<li>示例：<code>std::list</code>的迭代器</li>
+</ul>
+</li>
+<li><p><strong>RandomAccessIterator（随机访问迭代器）</strong></p>
+<ul>
+<li>继承自BidirectionalIterator</li>
+<li>支持随机访问（[]操作符）</li>
+<li>支持算术运算（+,-,+&#x3D;,-&#x3D;）</li>
+<li>支持迭代器比较（&lt;,&gt;,&lt;&#x3D;,&gt;&#x3D;）</li>
+<li>示例：<code>std::vector</code>和<code>std::array</code>的迭代器</li>
+</ul>
+</li>
+</ol>
+<p>理解这些迭代器概念对于有效使用STL算法非常重要，因为不同的算法对迭代器有不同的要求。例如：</p>
+<ul>
+<li><code>std::sort</code>需要RandomAccessIterator</li>
+<li><code>std::reverse</code>需要BidirectionalIterator</li>
+<li><code>std::find</code>只需要InputIterator</li>
+</ul>
+<h1 id="7-对象返回和异常"><a href="#7-对象返回和异常" class="headerlink" title="7. 对象返回和异常"></a>7. 对象返回和异常</h1><h2 id="7-1-返回值优化和对象返回"><a href="#7-1-返回值优化和对象返回" class="headerlink" title="7.1 返回值优化和对象返回"></a>7.1 返回值优化和对象返回</h2><p>C++中的返回值优化(RVO)和对象返回</p>
+<p>返回值优化(Return Value Optimization, RVO)是C++编译器的一项重要优化技术，它可以避免在函数返回对象时产生不必要的拷贝或移动操作，从而提高程序性能。</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="什么是返回值优化"><a href="#什么是返回值优化" class="headerlink" title="什么是返回值优化"></a>什么是返回值优化</h4><p>返回值优化是指编译器在某些情况下可以省略函数返回对象时的拷贝或移动构造操作，直接在调用者的栈帧上构造返回对象。</p>
+<h3 id="为什么需要返回值优化"><a href="#为什么需要返回值优化" class="headerlink" title="为什么需要返回值优化"></a>为什么需要返回值优化</h3><p>在没有优化的情况下，函数返回对象通常涉及以下步骤：</p>
+<ol>
+<li>在函数内部构造局部对象</li>
+<li>通过拷贝或移动构造函数创建返回的临时对象</li>
+<li>销毁函数内的局部对象</li>
+<li>将临时对象拷贝或移动到调用处的目标对象</li>
+</ol>
+<p>RVO可以省略中间步骤，直接在目标位置构造对象。</p>
+<h3 id="返回值优化的类型"><a href="#返回值优化的类型" class="headerlink" title="返回值优化的类型"></a>返回值优化的类型</h3><h4 id="1-具名返回值优化-NRVO-Named-Return-Value-Optimization"><a href="#1-具名返回值优化-NRVO-Named-Return-Value-Optimization" class="headerlink" title="1. 具名返回值优化(NRVO, Named Return Value Optimization)"></a>1. 具名返回值优化(NRVO, Named Return Value Optimization)</h4><p>当函数返回一个具名的局部对象时，编译器可能应用的优化。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Widget <span class="title">makeWidget</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Widget w;  <span class="comment">// 具名对象</span></span><br><span class="line">    <span class="comment">// 对w进行操作</span></span><br><span class="line">    <span class="keyword">return</span> w;  <span class="comment">// NRVO可能发生在这里</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-未具名返回值优化-URVO-Unnamed-Return-Value-Optimization"><a href="#2-未具名返回值优化-URVO-Unnamed-Return-Value-Optimization" class="headerlink" title="2. 未具名返回值优化(URVO, Unnamed Return Value Optimization)"></a>2. 未具名返回值优化(URVO, Unnamed Return Value Optimization)</h4><p>当函数返回一个临时对象时，编译器可能应用的优化。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Widget <span class="title">makeWidget</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Widget</span>();  <span class="comment">// 临时对象，URVO可能发生</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="返回值优化的工作原理"><a href="#返回值优化的工作原理" class="headerlink" title="返回值优化的工作原理"></a>返回值优化的工作原理</h3><p>编译器通常会：</p>
+<ol>
+<li>在调用者的栈帧中预留返回对象的内存空间</li>
+<li>将这块内存的地址传递给被调函数</li>
+<li>被调函数直接在这块内存上构造对象</li>
+</ol>
+<p>这样避免了额外的拷贝或移动操作。</p>
+<h3 id="如何确保获得返回值优化"><a href="#如何确保获得返回值优化" class="headerlink" title="如何确保获得返回值优化"></a>如何确保获得返回值优化</h3><p>为了最大化获得RVO的机会：</p>
+<ol>
+<li><p>返回局部对象时使用最简单的形式</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 好的形式 - 易于优化</span></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">MyClass</span>(arg1, arg2);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不好的形式 - 可能阻碍优化</span></span><br><span class="line"><span class="function">MyClass <span class="title">result</span><span class="params">(arg1, arg2)</span></span>;</span><br><span class="line"><span class="keyword">return</span> result;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>避免对返回的对象进行复杂的控制流操作</p>
+</li>
+<li><p>保持返回类型与返回表达式类型一致</p>
+</li>
+</ol>
+<h3 id="返回值优化与移动语义的关系"><a href="#返回值优化与移动语义的关系" class="headerlink" title="返回值优化与移动语义的关系"></a>返回值优化与移动语义的关系</h3><p>C++11引入移动语义后，即使RVO未发生，编译器也会尝试使用移动构造函数而非拷贝构造函数：</p>
+<ol>
+<li>如果RVO发生：无任何拷贝或移动</li>
+<li>如果RVO未发生但移动构造函数可用：使用移动构造</li>
+<li>如果RVO未发生且移动构造函数不可用：使用拷贝构造</li>
+</ol>
+<h3 id="实际示例"><a href="#实际示例" class="headerlink" title="实际示例"></a>实际示例</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Test</span>() &#123; std::cout &lt;&lt; <span class="string">&quot;Constructor\n&quot;</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Test</span>(<span class="type">const</span> Test &amp;) &#123; std::cout &lt;&lt; <span class="string">&quot;Copy Constructor\n&quot;</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Test</span>(Test &amp;&amp;) &#123; std::cout &lt;&lt; <span class="string">&quot;Move Constructor\n&quot;</span>; &#125;</span><br><span class="line"></span><br><span class="line">    ~<span class="built_in">Test</span>() &#123; std::cout &lt;&lt; <span class="string">&quot;Destructor\n&quot;</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">Test <span class="title">createTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Test t;</span><br><span class="line">    <span class="keyword">return</span> t;  <span class="comment">// NRVO可能发生</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Test <span class="title">createTest2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Test</span>();  <span class="comment">// URVO可能发生</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Test <span class="title">createTest3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 编译器预先不知道返回的是哪一个对象</span></span><br><span class="line">    <span class="comment">// 会优先调用移动构造函数</span></span><br><span class="line">    <span class="comment">// 如果没有移动构造函数会触发拷贝构造函数</span></span><br><span class="line">    Test t1;</span><br><span class="line">    Test t2;</span><br><span class="line">    <span class="keyword">auto</span> rand = std::<span class="built_in">rand</span>();</span><br><span class="line">    <span class="keyword">if</span> (rand % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> t1;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> t2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Case 1:\n&quot;</span>;</span><br><span class="line">    <span class="keyword">auto</span> t1 = <span class="built_in">createTest</span>();</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;\nCase 2:\n&quot;</span>;</span><br><span class="line">    <span class="keyword">auto</span> t2 = <span class="built_in">createTest2</span>();</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;\nCase 3:\n&quot;</span>;</span><br><span class="line">    <span class="keyword">auto</span> t3 = <span class="built_in">createTest3</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在现代编译器上，上述代码很可能只输出构造函数和析构函数，没有拷贝或移动操作。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li>RVO是编译器的优化而非语言要求，但现代主流编译器都会实现</li>
+<li>调试模式下RVO可能被禁用</li>
+<li>某些复杂控制流可能阻碍RVO</li>
+<li>C++17开始，某些情况下的拷贝消除成为语言要求而非优化</li>
+</ol>
+<p>返回值优化是C++性能优化的重要组成部分，理解它有助于编写更高效的代码。</p>
+<h2 id="7-2-异常的得失和相关建议"><a href="#7-2-异常的得失和相关建议" class="headerlink" title="7.2 异常的得失和相关建议"></a>7.2 异常的得失和相关建议</h2><h1 id="C-异常的得失与相关建议"><a href="#C-异常的得失与相关建议" class="headerlink" title="C++异常的得失与相关建议"></a>C++异常的得失与相关建议</h1><h2 id="异常机制的优点"><a href="#异常机制的优点" class="headerlink" title="异常机制的优点"></a>异常机制的优点</h2><ol>
+<li><strong>错误处理分离</strong>：将错误处理代码从正常业务逻辑中分离，提高代码可读性</li>
+<li><strong>强制处理</strong>：异常不能被忽略（除非使用catch(…)），而错误码可以被忽略</li>
+<li><strong>跨函数传播</strong>：异常可以自动跨多层函数调用传播，直到被捕获</li>
+<li><strong>类型丰富</strong>：可以抛出任意类型的对象，携带丰富的错误信息</li>
+<li><strong>构造函数错误处理</strong>：构造函数无法返回错误码，异常是报告构造失败的合理方式</li>
+</ol>
+<h2 id="异常机制的缺点"><a href="#异常机制的缺点" class="headerlink" title="异常机制的缺点"></a>异常机制的缺点</h2><ol>
+<li><strong>性能开销</strong>：异常处理机制（尤其是栈展开）可能带来运行时开销</li>
+<li><strong>代码复杂度</strong>：异常安全编程需要遵循特定规则（如RAII）</li>
+<li><strong>不可预测性</strong>：控制流可能突然跳转，难以追踪执行路径</li>
+<li><strong>资源管理挑战</strong>：可能导致资源泄漏，如果没有正确使用RAII</li>
+<li><strong>跨模块&#x2F;语言边界问题</strong>：在DLL边界或与其他语言交互时可能有问题</li>
+</ol>
+<h2 id="实用建议"><a href="#实用建议" class="headerlink" title="实用建议"></a>实用建议</h2><ol>
+<li><p><strong>合理使用场景</strong>：</p>
+<ul>
+<li>适合用于真正的异常情况（不可恢复错误、资源不足等）</li>
+<li>不适合用于常规控制流或频繁发生的可预期错误</li>
+</ul>
+</li>
+<li><p><strong>异常安全保证</strong>：</p>
+<ul>
+<li>基本保证：异常发生时程序保持有效状态</li>
+<li>强保证：操作要么完全成功，要么完全回滚（事务语义）</li>
+<li>不抛保证：承诺不抛出异常</li>
+</ul>
+</li>
+</ol>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>C++异常是一个强大的工具，但需要谨慎使用。在现代C++中，结合RAII、智能指针和其他资源管理技术，可以有效地利用异常机制，同时避免其陷阱。关键是根据项目需求和团队约定，制定一致的异常使用策略。</p>
+<h1 id="8-语言易用性改进"><a href="#8-语言易用性改进" class="headerlink" title="8. 语言易用性改进"></a>8. 语言易用性改进</h1><h2 id="8-1-自动类型推导和类模板参数推导"><a href="#8-1-自动类型推导和类模板参数推导" class="headerlink" title="8.1 自动类型推导和类模板参数推导"></a>8.1 自动类型推导和类模板参数推导</h2><h3 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h3><p>auto不仅仅是语法糖</p>
+<h3 id="decltype"><a href="#decltype" class="headerlink" title="decltype"></a>decltype</h3><p><code>decltype</code>是C++11引入的一个关键字，用于查询表达式的类型。它的全称是”declared type”（声明类型）。</p>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>decltype</code>的基本语法是：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">decltype</span>(expression) var;</span><br></pre></td></tr></table></figure>
+<p>这里<code>var</code>的类型将由<code>expression</code>的类型决定。</p>
+<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><ol>
+<li><p><strong>保留类型信息</strong>：<code>decltype</code>会保留表达式的完整类型信息，包括const限定符和引用。</p>
+</li>
+<li><p><strong>不计算表达式</strong>：<code>decltype</code>只分析表达式的类型，不会实际计算表达式。</p>
+</li>
+<li><p><strong>两种形式</strong>：</p>
+<ul>
+<li><code>decltype(entity)</code>：当参数是一个无括号的变量名时，返回该变量的声明类型</li>
+<li><code>decltype(expression)</code>：当参数是其他表达式时，返回表达式计算结果的类型</li>
+</ul>
+</li>
+</ol>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span>&amp; rx = x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例1：decltype(entity)</span></span><br><span class="line"><span class="keyword">decltype</span>(rx) y = x;  <span class="comment">// y的类型是const int&amp;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例2：decltype(expression)</span></span><br><span class="line"><span class="keyword">decltype</span>(x + <span class="number">5</span>) z;    <span class="comment">// z的类型是int</span></span><br><span class="line"><span class="keyword">decltype</span>((x)) w = x;   <span class="comment">// w的类型是int&amp;，因为(x)是一个左值表达式</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="与auto的区别"><a href="#与auto的区别" class="headerlink" title="与auto的区别"></a>与auto的区别</h4><ul>
+<li><code>auto</code>会忽略顶层const和引用</li>
+<li><code>decltype</code>会保留所有的类型信息</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> ci = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">auto</span> a = ci;        <span class="comment">// a是int</span></span><br><span class="line"><span class="keyword">decltype</span>(ci) b = ci; <span class="comment">// b是const int</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="常见用途"><a href="#常见用途" class="headerlink" title="常见用途"></a>常见用途</h4><ol>
+<li><p><strong>模板编程</strong>：在模板中根据参数推导返回类型</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> U&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">auto</span> <span class="title">add</span><span class="params">(T t, U u)</span> -&gt; <span class="title">decltype</span><span class="params">(t + u)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> t + u;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>lambda表达式</strong>：获取lambda的类型</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> lambda = [](<span class="type">int</span> x) &#123; <span class="keyword">return</span> x * <span class="number">2</span>; &#125;;</span><br><span class="line"><span class="keyword">decltype</span>(lambda) copy = lambda;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>SFINAE</strong>：在模板元编程中用于类型检查</p>
+</li>
+</ol>
+<h4 id="C-14扩展"><a href="#C-14扩展" class="headerlink" title="C++14扩展"></a>C++14扩展</h4><p>C++14引入了<code>decltype(auto)</code>，它使用<code>decltype</code>的规则来推导<code>auto</code>的类型：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="type">int</span>&amp; <span class="title">getRef</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">decltype</span>(<span class="keyword">auto</span>) a = <span class="built_in">getRef</span>();  <span class="comment">// a是int&amp;</span></span><br></pre></td></tr></table></figure>
+<p><code>decltype</code>是C++类型系统中非常重要的一个工具，特别是在模板元编程和泛型编程中非常有用。</p>
+<h2 id="8-2-类的特殊非静态成员函数和相关易用性改进"><a href="#8-2-类的特殊非静态成员函数和相关易用性改进" class="headerlink" title="8.2 类的特殊非静态成员函数和相关易用性改进"></a>8.2 类的特殊非静态成员函数和相关易用性改进</h2><h2 id="8-3-初始化相关易用性改进"><a href="#8-3-初始化相关易用性改进" class="headerlink" title="8.3 初始化相关易用性改进"></a>8.3 初始化相关易用性改进</h2><p>C++的初始化机制经历了从C++98到C++11及之后版本的持续改进。下面我们可以从不同的版本和维度来谈谈C++在初始化方面的主要改进：</p>
+<h3 id="1-统一的花括号初始化（列表初始化-brace-initialization）"><a href="#1-统一的花括号初始化（列表初始化-brace-initialization）" class="headerlink" title="1. 统一的花括号初始化（列表初始化 &#x2F; brace initialization）"></a>1. <strong>统一的花括号初始化（列表初始化 &#x2F; brace initialization）</strong></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x&#123;<span class="number">5</span>&#125;;</span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt; v&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">MyClass obj&#123;arg1, arg2&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>优点：</p>
+<ul>
+<li><p><strong>统一语法</strong>：适用于内置类型、容器、类对象等。</p>
+</li>
+<li><p><strong>防止窄化（narrowing）转换</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x1 = <span class="number">3.14</span>;   <span class="comment">// OK，x1 = 3</span></span><br><span class="line"><span class="type">int</span> x2&#123;<span class="number">3.14</span>&#125;;    <span class="comment">// 编译错误！更安全</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-默认成员初始化（default-member-initializers）"><a href="#2-默认成员初始化（default-member-initializers）" class="headerlink" title="2. 默认成员初始化（default member initializers）"></a>2. <strong>默认成员初始化（default member initializers）</strong></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">A</span> &#123;</span><br><span class="line">  <span class="type">int</span> x = <span class="number">10</span>;         <span class="comment">// 成员默认初始化</span></span><br><span class="line">  std::string name&#123;<span class="string">&quot;default&quot;</span>&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这样可以减少构造函数中的初始化负担。</p>
+<h3 id="3-构造函数委托"><a href="#3-构造函数委托" class="headerlink" title="3. 构造函数委托"></a>3. <strong>构造函数委托</strong></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">A</span>() : <span class="built_in">A</span>(<span class="number">0</span>) &#123;&#125;       <span class="comment">// 委托给另一个构造函数</span></span><br><span class="line">  <span class="built_in">A</span>(<span class="type">int</span> val) : <span class="built_in">x</span>(val) &#123;&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="type">int</span> x;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>改善构造函数代码复用性。</p>
+<h3 id="4-统一初始化语法与-std-initializer-list-构造"><a href="#4-统一初始化语法与-std-initializer-list-构造" class="headerlink" title="4. 统一初始化语法与**std::initializer_list**构造"></a>4. <strong>统一初始化语法与</strong>**<code>std::initializer_list</code>**<strong>构造</strong></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">MyClass</span>(std::initializer_list&lt;<span class="type">int</span>&gt; list) &#123; ... &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">MyClass obj&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;  <span class="comment">// 自动调用 initializer_list 构造函数</span></span><br></pre></td></tr></table></figure>
+
+<p>这种方式为容器和类提供了更强大和直观的初始化能力。</p>
+<h2 id="8-4-其他易用性改进"><a href="#8-4-其他易用性改进" class="headerlink" title="8.4 其他易用性改进"></a>8.4 其他易用性改进</h2><p>在 C++ 中，<strong>用户定义字面量（User-defined Literal）</strong> 是一种允许程序员为字面量（如整数、浮点数、字符串等）添加自定义语义的机制。通过用户定义字面量，可以让代码更具可读性和表达力。</p>
+<h3 id="一、用户定义字面量（User-defined-Literal）"><a href="#一、用户定义字面量（User-defined-Literal）" class="headerlink" title="一、用户定义字面量（User-defined Literal）"></a>一、用户定义字面量（User-defined Literal）</h3><p>用户定义字面量使用特殊的函数形式来定义：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">返回类型 <span class="keyword">operator</span><span class="string">&quot;&quot;</span> 标识符(参数)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>标识符</code> 是你为字面量定义的名称（不能是保留名称）。</li>
+<li>参数的类型依赖于字面量的类型，例如整数是 <code>unsigned long long</code>，字符串是 <code>const char*</code> 等。</li>
+<li>必须加上 <code>operator&quot;&quot;</code>。</li>
+</ul>
+<hr>
+<h3 id="二、示例"><a href="#二、示例" class="headerlink" title="二、示例"></a>二、示例</h3><h4 id="1-距离单位（如米、千米）"><a href="#1-距离单位（如米、千米）" class="headerlink" title="1. 距离单位（如米、千米）"></a>1. 距离单位（如米、千米）</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="type">double</span> <span class="keyword">operator</span><span class="string">&quot;&quot;</span> _km(<span class="type">long</span> <span class="type">double</span> x) &#123;</span><br><span class="line">    <span class="keyword">return</span> x * <span class="number">1000</span>;  <span class="comment">// 转换为米</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="type">double</span> <span class="keyword">operator</span><span class="string">&quot;&quot;</span> _m(<span class="type">long</span> <span class="type">double</span> x) &#123;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">double</span> distance = <span class="number">1.5</span>_km + <span class="number">30.0</span>_m;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Distance in meters: &quot;</span> &lt;&lt; distance &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Distance in meters: 1530</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="2-二进制字面量"><a href="#2-二进制字面量" class="headerlink" title="2. 二进制字面量"></a>2. 二进制字面量</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> <span class="keyword">operator</span><span class="string">&quot;&quot;</span> _bin(<span class="type">const</span> <span class="type">char</span>* str) &#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> value = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (*str) &#123;</span><br><span class="line">        value = value * <span class="number">2</span> + (*str++ - <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Binary 1011 is: &quot;</span> &lt;&lt; <span class="number">1011</span>_bin &lt;&lt; std::endl;  <span class="comment">// 输出 11</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="三、可接受的参数类型"><a href="#三、可接受的参数类型" class="headerlink" title="三、可接受的参数类型"></a>三、可接受的参数类型</h3><p>用户定义字面量的参数类型（固定规则）包括：</p>
+<table>
+<thead>
+<tr>
+<th>字面量类型</th>
+<th>参数类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整数字面量</td>
+<td><code>unsigned long long</code></td>
+</tr>
+<tr>
+<td>浮点字面量</td>
+<td><code>long double</code></td>
+</tr>
+<tr>
+<td>字符字面量</td>
+<td><code>char</code></td>
+</tr>
+<tr>
+<td>字符串</td>
+<td><code>const char*</code>, <code>std::size_t</code></td>
+</tr>
+<tr>
+<td>字符数组</td>
+<td><code>const char*, std::size_t</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="四、用途和好处"><a href="#四、用途和好处" class="headerlink" title="四、用途和好处"></a>四、用途和好处</h3><ul>
+<li>增强语义，例如 <code>10_km</code> 比 <code>10000</code> 更清晰。</li>
+<li>避免单位混淆错误。</li>
+<li>常用于自定义单位、时间、字符串解析等场景。</li>
+</ul>
+<hr>
+<h3 id="五、注意事项"><a href="#五、注意事项" class="headerlink" title="五、注意事项"></a>五、注意事项</h3><ul>
+<li>字面量后缀名不能以下划线开头（比如 <code>_x</code> 是合法的，<code>__x</code> 不合法，因为以双下划线或下划线加大写字母开头是保留的）。</li>
+<li>必须使用 <code>operator&quot;&quot;</code> 形式。</li>
+</ul>
+<hr>
+<p>如果你想深入了解某种特定用途（比如用于时间、温度、加密等），也可以给出具体场景，我可以进一步示例说明。</p>
+<h1 id="9-部分其他新特性"><a href="#9-部分其他新特性" class="headerlink" title="9. 部分其他新特性"></a>9. 部分其他新特性</h1><h2 id="9-1-using-类型别名；定宽整数类型；enum-class；byte；UTF-字符类型"><a href="#9-1-using-类型别名；定宽整数类型；enum-class；byte；UTF-字符类型" class="headerlink" title="9.1 using 类型别名；定宽整数类型；enum class；byte；UTF 字符类型"></a>9.1 using 类型别名；定宽整数类型；enum class；byte；UTF 字符类型</h2><h3 id="using-类型别名"><a href="#using-类型别名" class="headerlink" title="using 类型别名"></a>using 类型别名</h3><p>当然可以！我们用简单易懂的方式来介绍 C++ 中的 <code>using</code> 类型别名。</p>
+<hr>
+<h4 id="什么是类型别名？"><a href="#什么是类型别名？" class="headerlink" title="什么是类型别名？"></a>什么是类型别名？</h4><p>类型别名就是给一个已有的类型起一个新的名字，让代码更简洁、好懂。</p>
+<hr>
+<h4 id="用法1：传统写法（typedef）"><a href="#用法1：传统写法（typedef）" class="headerlink" title="用法1：传统写法（typedef）"></a>用法1：传统写法（typedef）</h4><p>以前，我们用 <code>typedef</code> 来给类型起别名，比如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">int</span> uint;</span><br></pre></td></tr></table></figure>
+
+<p>现在你可以用：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> uint = <span class="type">unsigned</span> <span class="type">int</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这两个意思完全一样，都是把 <code>unsigned int</code> 起个新名字叫 <code>uint</code>。</p>
+<hr>
+<h4 id="为什么用-using-更好？"><a href="#为什么用-using-更好？" class="headerlink" title="为什么用 using 更好？"></a>为什么用 <code>using</code> 更好？</h4><ol>
+<li><strong>语法更清晰</strong>：<code>using 新名字 = 原来的类型;</code></li>
+<li><strong>支持模板别名</strong>（<code>typedef</code> 不支持）</li>
+</ol>
+<hr>
+<h4 id="用法2：模板类型别名"><a href="#用法2：模板类型别名" class="headerlink" title="用法2：模板类型别名"></a>用法2：模板类型别名</h4><p>比如我们有个模板类型：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">using</span> Vec = std::vector&lt;T&gt;;</span><br></pre></td></tr></table></figure>
+
+<p>这个意思是：以后你写 <code>Vec&lt;int&gt;</code>，就等于写 <code>std::vector&lt;int&gt;</code>，是不是更短、更清楚？</p>
+<hr>
+<h4 id="举个例子总结："><a href="#举个例子总结：" class="headerlink" title="举个例子总结："></a>举个例子总结：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 给 string 起个新名字</span></span><br><span class="line"><span class="keyword">using</span> Str = std::string;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 给 vector&lt;int&gt; 起个新名字</span></span><br><span class="line"><span class="keyword">using</span> IntVec = std::vector&lt;<span class="type">int</span>&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 给模板 vector&lt;T&gt; 起别名</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">using</span> Vec = std::vector&lt;T&gt;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Str name = <span class="string">&quot;Tom&quot;</span>;          <span class="comment">// 等于 std::string name = &quot;Tom&quot;;</span></span><br><span class="line">    IntVec numbers = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 等于 std::vector&lt;int&gt; numbers</span></span><br><span class="line">    Vec&lt;<span class="type">double</span>&gt; scores = &#123;<span class="number">3.5</span>, <span class="number">4.0</span>&#125;; <span class="comment">// 等于 std::vector&lt;double&gt; scores</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="总结一下："><a href="#总结一下：" class="headerlink" title="总结一下："></a>总结一下：</h4><ul>
+<li><code>using 新名字 = 原类型;</code> 就是给类型起别名的方法。</li>
+<li>它比 <code>typedef</code> 更现代、更强大，尤其是支持模板别名。</li>
+<li>可以让代码更短、更易读。</li>
+</ul>
+<p>需要我再举更多例子或者讲得更细一点吗？</p>
+<h2 id="9-2-tuple、tie-和结构化绑定；时间、随机数、正则表达式"><a href="#9-2-tuple、tie-和结构化绑定；时间、随机数、正则表达式" class="headerlink" title="9.2 tuple、tie 和结构化绑定；时间、随机数、正则表达式"></a>9.2 tuple、tie 和结构化绑定；时间、随机数、正则表达式</h2><h3 id="1-tuple（元组）：像一个小型的“多元素容器”"><a href="#1-tuple（元组）：像一个小型的“多元素容器”" class="headerlink" title="1. tuple（元组）：像一个小型的“多元素容器”"></a>1. <code>tuple</code>（元组）：像一个小型的“多元素容器”</h3><h4 id="什么是-tuple？"><a href="#什么是-tuple？" class="headerlink" title="什么是 tuple？"></a>什么是 <code>tuple</code>？</h4><p><code>tuple</code> 就像一个“装多个不同类型数据的小盒子”。</p>
+<p>比如你想一起存一个名字（字符串）、年龄（int）和身高（float）：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;tuple&gt;</span></span></span><br><span class="line">std::tuple&lt;std::string, <span class="type">int</span>, <span class="type">float</span>&gt; person = &#123;<span class="string">&quot;Tom&quot;</span>, <span class="number">25</span>, <span class="number">1.75f</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="怎么取出里面的值？"><a href="#怎么取出里面的值？" class="headerlink" title="怎么取出里面的值？"></a>怎么取出里面的值？</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::string name = std::<span class="built_in">get</span>&lt;<span class="number">0</span>&gt;(person);  <span class="comment">// &quot;Tom&quot;</span></span><br><span class="line"><span class="type">int</span> age = std::<span class="built_in">get</span>&lt;<span class="number">1</span>&gt;(person);           <span class="comment">// 25</span></span><br><span class="line"><span class="type">float</span> height = std::<span class="built_in">get</span>&lt;<span class="number">2</span>&gt;(person);      <span class="comment">// 1.75</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2-tie：绑定变量，用来解包元组"><a href="#2-tie：绑定变量，用来解包元组" class="headerlink" title="2. tie：绑定变量，用来解包元组"></a>2. <code>tie</code>：绑定变量，用来<strong>解包元组</strong></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;tuple&gt;</span></span></span><br><span class="line">std::tuple&lt;<span class="type">int</span>, <span class="type">int</span>&gt; result = &#123;<span class="number">10</span>, <span class="number">20</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> a, b;</span><br><span class="line">std::<span class="built_in">tie</span>(a, b) = result;</span><br><span class="line"><span class="comment">// 现在 a = 10, b = 20</span></span><br></pre></td></tr></table></figure>
+
+<p>你也可以忽略其中一部分：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::<span class="built_in">tie</span>(a, std::ignore) = result;  <span class="comment">// 只取第一个，忽略第二个</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="3-结构化绑定（C-17）：更简单地解包"><a href="#3-结构化绑定（C-17）：更简单地解包" class="headerlink" title="3. 结构化绑定（C++17）：更简单地解包"></a>3. 结构化绑定（C++17）：更简单地解包</h3><p>从 C++17 开始，不用 <code>tie</code>，可以直接这样写：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> [name, age, height] = person;</span><br><span class="line"><span class="comment">// 自动拆开 tuple 的内容，对应赋值给变量</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-时间（）"><a href="#4-时间（）" class="headerlink" title="4. 时间（&lt;chrono&gt;）"></a>4. 时间（<code>&lt;chrono&gt;</code>）</h3><h4 id="获取当前时间："><a href="#获取当前时间：" class="headerlink" title="获取当前时间："></a>获取当前时间：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> now = std::chrono::system_clock::<span class="built_in">now</span>();  <span class="comment">// 当前时间</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="计时器例子："><a href="#计时器例子：" class="headerlink" title="计时器例子："></a>计时器例子：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> start = std::chrono::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line"><span class="comment">// 做一些事情...</span></span><br><span class="line"><span class="keyword">auto</span> end = std::chrono::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> duration = std::chrono::<span class="built_in">duration_cast</span>&lt;std::chrono::milliseconds&gt;(end - start);</span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;耗时：&quot;</span> &lt;&lt; duration.<span class="built_in">count</span>() &lt;&lt; <span class="string">&quot; 毫秒&quot;</span> &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="5-随机数（）"><a href="#5-随机数（）" class="headerlink" title="5. 随机数（&lt;random&gt;）"></a>5. 随机数（<code>&lt;random&gt;</code>）</h3><h4 id="生成一个-1-到-100-的随机整数："><a href="#生成一个-1-到-100-的随机整数：" class="headerlink" title="生成一个 1 到 100 的随机整数："></a>生成一个 1 到 100 的随机整数：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;random&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line">std::random_device rd;                      <span class="comment">// 随机种子</span></span><br><span class="line"><span class="function">std::mt19937 <span class="title">gen</span><span class="params">(rd())</span></span>;                     <span class="comment">// 随机数生成器</span></span><br><span class="line">std::uniform_int_distribution&lt;&gt; <span class="built_in">dist</span>(<span class="number">1</span>, <span class="number">100</span>);  <span class="comment">// 均匀分布</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> randomNumber = <span class="built_in">dist</span>(gen);</span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;随机数：&quot;</span> &lt;&lt; randomNumber &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="6-正则表达式（）"><a href="#6-正则表达式（）" class="headerlink" title="6. 正则表达式（&lt;regex&gt;）"></a>6. 正则表达式（<code>&lt;regex&gt;</code>）</h3><h4 id="检查一个字符串是不是-email："><a href="#检查一个字符串是不是-email：" class="headerlink" title="检查一个字符串是不是 email："></a>检查一个字符串是不是 email：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;regex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line">std::string email = <span class="string">&quot;abc@example.com&quot;</span>;</span><br><span class="line"><span class="function">std::regex <span class="title">pattern</span><span class="params">(<span class="string">R&quot;(\w+@\w+\.\w+)&quot;</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (std::<span class="built_in">regex_match</span>(email, pattern)) &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;是合法的 email&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;不是合法的 email&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查找字符串中的数字："><a href="#查找字符串中的数字：" class="headerlink" title="查找字符串中的数字："></a>查找字符串中的数字：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">std::string text = <span class="string">&quot;abc123xyz456&quot;</span>;</span><br><span class="line"><span class="function">std::regex <span class="title">pattern</span><span class="params">(<span class="string">R&quot;(\d+)&quot;</span>)</span></span>;</span><br><span class="line">std::smatch match;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (std::<span class="built_in">regex_search</span>(text, match, pattern)) &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;找到数字：&quot;</span> &lt;&lt; match.<span class="built_in">str</span>() &lt;&lt; std::endl;</span><br><span class="line">    text = match.<span class="built_in">suffix</span>();  <span class="comment">// 剩下的部分继续查找</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="10-any、optional、variant-和错误处理"><a href="#10-any、optional、variant-和错误处理" class="headerlink" title="10. any、optional、variant 和错误处理"></a>10. any、optional、variant 和错误处理</h1><h2 id="10-1-any-和-optional"><a href="#10-1-any-和-optional" class="headerlink" title="10.1 any 和 optional"></a>10.1 any 和 optional</h2><h2 id="10-2-variant；any、optional、variant-的接口比较"><a href="#10-2-variant；any、optional、variant-的接口比较" class="headerlink" title="10.2 variant；any、optional、variant 的接口比较"></a>10.2 variant；any、optional、variant 的接口比较</h2><h2 id="10-3-标准库的错误处理"><a href="#10-3-标准库的错误处理" class="headerlink" title="10.3 标准库的错误处理"></a>10.3 标准库的错误处理</h2><h2 id="小节自测-3"><a href="#小节自测-3" class="headerlink" title="小节自测"></a><em>小节自测</em></h2>
       
     </div>
 
@@ -1037,7 +1720,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-17 16:07:30" itemprop="dateModified" datetime="2025-05-17T16:07:30+08:00">2025-05-17</time>
+                <time title="修改时间：2025-05-28 15:50:37" itemprop="dateModified" datetime="2025-05-28T15:50:37+08:00">2025-05-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2023,7 +2706,159 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.res = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxSumBST</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="variable language_">self</span>.get_isBST_lo_hi_sum(root)</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.res</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_isBST_lo_hi_sum</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="built_in">tuple</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        如果以root为根节点的子树为BST，返回其True,lo,hi,sum</span></span><br><span class="line"><span class="string">        反之则返回false,None,None,None</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> (<span class="literal">False</span>, <span class="literal">None</span>, <span class="literal">None</span>, <span class="literal">None</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># assert root is not None</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="variable language_">self</span>.res = <span class="built_in">max</span>(<span class="variable language_">self</span>.res, root.val)</span><br><span class="line">            <span class="keyword">return</span> (<span class="literal">True</span>, root.val, root.val, root.val)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">elif</span> root.left <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            rp_isbst, rp_lo, rp_hi, rp_sum = <span class="variable language_">self</span>.get_isBST_lo_hi_sum(root.right)</span><br><span class="line">            <span class="keyword">if</span> rp_isbst <span class="keyword">and</span> root.val &lt; rp_lo:</span><br><span class="line">                <span class="variable language_">self</span>.res = <span class="built_in">max</span>(<span class="variable language_">self</span>.res, root.val + rp_sum)</span><br><span class="line">                <span class="keyword">return</span> (<span class="literal">True</span>, root.val, rp_hi, root.val + rp_sum)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> (<span class="literal">False</span>, <span class="literal">None</span>, <span class="literal">None</span>, <span class="literal">None</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">elif</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            lp_isbst, lp_lo, lp_hi, lp_sum = <span class="variable language_">self</span>.get_isBST_lo_hi_sum(root.left)</span><br><span class="line">            <span class="keyword">if</span> lp_isbst <span class="keyword">and</span> lp_hi &lt; root.val:</span><br><span class="line">                <span class="variable language_">self</span>.res = <span class="built_in">max</span>(<span class="variable language_">self</span>.res, root.val + lp_sum)</span><br><span class="line">                <span class="keyword">return</span> (<span class="literal">True</span>, lp_lo, root.val, root.val + lp_sum)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> (<span class="literal">False</span>, <span class="literal">None</span>, <span class="literal">None</span>, <span class="literal">None</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            lp_isbst, lp_lo, lp_hi, lp_sum = <span class="variable language_">self</span>.get_isBST_lo_hi_sum(root.left)</span><br><span class="line">            rp_isbst, rp_lo, rp_hi, rp_sum = <span class="variable language_">self</span>.get_isBST_lo_hi_sum(root.right)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> lp_isbst <span class="keyword">and</span> rp_isbst <span class="keyword">and</span> lp_hi &lt; root.val &lt; rp_lo:</span><br><span class="line">                <span class="variable language_">self</span>.res = <span class="built_in">max</span>(<span class="variable language_">self</span>.res, lp_sum + rp_sum + root.val)</span><br><span class="line">                <span class="keyword">return</span> (<span class="literal">True</span>, lp_lo, rp_hi, lp_sum + rp_sum + root.val)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> (<span class="literal">False</span>, <span class="literal">None</span>, <span class="literal">None</span>, <span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="本章导读"><a href="#本章导读" class="headerlink" title="本章导读"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/intro/binary-tree-practice/">本章导读</a></h3><h3 id="【强化练习】用「遍历」思维解题-I"><a href="#【强化练习】用「遍历」思维解题-I" class="headerlink" title="【强化练习】用「遍历」思维解题 I"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-traverse-i/">【强化练习】用「遍历」思维解题 I</a></h3><h3 id="【强化练习】用「遍历」思维解题-II"><a href="#【强化练习】用「遍历」思维解题-II" class="headerlink" title="【强化练习】用「遍历」思维解题 II"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-traverse-ii/">【强化练习】用「遍历」思维解题 II</a></h3><h3 id="【强化练习】用「遍历」思维解题-III"><a href="#【强化练习】用「遍历」思维解题-III" class="headerlink" title="【强化练习】用「遍历」思维解题 III"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-traverse-iii/">【强化练习】用「遍历」思维解题 III</a></h3><h3 id="【强化练习】用「分解问题」思维解题-I"><a href="#【强化练习】用「分解问题」思维解题-I" class="headerlink" title="【强化练习】用「分解问题」思维解题 I"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-divide-i/">【强化练习】用「分解问题」思维解题 I</a></h3><h3 id="【强化练习】用「分解问题」思维解题-II"><a href="#【强化练习】用「分解问题」思维解题-II" class="headerlink" title="【强化练习】用「分解问题」思维解题 II"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-divide-ii/">【强化练习】用「分解问题」思维解题 II</a></h3><h3 id="【强化练习】同时运用两种思维解题"><a href="#【强化练习】同时运用两种思维解题" class="headerlink" title="【强化练习】同时运用两种思维解题"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-combine-two-view/">【强化练习】同时运用两种思维解题</a></h3><h3 id="【强化练习】利用后序位置解题-I"><a href="#【强化练习】利用后序位置解题-I" class="headerlink" title="【强化练习】利用后序位置解题 I"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-post-order-i/">【强化练习】利用后序位置解题 I</a></h3><h3 id="【强化练习】利用后序位置解题-II"><a href="#【强化练习】利用后序位置解题-II" class="headerlink" title="【强化练习】利用后序位置解题 II"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-post-order-ii/">【强化练习】利用后序位置解题 II</a></h3><h3 id="【强化练习】利用后序位置解题-III"><a href="#【强化练习】利用后序位置解题-III" class="headerlink" title="【强化练习】利用后序位置解题 III"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-post-order-iii/">【强化练习】利用后序位置解题 III</a></h3><h3 id="【强化练习】运用层序遍历解题-I"><a href="#【强化练习】运用层序遍历解题-I" class="headerlink" title="【强化练习】运用层序遍历解题 I"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-level-i/">【强化练习】运用层序遍历解题 I</a></h3><h3 id="【强化练习】运用层序遍历解题-II"><a href="#【强化练习】运用层序遍历解题-II" class="headerlink" title="【强化练习】运用层序遍历解题 II"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-level-ii/">【强化练习】运用层序遍历解题 II</a></h3><h3 id="【强化练习】二叉搜索树经典例题-I"><a href="#【强化练习】二叉搜索树经典例题-I" class="headerlink" title="【强化练习】二叉搜索树经典例题 I"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/bst1/">【强化练习】二叉搜索树经典例题 I</a></h3><h3 id="【强化练习】二叉搜索树经典例题-II"><a href="#【强化练习】二叉搜索树经典例题-II" class="headerlink" title="【强化练习】二叉搜索树经典例题 II"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/bst2/">【强化练习】二叉搜索树经典例题 II</a></h3><!-- 
+<h3 id="本章导读"><a href="#本章导读" class="headerlink" title="本章导读"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/intro/binary-tree-practice/">本章导读</a></h3><h3 id="【强化练习】用「遍历」思维解题-I"><a href="#【强化练习】用「遍历」思维解题-I" class="headerlink" title="【强化练习】用「遍历」思维解题 I"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-traverse-i/">【强化练习】用「遍历」思维解题 I</a></h3><p>遍历的母版如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">track = []</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">root: <span class="type">Optional</span>[TreeNode]</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    track.append(root.val)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="comment"># do something 到了叶子节点</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    traverse(root.left)</span><br><span class="line">    traverse(root.right)</span><br><span class="line">    track.pop()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-paths/">Leetcode 257</a> 二叉树的所有路径<br>既可以使用分解问题的思路，也可以使用遍历的思路。</li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sum-root-to-leaf-numbers/description/">Leetcode 129</a> 二叉树的根节点到叶子节点的数字之和<br>直接使用遍历的母版</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.res = <span class="number">0</span></span><br><span class="line">        <span class="variable language_">self</span>.track = []</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">sumNumbers</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="variable language_">self</span>.traverse(root)</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.res</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">self,root</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        <span class="variable language_">self</span>.track.append(root.val)</span><br><span class="line">        <span class="comment"># 想想，放到这里而不是 self.track.append(root.val)之前有什么好处</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="variable language_">self</span>.res += <span class="built_in">sum</span>([num *(<span class="number">10</span>**idx) <span class="keyword">for</span> idx,num <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="variable language_">self</span>.track[::-<span class="number">1</span>])])</span><br><span class="line">        <span class="variable language_">self</span>.traverse(root.left)</span><br><span class="line">        <span class="variable language_">self</span>.traverse(root.right)</span><br><span class="line">        <span class="variable language_">self</span>.track.pop()</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-right-side-view/">Leetcode 199</a> 二叉树的右视图<br>带深度的层序遍历</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-string-starting-from-leaf/">Leetcode 998*</a> 从叶结点开始的最小字符串</p>
+<blockquote>
+<p>字典序的规则<br>逐字符比较：从第一个字符（或元素）开始，依次比较两个序列中对应位置的字符。<br>如果字符不同，根据字符的编码值（如ASCII、Unicode）决定顺序。例如 ‘a’ &lt; ‘b’，’A’ &lt; ‘a’（因为ASCII中大写字母排在小写字母前）。如果字符相同，继续比较下一个字符。<br>长度不同时的处理：<br>如果比较到某一位置时，其中一个序列已结束，则较短的序列排在前面。例如 “apple” &lt; “apples”。<br>就是python的默认字符串比较方法：</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.res = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.track = <span class="string">&quot;</span></span><br><span class="line"><span class="string">    def smallestFromLeaf(self, root: Optional[TreeNode]) -&gt; str:</span></span><br><span class="line"><span class="string">        def traverse(root: Optional[TreeNode]):</span></span><br><span class="line"><span class="string">            if not root:</span></span><br><span class="line"><span class="string">                return</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            self.track = chr(ord(&quot;</span>a<span class="string">&quot;) + root.val) + self.track</span></span><br><span class="line"><span class="string">            if not root.left and not root.right:</span></span><br><span class="line"><span class="string">                self.res = self.track[:] if self.res == &quot;</span><span class="string">&quot; or self.res &gt; self.track else self.res</span></span><br><span class="line"><span class="string">            traverse(root.left)</span></span><br><span class="line"><span class="string">            traverse(root.right)</span></span><br><span class="line"><span class="string">            self.track = self.track[1:]</span></span><br><span class="line"><span class="string">        traverse(root)</span></span><br><span class="line"><span class="string">        return self.res</span></span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sum-of-root-to-leaf-binary-numbers/description/">Leetcode 1022</a> 从根到叶的二进制数之和<br>字符串转化为数字的是后，利用<code>int(s,base=2)</code>可以制定二进制</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/pseudo-palindromic-paths-in-a-binary-tree/description/">Leetcode 1457</a> 二叉树中的伪回文路径<br>该题目的track是一个cnt，这样方便一些：</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.res = <span class="number">0</span></span><br><span class="line">        <span class="variable language_">self</span>.track = defaultdict(<span class="built_in">int</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pseudoPalindromicPaths</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">root: <span class="type">Optional</span>[TreeNode]</span>):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            </span><br><span class="line">            <span class="variable language_">self</span>.track[root.val] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root.left <span class="keyword">and</span> <span class="keyword">not</span> root.right <span class="keyword">and</span> <span class="variable language_">self</span>.isTrackPseudoPalindromic():</span><br><span class="line">                <span class="variable language_">self</span>.res += <span class="number">1</span></span><br><span class="line">            traverse(root.left)</span><br><span class="line">            traverse(root.right)</span><br><span class="line">            <span class="variable language_">self</span>.track[root.val] -= <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        traverse(root)</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isTrackPseudoPalindromic</span>(<span class="params">self</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        even_odd_cnt = &#123;<span class="number">0</span>: <span class="number">0</span>, <span class="number">1</span>: <span class="number">0</span>&#125;</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> _, val <span class="keyword">in</span> <span class="variable language_">self</span>.track.items():</span><br><span class="line">            <span class="keyword">if</span> val != <span class="number">0</span>:</span><br><span class="line">                even_odd_cnt[val % <span class="number">2</span>] += <span class="number">1</span></span><br><span class="line">                l += val</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> l % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> even_odd_cnt[<span class="number">1</span>] == <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> even_odd_cnt[<span class="number">1</span>] == <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="【强化练习】用「遍历」思维解题-II"><a href="#【强化练习】用「遍历」思维解题-II" class="headerlink" title="【强化练习】用「遍历」思维解题 II"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-traverse-ii/">【强化练习】用「遍历」思维解题 II</a></h3><ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sum-of-left-leaves/description/">Leetcode 404</a> 左叶子之和<br>如何判断一个节点是不是左叶子？答案是：不能判断，准确说需要在递归到该节点之前做判断。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">root: <span class="type">Optional</span>[TreeNode]</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">and</span> root.left.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.left.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="comment"># 此时root.left是为 左叶子</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">if</span> root.right <span class="keyword">and</span> root.right.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="comment"># 此时root.right是为 右叶子</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    traverse(root.left)</span><br><span class="line">    traverse(root.right)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/add-one-row-to-tree/description/">Leetcode 623</a> 在二叉树中增加一行<br>直接使用带层数的层序遍历，将截至的那一层保存在一个deque里面，对于该层做操作</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/flip-binary-tree-to-match-preorder-traversal/description/">Leetcode 971*</a> 翻转二叉树以匹配先序遍历<br>这个题目用到了二叉树遍历+贪心的方法，如果左右子节点的都存在，且flip后与voyage一样，则我们一定反转</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.idx = <span class="number">0</span></span><br><span class="line">        <span class="variable language_">self</span>.res = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">flipMatchVoyage</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode], voyage: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">root: <span class="type">Optional</span>[TreeNode]</span>):</span><br><span class="line">            <span class="keyword">if</span> <span class="variable language_">self</span>.res == [-<span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> voyage[<span class="variable language_">self</span>.idx] != root.val:</span><br><span class="line">                <span class="variable language_">self</span>.res = [-<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> <span class="variable language_">self</span>.idx &lt; <span class="built_in">len</span>(voyage) - <span class="number">1</span> <span class="keyword">and</span> root.right <span class="keyword">and</span> root.left <span class="keyword">and</span> voyage[<span class="variable language_">self</span>.idx + <span class="number">1</span>] == root.right.val <span class="keyword">and</span> voyage[<span class="variable language_">self</span>.idx + <span class="number">1</span>] != root.left.val:</span><br><span class="line">                <span class="comment"># 没有截至，且存在左右子节点，反转后与voyage一样，则我们一定反转</span></span><br><span class="line">                root.left, root.right = root.right, root.left</span><br><span class="line">                <span class="variable language_">self</span>.res.append(root.val)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="variable language_">self</span>.idx += <span class="number">1</span></span><br><span class="line">            traverse(root.left)</span><br><span class="line">            traverse(root.right)</span><br><span class="line"></span><br><span class="line">        traverse(root)</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.res</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/vertical-order-traversal-of-a-binary-tree/">Leetcode 987*</a> 二叉树的垂序遍历<br>非常好的一个题目，这个题目给我不少启发，<code>traverse(root):-&gt;None</code>是可以加入参数的！你要知道一个节点在第几层，第几列不需要非得使用层序遍历。例如如下的题目用层序遍历的算法会TLE：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.col2ValsRows = defaultdict(<span class="built_in">list</span>)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">verticalTraversal</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        q = deque([(<span class="number">0</span>, <span class="number">0</span>, root)])</span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">not</span> <span class="built_in">all</span>(_[<span class="number">2</span>] <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">for</span> _ <span class="keyword">in</span> q):</span><br><span class="line">            row, col, node = q.popleft()</span><br><span class="line">            <span class="keyword">if</span> node:</span><br><span class="line">                <span class="variable language_">self</span>.col2ValsRows[col].append((node.val, row))</span><br><span class="line">                q.append((row + <span class="number">1</span>, col - <span class="number">1</span>, node.left))</span><br><span class="line">                q.append((row + <span class="number">1</span>, col + <span class="number">1</span>, node.right))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                q.append((row + <span class="number">1</span>, col - <span class="number">1</span>, <span class="literal">None</span>))</span><br><span class="line">                q.append((row + <span class="number">1</span>, col + <span class="number">1</span>, <span class="literal">None</span>))</span><br><span class="line">        <span class="keyword">return</span> [[_[<span class="number">0</span>] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">sorted</span>(<span class="variable language_">self</span>.col2ValsRows[k], key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>]/<span class="number">10000</span> + x[<span class="number">1</span>])] <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">sorted</span>(<span class="variable language_">self</span>.col2ValsRows)]</span><br></pre></td></tr></table></figure>
+<p>原因是该二叉树最多右1000个节点，如果退化为一个链表，要遍历$2^{1000}$次，所以会TLE。可以用含参数的traverse函数以1000次遍历来解决。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line">        <span class="variable language_">self</span>.col2ValsRows = defaultdict(<span class="built_in">list</span>)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">verticalTraversal</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">root: <span class="type">Optional</span>[TreeNode], row: <span class="built_in">int</span>, col: <span class="built_in">int</span></span>):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="variable language_">self</span>.col2ValsRows[col].append((root.val, row))</span><br><span class="line">            traverse(root.left, row + <span class="number">1</span>, col - <span class="number">1</span>)</span><br><span class="line">            traverse(root.right, row + <span class="number">1</span>, col + <span class="number">1</span>)</span><br><span class="line">        traverse(root, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> [[_[<span class="number">0</span>] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">sorted</span>(<span class="variable language_">self</span>.col2ValsRows[k], key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>]/<span class="number">10000</span> + x[<span class="number">1</span>])] <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">sorted</span>(<span class="variable language_">self</span>.col2ValsRows)]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/cousins-in-binary-tree/description/">Leetcode 993</a> 二叉树的堂兄弟节点</li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sum-of-nodes-with-even-valued-grandparent/">Leetcode 1315</a> 祖父节点值为偶数的节点和</li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-good-nodes-in-binary-tree/">Leetcode 1448</a> 统计二叉树中好节点的数目<br>这三个题目都是含参数traverse函数的题目。</li>
+</ul>
+<h3 id="【强化练习】用「遍历」思维解题-III"><a href="#【强化练习】用「遍历」思维解题-III" class="headerlink" title="【强化练习】用「遍历」思维解题 III"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-traverse-iii/">【强化练习】用「遍历」思维解题 III</a></h3><ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/path-sum-iii/">Leetcode 437*</a> 路径总和 III<br>该题目比较有技巧性，之前的题目traverse的时候，track作为全局遍历，一般是track当前的路径，但是该题要求路径上的和，所以要track前缀和。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.res = <span class="number">0</span></span><br><span class="line">        <span class="variable language_">self</span>.track = [<span class="number">0</span>]  <span class="comment"># preSum</span></span><br><span class="line">        <span class="variable language_">self</span>.targetSum = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pathSum</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode], targetSum: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="variable language_">self</span>.targetSum = targetSum</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">root: <span class="type">Optional</span>[TreeNode]</span>):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="variable language_">self</span>.track.append(<span class="variable language_">self</span>.track[-<span class="number">1</span>] + root.val)</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="variable language_">self</span>.track[:-<span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">if</span> <span class="variable language_">self</span>.track[-<span class="number">1</span>] - _ == <span class="variable language_">self</span>.targetSum:</span><br><span class="line">                    <span class="variable language_">self</span>.res += <span class="number">1</span></span><br><span class="line">            traverse(root.left)</span><br><span class="line">            traverse(root.right)</span><br><span class="line">            <span class="variable language_">self</span>.track.pop()</span><br><span class="line">        traverse(root)</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.res</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-bottom-left-tree-value/">Leetcode 513</a> 找树左下角的值<br>这个题目有些特殊，最左下角不是几何意义上的，不是以root为(0,0),我们要求节点的(row,col)的row为最大，col为最小<br>而是求row最大的哪一个，当row一样大的时候，前序遍历在前的哪一个。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.res = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findBottomLeftValue</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">root: <span class="type">Optional</span>[TreeNode], row: <span class="built_in">int</span></span>):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="comment"># 注意这里是严格 row &gt; self.res[0]</span></span><br><span class="line">            <span class="comment"># 左树的节点比右树的节点先站住坑，会阻塞同row的右边的节点</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> <span class="variable language_">self</span>.res <span class="keyword">or</span> row &gt; <span class="variable language_">self</span>.res[<span class="number">0</span>]:</span><br><span class="line">                <span class="variable language_">self</span>.res = (row, root.val)</span><br><span class="line">            traverse(root.left, row + <span class="number">1</span>)</span><br><span class="line">            traverse(root.right, row + <span class="number">1</span>)</span><br><span class="line">        traverse(root, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.res[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-elements-in-a-contaminated-binary-tree/description/">Leetcode 1261</a> 在受污染的二叉树中查找元素<br>直接使用传参的traverse函数</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lexicographical-numbers/">Leetcode 386</a> 字典序排数<br>多叉树遍历，递归出口是&gt;&#x3D;n的数字,其实用排序也很好完成。</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.res = []</span><br><span class="line">        <span class="variable language_">self</span>.MAX = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">lexicalOrder</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="variable language_">self</span>.MAX = n</span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">root: n</span>):</span><br><span class="line">            <span class="keyword">if</span> root &gt; <span class="variable language_">self</span>.MAX:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="variable language_">self</span>.res.append(root)</span><br><span class="line">            children = [root * <span class="number">10</span> + _ <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)] <span class="keyword">if</span> root != <span class="number">0</span> <span class="keyword">else</span> <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>))</span><br><span class="line">            <span class="keyword">for</span> child <span class="keyword">in</span> children:</span><br><span class="line">                traverse(child)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># roots = [_ for _ in range(1, 10)]</span></span><br><span class="line">        <span class="comment"># for root in roots:</span></span><br><span class="line">        <span class="comment">#     traverse(root)</span></span><br><span class="line">        traverse(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.res[<span class="number">1</span>:]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/path-in-zigzag-labelled-binary-tree/">Leetcode 1104</a> 二叉树寻路<br>用一个nums表示二叉树：</p>
+</li>
+<li><p>nums[i] 的左子节点为 2 * i + 1</p>
+</li>
+<li><p>nums[i] 的右子节点为 2 * i + 2</p>
+</li>
+<li><p>nums[i] 的父节点为 <code>(i - 2) //2 if i % 2 == 0 else (i - 1) // 2 </code></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-coloring-game/description/">Leetcode 1145*</a> 二叉树着色游戏<br>纯技巧,要取得胜利，就需要过半的节点数被你染色。总共有3中覆盖的方法。<br><img src="/../images/1747743964407-image.png" alt="alt text"></p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">btreeGameWinningMove</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode], n: <span class="built_in">int</span>, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">find</span>(<span class="params">root: <span class="type">Optional</span>[TreeNode], target: <span class="built_in">int</span></span>) -&gt; <span class="type">Optional</span>[TreeNode]:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> root.val == target:</span><br><span class="line">                <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line">            lp = find(root.left, target)</span><br><span class="line">            <span class="keyword">if</span> lp:</span><br><span class="line">                <span class="keyword">return</span> lp</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                rp = find(root.right, target)</span><br><span class="line">                <span class="keyword">if</span> rp:</span><br><span class="line">                    <span class="keyword">return</span> rp</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">node_cnt</span>(<span class="params">root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> + node_cnt(root.left) + node_cnt(root.right)</span><br><span class="line"></span><br><span class="line">        node = find(root, x)</span><br><span class="line">        lp_cnt = node_cnt(node.left)</span><br><span class="line">        rp_cnt = node_cnt(node.right)</span><br><span class="line">        fp_cnt = n - <span class="number">1</span> - lp_cnt - rp_cnt</span><br><span class="line">        max_cnt = <span class="built_in">max</span>(lp_cnt, rp_cnt, fp_cnt)</span><br><span class="line">        <span class="keyword">return</span> max_cnt &gt; n / <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/step-by-step-directions-from-a-binary-tree-node-to-another/description/">Leetcode 2096*</a> 从二叉树节点出发，计算到达目标节点的最短路径<br>需要找到src和dst的最近公共祖先，然后根据src和dst的相对位置，计算出src和dst的最短路径。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.trace = []</span><br><span class="line">        <span class="variable language_">self</span>.trace_root2start = []</span><br><span class="line">        <span class="variable language_">self</span>.trace_root2end = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">getDirections</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode], startValue: <span class="built_in">int</span>, destValue: <span class="built_in">int</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">root: <span class="type">Optional</span>[TreeNode], target: <span class="built_in">int</span>, start: <span class="built_in">bool</span></span>):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">            <span class="variable language_">self</span>.trace.append(root)</span><br><span class="line">            <span class="keyword">if</span> <span class="variable language_">self</span>.trace[-<span class="number">1</span>].val == target:</span><br><span class="line">                <span class="keyword">if</span> start:</span><br><span class="line">                    <span class="variable language_">self</span>.trace_root2start = <span class="variable language_">self</span>.trace[:]</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="variable language_">self</span>.trace_root2end = <span class="variable language_">self</span>.trace[:]</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">            traverse(root.left, target, start)</span><br><span class="line">            traverse(root.right, target, start)</span><br><span class="line">            <span class="variable language_">self</span>.trace.pop()</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.trace = []</span><br><span class="line">        traverse(root, startValue, <span class="literal">True</span>)</span><br><span class="line">        <span class="variable language_">self</span>.trace = []</span><br><span class="line">        traverse(root, destValue, <span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># print([_.val for _ in self.trace_root2start])</span></span><br><span class="line">        <span class="comment"># print([_.val for _ in self.trace_root2end])</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (</span><br><span class="line">            <span class="built_in">len</span>(<span class="variable language_">self</span>.trace_root2start) &gt;= <span class="number">2</span></span><br><span class="line">            <span class="keyword">and</span> <span class="built_in">len</span>(<span class="variable language_">self</span>.trace_root2end) &gt;= <span class="number">2</span></span><br><span class="line">            <span class="keyword">and</span> <span class="variable language_">self</span>.trace_root2start[<span class="number">1</span>].val == <span class="variable language_">self</span>.trace_root2end[<span class="number">1</span>].val</span><br><span class="line">        ):</span><br><span class="line">            <span class="keyword">assert</span> <span class="variable language_">self</span>.trace_root2start[<span class="number">0</span>].val == <span class="variable language_">self</span>.trace_root2end[<span class="number">0</span>].val</span><br><span class="line">            <span class="variable language_">self</span>.trace_root2start.pop(<span class="number">0</span>)</span><br><span class="line">            <span class="variable language_">self</span>.trace_root2end.pop(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># print([_.val for _ in self.trace_root2start])</span></span><br><span class="line">        <span class="comment"># print([_.val for _ in self.trace_root2end])</span></span><br><span class="line"></span><br><span class="line">        res = <span class="string">&quot;&quot;</span></span><br><span class="line">        res += <span class="string">&quot;U&quot;</span> * (<span class="built_in">len</span>(<span class="variable language_">self</span>.trace_root2start) - <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(<span class="variable language_">self</span>.trace_root2end) - <span class="number">1</span>):</span><br><span class="line">            cur = <span class="variable language_">self</span>.trace_root2end[i]</span><br><span class="line">            nxt = <span class="variable language_">self</span>.trace_root2end[i + <span class="number">1</span>]</span><br><span class="line">            res += <span class="string">&quot;L&quot;</span> <span class="keyword">if</span> cur.left <span class="keyword">and</span> cur.left.val == nxt.val <span class="keyword">else</span> <span class="string">&quot;R&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-in-binary-tree/description/">Leetcode 1367</a> 二叉树中的链表<br>这个题目我做的有点偷懒了，完全使用字符串实现，不过也能AC。</li>
+</ul>
+<h3 id="【强化练习】用「分解问题」思维解题-I"><a href="#【强化练习】用「分解问题」思维解题-I" class="headerlink" title="【强化练习】用「分解问题」思维解题 I"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-divide-i/">【强化练习】用「分解问题」思维解题 I</a></h3><ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/verify-preorder-serialization-of-a-binary-tree/">Leetcode 331*</a> 判断二叉树的前序序列化是否合法<br>如果是一个合法的二叉树，其前序序列化的函数为：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">serialize</span>(<span class="params">root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;#&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(root.val) + <span class="string">&quot; ,&quot;</span> + serialize(root.left) + <span class="string">&quot;, &quot;</span> + serialize(root.right)</span><br></pre></td></tr></table></figure>
+<p>仿照此思路为我们可以设置一个<code>deserialize</code>函数，来反序列化二叉树。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Codec</span>:</span><br><span class="line">    <span class="comment"># 主函数，将字符串反序列化为二叉树结构</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">deserialize</span>(<span class="params">self, data: <span class="built_in">str</span></span>) -&gt; TreeNode:</span><br><span class="line">        <span class="comment"># 将字符串转化成列表</span></span><br><span class="line">        nodes = data.split(<span class="string">&quot;,&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>._deserialize(nodes)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 辅助函数，通过 nodes 列表构造二叉树</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_deserialize</span>(<span class="params">self, nodes: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; TreeNode:</span><br><span class="line">        <span class="keyword">assert</span> nodes <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># ****** 前序位置 *******</span></span><br><span class="line">        <span class="comment"># 列表最左侧就是根节点</span></span><br><span class="line">        first = nodes.pop(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span> first == <span class="string">&quot;#&quot;</span>: <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        root = TreeNode(<span class="built_in">int</span>(first)) </span><br><span class="line">        <span class="comment"># *********************</span></span><br><span class="line">        root.left = <span class="variable language_">self</span>._deserialize(nodes)</span><br><span class="line">        root.right = <span class="variable language_">self</span>._deserialize(nodes)</span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
+<p>设想一下一个不合理的序列化，你尝试用<code>deserialize</code>函数来反序列化，会则么样？</p>
+<ul>
+<li>例如：<code>1</code> 反序列化会返回会直接报错</li>
+<li>例如：<code>1,#,#,2</code> 反序列化不会报错，但是会有剩余<br>基于此我们可以完成该题目</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isValidSerialization</span>(<span class="params">self, preorder: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="comment"># 加速pop(0)操作</span></span><br><span class="line">        q = deque(preorder.split(<span class="string">&quot;,&quot;</span>))</span><br><span class="line">        <span class="comment"># 模仿上面自反序列函数</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">deSerialization</span>(<span class="params">q</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> q:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">if</span> q.popleft() == <span class="string">&quot;#&quot;</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">return</span> deSerialization(q) <span class="keyword">and</span> deSerialization(q)</span><br><span class="line">        <span class="keyword">return</span> deSerialization(q) <span class="keyword">and</span> <span class="keyword">not</span> q</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/all-possible-full-binary-trees/">Leetcode 984*</a> 所有可能的真二叉树<br>观察得到：</li>
+<li>所有偶数个节点是构不成真二叉树</li>
+<li>所有奇数个节点，其左右子树都是奇数个，加上自己&#x3D;奇 + 奇 + 1 &#x3D; 奇</li>
+<li>我们需要合并所有可能</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line"><span class="meta">    @cache </span><span class="comment"># 记忆化</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">allPossibleFBT</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="type">Optional</span>[TreeNode]]:</span><br><span class="line">        <span class="keyword">if</span> n % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> [TreeNode()]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># if n = 7</span></span><br><span class="line">            <span class="comment"># 所有的可能有: (1,5), (3,3), (5,1)</span></span><br><span class="line">            lrn_s = [(l, n - <span class="number">1</span> - l) <span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n) <span class="keyword">if</span> l % <span class="number">2</span> == <span class="number">1</span>]</span><br><span class="line">            res = []</span><br><span class="line">            <span class="keyword">for</span> ln, rn <span class="keyword">in</span> lrn_s:</span><br><span class="line">                ls = <span class="variable language_">self</span>.allPossibleFBT(ln)</span><br><span class="line">                rs = <span class="variable language_">self</span>.allPossibleFBT(rn)</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> ls:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> rs:</span><br><span class="line">                        dummy = TreeNode()</span><br><span class="line">                        dummy.left = l</span><br><span class="line">                        dummy.right = r</span><br><span class="line">                        res.append(dummy)</span><br><span class="line">            <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/delete-nodes-and-return-forest/">Leetcode 1110*</a> 删点成林<br>感觉用遍历的方法更加好做…将所有要删除的点的(node,father,is_left)i.e. 该节点的引用，其父亲的引用,其是其父亲的做儿子还是右儿子给保存下来，然后对每一个保存下来的(node,father,is_left)进行删除操作。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.to_delete_lst = []</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">delNodes</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode], to_delete: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[TreeNode]:</span><br><span class="line">        to_delete = <span class="built_in">set</span>(to_delete)</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">root, father, is_left</span>):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="keyword">if</span> root.val <span class="keyword">in</span> to_delete:</span><br><span class="line">                <span class="variable language_">self</span>.to_delete_lst.append((root, father, is_left))</span><br><span class="line">            traverse(root.left, root, <span class="literal">True</span>)</span><br><span class="line">            traverse(root.right, root, <span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">        traverse(root, <span class="literal">None</span>, <span class="literal">None</span>)</span><br><span class="line"></span><br><span class="line">        res1 = [root]</span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">for</span> node, f_node, is_left <span class="keyword">in</span> <span class="variable language_">self</span>.to_delete_lst:</span><br><span class="line">            <span class="keyword">assert</span> node</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> f_node:</span><br><span class="line">                <span class="comment"># delete root</span></span><br><span class="line">                res1 = []</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">assert</span> f_node</span><br><span class="line">                <span class="keyword">if</span> is_left:</span><br><span class="line">                    f_node.left = <span class="literal">None</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    f_node.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">            res += [node.left] <span class="keyword">if</span> node.left <span class="keyword">and</span>  node.left.val <span class="keyword">not</span> <span class="keyword">in</span> to_delete <span class="keyword">else</span> []</span><br><span class="line">            res += [node.right] <span class="keyword">if</span> node.right  <span class="keyword">and</span> node.right.val <span class="keyword">not</span> <span class="keyword">in</span> to_delete <span class="keyword">else</span> []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res1 + res</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="【强化练习】用「分解问题」思维解题-II"><a href="#【强化练习】用「分解问题」思维解题-II" class="headerlink" title="【强化练习】用「分解问题」思维解题 II"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-divide-ii/">【强化练习】用「分解问题」思维解题 II</a></h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/symmetric-tree/description/">Leetcode 101</a> 对称二叉树<br>将问题分解，一个树是对称的等价于 左子树&#x3D;右子树的反转，所以只用实现<code>is_same(p:Option[TreeNode], q:Optional[TreeNode]) -&gt; bool</code>以及<code>filp_tree(root:Optional[TreeNode]) -&gt; Optional[TreeNode]</code>这两个函数就可以。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/flip-equivalent-binary-trees/description/">Leetcode 951</a> 翻转等价二叉树<br>假设该签名的函数<code>flipEquiv(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -&gt; bool</code>已经实现，我们需要返回</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 情况1：在此处不进行翻转</span></span><br><span class="line">a = <span class="variable language_">self</span>.flipEquiv(root1.left,root2.left) <span class="keyword">and</span> <span class="variable language_">self</span>.flipEquiv(root1.right,root2.right)</span><br><span class="line"><span class="comment"># 情况2：在此处进行翻转</span></span><br><span class="line">b = <span class="variable language_">self</span>.flipEquiv(root1.left,root2.right) <span class="keyword">and</span> <span class="variable language_">self</span>.flipEquiv(root1.right,root2.left)</span><br><span class="line"><span class="keyword">return</span> a <span class="keyword">or</span> b</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-maximum-path-sum/description/">Leetcode 124</a> 二叉树最大路径和<br>首先实现函数<code>one_side_max_path_sum(root:Optional[TreeNode]) -&gt; int</code>，返回以<code>root</code>为根的二叉树中，单边路径和的最大值。<br>然后利用<code>traverse(root:Optional[TreeNode]) -&gt; None</code>，对所有的节点进行遍历,更新外部遍历的结果<code>self.res</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l, r = one_side_max_path_sum(root.left), one_side_max_path_sum(root.right)</span><br><span class="line"><span class="variable language_">self</span>.res = <span class="built_in">max</span>(<span class="variable language_">self</span>.res, root.val + <span class="built_in">max</span>(<span class="number">0</span>, l, r, l + r)) </span><br><span class="line"><span class="comment"># 有4种情况 0：两边都是负数， l：右边是负数， r：左边是负数， l + r：两边都是正数</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="【强化练习】同时运用两种思维解题"><a href="#【强化练习】同时运用两种思维解题" class="headerlink" title="【强化练习】同时运用两种思维解题"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-combine-two-view/">【强化练习】同时运用两种思维解题</a></h3><ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/path-sum/description/">Leetcode 111</a> 路径总和<br>所有关于叶子节点的操作，在traverse函数中完成，如下所示：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">root:<span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># or if root.left == root.right:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.left <span class="keyword">and</span> <span class="keyword">not</span> root.right:</span><br><span class="line">        <span class="comment"># do something</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    traverse(root.left)</span><br><span class="line">    traverse(root.right)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/range-sum-of-bst/">Leetcode 938</a> 二叉搜索树的范围和<br>直接利用BST的性质，可以直接改造traverse函数，如下所示：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">self, root: TreeNode, low: <span class="built_in">int</span>, high: <span class="built_in">int</span></span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> root.val &lt; low:</span><br><span class="line">        <span class="comment"># 目标区间在右子树</span></span><br><span class="line">        <span class="variable language_">self</span>.traverse(root.right, low, high)</span><br><span class="line">    <span class="keyword">elif</span> root.val &gt; high:</span><br><span class="line">        <span class="comment"># 目标区间在左子树</span></span><br><span class="line">        <span class="variable language_">self</span>.traverse(root.left, low, high)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># root.val 落在目标区间，累加 sum</span></span><br><span class="line">        <span class="variable language_">self</span>.<span class="built_in">sum</span> += root.val</span><br><span class="line">        <span class="comment"># 继续遍历左右子树</span></span><br><span class="line">        <span class="variable language_">self</span>.traverse(root.right, low, high)</span><br><span class="line">        <span class="variable language_">self</span>.traverse(root.left, low, high)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="【强化练习】利用后序位置解题-I"><a href="#【强化练习】利用后序位置解题-I" class="headerlink" title="【强化练习】利用后序位置解题 I"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-post-order-i/">【强化练习】利用后序位置解题 I</a></h3><ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/delete-leaves-with-a-given-value/description/">Leetcode 1325*</a> 删除给定值的叶子节点</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeLeafNodes</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode], target: <span class="built_in">int</span></span>) -&gt; <span class="type">Optional</span>[TreeNode]:</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">root: <span class="type">Optional</span>[TreeNode], f_node: <span class="type">Optional</span>[TreeNode], isleft:<span class="built_in">bool</span>, target:<span class="built_in">int</span></span>):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">            traverse(root.left, root, <span class="literal">True</span>, target)</span><br><span class="line">            traverse(root.right, root, <span class="literal">False</span>, target)</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 后序位置处理叶子节点</span></span><br><span class="line">            <span class="comment"># 之所以不在前序位置处理是因为，删除叶子节点后，被删除的节点的父节点就变成了新的叶子节点</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root.left <span class="keyword">and</span> <span class="keyword">not</span> root.right <span class="keyword">and</span> root.val == target:</span><br><span class="line">                <span class="keyword">if</span> isleft:</span><br><span class="line">                    f_node.left = <span class="literal">None</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    f_node.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">        dummy = TreeNode(<span class="number">10086</span>)</span><br><span class="line">        dummy.left = root</span><br><span class="line">        traverse(root, dummy, <span class="literal">True</span>, target)</span><br><span class="line">        <span class="keyword">return</span> dummy.left</span><br></pre></td></tr></table></figure>
+
+<h3 id="【强化练习】利用后序位置解题-II"><a href="#【强化练习】利用后序位置解题-II" class="headerlink" title="【强化练习】利用后序位置解题 II"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-post-order-ii/">【强化练习】利用后序位置解题 II</a></h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-subtree-with-all-the-deepest-nodes/description/">https://leetcode.cn/problems/smallest-subtree-with-all-the-deepest-nodes/description/</a><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-zigzag-path-in-a-binary-tree/">https://leetcode.cn/problems/longest-zigzag-path-in-a-binary-tree/</a><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-time-to-collect-all-apples-in-a-tree/description/">https://leetcode.cn/problems/minimum-time-to-collect-all-apples-in-a-tree/description/</a></p>
+<h3 id="【强化练习】利用后序位置解题-III"><a href="#【强化练习】利用后序位置解题-III" class="headerlink" title="【强化练习】利用后序位置解题 III"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-post-order-iii/">【强化练习】利用后序位置解题 III</a></h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-cameras/description/">https://leetcode.cn/problems/binary-tree-cameras/description/</a></p>
+<h3 id="【强化练习】运用层序遍历解题-I"><a href="#【强化练习】运用层序遍历解题-I" class="headerlink" title="【强化练习】运用层序遍历解题 I"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-level-i/">【强化练习】运用层序遍历解题 I</a></h3><h3 id="【强化练习】运用层序遍历解题-II"><a href="#【强化练习】运用层序遍历解题-II" class="headerlink" title="【强化练习】运用层序遍历解题 II"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/binary-tree-level-ii/">【强化练习】运用层序遍历解题 II</a></h3><h3 id="【强化练习】二叉搜索树经典例题-I"><a href="#【强化练习】二叉搜索树经典例题-I" class="headerlink" title="【强化练习】二叉搜索树经典例题 I"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/bst1/">【强化练习】二叉搜索树经典例题 I</a></h3><h3 id="【强化练习】二叉搜索树经典例题-II"><a href="#【强化练习】二叉搜索树经典例题-II" class="headerlink" title="【强化练习】二叉搜索树经典例题 II"></a><a target="_blank" rel="noopener" href="https://labuladong.online/algo/problem-set/bst2/">【强化练习】二叉搜索树经典例题 II</a></h3><!-- 
 ## [二叉树的拓展延伸](https://labuladong.online/algo/menu/more-bt/)
 ### [拓展：最近公共祖先系列解题框架](https://labuladong.online/algo/practice-in-action/lowest-common-ancestor-summary/)
 ### [拓展：如何计算完全二叉树的节点数](https://labuladong.online/algo/data-structure/count-complete-tree-nodes/)
@@ -4286,7 +5121,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yueht23.github.io/2025/04/22/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-C-%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/">
+    <link itemprop="mainEntityOfPage" href="https://yueht23.github.io/2025/04/22/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-Cpp%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -4300,7 +5135,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/04/22/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-C-%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" class="post-title-link" itemprop="url">华为入职培训-C++语言编程规范</a>
+            <a href="/2025/04/22/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD-Cpp%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" class="post-title-link" itemprop="url">华为入职培训-C++语言编程规范</a>
         </h2>
 
         <div class="post-meta">
@@ -4434,131 +5269,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yueht23.github.io/2025/04/22/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yueht">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yueht's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/04/22/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-04-22 21:11:27" itemprop="dateCreated datePublished" datetime="2025-04-22T21:11:27+08:00">2025-04-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-04-25 20:21:47" itemprop="dateModified" datetime="2025-04-25T20:21:47+08:00">2025-04-25</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h1 id="测试代码是否可以顺利渲染"><a href="#测试代码是否可以顺利渲染" class="headerlink" title="测试代码是否可以顺利渲染"></a>测试代码是否可以顺利渲染</h1><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello word&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">greeting</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Hello from JavaScript!&quot;</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello World&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打印 Hello World</span></span><br><span class="line">print<span class="punctuation">(</span><span class="string">&quot;Hello World&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个简单的数据框</span></span><br><span class="line">data <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span></span><br><span class="line">  name <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;Alice&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Bob&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Charlie&quot;</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">  age <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">25</span><span class="punctuation">,</span> <span class="number">30</span><span class="punctuation">,</span> <span class="number">35</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 ggplot2 绘制简单的散点图</span></span><br><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line">ggplot<span class="punctuation">(</span>data<span class="punctuation">,</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> name<span class="punctuation">,</span> y <span class="operator">=</span> age<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  geom_point<span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  labs<span class="punctuation">(</span>title <span class="operator">=</span> <span class="string">&quot;年龄分布&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h1><h2 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h2><p>$E&#x3D;mc^2$ and $\exists x \in X, \forall y \in Y, x \neq y$</p>
-<h2 id="行间公式"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式</h2><p>$$<br>\int_0^\infty \frac{x^3}{e^x} , dx &#x3D; \frac{\pi^4}{15}<br>$$</p>
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><table>
-<thead>
-<tr>
-<th>列1</th>
-<th>列2</th>
-<th>列3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-</tr>
-<tr>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-</tr>
-<tr>
-<td>7</td>
-<td>8</td>
-<td>9</td>
-</tr>
-</tbody></table>
-<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><h2 id="本地图片"><a href="#本地图片" class="headerlink" title="本地图片"></a>本地图片</h2><p><img src="/../images/image-1.png" alt="alt text"></p>
-<h2 id="网络图片"><a href="#网络图片" class="headerlink" title="网络图片"></a>网络图片</h2><p><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="alt text"></p>
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a target="_blank" rel="noopener" href="https://www.google.com/">Google</a></p>
-<h1 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h1><pre class="mermaid">graph TD
-    A --> B
-    B --> C
-    C --> A</pre>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -4623,7 +5338,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
